@@ -30,7 +30,7 @@ The neoadmin subdirectory contains the following:
 
 To customize the primary color of the theme and sidebar you need to change the variables in the `scss/_var.scss`. The detailed documentation about changing the colors is mentioned in this file itself.
 
-If you don't want to use particular component or plug-in just comment the import statement for that particular component in `src/sass/neoadmin.scss` and compile the SASS by running npm run build command.
+If you don't want to use particular component or plug-in just comment the import statement for that particular component in `src/scss/neoadmin.scss` and compile the SASS by running npm run build command.
 
 ### Compatibility with other frameworks
 
@@ -44,7 +44,7 @@ If you are using Node JS as your web server you can use pug as your layout engin
 
 To enable RTL support
 
-* Uncomment this line `@import 'component/rtl'`; in `src/sass/neoadmin.scss`.
+* Uncomment this line `@import 'component/rtl'`; in `src/scss/neoadmin.scss`.
 * Webpack will include the style automatically, but you can also add dir="rtl" attribute to <html> tag in `src/pug/layouts/_layout.pug`.
 * Build the source files using npm run build command.
 

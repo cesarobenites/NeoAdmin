@@ -1,6 +1,6 @@
 {
   "name": "neoadmin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Admin panel with Bootstrap, Sass, Pug.js and others",
   "main": "index.js",
   "scripts": {
