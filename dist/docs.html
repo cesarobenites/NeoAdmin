@@ -18,7 +18,7 @@
     <meta property="og:description" content="Neo Admin is responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.">
     <title>Documentation - Neo Admin</title>
     <!-- Main CSS-->
-    <link href="assets/neoadmin.73365d42bace48a29a79.css" rel="stylesheet">
+    <link href="assets/neoadmin.99ece92911c4b6140b3e.css" rel="stylesheet">
     <!-- Styles -> Plugins & Custom-->
   </head>
   <body class="app sidebar-mini">
@@ -138,7 +138,7 @@
       <div class="app-title">
         <div>
           <h1>Documentation</h1>
-          <p>Documentation of vali admin</p>
+          <p>Documentation of NeoAdmin</p>
         </div>
         <ul class="app-breadcrumb breadcrumb">
           <li class="breadcrumb-item">Home</li>
@@ -150,19 +150,25 @@
           <div class="docs" style="max-width: 700px;">
             <h2 class="docs-title">Directory Structure</h2>
             <pre class="directory-structure">│
-├── docs - <i>compiled files</i>
-│   ├── css
-│   ├── images
-│   └── js
+├── dist - <i>compiled files</i>
+│   ├── assets
+│   │   ├── fonts
+│   │   ├── images
+│   │   └── files .css and .js
+│   └── files .html
 └── src - <i>Layout and style source files</i>
+&nbsp;&nbsp;&nbsp;&nbsp;├── fonts - <i>Fonts source</i>
+&nbsp;&nbsp;&nbsp;&nbsp;├── images - <i>Image source</i>
+&nbsp;&nbsp;&nbsp;&nbsp;├── js - <i>Javascript source</i>
+&nbsp;&nbsp;&nbsp;&nbsp;├── plugins - <i>Plugin source</i>
 &nbsp;&nbsp;&nbsp;&nbsp;├── pug - <i>Layout source</i>
-&nbsp;&nbsp;&nbsp;&nbsp;└── sass - <i>Style source</i>
+&nbsp;&nbsp;&nbsp;&nbsp;└── scss - <i>Style source</i>
 </pre>
             <h2 class="docs-title" id="Compilation-of-source-files">Compilation of source files</h2>
-            <p>The theme is built using SASS and PugJs which are in turn compiled into HTML and CSS by Grunt. If you are not familiar with Grunt, <a href="https://24ways.org/2013/grunt-is-not-weird-and-hard/" target="_blank" rel="noopener">here</a> is an article to get started. If you are familiar with Grunt follow the instruction mentioned bellow to edit or customize the source. </p>
-            <p>If you don't want to edit theme you can use the compiled files directly inside <code>docs</code> folder.</p>
+            <p>The theme is built using SASS and PugJs which are in turn compiled into HTML and CSS by Webpack. If you are not familiar with Webpack, <a href="https://webpack.js.org/guides/getting-started/" target="_blank" rel="noopener">here</a> is a guide to get started. If you are familiar with Webpack follow the instruction mentioned bellow to edit or customize the source. </p>
+            <p>If you don't want to edit theme you can use the compiled files directly inside <code>dist</code> folder.</p>
             <p>Run <code>npm install</code> command in project root directory to install and build dependencies.</p>
-            <p>Use <code>npm run dev</code> task to edit and compile source files on the go or use <code>npm run build</code> task to compile all source files at once.</p>
+            <p>Use <code>npm run start</code> task to edit and compile source files on the go or use <code>npm run build</code> task to compile all source files at once.</p>
             <h2 class="docs-title" id="Layout-Customization">Layout Customization</h2>
             <p>The layout is built using PugJs. All the layout source files are located in <code>src/pug</code> directory. There are two sub directories inside this directory: 
               <ol>
@@ -171,16 +177,21 @@
               </ol>
             </p>
             <h2 class="docs-title" id="Style-Customization">Style Customization</h2>
-            <p>The styles are written in SASS. All the style files are located in <code>src/sass</code> directory. There is a file in this directory <code>main.sass</code> which imports all the files and exported as main.css There are four sub directories inside this directory:
+            <p>The styles are written in SASS. All the style files are located in <code>src/sass</code> directory. There is a file in this directory <code>neoadmin.sass</code> which imports all the files and exported as neoadmin.css There are two subdirectories inside this directory:
               <ol>
-                <li><code>1-tools</code> - It includes styles of all the external libraries and a file <code>_var.scss</code> which contains the variables required for the application</li>
-                <li><code>2-basics</code> - It contains the basic style like overall structure css and theming options</li>
-                <li><code>3-component</code> - It contains the styles for the components like card, widgets, sidebar, navbar etc</li>
-                <li><code>4-pages</code> - It contains the styles for the specific pages like login page, lock-screen page </li>
+                <li><code>vendors</code> - It includes styles of all the external libraries which contains the variables required for the application</li>
+                <li><code>neoadmin</code> - It contains the basic style like overall structure css and theming options</li>
               </ol>
             </p>
-            <p>To customize the primary color of the theme and sidebar you need to change the variables in the <code>1-tools/_var.scss</code>. The detailed documentation about changing the colors is mentioned in this file itself.</p>
-            <p>If you don't want to use particular component or plug-in just comment the import statement for that particular component in <code>src/sass/main.scss</code> and compile the SASS by running <code>npm run build</code> command.</p>
+            <p>The neoadmin subdirectory contains the following:
+              <ol>
+                <li><code>files *.scss</code> - These SASS files have the general settings and start variables of the themes.</li>
+                <li><code>component</code> - It contains the styles for the components like card, widgets, sidebar, navbar etc</li>
+                <li><code>pages</code> - It contains the styles for the specific pages like login page, lock-screen page </li>
+              </ol>
+            </p>
+            <p>To customize the primary color of the theme and sidebar you need to change the variables in the <code>scss/_var.scss</code>. The detailed documentation about changing the colors is mentioned in this file itself.</p>
+            <p>If you don't want to use particular component or plug-in just comment the import statement for that particular component in <code>src/sass/neoadmin.scss</code> and compile the SASS by running <code>npm run build</code> command.</p>
             <h2 class="docs-title" id="Compatibility-with-other-frameworks">Compatibility with other frameworks</h2>
             <p>This theme is not built for a specific framework or technology like Angular or React etc. But due to it's modular nature it's very easy to incorporate it into any front-end or back-end framework like Angular, React or VueJs or Node JS. The CSS is modular enough to be incorporated in any framework. While the Javascript used to make the components interactive can be used from any of the following framework.</p>
             <p>If you are using Angular you can use <a href="https://angular-ui.github.io/bootstrap/" rel="noopener">ui-bootstrap</a>, for React use <a href="https://react-bootstrap.github.io/" rel="noopener">React-Bootstrap</a> and for VueJs you can use <a href="https://yuche.github.io/vue-strap/" rel="noopener">VueStrap</a>.</p>
@@ -188,20 +199,20 @@
             <h2 class="docs-title" id="RTL-Support">RTL Support</h2>
             <p>To enable RTL support
               <ul>
-                <li>Uncomment this line <code>@import '3-component/rtl';</code> in <code>src/sass/main.scss</code>. </li>
-                <li>Add <code>dir="rtl"</code> attribute to <code>&lt;html&gt;</code> tag in <code>src/pug/layouts/_layout.pug</code>.</li>
+                <li>Uncomment this line <code>@import 'component/rtl';</code> in <code>src/sass/neoadmin.scss</code>. </li>
+                <li>Webpack will include the style automatically, but you can also add <code>dir="rtl"</code> attribute to <code>&lt;html&gt;</code> tag in <code>src/pug/layouts/_layout.pug</code>.</li>
                 <li>Build the source files using <code>npm run build</code> command.</li>
               </ul>
             </p>
             <h2 class="docs-title" id="Contribution-and-Issues">Contribution & Issues</h2>
-            <p>If you liked the theme do star and fork it on <a href="https://github.com/cesarcalicb/NeoAdmin" target="_blank" rel="noopener">GitHub</a>. If you find anything missing or want to contribute to this documentation, the source is available <a href="https://github.com/cesarcalicb/NeoAdmin/blob/master/src/pug/charts.pug" target="_blank" rel="noopener">here</a>. If you have an issue or feature request regarding theme please report it <a href="https://github.com/cesarcalicb/NeoAdmin/issues/new" target="_blank" rel="noopener">here</a>.</p>
+            <p>If you liked the theme do star and fork it on <a href="https://github.com/cesarcalicb/NeoAdmin" target="_blank" rel="noopener">GitHub</a>. If you find anything missing or want to contribute to this documentation, the source is available <a href="https://github.com/cesarcalicb/NeoAdmin/" target="_blank" rel="noopener">here</a>. If you have an issue or feature request regarding theme please report it <a href="https://github.com/cesarcalicb/NeoAdmin/issues/new" target="_blank" rel="noopener">here</a>.</p>
           </div>
         </div>
       </div>
     </main>
 <!-- Javascripts-->
-<script type="text/javascript" src="assets/vendor.73365d42bace48a29a79.js"></script>
-<script type="text/javascript" src="assets/neoadmin.73365d42bace48a29a79.js"></script>
+<script type="text/javascript" src="assets/vendor.99ece92911c4b6140b3e.js"></script>
+<script type="text/javascript" src="assets/neoadmin.99ece92911c4b6140b3e.js"></script>
     <!-- Page specific javascripts-->
   </body>
 </html>
