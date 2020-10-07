@@ -1,0 +1,13 @@
+
+
+@import '~jqvmap-novulnerability/dist/jqvmap';
+
+.jqvmap-zoomin, .jqvmap-zoomout {
+	width: 20px;
+	height: 20px;
+	line-height: 15px;
+}
+
+.jqvmap-zoomout {
+	top: 35px;
+}

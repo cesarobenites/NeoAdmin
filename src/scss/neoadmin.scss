@@ -1,0 +1,141 @@
+/*!
+ * ================================================================
+ * Project: Neo Admin
+ * Author: César R.
+ * Email: cesar.rcbx@gmail.com
+ * Description: Styles and Customizations
+ * ================================================================
+ */
+
+// Root Template
+//-----------------------------------------------------------------
+/*!
+ * ================================================================
+ * == Core
+ * ================================================================
+*/
+@import 'neoadmin/vars';
+@import 'neoadmin/fonts';
+@import '~font-awesome/scss/font-awesome';
+/*!
+ * ================================================================
+ * == Bootstrap
+ * ================================================================
+*/
+@import 'neoadmin/customize-bootstrap';
+@import '~bootstrap/scss/bootstrap';
+
+
+// Plugins - Vendors
+//-----------------------------------------------------------------
+/*!
+ * ================================================================
+ * == DataTables
+ * ================================================================
+*/
+@import 'vendors/dataTables.bootstrap';
+/*!
+ * ================================================================
+ * == Datepicker
+ * ================================================================
+*/
+@import 'vendors/bootstrap-datepicker';
+/*!
+ * ================================================================
+ * == Sweetalert
+ * ================================================================
+*/
+@import 'vendors/sweetalert';
+/*!
+ * ================================================================
+ * == Notify
+ * ================================================================
+*/
+@import 'vendors/notify';
+/*!
+ * ================================================================
+* == Select2
+ * ================================================================
+*/
+@import 'vendors/select2';
+/*!
+ * ================================================================
+ * == Pace
+ * ================================================================
+*/
+@import 'vendors/pace';
+/*!
+ * ================================================================
+ * == Jqvmap
+ * ================================================================
+*/
+@import 'vendors/jqvmap';
+/*!
+ * ================================================================
+ * == Dropzone
+ * ================================================================
+*/
+@import 'vendors/dropzone';
+/*!
+ * ================================================================
+ * == Chartjs
+ * ================================================================
+*/
+@import 'vendors/chart-js';
+
+/*!
+ * ================================================================
+ * == App & Helpers
+ * ================================================================
+*/
+// Apps & Helpers
+//-----------------------------------------------------------------
+@import 'neoadmin/app';
+@import 'neoadmin/helpers';
+
+/*!
+ * ================================================================
+ * == Component
+ * ================================================================
+*/
+// Component
+//-----------------------------------------------------------------
+@import 'neoadmin/component/header';
+@import 'neoadmin/component/sidebar';
+@import 'neoadmin/component/sidebar-mini';
+
+// This styles are optional based on your preferance
+
+@import 'neoadmin/component/dropdown';
+@import 'neoadmin/component/button';
+@import 'neoadmin/component/app-title';
+@import 'neoadmin/component/tile';
+@import 'neoadmin/component/custom-radio-n-checkbox';
+@import 'neoadmin/component/toggle-button';
+@import 'neoadmin/component/material-half-bg';
+@import 'neoadmin/component/material-loader';
+@import 'neoadmin/component/button-spinner';
+@import 'neoadmin/component/widgets';
+@import 'neoadmin/component/chat';
+
+// RTL support
+// Also you will need to add dir="rtl" attribute to HTML tag
+
+//@import 'neoadmin/component/rtl';
+
+/*!
+ * ================================================================
+ * == Pages
+ * ================================================================
+*/
+// Pages
+//-----------------------------------------------------------------
+// This styles are optional based on your preferance
+@import 'neoadmin/pages/landing-page';
+@import 'neoadmin/pages/docs';
+@import 'neoadmin/pages/login-material';
+@import 'neoadmin/pages/lockscreen-material';
+@import 'neoadmin/pages/error-page';
+@import 'neoadmin/pages/mailbox';
+@import 'neoadmin/pages/user-profile';
+

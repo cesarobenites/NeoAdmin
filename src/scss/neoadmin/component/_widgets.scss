@@ -1,0 +1,100 @@
+// Componant: Widget
+
+.widget-small {
+	display: flex;
+	flex-wrap: wrap;
+	border-radius: 4px;
+	color: $white;
+	margin-bottom: 20px;
+	padding: .75rem;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+
+	.icon-w {
+		align-self: center;
+		.icon {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: $white;
+		}
+	}
+
+	.caption {
+		align-self: center;
+		.description {
+			display: flex;
+			flex-direction: column;
+			&.text-muted {
+				color: $white !important;
+			}
+			.text-success, .text-danger {
+				color: $white !important;
+			}
+		}
+	}
+
+	&.w-light {
+		.description {
+				
+			&.text-muted {
+				color: $gray-600 !important;
+			}
+			.text-success {
+				color: $green !important;
+			}
+			.text-danger {
+				color: $red !important;
+			}
+		}
+	}
+
+	&.primary {
+		background-color: $primary-color;
+		&.w-light {
+			background-color: $white;
+			color: $gray-900;
+			.icon {
+				color: $primary-color;
+			}
+		}
+	}
+
+	&.info {
+		background-color: theme-color("info");
+
+		&.w-light {
+			background-color: #fff;
+			color: $gray-900;
+
+			.icon {
+				color: theme-color("info");
+			}
+		}
+	}
+
+	&.warning {
+		background-color: theme-color("warning");
+
+		&.w-light {
+			background-color: #fff;
+			color: $gray-900;
+
+			.icon {
+				color: theme-color("warning");
+			}
+		}
+	}
+
+	&.danger {
+		background-color: theme-color("danger");
+
+		&.w-light {
+			background-color: #fff;
+			color: $gray-900;
+
+			.icon {
+				color: theme-color("danger");
+			}
+		}
+	}
+}

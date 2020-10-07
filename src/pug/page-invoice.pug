@@ -1,0 +1,115 @@
+extends layouts/_layout.pug
+
+block variables
+	- var activePage = 'invoice-page';
+	- var activeGroup = 'pages';
+
+block title
+	title Invoice - Neo Admin
+
+block content
+	.app-title
+		div
+			h1 Invoice
+			p A Printable Invoice Format
+
+		ul.app-breadcrumb.breadcrumb
+			li.breadcrumb-item
+				| Home
+			li.breadcrumb-item
+				a(href='#') Invoice
+
+	.row
+		.col-md-12
+			.tile
+				section.invoice
+
+					.row.mb-4
+						.col-6
+							h2.page-header
+								i.fa.fa-globe
+								|  Neo20
+						.col-6
+							h5.text-right Date: 15/09/2020
+
+					.row.invoice-info
+						.col-4
+							| From
+							address
+								strong Neo20.
+								br
+								| 222 Lima
+								br
+								| Lima
+								br
+								| Lima
+								br
+								| Email: hola@neo20.com
+
+						.col-4
+							| To
+							address
+								strong César Cali CB
+								br
+								| 333 Lima
+								br
+								| Lima
+								br
+								| Phone: (999) 444-0000
+								br
+								| Email: cesar@neo20.com
+
+						.col-4
+							b Invoice #001515
+							br
+							br
+							b Order ID:
+							|  5G7U4H
+							br
+							b Payment Due:
+							|  22/09/2020
+							br
+							b Account:
+							|  777-8888
+							
+					.row
+						.col-12.table-responsive
+							table.table.table-striped
+								thead
+									tr
+										th Qty
+										th Product
+										th Serial #
+										th Description
+										th Subtotal
+								tbody
+									tr
+										td 1
+										td Back to the Underworld
+										td 456-987-234
+										td The best way to live in the world.
+										td $75.85
+									tr
+										td 1
+										td The street of the blind
+										td 323-556-775
+										td They don't know the true story
+										td $89.54
+									tr
+										td 1
+										td The dog that was a cat
+										td 522-345-673
+										td The story of the dog that was a cat
+										td $26.75
+									tr
+										td 1
+										td The Mountain that spoke to me
+										td 553-256-256
+										td The most unusual friendship
+										td $38.25
+
+					.row.d-print-none.mt-2
+						.col-12.text-right
+							button.btn.btn-primary(onclick='window.print();')
+								i.fa.fa-print
+								|  Print

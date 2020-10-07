@@ -1,0 +1,44 @@
+doctype html
+html(lang="es")
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+
+		meta(name="description", content="Neo Admin is responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.")
+
+		// Twitter meta
+		meta(property="twitter:card", content="summary_large_image")
+		meta(property="twitter:site", content="@cesarcalicb")
+		meta(property="twitter:creator", content="@cesarcalicb")
+
+		// Open Graph Meta
+		meta(property="og:type", content="website")
+		meta(property="og:site_name", content="Neo Admin")
+		meta(property="og:title", content="Neo Admin - Bootstrap 4 admin theme")
+		meta(property='og:url', content='http://neo20.com/blog/NeoAdmin')
+		meta(property='og:image', content='http://neo20.com/blog/NeoAdmin/hero-social.png')
+		meta(property="og:description", content="Neo Admin is responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.")
+
+		block title
+			title Neo Admin - Free Bootstrap 4 Admin Template
+
+		include ../includes/_head.pug
+
+	body.app.sidebar-mini
+
+		// Navbar
+		include ../includes/_header.pug
+
+		// Sidebar menu
+		include ../includes/_sidebar.pug
+
+		main.app-content
+			block content
+
+		//- Javascripts
+		include ../includes/_javascript.pug
+		
+		// Page specific javascripts
+		block specific-js
+

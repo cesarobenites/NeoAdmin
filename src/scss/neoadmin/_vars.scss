@@ -1,0 +1,70 @@
+//
+// Application Variables
+//-----------------------------------------------------
+
+
+// Primary font
+$body-font: 'Roboto', sans-serif;
+
+// Theme Colors
+// Color Variables
+// Bootstrap Color Overrides
+$white: #fff !default;
+$gray-100: #f8f9fc !default;
+$gray-200: #eaecf4 !default;
+$gray-300: #dddfeb !default;
+$gray-400: #d1d3e2 !default;
+$gray-500: #b7b9cc !default;
+$gray-600: #858796 !default;
+$gray-700: #6e707e !default;
+$gray-800: #5a5c69 !default;
+$gray-900: #3a3b45 !default;
+$black: #000 !default;
+
+$blue: #4e73df !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #e74a3b !default;
+$orange: #fd7e14 !default;
+$yellow: #f6c23e !default;
+$green: #1cc88a !default;
+$teal: #20c9a6 !default;
+$cyan: #36b9cc !default;
+
+// Primary color is the main color of the application which is used 
+// for navbar, active links and primary button.
+$primary-color: #294185;
+
+// Complementry color is used to indecate the loading bar on the top
+// of the page with pace.js plugin
+$complementry-color: adjust_hue($primary-color, 200);
+
+// ------- Sidebar Width --------
+$sidebar-width: 230px;
+
+// ------- Sidebar Colors --------
+
+// Background color of sidebar
+$sidebar-color: #263544;
+
+// Sidebar accent variable is used to determine the color of the links
+// of the sidebar. The allowed values are 'light' or 'dark' only
+$sidebar-accent: dark;
+
+// The following variables indecate sidebar link color
+// and link hover color when using a dark sidebar color
+$sidebar-dark-color: #b7c0cd;
+$sidebar-dark-link-color: #b7c0cd;
+
+// The following variables indicate sidebar link color
+// and link hover color when using a light sidebar color
+$sidebar-light-color: #333;
+$sidebar-light-link-color: #333;
+
+// The following variable indicates the path of the background image
+$path-background: '../../../images/background.jpg';
+
+// The following variables indicate the paths of the font files
+$fa-font-path: "~font-awesome/fonts";
+$folder-font: '../../fonts/';
