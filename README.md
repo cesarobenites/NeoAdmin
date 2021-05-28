@@ -2,7 +2,7 @@
 
 The theme is built using SASS and PugJs which are in turn compiled into HTML and CSS by Webpack. If you are not familiar with Webpack, [here](https://webpack.js.org/guides/getting-started/) is a guide to get started. If you are familiar with Webpack follow the instruction mentioned bellow to edit or customize the source.
 
-If you don't want to edit theme you can use the compiled files directly inside `dist` folder.
+If you don't want to edit theme you can use the compiled files directly inside `docs` folder.
 
 Run `npm install` command in project root directory to install and build dependencies.
 

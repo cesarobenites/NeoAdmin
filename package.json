@@ -4,7 +4,7 @@
   "description": "Admin panel with Bootstrap, Sass, Pug.js and others",
   "main": "index.js",
   "scripts": {
-    "build": "rimraf dist && webpack --config ./webpack/webpack.prod.js -p",
+    "build": "rimraf docs && webpack --config ./webpack/webpack.prod.js -p",
     "start": "webpack-dev-server --config ./webpack/webpack.dev.js -d"
   },
   "repository": {

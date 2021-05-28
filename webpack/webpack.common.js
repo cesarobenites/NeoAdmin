@@ -41,7 +41,7 @@ module.exports = {
 		neoadmin: './src/neoadmin.js'
 	},
     output: {
-		path: path.resolve(__dirname, '../dist'),
+		path: path.resolve(__dirname, '../docs'),
         filename: "assets/[name].[hash:20].js"
 	},
 	optimization: {
@@ -161,7 +161,7 @@ module.exports = {
 		}),
 		// new CopyPlugin({
 		// 	patterns: [
-		// 		{ from: './src/plugins', to: '../dist/plugins', noErrorOnMissing: true, },
+		// 		{ from: './src/plugins', to: '../docs/plugins', noErrorOnMissing: true, },
 		// 	],
 		// }),
 		new MiniCssExtractPlugin({
