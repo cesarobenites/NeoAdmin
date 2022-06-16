@@ -34,7 +34,7 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.5.1",
     "jqvmap-novulnerability": "^1.5.1",
-    "moment": "^2.29.0",
+    "moment": "^2.29.2",
     "pace-js": "^1.0.2",
     "popper.js": "^1.16.1",
     "select2": "^4.0.13",
