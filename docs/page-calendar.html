@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Neo Admin is responsive and free admin theme built with Bootstrap 5.3, SASS and PUG.js. It's fully customizable and modular.">
+    <!-- Twitter meta-->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:site" content="@cesarobenites">
+    <meta property="twitter:creator" content="@cesarobenites">
+    <!-- Open Graph Meta-->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Neo Admin">
+    <meta property="og:title" content="Neo Admin - Bootstrap 5.3 admin theme">
+    <meta property="og:url" content="http://neo20.com/blog/NeoAdmin">
+    <meta property="og:image" content="http://neo20.com/blog/NeoAdmin/hero-social.png">
+    <meta property="og:description" content="Neo Admin is responsive and free admin theme built with Bootstrap 5.3, SASS and PUG.js. It's fully customizable and modular.">
+    <title>Calendar - Neo Admin</title>
+    <!-- Main CSS-->
+    <link href="assets/css/neoadmin.css" rel="stylesheet">
+    <!-- Styles -> Plugins & Custom-->
+  </head>
+  <body class="app sidebar-mini">
+  <!-- Preloader - Prevents FOUC -->
+  <div id="neo-page-loader">
+    <div class="neo-spinner">
+      <div class="ring"></div>
+      <div class="ring"></div>
+    </div>
+  </div>
+    <!-- Navbar-->
+  <!-- Navbar-->
+  <header class="app-header">
+    <a class="app-header__logo" href="index.html">
+      <img src="assets/images/neo20_logo.png" alt="NeoAdmin Logo">
+    </a>
+    <!-- Sidebar toggle button-->
+    <a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+
+    <div class="app-nav-container">
+      <!-- Navbar Right Menu-->
+      <ul class="app-nav">
+        <!-- Search-->
+        <li class="app-search">
+          <input class="app-search__input" type="search" placeholder="Search...">
+          <button class="app-search__button">
+            <i class="bi bi-search"></i>
+          </button>
+        </li>
+
+        <!-- Theme Toggle-->
+        <li class="dropdown">
+          <a class="app-nav__item" href="#" data-toggle="theme" aria-label="Toggle Theme"
+            title="Toggle Dark/Light Mode">
+            <i class="bi bi-moon-stars fs-5"></i>
+          </a>
+        </li>
+
+        <!-- Full Screen Toggle -->
+        <li class="dropdown">
+          <a class="app-nav__item" href="#" data-toggle="fullscreen" aria-label="Toggle Fullscreen" title="Full Screen">
+            <i class="bi bi-arrows-fullscreen fs-5"></i>
+          </a>
+        </li>
+
+        <!-- Font Size Dropdown -->
+        <li class="dropdown">
+          <a class="app-nav__item" href="#" data-bs-toggle="dropdown" aria-label="Font Size" title="Text Size">
+            <i class="bi bi-type fs-5"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#" data-font-size="14px">Small</a></li>
+            <li><a class="dropdown-item" href="#" data-font-size="16px">Normal</a></li>
+            <li><a class="dropdown-item" href="#" data-font-size="20px">Large</a></li>
+          </ul>
+        </li>
+
+        <!--Notification Menu-->
+        <li class="dropdown"><a class="app-nav__item" href="#" data-bs-toggle="dropdown"
+            aria-label="Show notifications"><i class="bi bi-bell fs-5"></i></a>
+          <ul class="app-notification dropdown-menu dropdown-menu-end">
+            <li class="app-notification__title">You have 4 new notifications.</li>
+            <div class="app-notification__content">
+              <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
+                      class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-primary"></i><i
+                        class="bi bi-envelope-fill bi-stack-1x bi-inverse"></i></span></span>
+                  <div>
+                    <p class="app-notification__message">Lisa sent you a mail</p>
+                    <p class="app-notification__meta">2 min ago</p>
+                  </div>
+                </a></li>
+              <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
+                      class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-danger"></i><i
+                        class="bi bi-hdd-fill bi-stack-1x bi-inverse"></i></span></span>
+                  <div>
+                    <p class="app-notification__message">Mail server not working</p>
+                    <p class="app-notification__meta">5 min ago</p>
+                  </div>
+                </a></li>
+              <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
+                      class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-success"></i><i
+                        class="bi bi-cash-coin bi-stack-1x bi-inverse"></i></span></span>
+                  <div>
+                    <p class="app-notification__message">Transaction complete</p>
+                    <p class="app-notification__meta">2 days ago</p>
+                  </div>
+                </a></li>
+              <div class="app-notification__content">
+                <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
+                        class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-primary"></i><i
+                          class="bi bi-envelope-fill bi-stack-1x bi-inverse"></i></span></span>
+                    <div>
+                      <p class="app-notification__message">Lisa sent you a mail</p>
+                      <p class="app-notification__meta">2 min ago</p>
+                    </div>
+                  </a></li>
+                <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
+                        class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-danger"></i><i
+                          class="bi bi-hdd-fill bi-stack-1x bi-inverse"></i></span></span>
+                    <div>
+                      <p class="app-notification__message">Mail server not working</p>
+                      <p class="app-notification__meta">5 min ago</p>
+                    </div>
+                  </a></li>
+                <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
+                        class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-success"></i><i
+                          class="bi bi-cash-coin bi-stack-1x bi-inverse"></i></span></span>
+                    <div>
+                      <p class="app-notification__message">Transaction complete</p>
+                      <p class="app-notification__meta">2 days ago</p>
+                    </div>
+                  </a></li>
+              </div>
+            </div>
+            <li class="app-notification__footer"><a href="#">See all notifications.</a></li>
+          </ul>
+        </li>
+
+        <!-- User Menu-->
+        <li class="dropdown">
+          <a class="app-nav__item" href="#" data-bs-toggle="dropdown" aria-label="Open Profile Menu">
+            <i class="bi bi-person-circle fs-5"></i>
+          </a>
+          <ul class="dropdown-menu settings-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="page-user.html"><i class="bi bi-gear me-2"></i> Settings</a></li>
+            <li><a class="dropdown-item" href="page-user.html"><i class="bi bi-person me-2"></i> Profile</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="page-login.html"><i class="bi bi-box-arrow-right me-2"></i> Logout</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </header>
+    <!-- Sidebar menu-->
+    <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+    <aside class="app-sidebar">
+      <div class="sidebar-scroll sidebar-scroll-toggled">
+        <div class="app-sidebar__user">
+        <img class="app-sidebar__user-avatar-mobile" src="assets/images/avatar.jpg" alt="User Image">
+        <img class="app-sidebar__user-avatar" src="assets/images/avatar_128.jpg" alt="User Image">
+          <div>
+            <p class="app-sidebar__user-name">César Rolando</p>
+            <p class="app-sidebar__user-designation">Software Developer</p>
+          </div>
+        </div>
+        <ul class="app-menu">
+          <li><a class="app-menu__item" href="dashboard.html"><i class="app-menu__icon bi bi-house-door"></i><span class="app-menu__label">Dashboard</span></a></li>
+          <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon bi bi-laptop"></i><span class="app-menu__label">UI Elements</span><i class="treeview-indicator bi bi-chevron-right"></i></a>
+            <ul class="treeview-menu">
+              <li><a class="treeview-item" href="bootstrap-components.html"><i class="icon bi bi-chevron-right"></i> Bootstrap Elements</a></li>
+              <li><a class="treeview-item" href="https://icons.getbootstrap.com/" target="_blank" rel="noopener"><i class="icon bi bi-chevron-right"></i> Font Icons</a></li>
+              <li><a class="treeview-item" href="ui-cards.html"><i class="icon bi bi-chevron-right"></i> Cards</a></li>
+              <li><a class="treeview-item" href="widgets.html"><i class="icon bi bi-chevron-right"></i> Widgets</a></li>
+            </ul>
+          </li>
+          <li class="app-menu__group">Components</li>
+          <li><a class="app-menu__item" href="charts.html"><i class="app-menu__icon bi bi-pie-chart"></i><span class="app-menu__label">Charts</span></a></li>
+          <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon bi bi-pencil-square"></i><span class="app-menu__label">Forms</span><i class="treeview-indicator bi bi-chevron-right"></i></a>
+            <ul class="treeview-menu">
+              <li><a class="treeview-item" href="form-components.html"><i class="icon bi bi-chevron-right"></i> Form Components</a></li>
+              <li><a class="treeview-item" href="form-custom.html"><i class="icon bi bi-chevron-right"></i> Custom Components</a></li>
+              <li><a class="treeview-item" href="form-samples.html"><i class="icon bi bi-chevron-right"></i> Form Samples</a></li>
+              <li><a class="treeview-item" href="form-notifications.html"><i class="icon bi bi-chevron-right"></i> Form Notifications</a></li>
+            </ul>
+          </li>
+          <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon bi bi-table"></i><span class="app-menu__label">Tables</span><i class="treeview-indicator bi bi-chevron-right"></i></a>
+            <ul class="treeview-menu">
+              <li><a class="treeview-item" href="table-basic.html"><i class="icon bi bi-chevron-right"></i> Basic Tables</a></li>
+              <li><a class="treeview-item" href="table-data-table.html"><i class="icon bi bi-chevron-right"></i> Data Tables</a></li>
+            </ul>
+          </li>
+          <li class="app-menu__group">Extras</li>
+          <li class="treeview is-expanded"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon bi bi-file-earmark-text"></i><span class="app-menu__label">Pages</span><i class="treeview-indicator bi bi-chevron-right"></i></a>
+            <ul class="treeview-menu">
+              <li><a class="treeview-item" href="blank-page.html"><i class="icon bi bi-chevron-right"></i> Blank Page</a></li>
+              <li><a class="treeview-item" href="page-login.html"><i class="icon bi bi-chevron-right"></i> Login Page</a></li>
+              <li><a class="treeview-item" href="page-lockscreen.html"><i class="icon bi bi-chevron-right"></i> Lockscreen Page</a></li>
+              <li><a class="treeview-item" href="page-user.html"><i class="icon bi bi-chevron-right"></i> User Page</a></li>
+              <li><a class="treeview-item" href="page-invoice.html"><i class="icon bi bi-chevron-right"></i> Invoice Page</a></li>
+              <li><a class="treeview-item" href="page-mailbox.html"><i class="icon bi bi-chevron-right"></i> Mailbox</a></li>
+              <li><a class="treeview-item" href="page-error.html"><i class="icon bi bi-chevron-right"></i> Error Page</a></li>
+            </ul>
+          </li>
+          <li><a class="app-menu__item" href="docs.html"><i class="app-menu__icon bi bi-code-square"></i><span class="app-menu__label">Docs</span></a></li>
+        </ul>
+      </div>
+    </aside>
+    <main class="app-content">
+      <div class="app-title">
+        <div>
+          <h1>Calendar</h1>
+          <p>Full Calander page for managing events</p>
+        </div>
+        <ul class="app-breadcrumb breadcrumb">
+          <li class="breadcrumb-item">Home</li>
+          <li class="breadcrumb-item"><a href="#">Calendar</a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="tile row">
+            <div class="col-md-3">
+              <div id="external-events">
+                <h4 class="mb-4">Draggable Events</h4>
+                <div class="fc-event">My Event 1</div>
+                <div class="fc-event">My Event 2</div>
+                <div class="fc-event">My Event 3</div>
+                <div class="fc-event">My Event 4</div>
+                <div class="fc-event">My Event 5</div>
+                <p class="animated-checkbox mt-20">
+                  <label>
+                    <input id="drop-remove" type="checkbox"><span class="label-text">Remove after drop</span>
+                  </label>
+                </p>
+              </div>
+            </div>
+            <div class="col-md-9">
+              <div id="calendar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+<!-- Javascripts-->
+
+<script type="text/javascript" src="assets/js/neoadmin.js"></script>
+    <!-- Page specific javascripts-->
+    <script type="text/javascript">
+      $('#external-events .fc-event').each(function() {
+      
+      	// store data so the calendar knows to render an event upon drop
+      	$(this).data('event', {
+      		title: $.trim($(this).text()), // use the element's text as the event title
+      		stick: true // maintain when user navigates (see docs on the renderEvent method)
+      	});
+      
+      	// make the event draggable using jQuery UI
+      	$(this).draggable({
+      		zIndex: 999,
+      		revert: true,      // will cause the event to go back to its
+      		revertDuration: 0  //  original position after the drag
+      	});
+      
+      });
+    </script>
+  </body>
+</html>

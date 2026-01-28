@@ -9,8 +9,8 @@
 			user-select: none;
 
 			&:before {
-				content: "";
-				font-family: "FontAwesome";
+				content: "\f584";
+				font-family: "bootstrap-icons";
 				speak: none;
 				font-style: normal;
 				font-weight: normal;
@@ -27,7 +27,7 @@
 		}
 
 		&:checked + .label-text:before {
-			content: "";
+			content: "\f26d";
 			color: $primary-color;
 			animation: tick 180ms ease-in;
 		}
@@ -36,7 +36,7 @@
 			cursor: not-allowed !important;
 
 			&:before {
-				content: "";
+				content: "\f582";
 				color: #ccc;
 			}
 		}
@@ -52,8 +52,8 @@
 			user-select: none;
 
 			&:before {
-				content: "";
-				font-family: "FontAwesome";
+				content: "\f28a";
+				font-family: "bootstrap-icons";
 				speak: none;
 				font-style: normal;
 				font-weight: normal;
@@ -70,7 +70,7 @@
 		}
 
 		&:checked + .label-text:before {
-			content: "";
+			content: "\f518";
 			color: $primary-color;
 			animation: tick 180ms ease-in;
 		}
@@ -79,7 +79,7 @@
 			cursor: not-allowed !important;
 
 			&:before {
-				content: "";
+				content: "\f287";
 				color: #ccc;
 			}
 		}

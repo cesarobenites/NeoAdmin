@@ -1,4 +1,4 @@
-// Page: Login Material
+// Page: Lockscreen Material
 
 .lockscreen-content {
 	display: flex;
@@ -34,11 +34,82 @@
 			margin: 0 auto;
 		}
 
-		.user-name { margin-bottom: 2px; }
+		.user-name { 
+			margin-bottom: 2px;
+			color: #333;
+		}
 
 		label {
 			color: #666;
 			font-weight: 700;
+		}
+
+		p {
+			color: #666;
+		}
+	}
+}
+
+// Dark Mode Support
+[data-bs-theme="dark"] {
+	.lockscreen-content {
+		.logo {
+			h1 {
+				color: #e6edf3;
+				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+			}
+		}
+
+		.lock-box {
+			background-color: #1c2128;
+			box-shadow: 0px 29px 147.5px 102.5px rgba(0, 0, 0, 0.4), 0px 29px 95px 0px rgba(0, 0, 0, 0.6);
+			border: 1px solid #30363d;
+
+			.user-image {
+				border-color: #30363d;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+			}
+
+			.user-name {
+				color: #e6edf3;
+				font-weight: 600;
+			}
+
+			label {
+				color: #8b949e;
+				font-weight: 600;
+			}
+
+			p {
+				color: #8b949e;
+			}
+
+			.form-control {
+				background-color: #0d1117;
+				border-color: #30363d;
+				color: #e6edf3;
+
+				&::placeholder {
+					color: #6e7681;
+				}
+
+				&:focus {
+					background-color: #0d1117;
+					border-color: #58a6ff;
+					color: #e6edf3;
+					box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.1);
+				}
+			}
+
+			a {
+				color: #58a6ff;
+				text-decoration: none;
+
+				&:hover {
+					color: #79c0ff;
+					text-decoration: underline;
+				}
+			}
 		}
 	}
 }

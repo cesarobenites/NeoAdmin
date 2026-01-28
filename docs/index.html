@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="NeoAdmin is a modern, responsive admin dashboard template built with Bootstrap 5.3, SASS and TypeScript.">
+    <!-- Twitter meta-->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:site" content="@cesarcalicb">
+    <meta property="twitter:creator" content="@cesarcalicb">
+    <!-- Open Graph Meta-->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NeoAdmin">
+    <meta property="og:title" content="NeoAdmin - Modern Bootstrap 5 Admin Dashboard">
+    <meta property="og:url" content="https://neo20.com">
+    <meta property="og:image" content="https://neo20.com/neoadmin/hero-social.png">
+    <meta property="og:description"
+        content="NeoAdmin is a modern, responsive admin dashboard template built with Bootstrap 5.3, SASS and TypeScript.">
+    <title>NeoAdmin - Modern Bootstrap 5 Admin Dashboard</title>
+    <link href="assets/css/neoadmin.css" rel="stylesheet">
+</head>
+
+<body class="landing-page">
+    <!-- Preloader - Prevents FOUC -->
+    <div id="neo-page-loader">
+        <div class="neo-spinner">
+            <div class="ring"></div>
+            <div class="ring"></div>
+        </div>
+    </div>
+    <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1"
+        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+            <symbol id="icon-chart" viewbox="0 0 32 32">
+                <title>chart</title>
+                <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667"
+                    d="M24 26.667v-13.333"></path>
+                <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667"
+                    d="M16 26.667v-21.333"></path>
+                <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667"
+                    d="M8 26.667v-8"></path>
+            </symbol>
+            <symbol id="icon-globe" viewbox="0 0 32 32">
+                <title>globe</title>
+                <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667"
+                    d="M29.333 16c0 7.364-5.97 13.333-13.333 13.333s-13.333-5.97-13.333-13.333c0-7.364 5.97-13.333 13.333-13.333s13.333 5.97 13.333 13.333z">
+                </path>
+                <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667"
+                    d="M2.667 16h26.667"></path>
+                <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667"
+                    d="M16 2.667c3.216 3.512 5.223 8.178 5.333 13.311l0 0.022c-0.111 5.155-2.117 9.822-5.347 13.349l0.014-0.015c-3.216-3.512-5.223-8.178-5.333-13.311l-0-0.022c0.111-5.155 2.117-9.822 5.347-13.349l-0.014 0.015z">
+                </path>
+            </symbol>
+            <symbol id="icon-grid" viewbox="0 0 32 32">
+                <title>grid</title>
+                <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667"
+                    d="M4 4h9.333v9.333h-9.333v-9.333z"></path>
+                <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667"
+                    d="M18.667 4h9.333v9.333h-9.333v-9.333z"></path>
+                <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667"
+                    d="M18.667 18.667h9.333v9.333h-9.333v-9.333z"></path>
+                <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667"
+                    d="M4 18.667h9.333v9.333h-9.333v-9.333z"></path>
+            </symbol>
+            <symbol id="icon-layout" viewbox="0 0 32 32">
+                <title>layout</title>
+                <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667"
+                    d="M6.667 4h18.667c1.473 0 2.667 1.194 2.667 2.667v18.667c0 1.473-1.194 2.667-2.667 2.667h-18.667c-1.473 0-2.667-1.194-2.667-2.667v-18.667c0-1.473 1.194-2.667 2.667-2.667z">
+                </path>
+                <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667"
+                    d="M4 12h24"></path>
+                <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667"
+                    d="M12 28v-16"></path>
+            </symbol>
+            <symbol id="icon-smartphone" viewbox="0 0 32 32">
+                <title>smartphone</title>
+                <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667"
+                    d="M9.333 2.667h13.333c1.473 0 2.667 1.194 2.667 2.667v21.333c0 1.473-1.194 2.667-2.667 2.667h-13.333c-1.473 0-2.667-1.194-2.667-2.667v-21.333c0-1.473 1.194-2.667 2.667-2.667z">
+                </path>
+                <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667"
+                    d="M16 24v0"></path>
+            </symbol>
+            <symbol id="icon-zap" viewbox="0 0 32 32">
+                <title>zap</title>
+                <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667"
+                    d="M17.333 2.667l-13.333 16h12l-1.333 10.667 13.333-16h-12l1.333-10.667z"></path>
+            </symbol>
+        </defs>
+    </svg>
+    <section class="landing-hero">
+        <div class="landing-hero-overlay"></div>
+        <div class="landing-hero-content">
+            <h1 class="landing-hero-title">NeoAdmin - Modern Bootstrap 5 Admin Dashboard</h1>
+            <p class="landing-hero-description">Built with TypeScript, SASS, and Bootstrap 5.3</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a class="btn btn-primary btn-lg" href="dashboard.html">View Demo</a>
+                <a class="btn btn-outline-primary btn-lg" href="https://github.com/cesarcalicb/NeoAdmin" target="_blank"
+                    rel="noopener">GitHub</a>
+            </div>
+            <img class="landing-hero-banner" src="assets/images/banner.jpg">
+        </div>
+    </section>
+    <section class="features">
+        <h1 class="features-title">Features</h1>
+        <div class="features-cards">
+            <div class="features-card">
+                <div class="feature-icon-backdrop">
+                    <svg class="feature-icon">
+                        <use xlink:href="#icon-globe"></use>
+                    </svg>
+                </div>
+                <p class="feature-description">Free to use and open-source</p>
+            </div>
+            <div class="features-card">
+                <div class="feature-icon-backdrop">
+                    <svg class="feature-icon">
+                        <use xlink:href="#icon-smartphone"></use>
+                    </svg>
+                </div>
+                <p class="feature-description">Beautiful and mobile responsive</p>
+            </div>
+            <div class="features-card">
+                <div class="feature-icon-backdrop">
+                    <svg class="feature-icon">
+                        <use xlink:href="#icon-zap"></use>
+                    </svg>
+                </div>
+                <p class="feature-description">Built with Bootstrap 5.3, SASS and TypeScript</p>
+            </div>
+            <div class="features-card">
+                <div class="feature-icon-backdrop">
+                    <svg class="feature-icon">
+                        <use xlink:href="#icon-chart"></use>
+                    </svg>
+                </div>
+                <p class="feature-description">Chart.js integration to display responsive charts</p>
+            </div>
+            <div class="features-card">
+                <div class="feature-icon-backdrop">
+                    <svg class="feature-icon">
+                        <use xlink:href="#icon-layout"></use>
+                    </svg>
+                </div>
+                <p class="feature-description">Seven pre built pages including login, user profile and print friendly
+                    invoice page</p>
+            </div>
+            <div class="features-card">
+                <div class="feature-icon-backdrop">
+                    <svg class="feature-icon">
+                        <use xlink:href="#icon-grid"></use>
+                    </svg>
+                </div>
+                <p class="feature-description">Data tables with sort, search and paginate functions</p>
+            </div>
+        </div>
+    </section>
+    <footer class="landing-footer">Created by <b>César R.</b> & <a
+            href="https://github.com/cesarcalicb/NeoAdmin/graphs/contributors" target="_blank"
+            rel="noopener">contributors</a></footer>
+    <!-- Javascripts-->
+    <script type="text/javascript" src="assets/js/neoadmin.js"></script>
+</body>
+
+</html>

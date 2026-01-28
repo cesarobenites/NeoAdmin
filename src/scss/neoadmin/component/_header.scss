@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 /*----- Componant: Top Navigation Bar ----- */
 
 .app-header {
@@ -15,7 +17,6 @@
 }
 
 .app-header__logo {
-	//flex: 1 0 auto;
 	color: #fff;
 	text-align: center;
 	font-family: 'Roboto', sans-serif;
@@ -24,15 +25,14 @@
 	font-weight: 400;
 	line-height: 50px;
 	@media(min-width: 768px) {
-		//flex: 0 0 auto;
 		display: block;
 		padding: 0 15px;
 		width: $sidebar-width;
 		@if $sidebar-accent == dark {
-			background-color: darken( $primary-color, 5% );
+			background-color: color.scale($primary-color, $lightness: -8.4717607973%);
 		}
 		@if $sidebar-accent == light {
-			background-color: lighten( $primary-color, 5% );
+			background-color: color.scale($primary-color, $lightness: 8.4717607973%);
 		}
 	}
 	&:focus,
@@ -53,19 +53,18 @@
 .app-sidebar__toggle {
 	flex: 1 0 auto;
 	padding: 0 15px;
-	font-family: fontAwesome;
+	font-family: 'bootstrap-icons';
 	color: #fff;
 	line-height: 2.4;
 	transition: background-color 0.3s ease;
 	@media(max-width: 767px) { order: -1; }
 	&:before {
-		content: "\f0c9";
+		content: "\f479"; // bi-list
 		font-size: 21px;
 	}
 	&:focus,
 	&:hover {
 		color: #fff;
-		// background-color: darken($primary-color, 10);
 		text-decoration: none;
 	}
 }
@@ -125,7 +124,7 @@
 .app-notification__title {
 	padding: 8px 20px;
 	text-align: center;
-	background-color: transparentize($primary-color, 0.6);
+	background-color: color.scale($primary-color, $alpha: -60%);
 	color: #333;
 }
 .app-notification__footer {

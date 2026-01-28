@@ -1,0 +1,190 @@
+// Dark Mode Theme Support
+// Custom dark mode styles for NeoAdmin components
+
+[data-bs-theme="dark"] {
+    // Body and main content
+    body {
+        background-color: #0d1117;
+        color: #c9d1d9;
+    }
+
+    .app-content {
+        background-color: #0d1117;
+    }
+
+    // Header and Sidebar are excluded from dark mode overrides 
+    // to maintain the branded NeoAdmin look (Solid Blue / Solid Navy)
+    // only navigation items inside them might change if needed.
+
+    .app-search__input {
+        background-color: #21262d; // Slightly lighter than header for input field
+        border-color: #6e7681; // Higher contrast border
+        color: #c9d1d9;
+
+        &::placeholder {
+            color: #8b949e;
+        }
+    }
+
+    // Header color override for GitHub-like dark mode
+    .app-header {
+        background-color: darken($sidebar-color, 15%) !important;
+    }
+
+    // Logo area darker in dark mode (GitHub style logo background)
+    .app-header__logo {
+        background-color: darken($sidebar-color, 18%) !important;
+    }
+
+
+    // App Title
+    .app-title {
+        background-color: #161b22;
+        border-bottom: 1px solid #30363d;
+
+        h1 {
+            color: #c9d1d9;
+        }
+
+        p {
+            color: #8b949e;
+        }
+    }
+
+    .breadcrumb {
+        background-color: transparent;
+    }
+
+    .breadcrumb-item {
+        color: #8b949e;
+
+        a {
+            color: #58a6ff;
+        }
+
+        &.active {
+            color: #c9d1d9;
+        }
+    }
+
+    // Tiles
+    .tile {
+        background-color: #161b22;
+    }
+
+    .tile-title {
+        color: #c9d1d9;
+    }
+
+    // Dropdowns
+    .dropdown-menu {
+        background-color: #161b22;
+        border-color: #30363d;
+    }
+
+    .dropdown-item {
+        color: #c9d1d9;
+
+        &:hover,
+        &:focus {
+            background-color: #21262d;
+            color: #58a6ff;
+        }
+    }
+
+    .dropdown-divider {
+        border-color: #30363d;
+    }
+
+    // Notifications
+    .app-notification {
+        background-color: #161b22;
+        border-color: #30363d;
+    }
+
+    .app-notification__title {
+        background-color: rgba(88, 166, 255, 0.2);
+        color: #c9d1d9;
+    }
+
+    .app-notification__item {
+        border-bottom: 1px solid #30363d;
+
+        &:hover {
+            background-color: #21262d;
+        }
+    }
+
+    .app-notification__message {
+        color: #c9d1d9;
+    }
+
+    .app-notification__meta {
+        color: #8b949e;
+    }
+
+    .app-notification__footer {
+        background-color: #0d1117;
+        border-top: 1px solid #30363d;
+
+        a {
+            color: #58a6ff;
+        }
+    }
+
+    // Forms
+    .form-control,
+    .form-select {
+        background-color: #0d1117;
+        border-color: #30363d;
+        color: #c9d1d9;
+
+        &:focus {
+            background-color: #0d1117;
+            border-color: #58a6ff;
+            color: #c9d1d9;
+        }
+    }
+
+    // Tables
+    .table {
+        color: #c9d1d9;
+
+        thead th {
+            border-color: #30363d;
+            background-color: #161b22;
+        }
+
+        tbody td {
+            border-color: #30363d;
+        }
+
+        &-striped tbody tr:nth-of-type(odd) {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        &-hover tbody tr:hover {
+            background-color: #21262d;
+        }
+    }
+
+    // Text colors
+    .text-muted {
+        color: #8b949e !important;
+    }
+
+    .text-gray-800 {
+        color: #c9d1d9 !important;
+    }
+
+    // Sidebar Menu Items Dark Mode Version
+    .app-menu__item {
+        &.active,
+        &:hover,
+        &:focus {
+            background: darken($sidebar-color, 10%) !important; // Darker background as requested
+            border-left-color: $primary !important;
+            color: #fff !important; // Ensure text remains visible
+        }
+    }
+}

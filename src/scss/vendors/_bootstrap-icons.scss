@@ -1,0 +1,28 @@
+// Bootstrap Icons - Custom import with corrected font paths
+// This fixes the font-face URLs to work with Vite build
+
+@font-face {
+  font-display: block;
+  font-family: "bootstrap-icons";
+  // Using module resolution properly lets Vite optimize and rewrite the relative path in the final CSS
+  src: url("bootstrap-icons/font/fonts/bootstrap-icons.woff2") format("woff2"),
+       url("bootstrap-icons/font/fonts/bootstrap-icons.woff") format("woff");
+}
+
+.bi::before,
+[class^="bi-"]::before,
+[class*=" bi-"]::before {
+  display: inline-block;
+  font-family: "bootstrap-icons" !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: -.125em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Import all icon classes from node_modules
+@import 'bootstrap-icons/font/bootstrap-icons.scss';

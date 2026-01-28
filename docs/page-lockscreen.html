@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Neo Admin is responsive and free admin theme built with Bootstrap 5.3, SASS and PUG.js. It's fully customizable and modular.">
+  <!-- Twitter meta-->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:site" content="@cesarobenites">
+  <meta property="twitter:creator" content="@cesarobenites">
+  <!-- Open Graph Meta-->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Neo Admin">
+  <meta property="og:title" content="Neo Admin - Bootstrap 5.3 admin theme">
+  <meta property="og:url" content="http://neo20.com/blog/NeoAdmin">
+  <meta property="og:image" content="http://neo20.com/blog/NeoAdmin/hero-social.png">
+  <meta property="og:description"
+    content="Neo Admin is responsive and free admin theme built with Bootstrap 5.3, SASS and PUG.js. It's fully customizable and modular.">
+
+  <!-- Main CSS-->
+  <link href="assets/css/neoadmin.css" rel="stylesheet">
+  <!-- Styles -> Plugins & Custom-->
+  <title>Lockscreen - Neo Admin</title>
+</head>
+
+<body>
+  <!-- Preloader - Prevents FOUC -->
+  <div id="neo-page-loader">
+    <div class="neo-spinner">
+      <div class="ring"></div>
+      <div class="ring"></div>
+    </div>
+  </div>
+  <section class="material-half-bg">
+    <div class="cover"></div>
+  </section>
+  <section class="lockscreen-content">
+    <div class="logo">
+      <h1>Neo Admin</h1>
+    </div>
+    <div class="lock-box"><img class="rounded-circle user-image" src="assets/images/avatar_128.jpg">
+      <h4 class="text-center user-name">César Rolando</h4>
+      <p class="text-center text-muted">Account Locked</p>
+      <form class="unlock-form" action="index.html">
+        <div class="mb-3">
+          <label class="form-label">PASSWORD</label>
+          <input class="form-control" type="password" placeholder="Password" autofocus>
+        </div>
+        <div class="mb-3 btn-container">
+          <button class="btn btn-primary w-100" type="submit"><i class="bi bi-unlock fs-5 me-2"></i>UNLOCK </button>
+        </div>
+      </form>
+      <p><a href="page-login.html">Login as a different user.</a></p>
+    </div>
+  </section>
+  <!-- Javascripts-->
+
+  <script type="text/javascript" src="assets/js/neoadmin.js"></script>
+</body>
+
+</html>

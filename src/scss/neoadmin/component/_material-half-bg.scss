@@ -10,8 +10,22 @@
 	right: 0;
 	bottom: 0;
 	z-index: -1;
+	transition: background-color 0.3s ease;
+	
 	.cover {
 		background-color: $primary-color;
 		height: 50vh;
+		transition: background-color 0.3s ease;
+	}
+}
+
+// Dark Mode Support
+[data-bs-theme="dark"] {
+	.material-half-bg {
+		background-color: #0d1117;  // Fondo oscuro principal
+		
+		.cover {
+			background-color: #1f2937;  // Gris oscuro para la parte superior
+		}
 	}
 }

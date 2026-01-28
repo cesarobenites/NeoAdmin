@@ -21,10 +21,15 @@
 
 .mail-nav > li > a {
 	display: block;
-	background-color: #fff;
-	color: #2a2a2a;
+	background-color: transparent;
+	color: inherit;
 	border-radius: 0;
 	font-weight: 500;
+	transition: background-color 0.2s ease;
+
+	&:hover {
+		background-color: rgba(0, 0, 0, 0.05);
+	}
 }
 
 .mailbox-messages {
@@ -38,5 +43,37 @@
 		text-overflow: ellipsis;
 		white-space: nowrap;
 		max-width: 500px;
+	}
+}
+
+// Dark Mode Support
+[data-bs-theme="dark"] {
+	.folder-head {
+		border-bottom-color: #30363d;
+	}
+
+	.mailbox-controls {
+		border-bottom-color: #30363d;
+	}
+
+	.mail-nav > li > a {
+		color: #c9d1d9;
+
+		&:hover {
+			background-color: rgba(255, 255, 255, 0.05);
+		}
+
+		&.active {
+			background-color: rgba(88, 166, 255, 0.15);
+			color: #58a6ff;
+		}
+	}
+
+	.mailbox-messages {
+		table tr {
+			&:hover {
+				background-color: #21262d;
+			}
+		}
 	}
 }

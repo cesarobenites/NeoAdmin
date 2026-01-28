@@ -8,7 +8,6 @@
 		.info {
 			padding: 30px 60px;
 			text-align: center;
-			background-color: #fff;
 			white-space: nowrap;
 			background-color: #404040;
 			color: #fff;
@@ -19,14 +18,40 @@
 				margin-bottom: 20px;
 				margin-top: 10px;
 			}
+
+			h4 {
+				margin: 0;
+				font-weight: 500;
+			}
+
+			p {
+				margin: 5px 0 0;
+				opacity: 0.9;
+			}
 		}
 
 		.cover-image {
 			flex: 1;
-			background-image: url('../../../images/portada.jpg');
+			// Usar ruta absoluta desde el root del sitio
+			background-image: url('/assets/images/portada.jpg');
 			background-size: cover;
 			background-position: center;
 			min-height: 300px;
+			position: relative;
+
+			// Overlay para mejor contraste en dark mode
+			&::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: rgba(0, 0, 0, 0.1);
+				pointer-events: none;
+				opacity: 0;
+				transition: opacity 0.3s ease;
+			}
 		}
 	}
 
@@ -39,6 +64,7 @@
 			border-bottom: 0;
 			font-size: 15px;
 			border-radius: 0;
+			transition: background-color 0.2s ease;
 
 			&.active {
 				border-left-color: $primary-color;
@@ -47,7 +73,7 @@
 
 			&:hover,
 			&:active {
-				background-color: #eee !important;
+				background-color: rgba(0, 0, 0, 0.05);
 				border-bottom: 0;
 			}
 		}
@@ -106,5 +132,101 @@
 		}
 
 		label { color: #666; }
+	}
+}
+
+// Dark Mode Support
+[data-bs-theme="dark"] {
+	.user {
+		.profile {
+			.info {
+				// Usar un gris más visible que contraste mejor con el fondo oscuro
+				background-color: #374151;
+				color: #fff;
+
+				h4 {
+					color: #fff;
+				}
+
+				p {
+					color: rgba(255, 255, 255, 0.9);
+				}
+			}
+
+			.cover-image {
+				// Activar overlay en dark mode para mejor contraste
+				&::after {
+					opacity: 1;
+					background: rgba(0, 0, 0, 0.3);
+				}
+			}
+		}
+
+		.user-tabs {
+			.nav-link {
+				color: #c9d1d9;
+
+				&:hover,
+				&:active {
+					background-color: rgba(255, 255, 255, 0.05);
+				}
+
+				&.active {
+					background-color: rgba(88, 166, 255, 0.15);
+					color: #58a6ff;
+				}
+			}
+		}
+
+		.timeline-post {
+			background-color: #161b22;
+			border: 1px solid #30363d;
+			box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3), 0 3px 1px -2px rgba(0, 0, 0, 0.4), 0 1px 5px 0 rgba(0, 0, 0, 0.3);
+
+			.post-media {
+				h5 {
+					color: #c9d1d9;
+
+					a {
+						color: #58a6ff;
+
+						&:hover {
+							color: #79c0ff;
+						}
+					}
+				}
+			}
+
+			.post-content {
+				color: #c9d1d9;
+			}
+
+			.post-utility {
+				.likes,
+				.shares {
+					a {
+						color: #8b949e;
+
+						&:hover {
+							color: #58a6ff;
+						}
+					}
+				}
+
+				.comments {
+					color: #8b949e;
+				}
+			}
+		}
+
+		.user-settings {
+			.line-head {
+				color: #c9d1d9;
+			}
+
+			label {
+				color: #8b949e;
+			}
+		}
 	}
 }

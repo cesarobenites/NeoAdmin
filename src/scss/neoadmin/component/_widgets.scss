@@ -6,7 +6,6 @@
 	border-radius: 4px;
 	color: $white;
 	margin-bottom: 20px;
-	padding: .75rem;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 
 	.icon-w {
@@ -34,8 +33,10 @@
 	}
 
 	&.w-light {
+		background-color: $white;
+		color: $gray-900;
+
 		.description {
-				
 			&.text-muted {
 				color: $gray-600 !important;
 			}
@@ -49,51 +50,82 @@
 	}
 
 	&.primary {
-		background-color: $primary-color;
+		background-color: $primary;
 		&.w-light {
 			background-color: $white;
 			color: $gray-900;
 			.icon {
-				color: $primary-color;
+				color: $primary;
 			}
 		}
 	}
 
 	&.info {
-		background-color: theme-color("info");
+		background-color: $info;
 
 		&.w-light {
 			background-color: #fff;
 			color: $gray-900;
 
 			.icon {
-				color: theme-color("info");
+				color: $info;
 			}
 		}
 	}
 
 	&.warning {
-		background-color: theme-color("warning");
+		background-color: $warning;
 
 		&.w-light {
 			background-color: #fff;
 			color: $gray-900;
 
 			.icon {
-				color: theme-color("warning");
+				color: $warning;
 			}
 		}
 	}
 
 	&.danger {
-		background-color: theme-color("danger");
+		background-color: $danger;
 
 		&.w-light {
 			background-color: #fff;
 			color: $gray-900;
 
 			.icon {
-				color: theme-color("danger");
+				color: $danger;
+			}
+		}
+	}
+}
+
+// Dark mode support
+[data-bs-theme="dark"] {
+	.widget-small {
+		&.w-light {
+			background-color: var(--bs-gray-800);
+			color: var(--bs-gray-100);
+			border: 1px solid var(--bs-gray-700);
+
+			.caption {
+				.text-xs {
+					color: var(--bs-gray-400);
+				}
+
+				.h4 {
+					color: var(--bs-gray-100);
+				}
+
+				.description {
+					&.text-muted {
+						color: var(--bs-gray-400) !important;
+					}
+				}
+			}
+
+			.icon {
+				opacity: 0.9;
 			}
 		}
 	}

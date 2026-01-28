@@ -1,0 +1,22 @@
+// Basic TomSelect overrides to match NeoAdmin theme
+.ts-control {
+    border-radius: $border-radius;
+    border-color: $gray-400;
+    padding: 0.5rem 1rem;
+    
+    &:focus {
+        border-color: $primary;
+        box-shadow: 0 0 0 0.25rem rgba($primary, 0.25);
+    }
+}
+
+.ts-dropdown {
+    border-radius: $border-radius;
+    border: 1px solid $gray-200;
+    box-shadow: $box-shadow;
+    
+    .active {
+        background-color: $primary;
+        color: $white;
+    }
+}

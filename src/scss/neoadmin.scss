@@ -9,22 +9,22 @@
 
 // Root Template
 //-----------------------------------------------------------------
+
 /*!
  * ================================================================
  * == Core
  * ================================================================
 */
 @import 'neoadmin/vars';
-@import 'neoadmin/fonts';
-@import '~font-awesome/scss/font-awesome';
-/*!
- * ================================================================
- * == Bootstrap
- * ================================================================
-*/
-@import 'neoadmin/customize-bootstrap';
-@import '~bootstrap/scss/bootstrap';
+@import 'neoadmin/css-vars';
+@import 'neoadmin/dark-theme';
 
+// Customize Bootstrap
+@import 'neoadmin/customize-bootstrap'; 
+
+// Bootstrap 
+@import 'bootstrap/scss/bootstrap';
+@import 'vendors/bootstrap-icons';
 
 // Plugins - Vendors
 //-----------------------------------------------------------------
@@ -33,55 +33,49 @@
  * == DataTables
  * ================================================================
 */
-@import 'vendors/dataTables.bootstrap';
+// @import 'vendors/dataTables.bootstrap';
 /*!
  * ================================================================
  * == Datepicker
  * ================================================================
 */
-@import 'vendors/bootstrap-datepicker';
+// @import 'vendors/bootstrap-datepicker';
 /*!
  * ================================================================
  * == Sweetalert
  * ================================================================
 */
-@import 'vendors/sweetalert';
+// @import 'vendors/sweetalert';
 /*!
  * ================================================================
  * == Notify
  * ================================================================
 */
-@import 'vendors/notify';
+// @import 'vendors/notify';
 /*!
  * ================================================================
-* == Select2
+ * == TomSelect
  * ================================================================
 */
-@import 'vendors/select2';
+@import 'vendors/tom-select';
 /*!
  * ================================================================
  * == Pace
  * ================================================================
 */
-@import 'vendors/pace';
-/*!
- * ================================================================
- * == Jqvmap
- * ================================================================
-*/
-@import 'vendors/jqvmap';
+// @import 'vendors/pace';
 /*!
  * ================================================================
  * == Dropzone
  * ================================================================
 */
-@import 'vendors/dropzone';
+// @import 'vendors/dropzone';
 /*!
  * ================================================================
  * == Chartjs
  * ================================================================
 */
-@import 'vendors/chart-js';
+// @import 'vendors/chart-js';
 
 /*!
  * ================================================================
@@ -101,6 +95,7 @@
 // Component
 //-----------------------------------------------------------------
 @import 'neoadmin/component/header';
+@import 'neoadmin/component/preloader';
 @import 'neoadmin/component/sidebar';
 @import 'neoadmin/component/sidebar-mini';
 
@@ -121,7 +116,7 @@
 // RTL support
 // Also you will need to add dir="rtl" attribute to HTML tag
 
-//@import 'neoadmin/component/rtl';
+// @import 'neoadmin/component/rtl';
 
 /*!
  * ================================================================
@@ -138,4 +133,3 @@
 @import 'neoadmin/pages/error-page';
 @import 'neoadmin/pages/mailbox';
 @import 'neoadmin/pages/user-profile';
-

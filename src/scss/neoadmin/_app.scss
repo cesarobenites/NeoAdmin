@@ -1,8 +1,16 @@
+@use 'sass:color';
+
 // Page common styles
 
 ::selection {
 	color: $white;
-	background-color: darken($primary-color,10%);
+	background-color: color.scale($primary-color, $lightness: -16.9435215947%);
+}
+
+// Global text decoration overrides
+a {
+	text-decoration: none !important;
+	&:hover { text-decoration: none !important; }
 }
 
 

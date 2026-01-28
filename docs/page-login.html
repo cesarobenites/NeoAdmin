@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Neo Admin is responsive and free admin theme built with Bootstrap 5.3, SASS and PUG.js. It's fully customizable and modular.">
+  <!-- Twitter meta-->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:site" content="@cesarobenites">
+  <meta property="twitter:creator" content="@cesarobenites">
+  <!-- Open Graph Meta-->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Neo Admin">
+  <meta property="og:title" content="Neo Admin - Bootstrap 5.3 admin theme">
+  <meta property="og:url" content="http://neo20.com/blog/NeoAdmin">
+  <meta property="og:image" content="http://neo20.com/blog/NeoAdmin/hero-social.png">
+  <meta property="og:description"
+    content="Neo Admin is responsive and free admin theme built with Bootstrap 5.3, SASS and PUG.js. It's fully customizable and modular.">
+
+  <!-- Main CSS-->
+  <link href="assets/css/neoadmin.css" rel="stylesheet">
+  <!-- Styles -> Plugins & Custom-->
+  <title>Login - Neo Admin</title>
+</head>
+
+<body>
+  <!-- Preloader - Prevents FOUC -->
+  <div id="neo-page-loader">
+    <div class="neo-spinner">
+      <div class="ring"></div>
+      <div class="ring"></div>
+    </div>
+  </div>
+  <section class="material-half-bg">
+    <div class="cover"></div>
+  </section>
+  <section class="login-content">
+    <div class="logo">
+      <h1>Neo Admin</h1>
+    </div>
+    <div class="login-box">
+      <form class="login-form" action="index.html">
+        <h3 class="login-head"><i class="bi fs-5 me-2 bi-person"></i>SIGN IN</h3>
+        <div class="mb-3">
+          <label class="form-label">USERNAME</label>
+          <input class="form-control" type="text" placeholder="Email" autofocus>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">PASSWORD</label>
+          <input class="form-control" type="password" placeholder="Password">
+        </div>
+        <div class="mb-3">
+          <div class="utility">
+            <div class="animated-checkbox">
+              <label>
+                <input type="checkbox"><span class="label-text">Stay Signed in</span>
+              </label>
+            </div>
+            <p class="semibold-text mb-2"><a href="#" data-toggle="flip">Forgot Password ?</a></p>
+          </div>
+        </div>
+        <div class="mb-3 btn-container">
+          <button class="btn btn-primary w-100"><i class="bi bi-box-arrow-in-right fs-5 me-2"></i>SIGN IN</button>
+        </div>
+      </form>
+      <form class="forget-form" action="index.html">
+        <h3 class="login-head"><i class="bi fs-5 me-2 bi-lock"></i>Forgot Password ?</h3>
+        <div class="mb-3">
+          <label class="form-label">EMAIL</label>
+          <input class="form-control" type="text" placeholder="Email">
+        </div>
+        <div class="mb-3 btn-container">
+          <button class="btn btn-primary w-100"><i class="bi bi-unlock fs-5 me-2"></i>RESET</button>
+        </div>
+        <div class="mb-3 mt-3">
+          <p class="semibold-text mb-0"><a href="#" data-toggle="flip"><i class="bi bi-chevron-left me-2"></i> Back to
+              Login</a></p>
+        </div>
+      </form>
+    </div>
+  </section>
+  <!-- Javascripts-->
+
+  <script type="text/javascript" src="assets/js/neoadmin.js"></script>
+  <script type="text/javascript">
+    // Login Page Flipbox control
+    var flipBtns = document.querySelectorAll('.login-content [data-toggle="flip"]');
+    var loginBox = document.querySelector('.login-box');
+
+    if (flipBtns.length > 0 && loginBox) {
+      flipBtns.forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          loginBox.classList.toggle('flipped');
+        });
+      });
+    }
+
+  </script>
+</body>
+
+</html>

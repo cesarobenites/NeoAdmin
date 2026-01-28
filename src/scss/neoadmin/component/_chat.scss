@@ -51,11 +51,16 @@
 			img {
 				border-radius: 50%;
 				margin-right: 15px;
+				width: 48px;
+				height: 48px;
+				object-fit: cover;
+				flex-shrink: 0;
 			}
 
 			.info {
 				margin: 0;
-				background-color: #ddd;
+				background-color: var(--bs-gray-300);
+				color: var(--bs-gray-900);
 				padding: 5px 10px;
 				border-radius: 3px;
 				position: relative;
@@ -70,7 +75,7 @@
 					height: 0;
 					border-style: solid;
 					border-width: 0 16px 16px 0;
-					border-color: transparent #ddd transparent transparent;
+					border-color: transparent var(--bs-gray-300) transparent transparent;
 				}
 			}
 		}
@@ -84,8 +89,26 @@
 			border: 1px solid $primary-color;
 			outline: none;
 			padding: 5px 10px;
+			background-color: var(--bs-body-bg);
+			color: var(--bs-body-color);
 		}
 
 		button { border-radius: 0; }
+	}
+}
+
+// Dark mode support
+[data-bs-theme="dark"] {
+	.messanger {
+		.message {
+			.info {
+				background-color: var(--bs-gray-700);
+				color: var(--bs-gray-100);
+
+				&:before {
+					border-color: transparent var(--bs-gray-700) transparent transparent;
+				}
+			}
+		}
 	}
 }

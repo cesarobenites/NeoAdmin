@@ -16,8 +16,8 @@
 			user-select: none;
 
 			&:before {
-				content: "";
-				font-family: "FontAwesome";
+				content: "\f5d5";
+				font-family: "bootstrap-icons";
 				speak: none;
 				font-style: normal;
 				font-weight: normal;
@@ -33,7 +33,7 @@
 		}
 
 		&:checked + .button-indecator:before {
-			content: "";
+			content: "\f5d6";
 			color: $primary-color;
 			animation: toggleBtn 0.3s ease-in-out;
 		}
