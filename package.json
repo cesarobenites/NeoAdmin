@@ -1,6 +1,6 @@
 {
   "name": "neoadmin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "description": "Major release: Refactorización total a TypeScript, SCSS modular y eliminación de dependencias de jQuery",
   "main": "docs/assets/js/neoadmin.js",

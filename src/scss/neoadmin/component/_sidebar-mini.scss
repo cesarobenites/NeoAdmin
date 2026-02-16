@@ -1,4 +1,6 @@
 // Componant: Sidebar Mini
+@use '../vars' as *;
+@use "sass:color";
 
 @media (min-width: 768px) {
 	.sidebar-mini.sidenav-toggled {
@@ -52,7 +54,7 @@
 			&:hover {
 				.app-menu__item {
 					overflow: visible;
-					background: darken($sidebar-color, 10);
+					background: color.scale($sidebar-color, $lightness: -10%);
 					border-left-color: $primary-color;
 					@if $sidebar-accent == dark { color: $sidebar-dark-link-color }
 					@if $sidebar-accent == light { color: $primary-color }

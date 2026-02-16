@@ -1,203 +1,251 @@
+
+// DataTables Custom Styling - Clean & Modern
+// =======================================================
+
+// Variables (Local scope if not defined global, but using bootstrap vars preferred)
+$dt-border-color: var(--bs-border-color);
+$dt-head-color:   var(--bs-gray-600);
+$dt-row-hover:    var(--bs-tertiary-bg); 
+
 table.dataTable {
 	clear: both;
-	margin-top: 6px !important;
-	margin-bottom: 6px !important;
+	margin-top: 1rem !important;
+	margin-bottom: 1rem !important;
 	max-width: none !important;
-}
-table.dataTable td,
-table.dataTable th {
-	-webkit-box-sizing: content-box;
-	box-sizing: content-box;
-}
-table.dataTable td.dataTables_empty,
-table.dataTable th.dataTables_empty {
-	text-align: center;
-}
-table.dataTable.nowrap th,
-table.dataTable.nowrap td {
-	white-space: nowrap;
-}
-.tile div.dataTables_wrapper {
-	padding: 0;
-}
-div.dataTables_wrapper div.dataTables_length label {
-	font-weight: normal;
-	text-align: left;
-	white-space: nowrap;
-}
-div.dataTables_wrapper div.dataTables_length select {
-	width: 75px;
-	display: inline-block;
-}
-div.dataTables_wrapper div.dataTables_filter {
-	text-align: right;
-}
-div.dataTables_wrapper div.dataTables_filter label {
-	font-weight: normal;
-	white-space: nowrap;
-	text-align: left;
-}
-div.dataTables_wrapper div.dataTables_filter input {
-	margin-left: 0.5em;
-	display: inline-block;
-	width: auto;
-}
-div.dataTables_wrapper div.dataTables_info {
-	padding-top: 0.85em;
-	white-space: nowrap;
-}
-div.dataTables_wrapper div.dataTables_paginate {
-	margin: 0;
-	white-space: nowrap;
-	text-align: right;
-}
-div.dataTables_wrapper div.dataTables_paginate ul.pagination {
-	margin: 2px 0;
-	white-space: nowrap;
-	justify-content: flex-end;
-}
-div.dataTables_wrapper div.dataTables_processing {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 200px;
-	margin-left: -100px;
-	margin-top: -26px;
-	text-align: center;
-	padding: 1em 0;
-}
+	border-collapse: separate !important;
+	border-spacing: 0;
+	width: 100% !important;
+	
+	thead {
+		th {
+			vertical-align: middle;
+			border-bottom: 1px solid $dt-border-color;
+			color: $dt-head-color;
+			font-size: 0.75rem;
+			text-transform: uppercase;
+			letter-spacing: 0.05em;
+			font-weight: 700;
+			padding: 1rem 1.5rem;
+			border-top: none;
+			
+			// Custom sort icons handled via CSS only if needed, 
+			// but standard DataTables uses background images. 
+			// We'll reset them for a cleaner look if desired.
+			&.sorting, &.sorting_asc, &.sorting_desc {
+				background-image: none !important; 
+				padding-right: 1.5rem;
+				position: relative;
+				cursor: pointer;
 
-table.dataTable thead > tr > th.sorting_asc, table.dataTable thead > tr > th.sorting_desc, table.dataTable thead > tr > th.sorting,
-table.dataTable thead > tr > td.sorting_asc,
-table.dataTable thead > tr > td.sorting_desc,
-table.dataTable thead > tr > td.sorting {
-	padding-right: 30px;
-}
-table.dataTable thead > tr > th:active,
-table.dataTable thead > tr > td:active {
-	outline: none;
-}
-table.dataTable thead .sorting,
-table.dataTable thead .sorting_asc,
-table.dataTable thead .sorting_desc,
-table.dataTable thead .sorting_asc_disabled,
-table.dataTable thead .sorting_desc_disabled {
-	cursor: pointer;
-	position: relative;
-}
-table.dataTable thead .sorting:before, table.dataTable thead .sorting:after,
-table.dataTable thead .sorting_asc:before,
-table.dataTable thead .sorting_asc:after,
-table.dataTable thead .sorting_desc:before,
-table.dataTable thead .sorting_desc:after,
-table.dataTable thead .sorting_asc_disabled:before,
-table.dataTable thead .sorting_asc_disabled:after,
-table.dataTable thead .sorting_desc_disabled:before,
-table.dataTable thead .sorting_desc_disabled:after {
-	position: absolute;
-	bottom: 0.9em;
-	display: block;
-	opacity: 0.3;
-}
-table.dataTable thead .sorting:before,
-table.dataTable thead .sorting_asc:before,
-table.dataTable thead .sorting_desc:before,
-table.dataTable thead .sorting_asc_disabled:before,
-table.dataTable thead .sorting_desc_disabled:before {
-	right: 1em;
-	content: "\2191";
-}
-table.dataTable thead .sorting:after,
-table.dataTable thead .sorting_asc:after,
-table.dataTable thead .sorting_desc:after,
-table.dataTable thead .sorting_asc_disabled:after,
-table.dataTable thead .sorting_desc_disabled:after {
-	right: 0.5em;
-	content: "\2193";
-}
-table.dataTable thead .sorting_asc:before,
-table.dataTable thead .sorting_desc:after {
-	opacity: 1;
-}
-table.dataTable thead .sorting_asc_disabled:before,
-table.dataTable thead .sorting_desc_disabled:after {
-	opacity: 0;
-}
+				&::after {
+					font-family: "bootstrap-icons";
+					position: absolute;
+					right: 0;
+					top: 50%;
+					transform: translateY(-50%);
+					font-size: 0.8rem;
+					opacity: 0.3;
+				}
+			}
+			&.sorting::after { content: "\F282"; } // chevron-expand
+			&.sorting_asc::after { content: "\F286"; opacity: 1; color: var(--bs-primary); } // chevron-up
+			&.sorting_desc::after { content: "\F279"; opacity: 1; color: var(--bs-primary); } // chevron-down
+		}
+	}
 
-div.dataTables_scrollHead table.dataTable {
-	margin-bottom: 0 !important;
-}
+	tbody {
+		td {
+			padding: 1rem 1.5rem;
+			vertical-align: middle;
+			border-top: 1px solid $dt-border-color; // Use border-top for rows usually
+			border-bottom: none;
+			color: var(--bs-body-color);
+			font-size: 0.9rem;
+			
+			&:first-child { border-left: none; }
+			&:last-child { border-right: none; }
+		}
+		
+		tr:first-child td { border-top: none; }
 
-div.dataTables_scrollBody table {
-	border-top: none;
-	margin-top: 0 !important;
-	margin-bottom: 0 !important;
-}
-div.dataTables_scrollBody table thead .sorting:after,
-div.dataTables_scrollBody table thead .sorting_asc:after,
-div.dataTables_scrollBody table thead .sorting_desc:after {
-	display: none;
-}
-div.dataTables_scrollBody table tbody tr:first-child th,
-div.dataTables_scrollBody table tbody tr:first-child td {
-	border-top: none;
-}
-
-div.dataTables_scrollFoot > .dataTables_scrollFootInner {
-	box-sizing: content-box;
-}
-div.dataTables_scrollFoot > .dataTables_scrollFootInner > table {
-	margin-top: 0 !important;
-	border-top: none;
-}
-
-@media screen and (max-width: 767px) {
-	div.dataTables_wrapper div.dataTables_length,
-	div.dataTables_wrapper div.dataTables_filter,
-	div.dataTables_wrapper div.dataTables_info,
-	div.dataTables_wrapper div.dataTables_paginate {
-		text-align: center;
+		tr {
+			transition: background-color 0.2s ease;
+			&:hover {
+				background-color: $dt-row-hover;
+				
+				td {
+					color: var(--bs-heading-color);
+				}
+			}
+		}
+	}
+	
+	// Remove vertical borders
+	&.table-bordered {
+		border: none;
+		th, td { border-left: none; border-right: none; }
 	}
 }
-table.dataTable.table-sm > thead > tr > th {
-	padding-right: 20px;
-}
-table.dataTable.table-sm .sorting:before,
-table.dataTable.table-sm .sorting_asc:before,
-table.dataTable.table-sm .sorting_desc:before {
-	top: 5px;
-	right: 0.85em;
-}
-table.dataTable.table-sm .sorting:after,
-table.dataTable.table-sm .sorting_asc:after,
-table.dataTable.table-sm .sorting_desc:after {
-	top: 5px;
+
+
+// Wrapper layout
+.dataTables_wrapper {
+	padding: 0;
+
+	// Header controls (Length & Filter)
+	.row:first-child {
+		align-items: center;
+		margin-bottom: 1.5rem;
+		
+		// Length Selector
+		.dataTables_length {
+			label {
+				font-size: 0.9rem;
+				color: var(--bs-gray-600);
+				font-weight: 500;
+			}
+			select {
+				border: 1px solid var(--bs-border-color);
+				border-radius: 50rem; // Pill
+				padding: 0.375rem 2rem 0.375rem 1rem;
+				margin: 0 0.5rem;
+				color: var(--bs-body-color);
+				background-color: var(--bs-body-bg);
+				
+				&:focus {
+					border-color: var(--bs-primary);
+					outline: 0;
+					box-shadow: 0 0 0 0.2rem rgba(var(--bs-primary-rgb), 0.25);
+				}
+			}
+		}
+
+		// Filter Search
+		.dataTables_filter {
+			text-align: right;
+			
+			label {
+				font-size: 0.9rem;
+				color: var(--bs-gray-600);
+				font-weight: 500;
+			}
+			input {
+				border: 1px solid var(--bs-border-color);
+				border-radius: 50rem;
+				padding: 0.5rem 1.25rem;
+				margin-left: 0.75rem;
+				width: 250px;
+				background-color: var(--bs-body-bg);
+				transition: all 0.2s ease;
+				
+				&:focus {
+					width: 300px;
+					border-color: var(--bs-primary);
+					outline: 0;
+					box-shadow: 0 0 0 0.2rem rgba(var(--bs-primary-rgb), 0.25);
+				}
+			}
+		}
+	}
+
+	// Footer controls (Info & Pagination)
+	.row:last-child {
+		align-items: center;
+		margin-top: 1.5rem;
+
+		.dataTables_info {
+			color: var(--bs-gray-600);
+			font-size: 0.9rem;
+			padding-top: 0;
+		}
+
+		.dataTables_paginate {
+			ul.pagination {
+				margin: 0;
+				justify-content: flex-end;
+				
+				.page-item {
+					margin: 0 3px;
+					
+					.page-link {
+						border: none;
+						border-radius: 50%;
+						width: 36px;
+						height: 36px;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						color: var(--bs-gray-600);
+						background: transparent;
+						font-weight: 500;
+						transition: all 0.2s ease;
+						
+						&:hover, &:focus {
+							background-color: var(--bs-gray-200);
+							color: var(--bs-primary);
+							z-index: 2;
+						}
+					}
+
+					&.active .page-link {
+						background-color: var(--bs-primary);
+						color: #fff;
+						box-shadow: 0 4px 10px rgba(var(--bs-primary-rgb), 0.3);
+					}
+					
+					&.disabled .page-link {
+						color: var(--bs-gray-400);
+						background: transparent;
+					}
+				}
+			}
+		}
+	}
 }
 
-table.table-bordered.dataTable th,
-table.table-bordered.dataTable td {
-	border-left-width: 0;
-}
-table.table-bordered.dataTable th:last-child, table.table-bordered.dataTable th:last-child,
-table.table-bordered.dataTable td:last-child,
-table.table-bordered.dataTable td:last-child {
-	border-right-width: 0;
-}
-table.table-bordered.dataTable tbody th,
-table.table-bordered.dataTable tbody td {
-	border-bottom-width: 0;
+// Dark Mode Overrides
+[data-bs-theme="dark"] {
+	table.dataTable {
+		thead th {
+			color: var(--bs-gray-400);
+			&.sorting_asc::after, &.sorting_desc::after { color: var(--bs-primary); }
+		}
+		tbody tr:hover {
+			background-color: rgba(255,255,255, 0.05);
+		}
+	}
+	
+	.dataTables_wrapper {
+		.dataTables_length label, .dataTables_filter label, .dataTables_info {
+			color: var(--bs-gray-400); 
+		}
+		
+		.dataTables_paginate .pagination .page-item .page-link {
+			color: var(--bs-gray-500);
+			&:hover {
+				background-color: rgba(255,255,255, 0.1);
+				color: var(--bs-white);
+			}
+		}
+	}
 }
 
-div.dataTables_scrollHead table.table-bordered {
-	border-bottom-width: 0;
-}
-
-div.table-responsive > div.dataTables_wrapper > div.row {
-	margin: 0;
-}
-div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:first-child {
-	padding-left: 0;
-}
-div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:last-child {
-	padding-right: 0;
+// Mobile Responsive
+@media screen and (max-width: 767px) {
+	.dataTables_wrapper .row:first-child, 
+	.dataTables_wrapper .row:last-child {
+		flex-direction: column;
+		text-align: center;
+		
+		.col-sm-12 {
+			margin-bottom: 1rem;
+			display: flex;
+			justify-content: center;
+		}
+	}
+	
+	div.dataTables_wrapper div.dataTables_filter {
+		text-align: center;
+		input { width: 100%; margin-left: 0; }
+	}
 }

@@ -1,14 +1,15 @@
 // Componant: Card (Tile)
+@use '../vars' as *;
 
 .tile {
 	position: relative;
-	background: var(--bs-tertiary-bg);
-	border-radius: $border-radius-lg;
-	padding: 1.5rem;
+	background: var(--bs-body-bg); // Use body bg or specific card bg
+	border-radius: $border-radius; // Reduced from xl to standard
+	padding: 1.5rem; // Reduced from 2rem
 	box-shadow: $box-shadow;
 	margin-bottom: 30px;
-	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-	border: 1px solid var(--bs-border-color-translucent);
+	transition: box-shadow 0.3s ease, background-color 0.3s ease;
+	border: 0; // Remove border for cleaner look, or use very subtle one
 
 	&:hover {
 		box-shadow: $box-shadow-lg;
@@ -32,7 +33,7 @@
 		justify-content: center;
 		flex-direction: row;
 		color: var(--bs-body-color);
-		border-radius: $border-radius-lg;
+		border-radius: $border-radius-xl;
 		z-index: 10;
 
 		.l-text {
@@ -44,22 +45,16 @@
 
 	.tile-title {
 		margin-top: 0;
-		margin-bottom: 1.25rem;
-		font-size: 1.25rem;
+		margin-bottom: 2rem;
+		font-size: 1.5rem;
 		font-weight: 700;
 		color: var(--bs-heading-color);
 		position: relative;
-		padding-bottom: 0.5rem;
-
-		&::after {
-			content: "";
-			position: absolute;
-			left: 0;
-			bottom: 0;
-			width: 50px;
-			height: 2px;
-			background-color: $primary;
-		}
+		
+		// Remove the underline or make it minimal if needed. 
+		// The example image doesn't strictly show an underline on the card title, 
+		// but shows a "Data Table" main heading. 
+		// Assuming .tile-title is used for card headers.
 	}
 
 	.tile-title-w-btn {

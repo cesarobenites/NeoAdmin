@@ -1,3 +1,5 @@
+@use 'vars' as *;
+
 :root {
   --neo-primary: #{$primary};
   --neo-secondary: #{$secondary};

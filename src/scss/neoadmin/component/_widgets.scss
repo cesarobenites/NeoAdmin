@@ -1,10 +1,12 @@
 // Componant: Widget
+@use '../vars' as *;
+@use 'bootstrap' as bs;
 
 .widget-small {
 	display: flex;
 	flex-wrap: wrap;
 	border-radius: 4px;
-	color: $white;
+	color: bs.$white;
 	margin-bottom: 20px;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 
@@ -14,7 +16,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			color: $white;
+			color: bs.$white;
 		}
 	}
 
@@ -24,27 +26,27 @@
 			display: flex;
 			flex-direction: column;
 			&.text-muted {
-				color: $white !important;
+				color: bs.$white !important;
 			}
 			.text-success, .text-danger {
-				color: $white !important;
+				color: bs.$white !important;
 			}
 		}
 	}
 
 	&.w-light {
-		background-color: $white;
-		color: $gray-900;
+		background-color: bs.$white;
+		color: bs.$gray-900;
 
 		.description {
 			&.text-muted {
-				color: $gray-600 !important;
+				color: bs.$gray-600 !important;
 			}
 			.text-success {
-				color: $green !important;
+				color: bs.$green !important;
 			}
 			.text-danger {
-				color: $red !important;
+				color: bs.$red !important;
 			}
 		}
 	}
@@ -52,8 +54,8 @@
 	&.primary {
 		background-color: $primary;
 		&.w-light {
-			background-color: $white;
-			color: $gray-900;
+			background-color: bs.$white;
+			color: bs.$gray-900;
 			.icon {
 				color: $primary;
 			}
@@ -65,7 +67,7 @@
 
 		&.w-light {
 			background-color: #fff;
-			color: $gray-900;
+			color: bs.$gray-900;
 
 			.icon {
 				color: $info;
@@ -78,7 +80,7 @@
 
 		&.w-light {
 			background-color: #fff;
-			color: $gray-900;
+			color: bs.$gray-900;
 
 			.icon {
 				color: $warning;
@@ -91,7 +93,7 @@
 
 		&.w-light {
 			background-color: #fff;
-			color: $gray-900;
+			color: bs.$gray-900;
 
 			.icon {
 				color: $danger;

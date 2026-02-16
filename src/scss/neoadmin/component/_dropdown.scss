@@ -1,5 +1,6 @@
 // Componant: Dropdown
 // Updated styles for bootstrap dropdown to support BS5.3
+@use '../vars' as *;
 
 .dropdown-menu {
 	border-radius: 0 0 $border-radius-lg $border-radius-lg; // Sharp on top, rounded on bottom

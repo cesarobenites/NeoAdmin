@@ -49,7 +49,7 @@ export class NeoAdmin {
     }
 
     public init(): void {
-        console.log('NeoAdmin Initializing...');
+
         this.handlePersistence(); // Load saved state FIRST
         this.initBootstrapComponents();
         this.initLibraries();
@@ -147,9 +147,14 @@ export class NeoAdmin {
         // @ts-ignore
         if (typeof TomSelect !== 'undefined') {
             document.querySelectorAll('.neo-select').forEach((el) => {
+                const isMultiple = (el as HTMLSelectElement).multiple;
+                const plugins = isMultiple ? ['remove_button'] : [];
+
                 // @ts-ignore
                 new TomSelect(el, {
-                    plugins: ['dropdown_input'],
+                    plugins: plugins,
+                    create: false,
+                    // Allow search in the main control for multiple, or standard behavior for single
                 });
             });
         }

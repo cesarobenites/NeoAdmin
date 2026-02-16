@@ -1,4 +1,5 @@
 @use 'sass:color';
+@use '../vars' as *;
 
 /*----- Componant: Top Navigation Bar ----- */
 
@@ -17,22 +18,25 @@
 }
 
 .app-header__logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	color: #fff;
 	text-align: center;
-	font-family: 'Roboto', sans-serif;
-	padding: 0 10px;
-	font-size: 26px;
-	font-weight: 400;
+	font-family: $font-family-sans-serif;
+	padding: 0 15px;
+	font-size: 24px;
+	font-weight: 700;
 	line-height: 50px;
 	@media(min-width: 768px) {
-		display: block;
+		display: flex;
 		padding: 0 15px;
 		width: $sidebar-width;
 		@if $sidebar-accent == dark {
-			background-color: color.scale($primary-color, $lightness: -8.4717607973%);
+			background-color: color.scale($primary-color, $lightness: -10%);
 		}
 		@if $sidebar-accent == light {
-			background-color: color.scale($primary-color, $lightness: 8.4717607973%);
+			background-color: color.scale($primary-color, $lightness: 10%);
 		}
 	}
 	&:focus,
@@ -70,9 +74,10 @@
 }
 
 .app-nav {
-	@extend .list-unstyled;
-	display: flex;
+	padding-left: 0;
 	margin-bottom: 0;
+	list-style: none;
+	display: flex;
 	justify-content: flex-end;
 	@media(min-width: 768px) { flex: 1 0 auto; }
 }
@@ -159,4 +164,4 @@
 
 .app-notification__icon { padding-right: 10px; }
 .app-notification__message { line-height: 1.2; }
-.app-notification__meta { @extend .text-muted; }
+.app-notification__meta { color: $secondary; }

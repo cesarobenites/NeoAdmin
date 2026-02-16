@@ -1,22 +1,21 @@
 @use 'sass:color';
+@use 'vars' as *;
+@use 'bootstrap' as bs;
 
-// Page common styles
+// Common Page Styles
 
 ::selection {
-	color: $white;
+	color: bs.$white;
 	background-color: color.scale($primary-color, $lightness: -16.9435215947%);
 }
 
-// Global text decoration overrides
+// Global Overrides
 a {
 	text-decoration: none !important;
 	&:hover { text-decoration: none !important; }
 }
 
-
-
-
-// Fonts: Size and Colors
+// Fonts
 .text-xs {
 	font-size:.75rem
 }
@@ -28,8 +27,7 @@ a {
 // General
 
 .app {
-	// On large devices make sidebar visible by default
-	// adding sidenav-toggled class will close sidebar
+	// Sidebar visible by default on desktop
 	@media(min-width: 768px) {
 		&.sidenav-toggled {
 			.app-content { margin-left: 0; }
@@ -37,8 +35,8 @@ a {
 			.app-sidebar__overlay { visibility: hidden; }
 		}
 	}
-	// On small devices make sidebar collapsed by default
-	// adding sidenav-toggled class will open sidebar
+	
+	// Sidebar collapsed by default on mobile
 	@media(max-width: 767px) {
 		overflow-x: hidden;
 		.app-sidebar { left: -$sidebar-width; }

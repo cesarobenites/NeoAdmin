@@ -1,4 +1,5 @@
-// Page: Lockscreen Material
+@use "sass:color";
+@use '../vars' as *;
 
 .lockscreen-content {
 	display: flex;
@@ -6,110 +7,194 @@
 	align-items: center;
 	justify-content: center;
 	min-height: 100vh;
+    width: 100%;
+	padding: 1.5rem;
+    
+    background: linear-gradient(135deg, $primary 0%, color.adjust($primary, $lightness: -15%) 100%); 
+    z-index: 10;
 
 	.logo {
-		font-family: 'Roboto', sans-serif;
-		margin-bottom: 40px;
-		color: #fff;
-
+		margin-bottom: 2rem;
+        text-align: center;
+		
 		h1 {
-			font-size: 52px;
-			font-weight: 400;
+            font-family: 'Outfit', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+			font-size: clamp(2.5rem, 5vw, 3.5rem);
+			font-weight: 700;
+            letter-spacing: -0.5px;
+			margin: 0;
+            color: #ffffff;
+            text-shadow: 0 4px 6px rgba(0,0,0,0.1);
 		}
 	}
 
 	.lock-box {
 		position: relative;
-		min-width: 320px;
-		padding: 20px 40px;
-		background-color: #fff;
-		box-shadow: 0px 29px 147.5px 102.5px rgba(0, 0, 0, 0.05), 0px 29px 95px 0px rgba(0, 0, 0, 0.16);
-		perspective: 800px;
-		transition: all 0.5s ease-in-out;
+        width: 100%;
+        max-width: 400px;
+		padding: 2rem;
+        
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        
+		box-shadow: 0 20px 50px rgba(0,0,0,0.2), 0 5px 15px rgba(0,0,0,0.1);
+		transition: all 0.3s ease;
+		border-radius: $border-radius;
+        text-align: center;
 
 		.user-image {
-			border: 3px solid #fff;
-			max-width: 100px;
+			border: 4px solid #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+			width: 100px;
+            height: 100px;
+            object-fit: cover;
 			display: block;
-			margin: 0 auto;
+			margin: 0 auto 1.5rem auto;
+            transition: transform 0.3s ease;
 		}
 
 		.user-name { 
-			margin-bottom: 2px;
+			margin-bottom: 0.25rem;
 			color: #333;
+			font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+		}
+        
+        .locked-status {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+		p.text-muted {
+            @extend .locked-status;
 		}
 
-		label {
-			color: #666;
-			font-weight: 700;
+		.form-label {
+			color: #6c757d;
+			font-weight: 600;
+			font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+            text-align: left;
+            display: block; 
 		}
 
-		p {
-			color: #666;
-		}
+         .form-control {
+            border: 2px solid #e9ecef;
+            border-radius: 0.75rem;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            font-weight: 500;
+            background-color: #f8f9fa;
+            transition: all 0.2s ease;
+            text-align: center;
+
+            &:focus {
+                background-color: #fff;
+                border-color: $primary;
+                box-shadow: 0 0 0 4px rgba($primary, 0.15);
+            }
+            
+            &::placeholder {
+                color: #adb5bd;
+            }
+        }
+        
+        .btn-container {
+             margin-top: 1.5rem;
+             
+             .btn {
+                 padding: 0.8rem;
+                 font-weight: 700;
+                 border-radius: 0.75rem;
+                 text-transform: uppercase;
+                 box-shadow: 0 4px 6px rgba($primary, 0.3);
+                 
+                 &:hover {
+                     transform: translateY(-2px);
+                      box-shadow: 0 6px 12px rgba($primary, 0.4);
+                 }
+             }
+        }
+
+        a {
+             display: inline-block;
+             margin-top: 1.5rem;
+             color: $primary;
+             text-decoration: none;
+             font-weight: 600;
+             font-size: 0.9rem;
+             
+             &:hover {
+                 text-decoration: underline;
+                 color: color.adjust($primary, $lightness: -15%);
+             }
+        }
 	}
 }
 
-// Dark Mode Support
 [data-bs-theme="dark"] {
 	.lockscreen-content {
-		.logo {
-			h1 {
-				color: #e6edf3;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-			}
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+
+		.logo h1 {
+            color: #f8fafc;
 		}
 
 		.lock-box {
-			background-color: #1c2128;
-			box-shadow: 0px 29px 147.5px 102.5px rgba(0, 0, 0, 0.4), 0px 29px 95px 0px rgba(0, 0, 0, 0.6);
-			border: 1px solid #30363d;
+            background-color: rgba(30, 41, 59, 0.9);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 5px 15px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.05);
 
 			.user-image {
-				border-color: #30363d;
+				border-color: #334155;
 				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 			}
 
 			.user-name {
-				color: #e6edf3;
-				font-weight: 600;
+				color: #f1f5f9;
 			}
+            
+            p.text-muted {
+                color: #94a3b8 !important;
+            }
 
-			label {
-				color: #8b949e;
-				font-weight: 600;
-			}
-
-			p {
-				color: #8b949e;
+			.form-label {
+				color: #94a3b8;
 			}
 
 			.form-control {
-				background-color: #0d1117;
-				border-color: #30363d;
-				color: #e6edf3;
+				background-color: #0f172a;
+				border-color: #334155;
+				color: #e2e8f0;
 
 				&::placeholder {
-					color: #6e7681;
+					color: #475569;
 				}
 
 				&:focus {
-					background-color: #0d1117;
-					border-color: #58a6ff;
-					color: #e6edf3;
-					box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.1);
+					background-color: #0f172a;
+					border-color: #60a5fa;
+					box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
 				}
 			}
 
 			a {
-				color: #58a6ff;
-				text-decoration: none;
-
-				&:hover {
-					color: #79c0ff;
-					text-decoration: underline;
-				}
+				color: #60a5fa;
+				&:hover { color: #93c5fd; }
 			}
+            
+            .btn-container .btn-primary {
+                 background-color: #3b82f6;
+                 border-color: #3b82f6;
+            }
 		}
 	}
 }

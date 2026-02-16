@@ -1,4 +1,7 @@
 // Componant: Sidebar 
+@use '../vars' as *;
+@use 'bootstrap' as bs;
+@use "sass:color";
 
 .app-sidebar {
 	position: fixed;
@@ -54,7 +57,7 @@
 	margin-right: 15px;
 	width: 48px;
 	height: 48px;
-	@extend .rounded-circle;
+	border-radius: 50% !important;
 }
 
 // Full width logo modifier (use this class when displaying a logo without text)
@@ -92,13 +95,14 @@
 
 .app-sidebar__user-avatar-mobile {
 	display: none;
-	@extend .rounded-circle;
+	border-radius: 50% !important;
 	flex: 0 0 auto;
 	margin-right: 15px;
 }
 
 .app-menu {
-	@extend .list-unstyled;
+	padding-left: 0;
+	list-style: none;
 	margin-bottom: 0;
 	padding-bottom: 40px;
 }
@@ -117,11 +121,11 @@
 	&.active,
 	&:hover,
 	&:focus {
-		background: $primary-color;
+		background: color.adjust($sidebar-color, $lightness: -8%);
 		border-left-color: $primary-color;
 		text-decoration: none;
 		@if $sidebar-accent == dark { color: $sidebar-dark-link-color }
-		@if $sidebar-accent == light { color: $white }
+		@if $sidebar-accent == light { color: bs.$white }
 	}
 }
 
@@ -139,7 +143,7 @@
 	&.is-expanded {
 		[data-toggle='treeview'] {
 			border-left-color: $primary-color;
-			background: darken($sidebar-color, 10);
+			background: color.adjust($sidebar-color, $lightness: -12%);
 		}
 		.treeview-menu { max-height: 100vh; }
 		.treeview-indicator { transform: rotate(90deg); }
@@ -147,15 +151,16 @@
 }
 
 .treeview-menu {
-	@extend .list-unstyled;
+	padding-left: 0;
+	list-style: none;
 	max-height: 0;
 	overflow: hidden;
 	transition: max-height 0.3s ease;
 	@if $sidebar-accent == dark {
-		background: lighten($sidebar-color, 4)
+		background: color.scale($sidebar-color, $lightness: 4%)
 	}
 	@if $sidebar-accent == light {
-		background: darken($sidebar-color, 4)
+		background: color.scale($sidebar-color, $lightness: -4%)
 	}
 }
 
@@ -169,7 +174,7 @@
 	&.active,
 	&:hover,
 	&:focus {
-		background: darken($sidebar-color, 5);
+		background: color.adjust($sidebar-color, $lightness: -8%);
 		text-decoration: none;
 		@if $sidebar-accent == dark { color: $sidebar-dark-link-color }
 		@if $sidebar-accent == light { color: $sidebar-light-link-color }
