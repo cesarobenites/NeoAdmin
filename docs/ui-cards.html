@@ -7,17 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
     content="Neo Admin is responsive and free admin theme built with Bootstrap 5.3, SASS and PUG.js. It's fully customizable and modular.">
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:site" content="@cesarobenites">
-  <meta property="twitter:creator" content="@cesarobenites">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Neo Admin">
-  <meta property="og:title" content="Neo Admin - Bootstrap 5.3 admin theme">
-  <meta property="og:url" content="http://neo20.com/blog/NeoAdmin">
-  <meta property="og:image" content="http://neo20.com/blog/NeoAdmin/hero-social.png">
-  <meta property="og:description"
-    content="Neo Admin is responsive and free admin theme built with Bootstrap 5.3, SASS and PUG.js. It's fully customizable and modular.">
   <title>Cards - Neo Admin</title>
+  <!-- Main CSS-->
   <link href="assets/css/neoadmin.css" rel="stylesheet">
 </head>
 
@@ -28,112 +19,81 @@
       <div class="ring"></div>
     </div>
   </div>
-  <header class="app-header">
+    <header class="app-header">
     <a class="app-header__logo" href="index.html">
       <img src="assets/images/neo20_logo.png" alt="NeoAdmin Logo">
     </a>
+    <!-- Sidebar toggle button-->
     <a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
-
     <div class="app-nav-container">
+      <!-- Navbar Right Menu-->
       <ul class="app-nav">
+        <!-- Search-->
         <li class="app-search">
           <input class="app-search__input" type="search" placeholder="Search...">
           <button class="app-search__button">
             <i class="bi bi-search"></i>
           </button>
         </li>
-
-        <li class="dropdown">
-          <a class="app-nav__item" href="#" data-toggle="theme" aria-label="Toggle Theme"
-            title="Toggle Dark/Light Mode">
-            <i class="bi bi-moon-stars fs-5"></i>
-          </a>
-        </li>
-
-        <li class="dropdown">
-          <a class="app-nav__item" href="#" data-toggle="fullscreen" aria-label="Toggle Fullscreen" title="Full Screen">
-            <i class="bi bi-arrows-fullscreen fs-5"></i>
-          </a>
-        </li>
-
-        <li class="dropdown">
-          <a class="app-nav__item" href="#" data-bs-toggle="dropdown" aria-label="Font Size" title="Text Size">
-            <i class="bi bi-type fs-5"></i>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="#" data-font-size="14px">Small</a></li>
-            <li><a class="dropdown-item" href="#" data-font-size="16px">Normal</a></li>
-            <li><a class="dropdown-item" href="#" data-font-size="20px">Large</a></li>
-          </ul>
-        </li>
-
+        <!--Notification Menu-->
         <li class="dropdown"><a class="app-nav__item" href="#" data-bs-toggle="dropdown"
             aria-label="Show notifications"><i class="bi bi-bell fs-5"></i></a>
           <ul class="app-notification dropdown-menu dropdown-menu-end">
             <li class="app-notification__title">You have 4 new notifications.</li>
             <div class="app-notification__content">
               <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
-                      class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-primary"></i><i
-                        class="bi bi-envelope-fill bi-stack-1x bi-inverse"></i></span></span>
+                      class="bg-primary"><i class="bi bi-envelope-fill"></i></span></span>
                   <div>
                     <p class="app-notification__message">Lisa sent you a mail</p>
                     <p class="app-notification__meta">2 min ago</p>
                   </div>
                 </a></li>
               <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
-                      class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-danger"></i><i
-                        class="bi bi-hdd-fill bi-stack-1x bi-inverse"></i></span></span>
+                      class="bg-danger"><i class="bi bi-hdd-fill"></i></span></span>
                   <div>
                     <p class="app-notification__message">Mail server not working</p>
                     <p class="app-notification__meta">5 min ago</p>
                   </div>
                 </a></li>
               <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
-                      class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-success"></i><i
-                        class="bi bi-cash-coin bi-stack-1x bi-inverse"></i></span></span>
+                      class="bg-success"><i class="bi bi-cash-coin"></i></span></span>
                   <div>
                     <p class="app-notification__message">Transaction complete</p>
                     <p class="app-notification__meta">2 days ago</p>
                   </div>
                 </a></li>
-              <div class="app-notification__content">
-                <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
-                        class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-primary"></i><i
-                          class="bi bi-envelope-fill bi-stack-1x bi-inverse"></i></span></span>
-                    <div>
-                      <p class="app-notification__message">Lisa sent you a mail</p>
-                      <p class="app-notification__meta">2 min ago</p>
-                    </div>
-                  </a></li>
-                <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
-                        class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-danger"></i><i
-                          class="bi bi-hdd-fill bi-stack-1x bi-inverse"></i></span></span>
-                    <div>
-                      <p class="app-notification__message">Mail server not working</p>
-                      <p class="app-notification__meta">5 min ago</p>
-                    </div>
-                  </a></li>
-                <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
-                        class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-success"></i><i
-                          class="bi bi-cash-coin bi-stack-1x bi-inverse"></i></span></span>
-                    <div>
-                      <p class="app-notification__message">Transaction complete</p>
-                      <p class="app-notification__meta">2 days ago</p>
-                    </div>
-                  </a></li>
-              </div>
             </div>
             <li class="app-notification__footer"><a href="#">See all notifications.</a></li>
           </ul>
         </li>
-
+        <!-- User Menu-->
         <li class="dropdown">
           <a class="app-nav__item" href="#" data-bs-toggle="dropdown" aria-label="Open Profile Menu">
             <i class="bi bi-person-circle fs-5"></i>
           </a>
-          <ul class="dropdown-menu settings-menu dropdown-menu-end">
+          <ul class="dropdown-menu settings-menu dropdown-menu-end dropdown-menu-dark">
             <li><a class="dropdown-item" href="page-user.html"><i class="bi bi-gear me-2"></i> Settings</a></li>
             <li><a class="dropdown-item" href="page-user.html"><i class="bi bi-person me-2"></i> Profile</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#" data-toggle="theme"><i class="bi bi-moon-stars me-2"></i> Toggle
+                Theme</a></li>
+            <li><a class="dropdown-item" href="#" data-toggle="fullscreen"><i class="bi bi-arrows-fullscreen me-2"></i>
+                Full Screen</a></li>
+            <li>
+              <div class="font-size-options">
+                <button class="btn-font-size" data-font-size="14px" title="Small (14px)">
+                  <span style="font-size: 0.75rem; font-weight: 700;">A</span>
+                </button>
+                <button class="btn-font-size active" data-font-size="16px" title="Normal (16px)">
+                  <span style="font-size: 1rem; font-weight: 700;">A</span>
+                </button>
+                <button class="btn-font-size" data-font-size="18px" title="Large (18px)">
+                  <span style="font-size: 1.25rem; font-weight: 700;">A</span>
+                </button>
+              </div>
+            </li>
             <li>
               <hr class="dropdown-divider">
             </li>
@@ -144,6 +104,7 @@
       </ul>
     </div>
   </header>
+  <!-- Sidebar menu-->
   <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
   <aside class="app-sidebar">
     <div class="sidebar-scroll sidebar-scroll-toggled">
@@ -231,30 +192,31 @@
         <p>Premium UI cards & containers</p>
       </div>
       <ul class="app-breadcrumb breadcrumb">
-        <li class="breadcrumb-item">Home</li>
+        <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
         <li class="breadcrumb-item">UI</li>
         <li class="breadcrumb-item"><a href="#">Cards</a></li>
       </ul>
     </div>
     <div class="row">
       <div class="col-md-6">
-        <div class="tile">
-          <h3 class="tile-title">Standard Tile</h3>
-          <div class="tile-body">Hey there, I am a very simple card. I am good at containing small bits of information.
-            I am quite convenient because I require little markup to use effectively.</div>
-          <hr>
-          <div class="tile-footer">
+        <div class="card mb-3 border-0 shadow-sm">
+          <h5 class="card-header bg-transparent border-0 mt-2">Standard Card</h5>
+          <div class="card-body">
+            Hey there, I am a very simple card. I am good at containing small bits of information.
+            I am quite convenient because I require little markup to use effectively.
+          </div>
+          <div class="card-footer bg-transparent border-top-0 mb-2">
             <a class="btn btn-primary" href="#">Action Link</a>
           </div>
         </div>
       </div>
       <div class="col-md-6">
-        <div class="tile">
-          <div class="tile-title-w-btn">
-            <h3 class="title">Tile with Action</h3>
-            <p><a class="btn btn-primary btn-sm" href=""><i class="bi bi-plus-lg me-1"></i>Add Item</a></p>
+        <div class="card mb-3 border-0 shadow-sm">
+          <div class="card-header bg-transparent border-0 d-flex justify-content-between align-items-center mt-2">
+            <h5 class="mb-0">Card with Action</h5>
+            <a class="btn btn-primary btn-sm" href="#"><i class="bi bi-plus-lg me-1"></i>Add Item</a>
           </div>
-          <div class="tile-body">
+          <div class="card-body">
             <p><b>Card with action button</b></p>
             Hey there, I am a very simple card. I am good at containing small bits of information. I am quite convenient
             because I require little markup to use effectively.
@@ -262,16 +224,16 @@
         </div>
       </div>
       <div class="col-md-6">
-        <div class="tile">
-          <div class="tile-title-w-btn">
-            <h3 class="title">Button Groups</h3>
-            <div class="btn-group">
+        <div class="card mb-3 border-0 shadow-sm">
+          <div class="card-header bg-transparent border-0 d-flex justify-content-between align-items-center mt-2">
+            <h5 class="mb-0">Button Groups</h5>
+            <div class="btn-group" role="group" aria-label="Basic example">
               <a class="btn btn-outline-primary" href="#"><i class="bi bi-plus-lg"></i></a>
               <a class="btn btn-outline-primary" href="#"><i class="bi bi-pencil-square"></i></a>
               <a class="btn btn-outline-primary" href="#"><i class="bi bi-trash"></i></a>
             </div>
           </div>
-          <div class="tile-body">
+          <div class="card-body">
             <p><b>Card with button group</b></p>
             Hey there, I am a very simple card. I am good at containing small bits of information. I am quite convenient
             because I require little markup to use effectively.
@@ -279,20 +241,22 @@
         </div>
       </div>
       <div class="col-md-6">
-        <div class="tile">
-          <div class="overlay">
-            <div class="m-loader me-4">
-              <svg class="m-circular" viewBox="25 25 50 50">
-                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-miterlimit="10" />
-              </svg>
+        <div class="card mb-3 border-0 shadow-sm position-relative">
+          <div
+            class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center bg-white bg-opacity-75 rounded-3"
+            style="z-index: 10;">
+            <div class="text-center">
+              <div class="spinner-border text-primary mb-2" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <h5 class="m-0">Loading...</h5>
             </div>
-            <h3 class="l-text">Loading...</h3>
           </div>
-          <div class="tile-title-w-btn">
-            <h3 class="title">Loading State</h3>
-            <p><a class="btn btn-primary btn-sm" href=""><i class="bi bi-plus-lg"></i></a></p>
+          <div class="card-header bg-transparent border-0 d-flex justify-content-between align-items-center mt-2">
+            <h5 class="mb-0">Loading State</h5>
+            <a class="btn btn-primary btn-sm" href="#"><i class="bi bi-plus-lg"></i></a>
           </div>
-          <div class="tile-body">
+          <div class="card-body">
             <p><b>Card with overlay loader</b></p>
             Hey there, I am a very simple card. I am good at containing small bits of information. I am quite convenient
             because I require little markup to use effectively.
@@ -300,7 +264,6 @@
         </div>
       </div>
     </div>
-
     <div class="row mt-4">
       <div class="col-lg-12">
         <h4 class="mb-4">Standard Bootstrap 5.3 Cards</h4>

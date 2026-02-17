@@ -1,11 +1,9 @@
 // Page: Mailbox
-
 .folder-head {
 	padding: 10px;
 	margin-bottom: 0 !important;
 	border-bottom: 1px solid #ddd;
 }
-
 .mailbox-controls {
 	margin-bottom: 10px;
 	border-bottom: 1px solid #ddd;
@@ -13,12 +11,10 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-
 	.animated-checkbox {
 		.label-text:before { vertical-align: (-7px) !important; }
 	}
 }
-
 .mail-nav > li > a {
 	display: block;
 	background-color: transparent;
@@ -26,18 +22,15 @@
 	border-radius: 0;
 	font-weight: 500;
 	transition: background-color 0.2s ease;
-
 	&:hover {
 		background-color: rgba(0, 0, 0, 0.05);
 	}
 }
-
 .mailbox-messages {
 	table tr td {
 		border: 0;
 		padding: 5px;
 	}
-
 	.mail-subject {
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -45,30 +38,24 @@
 		max-width: 500px;
 	}
 }
-
 // Dark Mode Support
 [data-bs-theme="dark"] {
 	.folder-head {
 		border-bottom-color: #30363d;
 	}
-
 	.mailbox-controls {
 		border-bottom-color: #30363d;
 	}
-
 	.mail-nav > li > a {
 		color: #c9d1d9;
-
 		&:hover {
 			background-color: rgba(255, 255, 255, 0.05);
 		}
-
 		&.active {
 			background-color: rgba(88, 166, 255, 0.15);
 			color: #58a6ff;
 		}
 	}
-
 	.mailbox-messages {
 		table tr {
 			&:hover {

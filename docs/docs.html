@@ -7,22 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
     content="Neo Admin is responsive and free admin theme built with Bootstrap 5.3, SASS and PUG.js. It's fully customizable and modular.">
-  <!-- Twitter meta-->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:site" content="@cesarobenites">
-  <meta property="twitter:creator" content="@cesarobenites">
-  <!-- Open Graph Meta-->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Neo Admin">
-  <meta property="og:title" content="Neo Admin - Bootstrap 5.3 admin theme">
-  <meta property="og:url" content="http://neo20.com/blog/NeoAdmin">
-  <meta property="og:image" content="http://neo20.com/blog/NeoAdmin/hero-social.png">
-  <meta property="og:description"
-    content="Neo Admin is responsive and free admin theme built with Bootstrap 5.3, SASS and PUG.js. It's fully customizable and modular.">
   <title>Documentation - Neo Admin</title>
   <!-- Main CSS-->
   <link href="assets/css/neoadmin.css" rel="stylesheet">
-  <!-- Styles -> Plugins & Custom-->
 </head>
 
 <body class="app sidebar-mini">
@@ -33,15 +20,12 @@
       <div class="ring"></div>
     </div>
   </div>
-  <!-- Navbar-->
-  <!-- Navbar-->
-  <header class="app-header">
+    <header class="app-header">
     <a class="app-header__logo" href="index.html">
       <img src="assets/images/neo20_logo.png" alt="NeoAdmin Logo">
     </a>
     <!-- Sidebar toggle button-->
     <a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
-
     <div class="app-nav-container">
       <!-- Navbar Right Menu-->
       <ul class="app-nav">
@@ -52,34 +36,6 @@
             <i class="bi bi-search"></i>
           </button>
         </li>
-
-        <!-- Theme Toggle-->
-        <li class="dropdown">
-          <a class="app-nav__item" href="#" data-toggle="theme" aria-label="Toggle Theme"
-            title="Toggle Dark/Light Mode">
-            <i class="bi bi-moon-stars fs-5"></i>
-          </a>
-        </li>
-
-        <!-- Full Screen Toggle -->
-        <li class="dropdown">
-          <a class="app-nav__item" href="#" data-toggle="fullscreen" aria-label="Toggle Fullscreen" title="Full Screen">
-            <i class="bi bi-arrows-fullscreen fs-5"></i>
-          </a>
-        </li>
-
-        <!-- Font Size Dropdown -->
-        <li class="dropdown">
-          <a class="app-nav__item" href="#" data-bs-toggle="dropdown" aria-label="Font Size" title="Text Size">
-            <i class="bi bi-type fs-5"></i>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="#" data-font-size="14px">Small</a></li>
-            <li><a class="dropdown-item" href="#" data-font-size="16px">Normal</a></li>
-            <li><a class="dropdown-item" href="#" data-font-size="20px">Large</a></li>
-          </ul>
-        </li>
-
         <!--Notification Menu-->
         <li class="dropdown"><a class="app-nav__item" href="#" data-bs-toggle="dropdown"
             aria-label="Show notifications"><i class="bi bi-bell fs-5"></i></a>
@@ -87,68 +43,58 @@
             <li class="app-notification__title">You have 4 new notifications.</li>
             <div class="app-notification__content">
               <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
-                      class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-primary"></i><i
-                        class="bi bi-envelope-fill bi-stack-1x bi-inverse"></i></span></span>
+                      class="bg-primary"><i class="bi bi-envelope-fill"></i></span></span>
                   <div>
                     <p class="app-notification__message">Lisa sent you a mail</p>
                     <p class="app-notification__meta">2 min ago</p>
                   </div>
                 </a></li>
               <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
-                      class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-danger"></i><i
-                        class="bi bi-hdd-fill bi-stack-1x bi-inverse"></i></span></span>
+                      class="bg-danger"><i class="bi bi-hdd-fill"></i></span></span>
                   <div>
                     <p class="app-notification__message">Mail server not working</p>
                     <p class="app-notification__meta">5 min ago</p>
                   </div>
                 </a></li>
               <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
-                      class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-success"></i><i
-                        class="bi bi-cash-coin bi-stack-1x bi-inverse"></i></span></span>
+                      class="bg-success"><i class="bi bi-cash-coin"></i></span></span>
                   <div>
                     <p class="app-notification__message">Transaction complete</p>
                     <p class="app-notification__meta">2 days ago</p>
                   </div>
                 </a></li>
-              <div class="app-notification__content">
-                <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
-                        class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-primary"></i><i
-                          class="bi bi-envelope-fill bi-stack-1x bi-inverse"></i></span></span>
-                    <div>
-                      <p class="app-notification__message">Lisa sent you a mail</p>
-                      <p class="app-notification__meta">2 min ago</p>
-                    </div>
-                  </a></li>
-                <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
-                        class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-danger"></i><i
-                          class="bi bi-hdd-fill bi-stack-1x bi-inverse"></i></span></span>
-                    <div>
-                      <p class="app-notification__message">Mail server not working</p>
-                      <p class="app-notification__meta">5 min ago</p>
-                    </div>
-                  </a></li>
-                <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
-                        class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-success"></i><i
-                          class="bi bi-cash-coin bi-stack-1x bi-inverse"></i></span></span>
-                    <div>
-                      <p class="app-notification__message">Transaction complete</p>
-                      <p class="app-notification__meta">2 days ago</p>
-                    </div>
-                  </a></li>
-              </div>
             </div>
             <li class="app-notification__footer"><a href="#">See all notifications.</a></li>
           </ul>
         </li>
-
         <!-- User Menu-->
         <li class="dropdown">
           <a class="app-nav__item" href="#" data-bs-toggle="dropdown" aria-label="Open Profile Menu">
             <i class="bi bi-person-circle fs-5"></i>
           </a>
-          <ul class="dropdown-menu settings-menu dropdown-menu-end">
+          <ul class="dropdown-menu settings-menu dropdown-menu-end dropdown-menu-dark">
             <li><a class="dropdown-item" href="page-user.html"><i class="bi bi-gear me-2"></i> Settings</a></li>
             <li><a class="dropdown-item" href="page-user.html"><i class="bi bi-person me-2"></i> Profile</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#" data-toggle="theme"><i class="bi bi-moon-stars me-2"></i> Toggle
+                Theme</a></li>
+            <li><a class="dropdown-item" href="#" data-toggle="fullscreen"><i class="bi bi-arrows-fullscreen me-2"></i>
+                Full Screen</a></li>
+            <li>
+              <div class="font-size-options">
+                <button class="btn-font-size" data-font-size="14px" title="Small (14px)">
+                  <span style="font-size: 0.75rem; font-weight: 700;">A</span>
+                </button>
+                <button class="btn-font-size active" data-font-size="16px" title="Normal (16px)">
+                  <span style="font-size: 1rem; font-weight: 700;">A</span>
+                </button>
+                <button class="btn-font-size" data-font-size="18px" title="Large (18px)">
+                  <span style="font-size: 1.25rem; font-weight: 700;">A</span>
+                </button>
+              </div>
+            </li>
             <li>
               <hr class="dropdown-divider">
             </li>
@@ -246,7 +192,7 @@
         <p>NeoAdmin Documentation & Guide</p>
       </div>
       <ul class="app-breadcrumb breadcrumb">
-        <li class="breadcrumb-item">Home</li>
+        <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
         <li class="breadcrumb-item"><a href="#">Documentation</a></li>
       </ul>
     </div>
@@ -258,7 +204,6 @@
             <strong>TypeScript</strong>, and <strong>SASS (SCSS)</strong>. It abandons jQuery in favor of a modern
             vanilla JS/TS approach, bundled with <strong>Vite</strong> for blazing fast performance.
           </p>
-
           <h2 class="docs-title">Directory Structure</h2>
           <pre class="bg-body-secondary p-3 rounded border">│
 ├── docs             &lt;- <i>Production ready files (HTML/CSS/JS)</i>
@@ -274,28 +219,21 @@
     └── ts           &lt;- <i>TypeScript source files (Logic)</i>
         └── neoadmin.ts
 </pre>
-
           <h2 class="docs-title" id="Compilation">Build System (Vite)</h2>
           <p>This project uses <a href="https://vitejs.dev/" target="_blank">Vite</a> for development and bundling.
             Node.js is required.</p>
-
           <h5>1. Installation</h5>
           <p>Install dependencies via npm:</p>
           <pre class="bg-body-secondary p-3 rounded border"><code>npm install</code></pre>
-
           <h5>2. Development Server</h5>
           <p>Start a local dev server with hot reload:</p>
           <pre class="bg-body-secondary p-3 rounded border"><code>npm run dev</code></pre>
-
           <h5>3. Production Build</h5>
           <p>Compile TypeScript and SCSS into `docs/assets`:</p>
           <pre class="bg-body-secondary p-3 rounded border"><code>npm run build:universal</code></pre>
-
           <p>For <strong>Vue.js</strong> compatible builds (modules):</p>
           <pre class="bg-body-secondary p-3 rounded border"><code>npm run build:vue</code></pre>
-
           <h2 class="docs-title" id="Customization">Customization</h2>
-
           <h5>Styles (SCSS)</h5>
           <p>All styles are located in `src/scss`. The main entry point is `neoadmin.scss`.</p>
           <ul>
@@ -303,7 +241,6 @@
             <li><strong>Bootstrap:</strong> We modify Bootstrap via `_customize-bootstrap.scss` before importing it.
             </li>
           </ul>
-
           <h2 class="docs-title" id="Localization">Localization (i18n)</h2>
           <p>NeoAdmin supports automatic localization for libraries like DataTables.</p>
           <p>To set the language, simply change the <code>lang</code> attribute in your HTML tag:</p>
@@ -311,40 +248,35 @@
 &lt;html lang="en"&gt;   &lt;!-- English --&gt;
 &lt;html lang="fr"&gt;   &lt;!-- French --&gt;</code></pre>
           <p>Supported libraries seamlessly adapt to this setting on page load.</p>
-
           <h2 class="docs-title" id="Features">Features & Persistence</h2>
           <p>NeoAdmin includes built-in functionality for user preferences which are automatically
             <strong>persisted</strong> (saved) using <code>localStorage</code> or cookies. These settings remain active
-            even after refreshing the page.</p>
+            even after refreshing the page.
+          </p>
           <ul>
             <li><strong>Dark/Light Mode:</strong> Toggles the theme between light and dark modes.</li>
             <li><strong>Full Screen:</strong> Toggles the browser's full-screen mode.</li>
             <li><strong>Font Size:</strong> Adjusts the global font size (Small, Normal, Large).</li>
           </ul>
-
           <h2 class="docs-title" id="NeoAdmin-Methods">NeoAdmin Objects</h2>
           <p>The global <code>NeoAdmin</code> object provides easy access to notifications and alerts.</p>
-
           <h5>1. Notifications (Toasts)</h5>
           <p>Show a corner notification (Toast) using `NeoAdmin.notify()`.</p>
           <pre class="bg-body-secondary p-3 rounded border"><code class="language-javascript">// Types: 'success', 'danger', 'info', 'warning'
 NeoAdmin.notify('Update successful!', 'success');</code></pre>
           <button class="btn btn-success btn-sm mb-3" onclick="NeoAdmin.notify('Update successful!', 'success')">Try
             Notify</button>
-
           <h5>2. Alerts (Modals)</h5>
           <p>Show a modal alert using `NeoAdmin.alert()` or `NeoAdmin.swal()`.</p>
           <pre
             class="bg-body-secondary p-3 rounded border"><code class="language-javascript">NeoAdmin.alert('Good Job!', 'Operation completed.', 'info');</code></pre>
           <button class="btn btn-info btn-sm mb-3"
             onclick="NeoAdmin.alert('Good Job!', 'Operation completed.', 'info')">Try Alert</button>
-
           <h5>3. Programmatic Bootstrap Toasts</h5>
           <p>Trigger a standard Bootstrap 5 toast by its ID.</p>
           <pre class="bg-body-secondary p-3 rounded border"><code>NeoAdmin.showToast('liveToastId');</code></pre>
           <button class="btn btn-warning btn-sm mb-3" onclick="NeoAdmin.showToast('liveToastId')">Try Show
             Toast</button>
-
           <!-- Hidden Toast for Test -->
           <div class="toast-container position-fixed bottom-0 end-0 p-3">
             <div id="liveToastId" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
@@ -358,7 +290,6 @@ NeoAdmin.notify('Update successful!', 'success');</code></pre>
               </div>
             </div>
           </div>
-
           <h2 class="docs-title" id="Contribution">Contribution</h2>
           <p>If you find issues or want to contribute, please check the <a
               href="https://github.com/cesarobenites/NeoAdmin" target="_blank">GitHub Repository</a>.</p>
@@ -367,7 +298,6 @@ NeoAdmin.notify('Update successful!', 'success');</code></pre>
     </div>
   </main>
   <!-- Javascripts-->
-
   <script type="text/javascript" src="assets/js/neoadmin.js"></script>
   <!-- Page specific javascripts-->
 </body>

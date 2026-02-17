@@ -87,7 +87,8 @@ export class NeoAdmin {
 
         // Sidebar - apply when DOM is ready
         const sidebarToggled = localStorage.getItem('neo-sidebar-toggled') === 'true';
-        if (sidebarToggled) {
+        // Only restore 'open' state on Desktop to prevent UX issues on mobile
+        if (sidebarToggled && window.innerWidth >= 768) {
             const applySidebar = () => {
                 if (document.body) {
                     document.body.classList.add('sidenav-toggled');
@@ -178,10 +179,10 @@ export class NeoAdmin {
         const body = document.body;
         const html = document.documentElement;
 
-        // Remove early state class and transfer to body
+        // Sync initial state
         html.classList.remove('sidenav-toggled-init');
         const sidebarState = localStorage.getItem('neo-sidebar-toggled');
-        if (sidebarState === 'true') {
+        if (sidebarState === 'true' && window.innerWidth >= 768) {
             body.classList.add('sidenav-toggled');
         }
 
@@ -193,15 +194,41 @@ export class NeoAdmin {
             });
         }
 
-        // Mobile Overlay
+        // Mobile Overlay - Ensure it exists and works
         const overlay = document.querySelector('.app-sidebar__overlay');
         if (overlay) {
             overlay.addEventListener('click', (e) => {
                 e.preventDefault();
-                body.classList.toggle('sidenav-toggled');
-                this.saveState('sidebar-toggled', body.classList.contains('sidenav-toggled'));
+                body.classList.remove('sidenav-toggled');
+                this.saveState('sidebar-toggled', false);
             });
         }
+
+        // Auto-close on mobile when a navigation link is clicked
+        const closeSidebarOnMobile = () => {
+            if (window.innerWidth < 768) {
+                body.classList.remove('sidenav-toggled');
+                this.saveState('sidebar-toggled', false);
+            }
+        };
+
+        // All menu items excluding treeview toggles
+        const sidebarLinks = document.querySelectorAll('.app-menu__item:not([data-toggle="treeview"]), .treeview-item');
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                closeSidebarOnMobile();
+            });
+        });
+
+        // Handle window resize to prevent weird states
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768 && localStorage.getItem('neo-sidebar-toggled') === 'true') {
+                body.classList.add('sidenav-toggled');
+            } else if (window.innerWidth < 768) {
+                // If we resized to mobile, force close it initially for better UX
+                body.classList.remove('sidenav-toggled');
+            }
+        });
     }
 
     private handleTreeview(): void {
@@ -212,6 +239,21 @@ export class NeoAdmin {
                 const parent = (e.currentTarget as HTMLElement).closest('.treeview');
                 if (parent) {
                     parent.classList.toggle('is-expanded');
+                }
+            });
+        });
+
+        // Nested Submenus (for Font Size in User Menu)
+        const submenuToggles = document.querySelectorAll('.dropdown-submenu > a');
+        submenuToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation(); // Prevent closing parent menu
+                const parent = (e.currentTarget as HTMLElement).parentElement;
+                if (parent) {
+                    parent.classList.toggle('show');
+                    const menu = parent.querySelector('.dropdown-menu');
+                    if (menu) menu.classList.toggle('show');
                 }
             });
         });
@@ -231,16 +273,46 @@ export class NeoAdmin {
     }
 
     private handleFontScaling(): void {
-        const fontToggles = document.querySelectorAll('[data-font-size]');
-        fontToggles.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                const size = (e.currentTarget as HTMLElement).dataset.fontSize;
-                if (size) {
-                    document.documentElement.style.setProperty('--neo-base-size', size);
-                    this.saveState('font-size', size);
+        const defaultSize = '16px';
+        const sizes = ['14px', '16px', '18px'];
+
+        const updateUI = (currentSize: string) => {
+            document.querySelectorAll('.btn-font-size').forEach(btn => {
+                const btnSize = (btn as HTMLElement).dataset.fontSize;
+                if (btnSize === currentSize) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
                 }
             });
+        };
+
+        const setSize = (size: string) => {
+            if (sizes.includes(size)) {
+                document.documentElement.style.setProperty('--neo-base-size', size);
+                this.saveState('font-size', size);
+                updateUI(size);
+            }
+        };
+
+        // Initialize UI with current state
+        const savedSize = localStorage.getItem('neo-font-size') || defaultSize;
+        // Validate saved size
+        const initialSize = sizes.includes(savedSize) ? savedSize : defaultSize;
+
+        setSize(initialSize); // Apply initially
+
+        document.addEventListener('click', (e) => {
+            const target = e.target as HTMLElement;
+            // Handle clicks on .btn-font-size or its children
+            const sizeBtn = target.closest('.btn-font-size');
+
+            if (sizeBtn) {
+                e.preventDefault();
+                e.stopPropagation(); // Stop from closing dropdown
+                const size = (sizeBtn as HTMLElement).dataset.fontSize;
+                if (size) setSize(size);
+            }
         });
     }
 

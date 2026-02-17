@@ -1,10 +1,9 @@
-// Componant: Widget
 @use '../vars' as *;
 @use 'bootstrap' as bs;
 
 .widget-small {
 	display: flex;
-	flex-wrap: wrap;
+	flex-wrap: wrap; // Changed back to flex-wrap based on user feedback/css
 	border-radius: 4px;
 	color: bs.$white;
 	margin-bottom: 20px;

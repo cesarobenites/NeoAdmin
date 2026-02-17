@@ -1,30 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description"
-    content="Neo Admin is responsive and free admin theme built with Bootstrap 5.3, SASS and PUG.js. It's fully customizable and modular.">
-  <!-- Twitter meta-->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:site" content="@cesarobenites">
-  <meta property="twitter:creator" content="@cesarobenites">
-  <!-- Open Graph Meta-->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Neo Admin">
-  <meta property="og:title" content="Neo Admin - Bootstrap 5.3 admin theme">
-  <meta property="og:url" content="http://neo20.com/blog/NeoAdmin">
-  <meta property="og:image" content="http://neo20.com/blog/NeoAdmin/hero-social.png">
-  <meta property="og:description"
-    content="Neo Admin is responsive and free admin theme built with Bootstrap 5.3, SASS and PUG.js. It's fully customizable and modular.">
+  <meta name="description" content="Neo Admin is responsive and free admin theme built with Bootstrap 5.3, SASS and PUG.js. It's fully customizable and modular.">
   <title>Blank Page - Neo Admin</title>
   <!-- Main CSS-->
   <link href="assets/css/neoadmin.css" rel="stylesheet">
-  <!-- Styles -> Plugins & Custom-->
 </head>
-
 <body class="app sidebar-mini">
   <!-- Preloader - Prevents FOUC -->
   <div id="neo-page-loader">
@@ -33,15 +17,12 @@
       <div class="ring"></div>
     </div>
   </div>
-  <!-- Navbar-->
-  <!-- Navbar-->
-  <header class="app-header">
+    <header class="app-header">
     <a class="app-header__logo" href="index.html">
       <img src="assets/images/neo20_logo.png" alt="NeoAdmin Logo">
     </a>
     <!-- Sidebar toggle button-->
     <a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
-
     <div class="app-nav-container">
       <!-- Navbar Right Menu-->
       <ul class="app-nav">
@@ -52,34 +33,6 @@
             <i class="bi bi-search"></i>
           </button>
         </li>
-
-        <!-- Theme Toggle-->
-        <li class="dropdown">
-          <a class="app-nav__item" href="#" data-toggle="theme" aria-label="Toggle Theme"
-            title="Toggle Dark/Light Mode">
-            <i class="bi bi-moon-stars fs-5"></i>
-          </a>
-        </li>
-
-        <!-- Full Screen Toggle -->
-        <li class="dropdown">
-          <a class="app-nav__item" href="#" data-toggle="fullscreen" aria-label="Toggle Fullscreen" title="Full Screen">
-            <i class="bi bi-arrows-fullscreen fs-5"></i>
-          </a>
-        </li>
-
-        <!-- Font Size Dropdown -->
-        <li class="dropdown">
-          <a class="app-nav__item" href="#" data-bs-toggle="dropdown" aria-label="Font Size" title="Text Size">
-            <i class="bi bi-type fs-5"></i>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="#" data-font-size="14px">Small</a></li>
-            <li><a class="dropdown-item" href="#" data-font-size="16px">Normal</a></li>
-            <li><a class="dropdown-item" href="#" data-font-size="20px">Large</a></li>
-          </ul>
-        </li>
-
         <!--Notification Menu-->
         <li class="dropdown"><a class="app-nav__item" href="#" data-bs-toggle="dropdown"
             aria-label="Show notifications"><i class="bi bi-bell fs-5"></i></a>
@@ -87,68 +40,58 @@
             <li class="app-notification__title">You have 4 new notifications.</li>
             <div class="app-notification__content">
               <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
-                      class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-primary"></i><i
-                        class="bi bi-envelope-fill bi-stack-1x bi-inverse"></i></span></span>
+                      class="bg-primary"><i class="bi bi-envelope-fill"></i></span></span>
                   <div>
                     <p class="app-notification__message">Lisa sent you a mail</p>
                     <p class="app-notification__meta">2 min ago</p>
                   </div>
                 </a></li>
               <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
-                      class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-danger"></i><i
-                        class="bi bi-hdd-fill bi-stack-1x bi-inverse"></i></span></span>
+                      class="bg-danger"><i class="bi bi-hdd-fill"></i></span></span>
                   <div>
                     <p class="app-notification__message">Mail server not working</p>
                     <p class="app-notification__meta">5 min ago</p>
                   </div>
                 </a></li>
               <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
-                      class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-success"></i><i
-                        class="bi bi-cash-coin bi-stack-1x bi-inverse"></i></span></span>
+                      class="bg-success"><i class="bi bi-cash-coin"></i></span></span>
                   <div>
                     <p class="app-notification__message">Transaction complete</p>
                     <p class="app-notification__meta">2 days ago</p>
                   </div>
                 </a></li>
-              <div class="app-notification__content">
-                <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
-                        class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-primary"></i><i
-                          class="bi bi-envelope-fill bi-stack-1x bi-inverse"></i></span></span>
-                    <div>
-                      <p class="app-notification__message">Lisa sent you a mail</p>
-                      <p class="app-notification__meta">2 min ago</p>
-                    </div>
-                  </a></li>
-                <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
-                        class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-danger"></i><i
-                          class="bi bi-hdd-fill bi-stack-1x bi-inverse"></i></span></span>
-                    <div>
-                      <p class="app-notification__message">Mail server not working</p>
-                      <p class="app-notification__meta">5 min ago</p>
-                    </div>
-                  </a></li>
-                <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
-                        class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-success"></i><i
-                          class="bi bi-cash-coin bi-stack-1x bi-inverse"></i></span></span>
-                    <div>
-                      <p class="app-notification__message">Transaction complete</p>
-                      <p class="app-notification__meta">2 days ago</p>
-                    </div>
-                  </a></li>
-              </div>
             </div>
             <li class="app-notification__footer"><a href="#">See all notifications.</a></li>
           </ul>
         </li>
-
         <!-- User Menu-->
         <li class="dropdown">
           <a class="app-nav__item" href="#" data-bs-toggle="dropdown" aria-label="Open Profile Menu">
             <i class="bi bi-person-circle fs-5"></i>
           </a>
-          <ul class="dropdown-menu settings-menu dropdown-menu-end">
+          <ul class="dropdown-menu settings-menu dropdown-menu-end dropdown-menu-dark">
             <li><a class="dropdown-item" href="page-user.html"><i class="bi bi-gear me-2"></i> Settings</a></li>
             <li><a class="dropdown-item" href="page-user.html"><i class="bi bi-person me-2"></i> Profile</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#" data-toggle="theme"><i class="bi bi-moon-stars me-2"></i> Toggle
+                Theme</a></li>
+            <li><a class="dropdown-item" href="#" data-toggle="fullscreen"><i class="bi bi-arrows-fullscreen me-2"></i>
+                Full Screen</a></li>
+            <li>
+              <div class="font-size-options">
+                <button class="btn-font-size" data-font-size="14px" title="Small (14px)">
+                  <span style="font-size: 0.75rem; font-weight: 700;">A</span>
+                </button>
+                <button class="btn-font-size active" data-font-size="16px" title="Normal (16px)">
+                  <span style="font-size: 1rem; font-weight: 700;">A</span>
+                </button>
+                <button class="btn-font-size" data-font-size="18px" title="Large (18px)">
+                  <span style="font-size: 1.25rem; font-weight: 700;">A</span>
+                </button>
+              </div>
+            </li>
             <li>
               <hr class="dropdown-divider">
             </li>
@@ -242,26 +185,73 @@
   <main class="app-content">
     <div class="app-title">
       <div>
-        <h1>Blank Page</h1>
-        <p>Start a beautiful journey here</p>
+        <h1><i class="bi bi-file-earmark-plus me-2"></i> Blank Page</h1>
+        <p>Start your next big project here with NeoAdmin</p>
       </div>
       <ul class="app-breadcrumb breadcrumb">
-        <li class="breadcrumb-item">Home</li>
+        <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
         <li class="breadcrumb-item"><a href="#">Blank Page</a></li>
       </ul>
     </div>
     <div class="row">
       <div class="col-md-12">
-        <div class="tile">
-          <div class="tile-body">Create a beautiful dashboard</div>
+        <div class="tile text-center py-5 border-0 shadow-sm overflow-hidden position-relative">
+          <div class="position-absolute top-0 start-0 w-100 h-100 bg-primary opacity-05"
+            style="background-image: radial-gradient(circle at 2px 2px, rgba(var(--bs-primary-rgb), 0.1) 1px, transparent 0); background-size: 24px 24px;">
+          </div>
+          <div class="tile-body position-relative z-1">
+            <div class="mb-4">
+              <i class="bi bi-rocket-takeoff text-primary display-1"></i>
+            </div>
+            <h2 class="fw-bold mb-3">Ready to Create?</h2>
+            <p class="text-secondary fs-5 mx-auto mb-4" style="max-width: 600px;">
+              This is your clean slate. Use our modular components and pre-built blocks to build something amazing.
+            </p>
+            <div class="d-flex justify-content-center gap-3">
+              <a class="btn btn-primary px-4 py-2" href="bootstrap-components.html"><i class="bi bi-grid me-2"></i>
+                Explore UI Components</a>
+              <a class="btn btn-outline-secondary px-4 py-2" href="docs.html"><i class="bi bi-journal-text me-2"></i>
+                Read Documentation</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-4">
+        <div class="tile h-100">
+          <div class="tile-title-w-btn">
+            <h3 class="title"><i class="bi bi-palette me-2"></i> Dynamic Styling</h3>
+          </div>
+          <div class="tile-body">
+            Use our SASS-powered theme engine to customize colors and layouts in seconds.
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="tile h-100">
+          <div class="tile-title-w-btn">
+            <h3 class="title"><i class="bi bi-shield-check me-2"></i> Modern Tech</h3>
+          </div>
+          <div class="tile-body">
+            Built on Bootstrap 5.3, TypeScript, and Vite for a lightning-fast development experience.
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="tile h-100">
+          <div class="tile-title-w-btn">
+            <h3 class="title"><i class="bi bi-stars me-2"></i> Pre-built Pages</h3>
+          </div>
+          <div class="tile-body">
+            Leverage our collection of professional pages to launch your app faster.
+          </div>
         </div>
       </div>
     </div>
   </main>
   <!-- Javascripts-->
-
   <script type="text/javascript" src="assets/js/neoadmin.js"></script>
   <!-- Page specific javascripts-->
 </body>
-
 </html>

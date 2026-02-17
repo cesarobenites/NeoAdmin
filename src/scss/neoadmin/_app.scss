@@ -1,31 +1,24 @@
 @use 'sass:color';
 @use 'vars' as *;
 @use 'bootstrap' as bs;
-
 // Common Page Styles
-
 ::selection {
 	color: bs.$white;
 	background-color: color.scale($primary-color, $lightness: -16.9435215947%);
 }
-
 // Global Overrides
 a {
 	text-decoration: none !important;
 	&:hover { text-decoration: none !important; }
 }
-
 // Fonts
 .text-xs {
 	font-size:.75rem
 }
-
 .text-lg {
 	font-size:1.2rem
 }
-
 // General
-
 .app {
 	// Sidebar visible by default on desktop
 	@media(min-width: 768px) {
@@ -35,7 +28,6 @@ a {
 			.app-sidebar__overlay { visibility: hidden; }
 		}
 	}
-	
 	// Sidebar collapsed by default on mobile
 	@media(max-width: 767px) {
 		overflow-x: hidden;
@@ -48,7 +40,6 @@ a {
 		}
 	}
 }
-
 .app-content {
 	min-height: calc(100vh - 50px);
 	margin-top: 50px;

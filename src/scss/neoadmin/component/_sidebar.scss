@@ -1,8 +1,6 @@
-// Componant: Sidebar 
 @use '../vars' as *;
 @use 'bootstrap' as bs;
 @use "sass:color";
-
 .app-sidebar {
 	position: fixed;
 	top: 0;
@@ -22,14 +20,12 @@
 	scrollbar-width: thin;
 	@media print { display: none; }
 }
-
 .app-menu__group {
 	padding: 12px 15px;
 	font-size: 1.0625em;
 	@if $sidebar-accent == dark { color: $sidebar-dark-link-color }
 	@if $sidebar-accent == light { color: $sidebar-light-link-color }
 }
-
 .app-sidebar__overlay {
 	@media(max-width: 767px) {
 		position: fixed;
@@ -40,7 +36,6 @@
 		z-index: 9;
 	}
 }
-
 .app-sidebar__user {
 	display: flex;
 	align-items: center;
@@ -50,8 +45,6 @@
 		color: #fff;
 	}
 }
-
-// Default small avatar (Circle)
 .app-sidebar__user-avatar {
 	flex: 0 0 auto;
 	margin-right: 15px;
@@ -59,8 +52,6 @@
 	height: 48px;
 	border-radius: 50% !important;
 }
-
-// Full width logo modifier (use this class when displaying a logo without text)
 .app-sidebar__user-avatar--full {
 	display: block;
 	max-width: 100%;
@@ -70,43 +61,37 @@
 	margin-right: 0;
 	border-radius: 0;
 }
-
 .app-sidebar__user-name {
 	font-size: 17px;
-	line-height: 1.2; // Tighter line height
-    font-weight: 600; // Bold as requested
-    margin-bottom: 2px; // Minimal spacing
+	line-height: 1.2;
+    font-weight: 600;
+    margin-bottom: 2px;
 }
-
 .app-sidebar__user-designation {
-    font-size: 0.9em; // Slightly smaller
+    font-size: 0.9em;
     line-height: 1;
 	margin-bottom: 0;
     opacity: 0.8; 
 }
-
 .app-sidebar__user-name,
 .app-sidebar__user-designation {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	color: #fff; // Ensure visibility
+	color: #fff;
 }
-
 .app-sidebar__user-avatar-mobile {
 	display: none;
 	border-radius: 50% !important;
 	flex: 0 0 auto;
 	margin-right: 15px;
 }
-
 .app-menu {
 	padding-left: 0;
 	list-style: none;
 	margin-bottom: 0;
 	padding-bottom: 40px;
 }
-
 .app-menu__item {
 	position: relative;
 	display: flex;
@@ -128,17 +113,14 @@
 		@if $sidebar-accent == light { color: bs.$white }
 	}
 }
-
 .app-menu__icon {
 	flex: 0 0 auto;
 	width: 28px;
 }
-
 .app-menu__label {
 	white-space: nowrap;
 	flex: 1 1 auto;
 }
-
 .treeview {
 	&.is-expanded {
 		[data-toggle='treeview'] {
@@ -149,7 +131,6 @@
 		.treeview-indicator { transform: rotate(90deg); }
 	}
 }
-
 .treeview-menu {
 	padding-left: 0;
 	list-style: none;
@@ -163,7 +144,6 @@
 		background: color.scale($sidebar-color, $lightness: -4%)
 	}
 }
-
 .treeview-item {
 	display: flex;
 	align-items: center;
@@ -181,7 +161,6 @@
 	}
 	.icon { margin-right: 5px; font-size: 0.75em; }
 }
-
 .treeview-indicator {
 	font-size: 0.75em;
 	transform-origin: center;

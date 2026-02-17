@@ -1,14 +1,9 @@
-// Bootstrap Icons - Custom import with corrected font paths
-// This fixes the font-face URLs to work with Vite build
-
 @font-face {
   font-display: block;
   font-family: "bootstrap-icons";
-  // Using module resolution properly lets Vite optimize and rewrite the relative path in the final CSS
   src: url("bootstrap-icons/font/fonts/bootstrap-icons.woff2") format("woff2"),
        url("bootstrap-icons/font/fonts/bootstrap-icons.woff") format("woff");
 }
-
 .bi::before,
 [class^="bi-"]::before,
 [class*=" bi-"]::before {
@@ -23,6 +18,40 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 // Import all icon classes from node_modules
 @import 'bootstrap-icons/font/bootstrap-icons.scss';
+
+// Stacked Icons (fa-stack equivalent for bi-)
+.bi-stack {
+	display: inline-block;
+	height: 2em;
+	line-height: 2em;
+	position: relative;
+	vertical-align: middle;
+	width: 2.5em;
+}
+
+.bi-stack-1x, .bi-stack-2x {
+	left: 0;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+}
+
+.bi-stack-1x {
+	line-height: inherit;
+}
+
+.bi-stack-2x {
+	font-size: 2em;
+}
+
+.bi-inverse {
+	color: #fff;
+}
+
+.bi-lg {
+	font-size: 1.33333em;
+	line-height: 0.75em;
+	vertical-align: -15%;
+}

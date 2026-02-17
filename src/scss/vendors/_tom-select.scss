@@ -10,28 +10,23 @@
     color: var(--bs-body-color);
     background-color: var(--bs-body-bg);
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    min-height: calc(1.5em + 1rem + 2px); // Matches Bootstrap's form-control height
-
+    min-height: calc(1.5em + 1rem + 2px);
     &:focus {
         border-color: rgba($primary, 0.5);
         box-shadow: 0 0 0 0.25rem rgba($primary, 0.25);
     }
 }
-
 .ts-wrapper {
     overflow: visible !important;
-
     &.input-active, &.focus {
         z-index: 100 !important;
     }
 }
-
 // Global fix for Tiles containing active Tom Select to prevent stacking issues
 .tile:has(.ts-wrapper.input-active),
 .tile:has(.ts-wrapper.focus) {
     z-index: 999 !important;
 }
-
 .ts-dropdown {
     border-radius: $border-radius;
     border: 1px solid var(--bs-border-color);
@@ -41,12 +36,10 @@
     margin-top: 5px;
     background: var(--bs-body-bg);
     color: var(--bs-body-color);
-    
     .active {
         background-color: $primary !important;
         color: #fff !important;
     }
-
     .option {
         padding: 0.5rem 0.75rem;
     }

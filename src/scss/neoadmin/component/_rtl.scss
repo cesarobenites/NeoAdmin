@@ -1,27 +1,21 @@
-// Componant: RTL
 // Right to left support
-
 [dir=rtl] {
 	body {
 		text-align: right;
 		direction: rtl;
 	}
-
 	.app-sidebar {
 		left: auto;
 		right: 0;
 	}
-
 	.app-sidebar__user-avatar {
 		margin-left: 15px;
 		margin-right: 0;
 	}
-
 	.dropdown-menu.dropdown-menu-right {
 		right: auto;
 		left: 0;
 	}
-
 	.list-unstyled,
 	.app-nav,
 	.app-menu,
@@ -29,38 +23,31 @@
 	.treeview-menu {
 		padding-right: 0;
 	}
-
 	.btn .icon,
 	.btn .fa,
 	.treeview-item .icon {
 		margin-right: 0;
 		margin-left: 5px;
 	}
-
 	.modal-header .close {
 		margin-left: 0;
 		margin-right: auto;
 	}
-
 	.modal-footer > :not(:last-child) {
 		margin-right: 0;
 		margin-left: 0.25rem;
 	}
-
 	.widget-small .icon { border-radius: 0 4px 4px 0; }
-
 	.user .timeline-post .post-media img {
 		margin-right: 0;
 		margin-left: 10px;
 	}
-
 	table.table-bordered.dataTable th:last-child,
 	table.table-bordered.dataTable th:last-child,
 	table.table-bordered.dataTable td:last-child,
 	table.table-bordered.dataTable td:last-child {
 		border-right-width: 1px;
 	}
-
 	@media(min-width: 768px) {
 		.app-header {
 			padding-right: 0;
@@ -96,7 +83,6 @@
 			border-bottom-left-radius: 4px;
 		}
 	}
-
 	@media(max-width: 768px) {
 		.app.sidenav-toggled .app-sidebar {
 			left: auto;

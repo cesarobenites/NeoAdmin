@@ -1,11 +1,8 @@
-// Componant: ChatBox
 @use '../vars' as *;
 @use 'bootstrap' as bs;
-
 .messanger {
 	display: flex;
 	flex-direction: column;
-
 	.messages {
 		flex: 1;
 		margin: 10px 0;
@@ -13,28 +10,22 @@
 		max-height: 260px;
 		overflow-y: auto;
 		overflow-x: hidden;
-
 		.message {
 			display: flex;
 			margin-bottom: 15px;
 			align-items: flex-start;
-
 			&.me {
 				flex-direction: row-reverse;
-
 				img {
 					margin-right: 0;
 					margin-left: 15px;
 				}
-
 				.info {
 					background-color: $primary-color;
 					color: bs.$white;
-
 					&:before {
 						display: none;
 					}
-
 					&:after {
 						position: absolute;
 						right: -13px;
@@ -49,7 +40,6 @@
 					}
 				}
 			}
-
 			img {
 				border-radius: 50%;
 				margin-right: 15px;
@@ -58,7 +48,6 @@
 				object-fit: cover;
 				flex-shrink: 0;
 			}
-
 			.info {
 				margin: 0;
 				background-color: var(--bs-gray-300);
@@ -67,7 +56,6 @@
 				border-radius: 3px;
 				position: relative;
 				align-self: flex-start;
-
 				&:before {
 					position: absolute;
 					left: -14px;
@@ -82,10 +70,8 @@
 			}
 		}
 	}
-
 	.sender {
 		display: flex;
-
 		input[type="text"] {
 			flex: 1;
 			border: 1px solid $primary-color;
@@ -94,11 +80,9 @@
 			background-color: var(--bs-body-bg);
 			color: var(--bs-body-color);
 		}
-
 		button { border-radius: 0; }
 	}
 }
-
 // Dark mode support
 [data-bs-theme="dark"] {
 	.messanger {
@@ -106,7 +90,6 @@
 			.info {
 				background-color: var(--bs-gray-700);
 				color: var(--bs-gray-100);
-
 				&:before {
 					border-color: transparent var(--bs-gray-700) transparent transparent;
 				}

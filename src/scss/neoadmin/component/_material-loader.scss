@@ -1,6 +1,4 @@
-// Componant: Material Loader
 @use '../vars' as *;
-
 .m-loader {
 	position: relative;
 	width: 40px;
@@ -10,7 +8,6 @@
 		padding-top: 100%;
 	}
 }
-
 .m-circular {
 	animation: rotate 1.5s linear infinite;
 	height: 100%;
@@ -47,11 +44,4 @@
 		stroke-dashoffset: -124px;
 	}
 }
-
-
 // Usage Example
-// <div class="m-loader mr-20">
-// 	<svg class="m-circular" viewBox="25 25 50 50">
-// 		<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-miterlimit="10"></circle>
-// 	</svg>
-// </div>

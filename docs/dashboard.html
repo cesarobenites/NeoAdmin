@@ -6,18 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="NeoAdmin - Modern Bootstrap 5 Admin Dashboard built with TypeScript and Vanilla JS">
-  <!-- Twitter meta-->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:site" content="@cesarobenites">
-  <meta property="twitter:creator" content="@cesarobenites">
-  <!-- Open Graph Meta-->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="NeoAdmin">
-  <meta property="og:title" content="NeoAdmin - Bootstrap 5 Admin Dashboard">
-  <meta property="og:url" content="https://neo20.com">
-  <meta property="og:image" content="https://neo20.com/neoadmin/hero-social.png">
-  <meta property="og:description"
-    content="NeoAdmin - Modern Bootstrap 5 Admin Dashboard built with TypeScript and Vanilla JS">
   <title>Dashboard - NeoAdmin</title>
   <!-- Main CSS-->
   <link href="assets/css/neoadmin.css" rel="stylesheet">
@@ -38,7 +26,6 @@
     </a>
     <!-- Sidebar toggle button-->
     <a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
-
     <div class="app-nav-container">
       <!-- Navbar Right Menu-->
       <ul class="app-nav">
@@ -49,34 +36,6 @@
             <i class="bi bi-search"></i>
           </button>
         </li>
-
-        <!-- Theme Toggle-->
-        <li class="dropdown">
-          <a class="app-nav__item" href="#" data-toggle="theme" aria-label="Toggle Theme"
-            title="Toggle Dark/Light Mode">
-            <i class="bi bi-moon-stars fs-5"></i>
-          </a>
-        </li>
-
-        <!-- Full Screen Toggle -->
-        <li class="dropdown">
-          <a class="app-nav__item" href="#" data-toggle="fullscreen" aria-label="Toggle Fullscreen" title="Full Screen">
-            <i class="bi bi-arrows-fullscreen fs-5"></i>
-          </a>
-        </li>
-
-        <!-- Font Size Dropdown -->
-        <li class="dropdown">
-          <a class="app-nav__item" href="#" data-bs-toggle="dropdown" aria-label="Font Size" title="Text Size">
-            <i class="bi bi-type fs-5"></i>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="#" data-font-size="14px">Small</a></li>
-            <li><a class="dropdown-item" href="#" data-font-size="16px">Normal</a></li>
-            <li><a class="dropdown-item" href="#" data-font-size="20px">Large</a></li>
-          </ul>
-        </li>
-
         <!--Notification Menu-->
         <li class="dropdown"><a class="app-nav__item" href="#" data-bs-toggle="dropdown"
             aria-label="Show notifications"><i class="bi bi-bell fs-5"></i></a>
@@ -84,68 +43,58 @@
             <li class="app-notification__title">You have 4 new notifications.</li>
             <div class="app-notification__content">
               <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
-                      class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-primary"></i><i
-                        class="bi bi-envelope-fill bi-stack-1x bi-inverse"></i></span></span>
+                      class="bg-primary"><i class="bi bi-envelope-fill"></i></span></span>
                   <div>
                     <p class="app-notification__message">Lisa sent you a mail</p>
                     <p class="app-notification__meta">2 min ago</p>
                   </div>
                 </a></li>
               <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
-                      class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-danger"></i><i
-                        class="bi bi-hdd-fill bi-stack-1x bi-inverse"></i></span></span>
+                      class="bg-danger"><i class="bi bi-hdd-fill"></i></span></span>
                   <div>
                     <p class="app-notification__message">Mail server not working</p>
                     <p class="app-notification__meta">5 min ago</p>
                   </div>
                 </a></li>
               <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
-                      class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-success"></i><i
-                        class="bi bi-cash-coin bi-stack-1x bi-inverse"></i></span></span>
+                      class="bg-success"><i class="bi bi-cash-coin"></i></span></span>
                   <div>
                     <p class="app-notification__message">Transaction complete</p>
                     <p class="app-notification__meta">2 days ago</p>
                   </div>
                 </a></li>
-              <div class="app-notification__content">
-                <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
-                        class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-primary"></i><i
-                          class="bi bi-envelope-fill bi-stack-1x bi-inverse"></i></span></span>
-                    <div>
-                      <p class="app-notification__message">Lisa sent you a mail</p>
-                      <p class="app-notification__meta">2 min ago</p>
-                    </div>
-                  </a></li>
-                <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
-                        class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-danger"></i><i
-                          class="bi bi-hdd-fill bi-stack-1x bi-inverse"></i></span></span>
-                    <div>
-                      <p class="app-notification__message">Mail server not working</p>
-                      <p class="app-notification__meta">5 min ago</p>
-                    </div>
-                  </a></li>
-                <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
-                        class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-success"></i><i
-                          class="bi bi-cash-coin bi-stack-1x bi-inverse"></i></span></span>
-                    <div>
-                      <p class="app-notification__message">Transaction complete</p>
-                      <p class="app-notification__meta">2 days ago</p>
-                    </div>
-                  </a></li>
-              </div>
             </div>
             <li class="app-notification__footer"><a href="#">See all notifications.</a></li>
           </ul>
         </li>
-
         <!-- User Menu-->
         <li class="dropdown">
           <a class="app-nav__item" href="#" data-bs-toggle="dropdown" aria-label="Open Profile Menu">
             <i class="bi bi-person-circle fs-5"></i>
           </a>
-          <ul class="dropdown-menu settings-menu dropdown-menu-end">
+          <ul class="dropdown-menu settings-menu dropdown-menu-end dropdown-menu-dark">
             <li><a class="dropdown-item" href="page-user.html"><i class="bi bi-gear me-2"></i> Settings</a></li>
             <li><a class="dropdown-item" href="page-user.html"><i class="bi bi-person me-2"></i> Profile</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#" data-toggle="theme"><i class="bi bi-moon-stars me-2"></i> Toggle
+                Theme</a></li>
+            <li><a class="dropdown-item" href="#" data-toggle="fullscreen"><i class="bi bi-arrows-fullscreen me-2"></i>
+                Full Screen</a></li>
+            <li>
+              <div class="font-size-options">
+                <button class="btn-font-size" data-font-size="14px" title="Small (14px)">
+                  <span style="font-size: 0.75rem; font-weight: 700;">A</span>
+                </button>
+                <button class="btn-font-size active" data-font-size="16px" title="Normal (16px)">
+                  <span style="font-size: 1rem; font-weight: 700;">A</span>
+                </button>
+                <button class="btn-font-size" data-font-size="18px" title="Large (18px)">
+                  <span style="font-size: 1.25rem; font-weight: 700;">A</span>
+                </button>
+              </div>
+            </li>
             <li>
               <hr class="dropdown-divider">
             </li>
@@ -243,7 +192,7 @@
         <p>Admin Template with Bootstrap</p>
       </div>
       <ul class="app-breadcrumb breadcrumb">
-        <li class="breadcrumb-item">Home</li>
+        <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
         <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
       </ul>
     </div>
@@ -329,7 +278,6 @@
     </div>
   </main>
   <!-- Javascripts-->
-
   <script type="text/javascript" src="assets/js/neoadmin.js"></script>
   <!-- Page specific javascripts-->
   <script type="text/javascript">
@@ -367,7 +315,6 @@
         }
       }
     });
-
     var myPieChart = new Chart(ctxp, {
       type: 'pie',
       data: {
@@ -384,7 +331,6 @@
       }
     });
   </script>
-
 </body>
 
 </html>

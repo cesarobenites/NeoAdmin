@@ -6,14 +6,11 @@
  * Description: Styles and Customizations
  * ================================================================
  */
-
 // Core
 @use 'neoadmin/vars' as *;
 @use 'neoadmin/css-vars' as *;
-
 // Customize Bootstrap Variables
 @use 'neoadmin/customize-bootstrap' as *; 
-
 // Bootstrap 5 Framework with Custom Configuration
 @use 'bootstrap' with (
   // Colors
@@ -25,30 +22,25 @@
   $danger: $danger,
   $light: $light,
   $dark: $dark,
-
   // Fonts
   $font-family-sans-serif: $font-family-sans-serif,
   $font-family-monospace: $font-family-monospace,
   $font-size-base: $font-size-base,
   $headings-font-weight: $headings-font-weight,
-
   // Layout
   $grid-gutter-width: $grid-gutter-width,
-
   // Components (Buttons)
   $btn-border-radius: $btn-border-radius,
   $btn-border-radius-lg: $btn-border-radius-lg,
   $btn-border-radius-sm: $btn-border-radius-sm,
   $btn-font-weight: $btn-font-weight,
   $btn-transition: $btn-transition,
-
   // Components (Dropdowns)
   $dropdown-padding-y: $dropdown-padding-y,
   $dropdown-spacer: $dropdown-spacer,
   $dropdown-border-width: $dropdown-border-width,
   $dropdown-item-padding-y: $dropdown-item-padding-y,
   $dropdown-item-padding-x: $dropdown-item-padding-x,
-
   // Components (Forms)
   $input-border-radius: $input-border-radius,
   $input-border-radius-lg: $input-border-radius-lg,
@@ -57,7 +49,6 @@
   $input-btn-border-width: $input-btn-border-width,
   $input-btn-focus-width: $input-btn-focus-width,
   $input-btn-focus-box-shadow: $input-btn-focus-box-shadow,
-
   // General
   $border-radius: $border-radius,
   $border-radius-lg: $border-radius-lg,
@@ -68,18 +59,13 @@
   $box-shadow-lg: $box-shadow-lg,
   $link-color: $link-color
 );
-
 @use 'vendors/bootstrap-icons' as *;
 @use 'neoadmin/dark-theme' as *;
-
 // Plugins
 @use 'vendors/dataTables.bootstrap' as *;
 @use 'vendors/tom-select' as *;
-
-// App & Helpers
 @use 'neoadmin/app' as *;
 @use 'neoadmin/helpers' as *;
-
 // Components
 @use 'neoadmin/component/header' as *;
 @use 'neoadmin/component/preloader' as *;
@@ -95,7 +81,6 @@
 @use 'neoadmin/component/button-spinner' as *;
 @use 'neoadmin/component/widgets' as *;
 @use 'neoadmin/component/chat' as *;
-
 // Pages
 @use 'neoadmin/pages/landing-page' as *;
 @use 'neoadmin/pages/docs' as *;

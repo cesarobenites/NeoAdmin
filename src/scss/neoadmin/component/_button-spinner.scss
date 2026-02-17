@@ -1,5 +1,3 @@
-// Componant: Button Loader
-
 .btn-spinner {
 	display: inline-block;
 	z-index: 2000;
@@ -14,7 +12,6 @@
 	border-radius: 10px;
 	animation: bSpinner 0.8s linear infinite;
 }
-
 @keyframes bSpinner {
 	0%   { transform: rotate(0deg) }
 	100% { transform: rotate(360deg) }

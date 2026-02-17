@@ -1,6 +1,4 @@
 // Component: Preloader
-// Professional loading screen to prevent FOUC (Flash of Unstyled Content)
-
 #neo-page-loader {
     position: fixed;
     top: 0;
@@ -13,19 +11,15 @@
     justify-content: center;
     z-index: 9999;
     transition: all 0.5s ease-in-out;
-
     &.is-hidden {
         opacity: 0;
         visibility: hidden;
     }
 }
-
-// Double Ring Spinner - Elegant and Minimal
 .neo-spinner {
     position: relative;
     width: 60px;
     height: 60px;
-
     .ring {
         position: absolute;
         top: 0;
@@ -36,11 +30,9 @@
         border-top-color: var(--bs-primary, #467fcf);
         border-radius: 50%;
         animation: neo-spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-
         &:nth-child(1) {
             animation-delay: -0.45s;
         }
-
         &:nth-child(2) {
             width: 80%;
             height: 80%;
@@ -52,7 +44,6 @@
         }
     }
 }
-
 @keyframes neo-spin {
     0% {
         transform: rotate(0deg);
@@ -61,7 +52,6 @@
         transform: rotate(360deg);
     }
 }
-
 // Dark theme support
 [data-bs-theme="dark"] {
     #neo-page-loader {

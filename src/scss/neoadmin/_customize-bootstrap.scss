@@ -1,36 +1,23 @@
-
-//
 // Customize Bootstrap Variables
-//-----------------------------------------------------
-
 @use 'vars' as *;
-
-// $primary: $primary-color; // Already defined in vars
 $grid-gutter-width: 20px;
-
 // Typography
 $font-size-base: .8rem;
-// $font-family-sans-serif: $body-font; // Already defined in vars
 $link-color: $primary;
 $headings-font-weight: bold;
-
-
 // Dropdowns
 $dropdown-padding-y: 0;
 $dropdown-spacer: 0;
 $dropdown-border-width: 0;
 $dropdown-item-padding-y: 8px;
 $dropdown-item-padding-x: 20px;
-
 // Buttons
 $btn-border-radius: 0.5rem;
 $btn-border-radius-lg: 0.5rem;
 $btn-border-radius-sm: 0.25rem;
 $btn-font-weight: 600;
 $btn-transition: all 0.2s ease-in-out;
-
 // Forms
-
 $input-border-radius: 0.5rem;
 $input-border-radius-lg: 0.5rem;
 $input-border-radius-sm: 0.25rem;
@@ -38,6 +25,3 @@ $input-focus-border-color: $primary;
 $input-btn-border-width: 1px;
 $input-btn-focus-box-shadow: 0 0 0 0.25rem rgba($primary, 0.25);
 $input-btn-focus-width: 0.25rem;
-
-
-

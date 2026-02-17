@@ -1,5 +1,4 @@
 @use 'vars' as *;
-
 :root {
   --neo-primary: #{$primary};
   --neo-secondary: #{$secondary};
@@ -9,25 +8,20 @@
   --neo-danger: #{$danger};
   --neo-light: #{$light};
   --neo-dark: #{$dark};
-  
   // Sidebar
   --neo-sidebar-width: #{$sidebar-width};
   --neo-sidebar-collapsed-width: #{$sidebar-collapsed-width};
   --neo-header-height: #{$header-height};
-  
   // Font Scaling
   --neo-base-size: 16px;
   font-size: var(--neo-base-size);
 }
-
 [data-font-scale="small"] {
   --neo-font-base: 12px;
 }
-
 [data-font-scale="large"] {
   --neo-font-base: 16px;
 }
-
 body {
   font-size: var(--neo-font-base);
 }

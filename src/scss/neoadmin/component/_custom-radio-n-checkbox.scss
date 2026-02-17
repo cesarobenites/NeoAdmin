@@ -1,14 +1,11 @@
 /* Custom Checkbox and Radio Buttons */
 @use '../vars' as *;
-
 .animated-checkbox {
 	input[type="checkbox"] {
 		display: none;
-
 		+ .label-text {
 			cursor: pointer !important;
 			user-select: none;
-
 			&:before {
 				content: "\f584";
 				font-family: "bootstrap-icons";
@@ -26,16 +23,13 @@
 				vertical-align: -2px;
 			}
 		}
-
 		&:checked + .label-text:before {
 			content: "\f26d";
 			color: $primary-color;
 			animation: tick 180ms ease-in;
 		}
-
 		&:disabled + .label-text {
 			cursor: not-allowed !important;
-
 			&:before {
 				content: "\f582";
 				color: #ccc;
@@ -43,15 +37,12 @@
 		}
 	}
 }
-
 .animated-radio-button {
 	input[type="radio"] {
 		display: none;
-
 		+ .label-text {
 			cursor: pointer !important;
 			user-select: none;
-
 			&:before {
 				content: "\f28a";
 				font-family: "bootstrap-icons";
@@ -69,16 +60,13 @@
 				vertical-align: -2px;
 			}
 		}
-
 		&:checked + .label-text:before {
 			content: "\f518";
 			color: $primary-color;
 			animation: tick 180ms ease-in;
 		}
-
 		&:disabled + .label-text {
 			cursor: not-allowed !important;
-
 			&:before {
 				content: "\f287";
 				color: #ccc;
@@ -86,17 +74,14 @@
 		}
 	}
 }
-
 // Bounce the checked checkbox and radio button
 @keyframes tick {
 	0% {
 		transform: scale(0);
 	}
-
 	90% {
 		transform: scale(1.4);
 	}
-
 	100% {
 		transform: scale(1);
 	}

@@ -1,12 +1,6 @@
-//
-// Application Variables - NeoAdmin v3
-//-----------------------------------------------------
-
 // System Fonts
 $font-family-sans-serif: 'Outfit', 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 $font-family-monospace:  SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-
-// Theme Colors (NeoAdmin Palette)
 $primary:       #3b5598;
 $secondary:     #858796;
 $success:       #1cc88a;
@@ -15,7 +9,6 @@ $warning:       #f6c23e;
 $danger:        #e74a3b;
 $light:         #f8f9fc;
 $dark:          #5a5c69;
-
 // Legacy Aliases
 $primary-color:   $primary;
 $secondary-color: $secondary;
@@ -23,35 +16,26 @@ $success-color:   $success;
 $info-color:      $info;
 $warning-color:   $warning;
 $danger-color:    $danger;
-
 // Sidebar default colors
 $sidebar-color:           #2a2d3e; 
-// Backup variables required for _sidebar.scss logic
 $sidebar-accent:          dark;
 $sidebar-dark-color:      #b7c0cd;
 $sidebar-dark-link-color: #b7c0cd;
 $sidebar-light-color:     #333;
 $sidebar-light-link-color: #333;
-$sidebar-text-color:      $sidebar-dark-link-color; // Fallback alias
+$sidebar-text-color:      $sidebar-dark-link-color;
 $sidebar-active-text-color: #ffffff;
-
 // Asset Paths
 $path-background: "../images/background.jpg";
-
-
-
-
 // Sidebar & Layout
 $sidebar-width: 250px;
 $sidebar-collapsed-width: 70px;
 $header-height: 60px;
-
 // BorderRadius
 $border-radius:               0.5rem;
 $border-radius-lg:            0.75rem;
 $border-radius-sm:            0.25rem;
 $border-radius-xl:            1rem;
-
 // Box Shadow
 $box-shadow:                  0 .15rem 1.75rem 0 rgba(58, 59, 69, .15);
 $box-shadow-sm:               0 .125rem .25rem 0 rgba(58, 59, 69, .2);

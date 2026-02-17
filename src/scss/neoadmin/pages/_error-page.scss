@@ -1,5 +1,4 @@
 // Page: Error
-
 .page-error {
 	display: flex;
 	align-items: center;
@@ -7,6 +6,13 @@
 	flex-direction: column;
 	min-height: calc(100vh - 110px);
 	margin-bottom: 0;
+	.error-code {
+		font-size: 150px;
+		font-weight: 700;
+		color: theme-color("danger");
+		line-height: 1;
+		margin-bottom: 2rem;
+	}
 	h1 {
 		margin: 10px;
 		color: theme-color("danger");

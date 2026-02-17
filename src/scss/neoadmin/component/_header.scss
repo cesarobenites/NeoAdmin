@@ -1,8 +1,6 @@
 @use 'sass:color';
 @use '../vars' as *;
 
-/*----- Componant: Top Navigation Bar ----- */
-
 .app-header {
 	position: fixed;
 	left: 0;
@@ -63,7 +61,7 @@
 	transition: background-color 0.3s ease;
 	@media(max-width: 767px) { order: -1; }
 	&:before {
-		content: "\f479"; // bi-list
+		content: "\f479";
 		font-size: 21px;
 	}
 	&:focus,
@@ -113,6 +111,7 @@
 	transition: background-color 0.3s ease;
 	&::placeholder { color: rgba(0,0,0,0.4); }
 }
+
 .app-search__button {
 	position: absolute;
 	right: 0;
@@ -125,24 +124,29 @@
 	cursor: pointer;
 }
 
+// Notifications
 .app-notification { min-width: 270px; }
+
 .app-notification__title {
 	padding: 8px 20px;
 	text-align: center;
 	background-color: color.scale($primary-color, $alpha: -60%);
 	color: #333;
 }
+
 .app-notification__footer {
 	padding: 8px 20px;
 	text-align: center;
-    background-color: #eee;
+	background-color: #eee;
 }
+
 .app-notification__content {
 	max-height: 220px;
 	overflow-y: auto;
 	&::-webkit-scrollbar { width: 6px; }
 	&::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.2); }
 }
+
 .app-notification__item {
 	display: flex;
 	padding: 8px 20px;
@@ -162,6 +166,56 @@
 	margin-bottom: 0;
 }
 
-.app-notification__icon { padding-right: 10px; }
+.app-notification__icon { 
+	padding-right: 10px;
+	// New simplified icon structure
+	> span {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		color: #fff;
+		font-size: 1.25rem;
+	}
+}
+
 .app-notification__message { line-height: 1.2; }
 .app-notification__meta { color: $secondary; }
+
+// User Menu Zoom Buttons
+.font-size-options {
+	display: flex;
+	justify-content: space-around;
+	padding: 8px 16px; 
+	gap: 12px; // Add space between buttons
+
+	.btn-font-size {
+		border: 1px solid #ddd; 
+		background: transparent;
+		border-radius: 4px;
+		width: 32px;
+		height: 32px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		transition: all 0.2s ease;
+		
+		&:hover, 
+		&.active {
+			background-color: $primary-color;
+			color: #fff;
+			border-color: $primary-color;
+		}
+	}
+}
+
+// User Menu Dropdown Tweaks
+.app-nav .dropdown-menu {
+	margin-top: 10px !important; // Consistent gap using pixels
+	min-width: 200px; // Minimal width to prevent shrinking
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
