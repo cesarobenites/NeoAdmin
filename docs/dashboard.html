@@ -41,6 +41,38 @@
           <i class="bi bi-search"></i>
         </li>
 
+        <!--Notification Menu-->
+        <li class="dropdown"><a class="app-nav__item" href="#" data-bs-toggle="dropdown"
+            aria-label="Show notifications"><i class="bi bi-bell fs-5"></i></a>
+          <ul class="app-notification dropdown-menu dropdown-menu-end">
+            <li class="app-notification__title">You have 4 new notifications.</li>
+            <div class="app-notification__content">
+              <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
+                      class="bg-primary"><i class="bi bi-envelope-fill"></i></span></span>
+                  <div>
+                    <p class="app-notification__message">Lisa sent you a mail</p>
+                    <p class="app-notification__meta">2 min ago</p>
+                  </div>
+                </a></li>
+              <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
+                      class="bg-danger"><i class="bi bi-hdd-fill"></i></span></span>
+                  <div>
+                    <p class="app-notification__message">Mail server not working</p>
+                    <p class="app-notification__meta">5 min ago</p>
+                  </div>
+                </a></li>
+              <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
+                      class="bg-success"><i class="bi bi-cash-coin"></i></span></span>
+                  <div>
+                    <p class="app-notification__message">Transaction complete</p>
+                    <p class="app-notification__meta">2 days ago</p>
+                  </div>
+                </a></li>
+            </div>
+            <li class="app-notification__footer"><a href="#">See all notifications.</a></li>
+          </ul>
+        </li>
+
         <!-- User Menu -->
         <li class="dropdown">
           <a class="app-nav__item" href="#" data-bs-toggle="dropdown" aria-label="Open Profile Menu">
@@ -57,7 +89,7 @@
               <div class="dropdown-item d-flex align-items-center justify-content-between"
                 onclick="toggleFooterMode(event)">
                 <span><i class="bi bi-layout-sidebar-bottom me-2"></i> Mobile Footer</span>
-                <div class="form-check form-switch m-0">
+                <div class="form-check form-switch m-0 ms-auto">
                   <input class="form-check-input" type="checkbox" id="footerSwitch">
                 </div>
               </div>
@@ -167,10 +199,10 @@
         <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
       </ul>
     </div>
-    <div class="row">
-      <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-md-4">
+    <div class="row g-3">
+      <div class="col-xl-3 col-sm-6 col-12">
         <div class="card h-100">
-          <div class="card-body">
+          <div class="card-body py-2">
             <div class="row align-items-center">
               <div class="col me-2">
                 <div class="text-xs font-weight-bold text-uppercase mb-1">Earnings (Monthly)</div>
@@ -183,9 +215,9 @@
           </div>
         </div>
       </div>
-      <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-md-4">
+      <div class="col-xl-3 col-sm-6 col-12">
         <div class="card h-100">
-          <div class="card-body">
+          <div class="card-body py-2">
             <div class="row align-items-center">
               <div class="col me-2">
                 <div class="text-xs font-weight-bold text-uppercase mb-1">Sales</div>
@@ -198,9 +230,9 @@
           </div>
         </div>
       </div>
-      <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-md-4">
+      <div class="col-xl-3 col-sm-6 col-12">
         <div class="card h-100">
-          <div class="card-body">
+          <div class="card-body py-2">
             <div class="row align-items-center">
               <div class="col me-2">
                 <div class="text-xs font-weight-bold text-uppercase mb-1">New User</div>
@@ -213,9 +245,9 @@
           </div>
         </div>
       </div>
-      <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-md-4">
+      <div class="col-xl-3 col-sm-6 col-12">
         <div class="card h-100">
-          <div class="card-body">
+          <div class="card-body py-2">
             <div class="row align-items-center">
               <div class="col me-2">
                 <div class="text-xs font-weight-bold text-uppercase mb-1">Pending Requests</div>
@@ -229,8 +261,8 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-6 d-flex mb-2 mb-md-0">
+    <div class="row g-3">
+      <div class="col-md-6 d-flex">
         <div class="tile w-100 h-100">
           <h3 class="tile-title">Monthly Sales</h3>
           <div class="ratio ratio-16x9">
@@ -238,7 +270,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6 d-flex mb-2 mb-md-0">
+      <div class="col-md-6 d-flex">
         <div class="tile w-100 h-100">
           <h3 class="tile-title">Support Requests</h3>
           <div class="ratio ratio-16x9">
