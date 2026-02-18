@@ -38,29 +38,3 @@
 		max-width: 500px;
 	}
 }
-// Dark Mode Support
-[data-bs-theme="dark"] {
-	.folder-head {
-		border-bottom-color: #30363d;
-	}
-	.mailbox-controls {
-		border-bottom-color: #30363d;
-	}
-	.mail-nav > li > a {
-		color: #c9d1d9;
-		&:hover {
-			background-color: rgba(255, 255, 255, 0.05);
-		}
-		&.active {
-			background-color: rgba(88, 166, 255, 0.15);
-			color: #58a6ff;
-		}
-	}
-	.mailbox-messages {
-		table tr {
-			&:hover {
-				background-color: #21262d;
-			}
-		}
-	}
-}

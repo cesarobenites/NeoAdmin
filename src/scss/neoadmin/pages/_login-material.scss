@@ -169,60 +169,6 @@
         }
     }
 }
-// Dark Mode Support
-[data-bs-theme="dark"] {
-    .login-content {
-        background: linear-gradient(135deg, #1a1c23 0%, #101216 100%);
-        // Or a dark rich gradient
-        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-        .logo h1 {
-            color: #f8fafc;
-        }
-        .login-box {
-            background-color: rgba(30, 41, 59, 0.9);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 5px 15px rgba(0,0,0,0.2);
-            border: 1px solid rgba(255,255,255,0.05);
-            .login-head {
-                color: #e2e8f0;
-                i { color: #60a5fa; }
-            }
-            .forget-form {
-                 background-color: rgba(30, 41, 59, 0.9);
-            }
-            .form-label {
-                color: #94a3b8;
-            }
-            .form-control {
-                background-color: #0f172a;
-                border-color: #334155;
-                color: #e2e8f0;
-                &:focus {
-                    background-color: #0f172a;
-                    border-color: #60a5fa;
-                    box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.2);
-                }
-                &::placeholder {
-                    color: #475569;
-                }
-            }
-            .animated-checkbox .label-text {
-                color: #cbd5e1;
-            }
-            .utility a {
-                color: #60a5fa;
-                &:hover { color: #93c5fd; }
-            }
-            .btn-container .btn-primary {
-                background-color: #3b82f6;
-                border-color: #3b82f6;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-                &:hover {
-                    background-color: #2563eb;
-                }
-            }
-        }
-    }
-}
 @media (max-width: 576px) {
 	.login-content {
 		padding: 1rem;

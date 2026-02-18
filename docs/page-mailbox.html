@@ -27,15 +27,21 @@
     <!-- Sidebar toggle button-->
     <a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
     <div class="app-nav-container">
-      <!-- Navbar Right Menu-->
+      <!-- Navbar Right Menu -->
       <ul class="app-nav">
-        <!-- Search-->
         <li class="app-search">
-          <input class="app-search__input" type="search" placeholder="Search...">
-          <button class="app-search__button">
-            <i class="bi bi-search"></i>
-          </button>
+          <form action="page-search.html" method="GET" class="d-flex">
+            <input class="app-search__input" type="search" name="q" placeholder="Search...">
+            <button class="app-search__button" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </form>
         </li>
+        <!-- Search Toggle (Top - Mobile Only when No Footer) -->
+        <li class="app-search__toggle toggle-search-btn">
+          <i class="bi bi-search"></i>
+        </li>
+
         <!--Notification Menu-->
         <li class="dropdown"><a class="app-nav__item" href="#" data-bs-toggle="dropdown"
             aria-label="Show notifications"><i class="bi bi-bell fs-5"></i></a>
@@ -67,14 +73,28 @@
             <li class="app-notification__footer"><a href="#">See all notifications.</a></li>
           </ul>
         </li>
-        <!-- User Menu-->
+
+        <!-- User Menu -->
         <li class="dropdown">
           <a class="app-nav__item" href="#" data-bs-toggle="dropdown" aria-label="Open Profile Menu">
             <i class="bi bi-person-circle fs-5"></i>
           </a>
-          <ul class="dropdown-menu settings-menu dropdown-menu-end ">
-            <li><a class="dropdown-item" href="page-user.html"><i class="bi bi-gear me-2"></i> Settings</a></li>
+          <ul class="dropdown-menu settings-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="page-settings.html"><i class="bi bi-gear me-2"></i> Settings</a></li>
             <li><a class="dropdown-item" href="page-user.html"><i class="bi bi-person me-2"></i> Profile</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <!-- Footer Toggle -->
+            <li>
+              <div class="dropdown-item d-flex align-items-center justify-content-between gap-3"
+                onclick="toggleFooterMode(event)">
+                <span><i class="bi bi-layout-sidebar-bottom me-2"></i> Mobile Footer</span>
+                <div class="form-check form-switch m-0 ms-auto">
+                  <input class="form-check-input" type="checkbox" id="footerSwitch">
+                </div>
+              </div>
+            </li>
             <li>
               <hr class="dropdown-divider">
             </li>
@@ -82,22 +102,6 @@
                 Theme</a></li>
             <li><a class="dropdown-item" href="#" data-toggle="fullscreen"><i class="bi bi-arrows-fullscreen me-2"></i>
                 Full Screen</a></li>
-            <li>
-              <div class="font-size-options">
-                <button class="btn-font-size" data-font-size="14px" title="Small (14px)">
-                  <span style="font-size: 0.75rem; font-weight: 700;">A</span>
-                </button>
-                <button class="btn-font-size active" data-font-size="16px" title="Normal (16px)">
-                  <span style="font-size: 1rem; font-weight: 700;">A</span>
-                </button>
-                <button class="btn-font-size" data-font-size="18px" title="Large (18px)">
-                  <span style="font-size: 1.25rem; font-weight: 700;">A</span>
-                </button>
-              </div>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
             <li><a class="dropdown-item" href="page-login.html"><i class="bi bi-box-arrow-right me-2"></i> Logout</a>
             </li>
           </ul>
@@ -127,7 +131,7 @@
             <li><a class="treeview-item" href="bootstrap-components.html"><i class="icon bi bi-chevron-right"></i>
                 Bootstrap Elements</a></li>
             <li><a class="treeview-item" href="https://icons.getbootstrap.com/" target="_blank" rel="noopener"><i
-                  class="icon bi bi-chevron-right"></i> Font Icons</a></li>
+                  class="icon bi bi-chevron-right"></i> Bootstrap Icons</a></li>
             <li><a class="treeview-item" href="ui-cards.html"><i class="icon bi bi-chevron-right"></i> Cards</a></li>
             <li><a class="treeview-item" href="widgets.html"><i class="icon bi bi-chevron-right"></i> Widgets</a></li>
           </ul>
@@ -178,6 +182,8 @@
                 Mailbox</a></li>
             <li><a class="treeview-item" href="page-error.html"><i class="icon bi bi-chevron-right"></i> Error Page</a>
             </li>
+            <li><a class="treeview-item" href="page-search.html"><i class="icon bi bi-chevron-right"></i> Search
+                Results</a></li>
           </ul>
         </li>
         <li><a class="app-menu__item" href="docs.html"><i class="app-menu__icon bi bi-code-square"></i><span
@@ -376,11 +382,13 @@
 
     <!-- Footer Search Overlay -->
     <div class="app-bottom-search" id="footer-search-container">
-      <i class="bi bi-search app-bottom-search__icon"></i>
-      <input type="text" class="app-bottom-search__input" placeholder="Search...">
-      <button class="app-bottom-search__close" id="close-footer-search">
-        <i class="bi bi-x"></i>
-      </button>
+      <form action="page-search.html" method="GET" class="w-100 d-flex align-items-center">
+        <i class="bi bi-search app-bottom-search__icon"></i>
+        <input type="text" name="q" class="app-bottom-search__input" placeholder="Search...">
+        <button type="button" class="app-bottom-search__close" id="close-footer-search">
+          <i class="bi bi-x"></i>
+        </button>
+      </form>
     </div>
 
     <div class="btn-group dropup">
@@ -426,7 +434,7 @@
         <span class="app-bottom-nav__label">Profile</span>
       </button>
       <ul class="dropdown-menu settings-menu dropdown-menu-end">
-        <li><a class="dropdown-item" href="page-user.html"><i class="bi bi-gear me-2"></i> Settings</a></li>
+        <li><a class="dropdown-item" href="page-settings.html"><i class="bi bi-gear me-2"></i> Settings</a></li>
         <li><a class="dropdown-item" href="page-user.html"><i class="bi bi-person me-2"></i> Profile</a></li>
         <li>
           <hr class="dropdown-divider">

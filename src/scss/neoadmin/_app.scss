@@ -1,26 +1,30 @@
 @use 'sass:color';
 @use 'vars' as *;
 @use 'bootstrap' as bs;
-// Common Page Styles
+
+// =============================================================================
+// 1. GLOBAL OVERRIDES & DEFAULTS
+// =============================================================================
 ::selection {
 	color: bs.$white;
 	background-color: color.scale($primary-color, $lightness: -16.9435215947%);
 }
-// Global Overrides
+
 a {
 	text-decoration: none !important;
 	&:hover { text-decoration: none !important; }
 }
-// Fonts
-.text-xs {
-	font-size:.75rem
-}
-.text-lg {
-	font-size:1.2rem
-}
-// General
+
+// -----------------------------------------------------------------------------
+// Helper Typography Classes
+// -----------------------------------------------------------------------------
+.text-xs { font-size: 0.75rem; }
+.text-lg { font-size: 1.2rem; }
+
+// =============================================================================
+// 2. CORE THEME LAYOUT
+// =============================================================================
 .app {
-	// Sidebar visible by default on desktop
 	@media(min-width: 768px) {
 		&.sidenav-toggled {
 			.app-content { margin-left: 0; }
@@ -28,7 +32,6 @@ a {
 			.app-sidebar__overlay { visibility: hidden; }
 		}
 	}
-	// Sidebar collapsed by default on mobile
 	@media(max-width: 767px) {
 		overflow-x: hidden;
 		.app-sidebar { left: -$sidebar-width; }
@@ -40,22 +43,22 @@ a {
 		}
 	}
 }
+
 .app-content {
-	min-height: calc(100vh - 50px);
-	margin-top: 50px;
-	padding: 20px;
+	min-height: calc(100vh - $header-height);
+	margin-top: $header-height;
+	padding: $app-content-padding;
 	background-color: #E5E5E5;
 	transition: margin-left 0.3s ease;
 	@media(min-width: 768px) { margin-left: $sidebar-width; }
 	@media(max-width: 767px) {
 		margin-top: 50px;
 		min-width: 100%;
-		// Only add padding if footer is visible
 		body.footer-visible & {
-			padding-bottom: 60px; // 50px height + 10px spacing
+			padding-bottom: 60px;
 		}
 	}
-	@media(max-width: 480px) { padding: 15px; }
+	@media(max-width: 480px) { padding: $app-content-padding-mobile; }
 	@media print {
 		margin: 0;
 		padding: 0;
@@ -63,16 +66,11 @@ a {
 	}
 }
 
-// Component Overrides
+// =============================================================================
+// 3. COMPONENT OVERRIDES
+// =============================================================================
 .pagination {
 	flex-wrap: wrap;
-	justify-content: center; // Center pagination on small screens if wrapped
+	justify-content: center;
 	@media(min-width: 576px) { justify-content: flex-start; }
-}
-
-.card {
-	border: 0;
-	box-shadow: $box-shadow;
-	border-radius: $border-radius;
-	margin-bottom: 30px;
 }

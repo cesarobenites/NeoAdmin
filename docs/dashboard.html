@@ -29,12 +29,13 @@
     <div class="app-nav-container">
       <!-- Navbar Right Menu -->
       <ul class="app-nav">
-        <!-- Search (Top) -->
         <li class="app-search">
-          <input class="app-search__input" type="search" placeholder="Search...">
-          <button class="app-search__button">
-            <i class="bi bi-search"></i>
-          </button>
+          <form action="page-search.html" method="GET" class="d-flex">
+            <input class="app-search__input" type="search" name="q" placeholder="Search...">
+            <button class="app-search__button" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </form>
         </li>
         <!-- Search Toggle (Top - Mobile Only when No Footer) -->
         <li class="app-search__toggle toggle-search-btn">
@@ -79,14 +80,14 @@
             <i class="bi bi-person-circle fs-5"></i>
           </a>
           <ul class="dropdown-menu settings-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="page-user.html"><i class="bi bi-gear me-2"></i> Settings</a></li>
+            <li><a class="dropdown-item" href="page-settings.html"><i class="bi bi-gear me-2"></i> Settings</a></li>
             <li><a class="dropdown-item" href="page-user.html"><i class="bi bi-person me-2"></i> Profile</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
             <!-- Footer Toggle -->
             <li>
-              <div class="dropdown-item d-flex align-items-center justify-content-between"
+              <div class="dropdown-item d-flex align-items-center justify-content-between gap-3"
                 onclick="toggleFooterMode(event)">
                 <span><i class="bi bi-layout-sidebar-bottom me-2"></i> Mobile Footer</span>
                 <div class="form-check form-switch m-0 ms-auto">
@@ -181,6 +182,8 @@
             </li>
             <li><a class="treeview-item" href="page-error.html"><i class="icon bi bi-chevron-right"></i> Error Page</a>
             </li>
+            <li><a class="treeview-item" href="page-search.html"><i class="icon bi bi-chevron-right"></i> Search
+                Results</a></li>
           </ul>
         </li>
         <li><a class="app-menu__item" href="docs.html"><i class="app-menu__icon bi bi-code-square"></i><span
@@ -199,82 +202,90 @@
         <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
       </ul>
     </div>
-    <div class="row g-3">
+    <div class="row g-3 mb-4">
       <div class="col-xl-3 col-sm-6 col-12">
-        <div class="card h-100">
-          <div class="card-body py-2">
+        <div class="card card-compact h-100">
+          <div class="card-body">
             <div class="row align-items-center">
               <div class="col me-2">
                 <div class="text-xs font-weight-bold text-uppercase mb-1">Earnings (Monthly)</div>
                 <div class="h5 mb-0 font-weight-bold text-gray-800">$75,000</div>
-                <div class="mt-2 mb-0 text-muted text-xs"><span class="text-success me-2"><i class="bi bi-arrow-up"></i>
-                    4.68%</span><span>Since last month</span></div>
+                <div class="mt-2 mb-0 text-muted d-flex align-items-center gap-1"><span class="text-success text-xs"><i
+                      class="bi bi-arrow-up"></i>
+                    4.68%</span><span class="text-xs">Since last month</span></div>
               </div>
-              <div class="col-auto"><i class="bi bi-calendar3 fs-1 text-primary"></i></div>
+              <div class="col-auto"><i class="bi bi-calendar3 fs-3 text-primary"></i></div>
             </div>
           </div>
         </div>
       </div>
       <div class="col-xl-3 col-sm-6 col-12">
-        <div class="card h-100">
-          <div class="card-body py-2">
+        <div class="card card-compact h-100">
+          <div class="card-body">
             <div class="row align-items-center">
               <div class="col me-2">
                 <div class="text-xs font-weight-bold text-uppercase mb-1">Sales</div>
                 <div class="h5 mb-0 font-weight-bold text-gray-800">123</div>
-                <div class="mt-2 mb-0 text-muted text-xs"><span class="text-success me-2"><i class="bi bi-arrow-up"></i>
-                    9.11%</span><span>Since last years</span></div>
+                <div class="mt-2 mb-0 text-muted d-flex align-items-center gap-1"><span class="text-success text-xs"><i
+                      class="bi bi-arrow-up"></i>
+                    9.11%</span><span class="text-xs">Since last years</span></div>
               </div>
-              <div class="col-auto"><i class="bi bi-cart fs-1 text-success"></i></div>
+              <div class="col-auto"><i class="bi bi-cart fs-3 text-success"></i></div>
             </div>
           </div>
         </div>
       </div>
       <div class="col-xl-3 col-sm-6 col-12">
-        <div class="card h-100">
-          <div class="card-body py-2">
+        <div class="card card-compact h-100">
+          <div class="card-body">
             <div class="row align-items-center">
               <div class="col me-2">
                 <div class="text-xs font-weight-bold text-uppercase mb-1">New User</div>
                 <div class="h5 mb-0 font-weight-bold text-gray-800">54</div>
-                <div class="mt-2 mb-0 text-muted text-xs"><span class="text-success me-2"><i class="bi bi-arrow-up"></i>
-                    5.60%</span><span>Since last month</span></div>
+                <div class="mt-2 mb-0 text-muted d-flex align-items-center gap-1"><span class="text-success text-xs"><i
+                      class="bi bi-arrow-up"></i>
+                    5.60%</span><span class="text-xs">Since last month</span></div>
               </div>
-              <div class="col-auto"><i class="bi bi-people fs-1 text-info"></i></div>
+              <div class="col-auto"><i class="bi bi-people fs-3 text-info"></i></div>
             </div>
           </div>
         </div>
       </div>
       <div class="col-xl-3 col-sm-6 col-12">
-        <div class="card h-100">
-          <div class="card-body py-2">
+        <div class="card card-compact h-100">
+          <div class="card-body">
             <div class="row align-items-center">
               <div class="col me-2">
                 <div class="text-xs font-weight-bold text-uppercase mb-1">Pending Requests</div>
                 <div class="h5 mb-0 font-weight-bold text-gray-800">90</div>
-                <div class="mt-2 mb-0 text-muted text-xs"><span class="text-danger me-2"><i
-                      class="bi bi-arrow-down"></i> 2.50%</span><span>Since yesterday</span></div>
+                <div class="mt-2 mb-0 text-muted d-flex align-items-center gap-1"><span class="text-danger text-xs"><i
+                      class="bi bi-arrow-down"></i> 2.50%</span><span class="text-xs">Since yesterday</span></div>
               </div>
-              <div class="col-auto"><i class="bi bi-chat-dots fs-1 text-danger"></i></div>
+              <div class="col-auto"><i class="bi bi-chat-dots fs-3 text-danger"></i></div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
     <div class="row g-3">
       <div class="col-md-6 d-flex">
-        <div class="tile w-100 h-100">
-          <h3 class="tile-title">Monthly Sales</h3>
-          <div class="ratio ratio-16x9">
-            <canvas id="lineChartDemo"></canvas>
+        <div class="card card-tile w-100 h-100">
+          <div class="card-body">
+            <h3 class="card-title">Monthly Sales</h3>
+            <div class="ratio ratio-16x9">
+              <canvas id="lineChartDemo"></canvas>
+            </div>
           </div>
         </div>
       </div>
       <div class="col-md-6 d-flex">
-        <div class="tile w-100 h-100">
-          <h3 class="tile-title">Support Requests</h3>
-          <div class="ratio ratio-16x9">
-            <canvas id="pieChartDemo"></canvas>
+        <div class="card card-tile w-100 h-100">
+          <div class="card-body">
+            <h3 class="card-title">Support Requests</h3>
+            <div class="ratio ratio-16x9">
+              <canvas id="pieChartDemo"></canvas>
+            </div>
           </div>
         </div>
       </div>
@@ -290,11 +301,13 @@
 
     <!-- Footer Search Overlay -->
     <div class="app-bottom-search" id="footer-search-container">
-      <i class="bi bi-search app-bottom-search__icon"></i>
-      <input type="text" class="app-bottom-search__input" placeholder="Search...">
-      <button class="app-bottom-search__close" id="close-footer-search">
-        <i class="bi bi-x"></i>
-      </button>
+      <form action="page-search.html" method="GET" class="w-100 d-flex align-items-center">
+        <i class="bi bi-search app-bottom-search__icon"></i>
+        <input type="text" name="q" class="app-bottom-search__input" placeholder="Search...">
+        <button type="button" class="app-bottom-search__close" id="close-footer-search">
+          <i class="bi bi-x"></i>
+        </button>
+      </form>
     </div>
 
     <div class="btn-group dropup">
@@ -340,7 +353,7 @@
         <span class="app-bottom-nav__label">Profile</span>
       </button>
       <ul class="dropdown-menu settings-menu dropdown-menu-end">
-        <li><a class="dropdown-item" href="page-user.html"><i class="bi bi-gear me-2"></i> Settings</a></li>
+        <li><a class="dropdown-item" href="page-settings.html"><i class="bi bi-gear me-2"></i> Settings</a></li>
         <li><a class="dropdown-item" href="page-user.html"><i class="bi bi-person me-2"></i> Profile</a></li>
         <li>
           <hr class="dropdown-divider">

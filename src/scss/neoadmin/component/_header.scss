@@ -231,12 +231,35 @@
 	display: flex;
 	justify-content: space-around;
 	padding: 8px 16px; 
-	gap: 12px; // Add space between buttons
+	gap: 12px;
 
-	// Specifically for settings page panel
+	// Specifically for settings page panel (Segmented Control style)
 	&.settings-font-panel {
-		background-color: #f8f9fa; // Light background by default
-		border: 1px solid #dee2e6;
+		background-color: var(--bs-tertiary-bg);
+		border: 1px solid var(--bs-border-color);
+		gap: 0;
+		padding: 4px;
+		border-radius: 8px !important;
+
+		.btn-font-size {
+			width: auto;
+			height: auto;
+			border: 0 !important;
+			color: var(--bs-secondary-color) !important;
+			border-radius: 6px !important;
+			
+			&:hover {
+				color: var(--bs-body-color) !important;
+				background-color: var(--bs-secondary-bg);
+			}
+			
+			&.active {
+				background-color: var(--bs-body-bg) !important;
+				color: $primary-color !important;
+				box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+                font-weight: 700;
+			}
+		}
 	}
 
 	.btn-font-size {
@@ -249,12 +272,13 @@
 		align-items: center;
 		justify-content: center;
 		cursor: pointer;
+		color: var(--bs-body-color);
 		transition: all 0.2s ease;
 		
 		&:hover, 
 		&.active {
-			background-color: $primary-color;
-			color: #fff;
+			background-color: $primary-color !important;
+			color: #fff !important;
 			border-color: $primary-color;
 		}
 	}

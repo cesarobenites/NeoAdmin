@@ -1,142 +1,49 @@
 @use "sass:color";
 @use 'vars' as *;
+
+// =============================================================================
+// GLOBAL DARK MODE STYLES
+// =============================================================================
 [data-bs-theme="dark"] {
+    
+    // --- 1. Base & Layout ---
     body {
         background-color: #0d1117;
         color: #c9d1d9;
     }
+    
     .app-content {
         background-color: #0d1117;
     }
-    .app-search__input {
-        background-color: #21262d;
-        border-color: #6e7681;
-        color: #c9d1d9;
-        &::placeholder {
-            color: #8b949e;
-        }
-    }
-    .app-header {
-        background-color: color.adjust($sidebar-color, $lightness: -15%) !important;
-    }
-    .app-header__logo {
-        background-color: transparent !important;
-    }
+    
     .app-title {
         background-color: #161b22;
         border-bottom: 1px solid #30363d;
-        h1 {
-            color: #c9d1d9;
-        }
-        p {
-            color: #8b949e;
-        }
+        h1 { color: #c9d1d9; }
+        p { color: #8b949e; }
     }
-    .breadcrumb {
-        background-color: transparent;
+
+    // --- 2. Navigation Components ---
+    .app-header {
+        background-color: color.adjust($sidebar-color, $lightness: -15%) !important;
     }
-    .breadcrumb-item {
-        color: #8b949e;
-        a {
-            color: #58a6ff;
-        }
-        &.active {
-            color: #c9d1d9;
-        }
+    
+    .app-header__logo {
+        background-color: transparent !important;
     }
-    .tile {
-        background-color: #161b22;
-    }
-    .tile-title {
-        color: #c9d1d9;
-    }
-    .dropdown-menu {
-        background-color: #161b22;
-        border-color: #30363d;
-    }
-    .dropdown-item {
-        color: #c9d1d9;
-        &:hover,
-        &:focus {
-            background-color: #21262d;
-            color: #58a6ff;
-        }
-    }
-    .dropdown-divider {
-        border-color: #30363d;
-    }
-    .app-notification {
-        background-color: #161b22;
-        border-color: #30363d;
-    }
-    .app-notification__title {
-        background-color: rgba(88, 166, 255, 0.2);
-        color: #c9d1d9;
-    }
-    .app-notification__item {
-        border-bottom: 1px solid #30363d;
-        &:hover {
-            background-color: #21262d;
-        }
-    }
-    .app-notification__message {
-        color: #c9d1d9;
-    }
-    .app-notification__meta {
-        color: #8b949e;
-    }
-    .app-notification__footer {
-        background-color: #0d1117;
-        border-top: 1px solid #30363d;
-        a {
-            color: #58a6ff;
-        }
-    }
-    .form-control,
-    .form-select {
-        background-color: #0d1117;
-        border-color: #30363d;
-        color: #c9d1d9;
-        &:focus {
-            background-color: #0d1117;
-            border-color: #58a6ff;
-            color: #c9d1d9;
-        }
-    }
-    .table {
-        color: #c9d1d9;
-        thead th {
-            border-color: #30363d;
-            background-color: #161b22;
-        }
-        tbody td {
-            border-color: #30363d;
-        }
-        &-striped tbody tr:nth-of-type(odd) {
-            background-color: rgba(255, 255, 255, 0.02);
-        }
-        &-hover tbody tr:hover {
-            background-color: #21262d;
-        }
-    }
-    .text-muted {
-        color: #8b949e !important;
-    }
-    .text-gray-800 {
-        color: #c9d1d9 !important;
-    }
+
     .app-menu__item {
-        &.active,
-        &:hover,
-        &:focus {
+        &.active, &:hover, &:focus {
             background: color.adjust($sidebar-color, $lightness: -8%) !important;
             border-left-color: $primary !important;
             color: #fff !important;
         }
     }
+    
     .treeview.is-expanded [data-toggle='treeview'] {
         background: color.adjust($sidebar-color, $lightness: -10%) !important;
     }
+    
     .treeview-item {
         color: #8b949e !important;
         &:hover, &.active, &:focus {
@@ -145,79 +52,130 @@
         }
     }
 
-    // Mobile Search Overlay (Dark Mode)
-    .app-search.show {
-        background-color: $sidebar-color; // Use sidebar color or dark header color
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-
-        .app-search__input {
-            background-color: #0d1117; // Dark input background
-            color: #c9d1d9; // Light text
-            border-color: #30363d;
-
-            &::placeholder {
-                color: #8b949e;
-            }
-        }
-
-        .app-search__button {
-            color: #c9d1d9;
-        }
-    }
-
-    // Bottom Navigation (Mobile)
     .app-bottom-nav {
         background-color: $sidebar-color;
         border-top: 1px solid #30363d;
-        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
-
         .app-bottom-nav__item {
             color: #8b949e;
-
-            &:hover,
-            &:focus,
-            &.active {
-                color: #58a6ff; // Twitter/GitHub blue-ish
-            }
-
-            .badge-notification {
-                border-color: $sidebar-color;
-            }
+            &:hover, &:focus, &.active { color: #58a6ff; }
         }
-
-        // Bottom Search Container (Dark)
         .app-bottom-search {
-            background-color: $sidebar-color; // Match footer background
-            
-            .app-bottom-search__icon,
-            .app-bottom-search__close {
-                color: #8b949e;
-            }
-            
-            .app-bottom-search__input {
-                color: #c9d1d9;
-                
-                &::placeholder {
-                    color: #484f58;
-                }
+            background-color: $sidebar-color;
+            .app-bottom-search__input { color: #c9d1d9; }
+        }
+    }
+
+    // --- 3. Unified Card Component ---
+    .card {
+        background: var(--bs-gray-900);
+        &:hover {
+            background: color-mix(in srgb, var(--bs-gray-900), white 2%);
+        }
+        .card-overlay {
+            background-color: rgba(0, 0, 0, 0.85);
+        }
+    }
+
+    // --- 4. Widgets & UI Elements ---
+    .widget-small.w-light {
+        background-color: var(--bs-gray-800);
+        color: var(--bs-gray-100);
+        border: 1px solid var(--bs-gray-700);
+        .caption .text-xs, .description.text-muted { color: var(--bs-gray-400) !important; }
+    }
+
+    .dropdown-menu {
+        background-color: var(--bs-gray-900);
+        border-color: #30363d;
+        .dropdown-item {
+            color: #c9d1d9;
+            &:hover { background-color: var(--bs-gray-800); }
+        }
+    }
+
+    .table {
+        color: #c9d1d9;
+        thead th { border-color: #30363d; background-color: #161b22; }
+        tbody td { border-color: #30363d; }
+    }
+
+    // --- 5. Messenger / Chat ---
+    .messanger {
+        .message .info {
+            background-color: var(--bs-gray-700);
+            color: var(--bs-gray-100);
+            &:before { border-color: transparent var(--bs-gray-700) transparent transparent; }
+        }
+        input[type="text"] { background-color: #0d1117; color: #c9d1d9; border-color: #30363d; }
+    }
+
+    // --- 6. Page Specific: User Profile ---
+    .user {
+        .profile .info { background-color: #374151; color: #fff; }
+        .user-tabs .nav-link {
+            color: #c9d1d9;
+            &.active { background-color: rgba(88, 166, 255, 0.15); color: #58a6ff; }
+        }
+        .timeline-post {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            .post-content { color: #c9d1d9; }
+        }
+    }
+
+    // --- 7. Page Specific: Mailbox ---
+    .mailbox-controls, .folder-head { border-bottom-color: #30363d; }
+    .mail-nav > li > a {
+        color: #c9d1d9;
+        &.active { background-color: rgba(88, 166, 255, 0.15); color: #58a6ff; }
+    }
+    .mailbox-messages table tr:hover { background-color: #21262d; }
+
+    // --- 8. Page Specific: Auth (Login/Lockscreen) ---
+    .login-content, .lockscreen-content {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        .login-box, .lock-box {
+            background-color: rgba(30, 41, 59, 0.9);
+            border: 1px solid rgba(255,255,255,0.05);
+            .form-control { background-color: #0f172a; border-color: #334155; color: #e2e8f0; }
+        }
+    }
+
+    // --- 9. Utilities & Loaders ---
+    .text-muted { color: #8b949e !important; }
+    .text-gray-800 { color: #c9d1d9 !important; }
+    #neo-page-loader { background-color: #0d1117; }
+
+    // Settings Panels
+    .font-size-options.settings-font-panel {
+        background-color: #161b22 !important;
+        border-color: #30363d !important;
+        .btn-font-size {
+            color: #8b949e !important;
+            &:hover { background-color: #21262d; color: #fff !important; }
+            &.active { 
+                background-color: #30363d !important; 
+                color: #58a6ff !important; 
+                box-shadow: none !important;
             }
         }
     }
-    
-    // Settings Font Panel
-    .font-size-options.settings-font-panel {
-        background-color: #0d1117 !important;
-        border-color: #30363d !important;
-        
-        .btn-font-size {
-            color: #c9d1d9;
-            border-color: #30363d;
-            
-            &:hover, &.active {
-                background-color: #30363d;
-                border-color: #8b949e;
-                color: #fff;
+
+    // --- 10. Search Results ---
+    .search-results {
+        .search-query-header {
+            h2 span { color: #58a6ff; }
+        }
+        .result-item {
+            .result-title a { color: #58a6ff; }
+            .result-url { color: #3fb950; }
+            .result-snippet mark { 
+                background-color: rgba(88, 166, 255, 0.2); 
+                color: #58a6ff; 
             }
+        }
+        .search-filter-nav .nav-link:hover:not(.active) {
+            background-color: #21262d;
         }
     }
 }

@@ -1,6 +1,6 @@
-// System Fonts
-$font-family-sans-serif: 'Outfit', 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-$font-family-monospace:  SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+// =============================================================================
+// 1. CORE THEME COLORS
+// =============================================================================
 $primary:       #3b5598;
 $secondary:     #858796;
 $success:       #1cc88a;
@@ -9,6 +9,7 @@ $warning:       #f6c23e;
 $danger:        #e74a3b;
 $light:         #f8f9fc;
 $dark:          #5a5c69;
+
 // Legacy Aliases
 $primary-color:   $primary;
 $secondary-color: $secondary;
@@ -16,7 +17,28 @@ $success-color:   $success;
 $info-color:      $info;
 $warning-color:   $warning;
 $danger-color:    $danger;
-// Sidebar default colors
+
+// =============================================================================
+// 2. TYPOGRAPHY & FONTS
+// =============================================================================
+$font-family-sans-serif: 'Outfit', 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-monospace:  SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-size-base: 0.875rem;
+$headings-font-weight: 700;
+
+// =============================================================================
+// 3. LAYOUT & SPACING
+// =============================================================================
+$sidebar-width:           250px;
+$sidebar-collapsed-width: 70px;
+$header-height:           50px; // Matching the actual header height from app.scss logic
+$app-content-padding:     1.5rem; // Reduced from 2rem for a more compact feel
+$app-content-padding-mobile: 1rem;
+$grid-gutter-width:       1.5rem;
+
+// =============================================================================
+// 4. SIDEBAR THEME
+// =============================================================================
 $sidebar-color:           #2a2d3e; 
 $sidebar-accent:          dark;
 $sidebar-dark-color:      #b7c0cd;
@@ -25,18 +47,40 @@ $sidebar-light-color:     #333;
 $sidebar-light-link-color: #333;
 $sidebar-text-color:      $sidebar-dark-link-color;
 $sidebar-active-text-color: #ffffff;
-// Asset Paths
+
+// =============================================================================
+// 5. COMPONENTS (CARDS)
+// =============================================================================
+$card-margin-bottom:      1.5rem;
+$card-border-radius:      0.75rem;
+
+// Standard Size
+$card-padding-x:          1.25rem;
+$card-padding-y:          1.25rem;
+
+// Compact Size (Metric cards)
+$card-compact-padding-x:  1.25rem;
+$card-compact-padding-y:  0.75rem; 
+
+// Tile Style
+$tile-padding:            1.25rem;
+
+// Large Size
+$card-lg-padding:         2.5rem;
+
+// =============================================================================
+// 6. SHADOWS & BORDERS
+// =============================================================================
+$border-radius:           $card-border-radius;
+$border-radius-lg:        0.75rem;
+$border-radius-sm:        0.25rem;
+$border-radius-xl:        1rem;
+
+$box-shadow:              0 0.5rem 1rem rgba(0, 0, 0, 0.08);
+$box-shadow-sm:           0 .125rem .25rem 0 rgba(58, 59, 69, .2);
+$box-shadow-lg:           0 1rem 3rem rgba(0, 0, 0, 0.12);
+
+// =============================================================================
+// 7. ASSETS
+// =============================================================================
 $path-background: "../images/background.jpg";
-// Sidebar & Layout
-$sidebar-width: 250px;
-$sidebar-collapsed-width: 70px;
-$header-height: 60px;
-// BorderRadius
-$border-radius:               0.75rem;
-$border-radius-lg:            0.75rem;
-$border-radius-sm:            0.25rem;
-$border-radius-xl:            1rem;
-// Box Shadow
-$box-shadow:                  0 0.5rem 1rem rgba(0, 0, 0, 0.08);
-$box-shadow-sm:               0 .125rem .25rem 0 rgba(58, 59, 69, .2);
-$box-shadow-lg:               0 1rem 3rem rgba(0, 0, 0, 0.12);

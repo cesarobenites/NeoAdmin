@@ -1,0 +1,100 @@
+@use '../vars' as *;
+
+// =============================================================================
+// UNIFIED CARD COMPONENT
+// =============================================================================
+.card {
+    position: relative;
+    background: var(--bs-body-bg);
+    border: 0;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    margin-bottom: $card-margin-bottom;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: $box-shadow-lg;
+    }
+
+    .card-body {
+        flex: 1 1 auto;
+        padding: $card-padding-y $card-padding-x;
+    }
+
+    // --- SIZES ---
+    &.card-compact {
+        .card-body {
+            padding: $card-compact-padding-y $card-compact-padding-x;
+        }
+    }
+    
+    &.card-sm {
+        .card-body {
+            padding: 0.6rem 1rem;
+        }
+    }
+
+    &.card-lg {
+        .card-body {
+            padding: $card-lg-padding;
+        }
+    }
+
+    // --- TYPES (Inherited style from old Tile) ---
+    &.card-tile {
+        .card-title {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--bs-heading-color);
+            position: relative;
+            
+            // Subtle accent line
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -8px;
+                left: 0;
+                width: 35px;
+                height: 3px;
+                background: var(--bs-primary);
+                border-radius: 4px;
+                opacity: 0.8;
+            }
+        }
+        
+        .card-footer {
+            background: transparent;
+            border-top: 1px solid var(--bs-border-color);
+            padding: 1rem 0 0 0;
+            margin-top: 1rem;
+        }
+    }
+
+    // --- UTILITIES ---
+    .card-overlay {
+        position: absolute;
+        top: 0; left: 0; bottom: 0; right: 0;
+        background-color: rgba(var(--bs-body-bg-rgb), 0.85);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: var(--bs-body-color);
+        border-radius: $border-radius;
+        z-index: 10;
+        backdrop-filter: blur(2px);
+        
+        .l-text {
+            font-size: 1.5rem;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+    }
+}

@@ -45,12 +45,3 @@
 		margin-top: 0;
 	}
 }
-// Dark mode refinements
-[data-bs-theme="dark"] {
-	.dropdown-menu {
-		background-color: var(--bs-gray-900);
-		.dropdown-item:hover {
-			background-color: var(--bs-gray-800);
-		}
-	}
-}

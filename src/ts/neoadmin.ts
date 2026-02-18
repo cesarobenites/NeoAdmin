@@ -443,6 +443,7 @@ export class NeoAdmin {
         });
     }
 
+
     private handlePersistence(): void {
         if (!this.options.persistence) return;
 
