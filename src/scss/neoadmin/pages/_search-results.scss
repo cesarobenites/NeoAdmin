@@ -4,6 +4,12 @@
     .search-main-card {
         border-radius: $card-border-radius;
         overflow: hidden;
+        background-color: var(--bs-card-bg); // Use theme-aware card background
+        
+        .card-header, .card-footer {
+            background-color: transparent; // Ensure no hardcoded white
+            border-color: var(--bs-border-color);
+        }
         
         .card-header {
             .text-primary { 
