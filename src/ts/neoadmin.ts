@@ -382,33 +382,63 @@ export class NeoAdmin {
             setFooterState(newState);
         };
 
-        // Search Toggle Delegation (Top & Bottom)
-        const searchContainer = document.querySelector('.app-search');
-        document.body.addEventListener('click', (e) => {
-            const target = e.target as HTMLElement;
-            // Check for toggle button or specific ID
-            if (target.closest('.toggle-search-btn') || target.closest('#mobile-search-toggle-bottom')) {
-                e.preventDefault();
-                if (searchContainer) {
-                    searchContainer.classList.toggle('show');
-                    if (searchContainer.classList.contains('show')) {
-                        const input = searchContainer.querySelector('input') as HTMLInputElement;
-                        if (input) input.focus();
-                    }
+        // Search Logic
+        const topSearchContainer = document.querySelector('.app-search');
+        const bottomSearchContainer = document.getElementById('footer-search-container');
+        const bottomSearchInput = bottomSearchContainer?.querySelector('input');
+        const bottomNavItems = document.querySelectorAll('.app-bottom-nav__item, .btn-group.dropup');
+
+        const toggleTopSearch = (show: boolean) => {
+            if (topSearchContainer) {
+                if (show) {
+                    topSearchContainer.classList.add('show');
+                    const input = topSearchContainer.querySelector('input') as HTMLInputElement;
+                    if (input) input.focus();
+                } else {
+                    topSearchContainer.classList.remove('show');
                 }
             }
-        });
+        };
 
-        // Close Search on Outside Click
-        document.addEventListener('click', (e) => {
-            if (searchContainer && searchContainer.classList.contains('show')) {
-                const target = e.target as HTMLElement;
-                const isClickInside = searchContainer.contains(target);
-                const isClickOnToggle = target.closest('.toggle-search-btn') || target.closest('#mobile-search-toggle-bottom');
-
-                if (!isClickInside && !isClickOnToggle) {
-                    searchContainer.classList.remove('show');
+        const toggleBottomSearch = (show: boolean) => {
+            if (bottomSearchContainer) {
+                if (show) {
+                    bottomSearchContainer.classList.add('show');
+                    if (bottomSearchInput) bottomSearchInput.focus();
+                    bottomNavItems.forEach(el => (el as HTMLElement).style.display = 'none');
+                } else {
+                    bottomSearchContainer.classList.remove('show');
+                    bottomNavItems.forEach(el => (el as HTMLElement).style.display = '');
                 }
+            }
+        };
+        document.body.addEventListener('click', (e) => {
+            const target = e.target as HTMLElement;
+            const isFooterVisible = document.body.classList.contains('footer-visible');
+
+            // 1. Footer Search Toggle
+            if (target.closest('#mobile-search-toggle-bottom')) {
+                e.preventDefault();
+                e.stopPropagation();
+                if (isFooterVisible) toggleBottomSearch(true);
+                else toggleTopSearch(!topSearchContainer?.classList.contains('show'));
+                return;
+            }
+
+            // 2. Close Bottom Search
+            if (target.closest('#close-footer-search') || target.closest('.app-bottom-search__close')) {
+                e.preventDefault();
+                e.stopPropagation();
+                toggleBottomSearch(false);
+                return;
+            }
+
+            // 3. Global Click (Outside)
+            if (bottomSearchContainer && bottomSearchContainer.classList.contains('show')) {
+                if (!bottomSearchContainer.contains(target)) toggleBottomSearch(false);
+            }
+            if (topSearchContainer && topSearchContainer.classList.contains('show')) {
+                if (!topSearchContainer.contains(target) && !target.closest('.toggle-search-btn')) toggleTopSearch(false);
             }
         });
     }

@@ -3,9 +3,9 @@
 	position: relative;
 	background: var(--bs-body-bg);
 	border-radius: $border-radius;
-	padding: 1.5rem;
+	padding: 1.5rem 1.5rem 1rem 1.5rem; // Reduced bottom padding
 	box-shadow: $box-shadow;
-	margin-bottom: 1.5rem; // Reduced from 30px to match standard spacing
+	margin-bottom: 1.5rem;
 	transition: box-shadow 0.3s ease, background-color 0.3s ease;
 	border: 0;
 	&:hover {
