@@ -1,0 +1,65 @@
+@use '../vars' as *;
+@use 'sass:color';
+
+.app-search__toggle {
+	display: none;
+	padding: 15px;
+	color: #fff;
+	line-height: 20px;
+	transition: background-color 0.3s ease;
+	cursor: pointer;
+	border: none;
+	background: transparent;
+
+	&:hover,
+	&:focus {
+		background: rgba(0, 0, 0, 0.1);
+		color: #f6f6f6;
+	}
+
+	@media(max-width: 480px) {
+		display: block; // Show on mobile
+	}
+}
+
+// Mobile Search Overlay
+.app-search.show {
+	display: flex !important;
+	position: fixed; // Fixed to viewport to ensure full width
+	top: $header-height; // Below header
+	left: 0;
+	right: 0;
+	width: 100%;
+	background-color: $primary-color; 
+	padding: 10px 15px;
+	z-index: 2000; // High z-index to overlay everything
+	box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+	animation: slideDown 0.2s ease-out;
+
+	.app-search__input {
+		width: 100%;
+		background-color: #fff;
+		color: #333;
+		border-radius: 4px;
+		border: 1px solid transparent;
+		
+		&:focus {
+			border-color: rgba(0,0,0,0.1);
+			outline: none;
+		}
+
+		&::placeholder { color: rgba(0,0,0,0.5); }
+	}
+
+	.app-search__button {
+		color: #333;
+		right: 15px; // Adjust right position due to container padding
+	}
+}
+
+@keyframes slideDown {
+	from { transform: translateY(-10px); opacity: 0; }
+	to { transform: translateY(0); opacity: 1; }
+}
+
+

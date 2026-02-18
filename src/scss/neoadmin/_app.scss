@@ -50,6 +50,10 @@ a {
 	@media(max-width: 767px) {
 		margin-top: 50px;
 		min-width: 100%;
+		// Only add padding if footer is visible
+		body.footer-visible & {
+			padding-bottom: 60px; // 50px height + 10px spacing
+		}
 	}
 	@media(max-width: 480px) { padding: 15px; }
 	@media print {
@@ -57,4 +61,18 @@ a {
 		padding: 0;
 		background-color: #fff;
 	}
+}
+
+// Component Overrides
+.pagination {
+	flex-wrap: wrap;
+	justify-content: center; // Center pagination on small screens if wrapped
+	@media(min-width: 576px) { justify-content: flex-start; }
+}
+
+.card {
+	border: 0;
+	box-shadow: $box-shadow;
+	border-radius: $border-radius;
+	margin-bottom: 30px;
 }

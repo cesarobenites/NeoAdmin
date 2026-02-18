@@ -58,6 +58,7 @@ export class NeoAdmin {
         this.handleTheme();
         this.handleFontScaling();
         this.handleFullScreen();
+        this.handleMobileFooter(); // Register mobile footer logic
         this.hidePreloader(); // Remove loading screen when ready
     }
 
@@ -260,16 +261,16 @@ export class NeoAdmin {
     }
 
     private handleTheme(): void {
-        const themeToggle = document.querySelector('[data-toggle="theme"]');
-        if (themeToggle) {
-            themeToggle.addEventListener('click', (e) => {
+        const themeToggles = document.querySelectorAll('[data-toggle="theme"]');
+        themeToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
                 e.preventDefault();
                 const currentTheme = document.documentElement.getAttribute('data-bs-theme');
                 const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
                 document.documentElement.setAttribute('data-bs-theme', newTheme);
                 this.saveState('theme', newTheme);
             });
-        }
+        });
     }
 
     private handleFontScaling(): void {
@@ -317,8 +318,8 @@ export class NeoAdmin {
     }
 
     private handleFullScreen(): void {
-        const toggle = document.querySelector('[data-toggle="fullscreen"]');
-        if (toggle) {
+        const toggles = document.querySelectorAll('[data-toggle="fullscreen"]');
+        toggles.forEach(toggle => {
             toggle.addEventListener('click', (e) => {
                 e.preventDefault();
                 if (!document.fullscreenElement) {
@@ -329,7 +330,87 @@ export class NeoAdmin {
                     }
                 }
             });
+        });
+    }
+
+    private handleMobileFooter(): void {
+        const setFooterState = (active: boolean) => {
+            if (active) {
+                document.body.classList.add('footer-visible');
+            } else {
+                document.body.classList.remove('footer-visible');
+            }
+            if (this.options.persistence) {
+                localStorage.setItem('neo-footer-active', String(active));
+            }
+
+            // Update ALL switches
+            document.querySelectorAll('.neo-footer-switch').forEach((el) => {
+                (el as HTMLInputElement).checked = active;
+            });
+            // Legacy ID support
+            const legacySwitch = document.getElementById('footerSwitch') as HTMLInputElement;
+            if (legacySwitch) legacySwitch.checked = active;
+        };
+
+        // Initialize state
+        const savedState = localStorage.getItem('neo-footer-active') === 'true';
+        setFooterState(savedState);
+
+        // Switch Listeners (Class based)
+        document.querySelectorAll('.neo-footer-switch').forEach(el => {
+            el.addEventListener('change', function (this: HTMLInputElement) {
+                setFooterState(this.checked);
+            });
+            // Stop propagation on switch container click to prevent menu closing if inside dropdown
+            el.addEventListener('click', (e) => e.stopPropagation());
+        });
+
+        // Legacy Selector Listener
+        const footerSwitch = document.getElementById('footerSwitch');
+        if (footerSwitch && !footerSwitch.classList.contains('neo-footer-switch')) {
+            footerSwitch.addEventListener('change', function (this: HTMLInputElement) {
+                setFooterState(this.checked);
+            });
+            footerSwitch.addEventListener('click', (e) => e.stopPropagation());
         }
+
+        // Global Toggle for Menu Item Click
+        (window as any).toggleFooterMode = (e: Event) => {
+            if (e) e.stopPropagation();
+            const newState = !document.body.classList.contains('footer-visible');
+            setFooterState(newState);
+        };
+
+        // Search Toggle Delegation (Top & Bottom)
+        const searchContainer = document.querySelector('.app-search');
+        document.body.addEventListener('click', (e) => {
+            const target = e.target as HTMLElement;
+            // Check for toggle button or specific ID
+            if (target.closest('.toggle-search-btn') || target.closest('#mobile-search-toggle-bottom')) {
+                e.preventDefault();
+                if (searchContainer) {
+                    searchContainer.classList.toggle('show');
+                    if (searchContainer.classList.contains('show')) {
+                        const input = searchContainer.querySelector('input') as HTMLInputElement;
+                        if (input) input.focus();
+                    }
+                }
+            }
+        });
+
+        // Close Search on Outside Click
+        document.addEventListener('click', (e) => {
+            if (searchContainer && searchContainer.classList.contains('show')) {
+                const target = e.target as HTMLElement;
+                const isClickInside = searchContainer.contains(target);
+                const isClickOnToggle = target.closest('.toggle-search-btn') || target.closest('#mobile-search-toggle-bottom');
+
+                if (!isClickInside && !isClickOnToggle) {
+                    searchContainer.classList.remove('show');
+                }
+            }
+        });
     }
 
     private handlePersistence(): void {

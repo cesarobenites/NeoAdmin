@@ -68,6 +68,8 @@
 @use 'neoadmin/helpers' as *;
 // Components
 @use 'neoadmin/component/header' as *;
+@use 'neoadmin/component/header-mobile' as *;
+@use 'neoadmin/component/bottom-nav' as *;
 @use 'neoadmin/component/preloader' as *;
 @use 'neoadmin/component/sidebar' as *;
 @use 'neoadmin/component/sidebar-mini' as *;
