@@ -8,7 +8,7 @@
     <meta name="description" content="Neo Admin professional settings page.">
     <title>Settings - Neo Admin</title>
     <!-- Main CSS-->
-    <link href="assets/css/neoadmin.css" rel="stylesheet">
+    <link href="assets/css/neoadmin.css?v=3" rel="stylesheet">
 </head>
 
 <body class="app sidebar-mini">
@@ -214,9 +214,9 @@
         </div>
         <div class="row">
             <div class="col-md-4">
-                <div class="tile">
-                    <h3 class="tile-title"><i class="bi bi-person-lines-fill me-2"></i> Account</h3>
-                    <div class="tile-body">
+                <div class="card card-tile mb-4 border-0 shadow-sm">
+                    <h3 class="card-title px-4 pt-4"><i class="bi bi-person-lines-fill me-2"></i> Account</h3>
+                    <div class="card-body">
                         <form>
                             <div class="mb-3">
                                 <label class="form-label">Username</label>
@@ -236,9 +236,9 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="tile">
-                    <h3 class="tile-title"><i class="bi bi-shield-lock me-2"></i> Security</h3>
-                    <div class="tile-body">
+                <div class="card card-tile mb-4 border-0 shadow-sm">
+                    <h3 class="card-title px-4 pt-4"><i class="bi bi-shield-lock me-2"></i> Security</h3>
+                    <div class="card-body">
                         <form>
                             <div class="mb-3">
                                 <label class="form-label">Current Password</label>
@@ -261,9 +261,9 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="tile">
-                    <h3 class="tile-title"><i class="bi bi-palette me-2"></i> Interface</h3>
-                    <div class="tile-body">
+                <div class="card card-tile mb-4 border-0 shadow-sm">
+                    <h3 class="card-title px-4 pt-4"><i class="bi bi-palette me-2"></i> Interface</h3>
+                    <div class="card-body">
                         <!-- Theme -->
                         <div class="mb-4">
                             <label class="form-label fw-bold mb-2">Theme Mode</label>
@@ -313,9 +313,9 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <div class="tile">
-                    <h3 class="tile-title"><i class="bi bi-bell me-2"></i> Notifications</h3>
-                    <div class="tile-body">
+                <div class="card card-tile mb-4 border-0 shadow-sm">
+                    <h3 class="card-title px-4 pt-4"><i class="bi bi-bell me-2"></i> Notifications</h3>
+                    <div class="card-body">
                         <div class="list-group list-group-flush">
                             <div
                                 class="list-group-item d-flex justify-content-between align-items-center bg-transparent px-0">
@@ -342,9 +342,9 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="tile bg-danger text-white">
-                    <h3 class="tile-title text-white"><i class="bi bi-trash me-2"></i> Danger Zone</h3>
-                    <div class="tile-body">
+                <div class="card card-tile mb-4 border-0 shadow-sm bg-danger text-white">
+                    <h3 class="card-title px-4 pt-4 text-white"><i class="bi bi-trash me-2"></i> Danger Zone</h3>
+                    <div class="card-body">
                         <p>Once you delete your account, there is no going back. Please be certain.</p>
                         <button class="btn btn-outline-light" type="button">Delete Account</button>
                     </div>
@@ -372,41 +372,6 @@
             </form>
         </div>
 
-        <div class="btn-group dropup">
-            <button type="button" class="app-bottom-nav__item" data-bs-toggle="dropdown" aria-expanded="false"
-                aria-label="Show notifications">
-                <i class="bi bi-bell"></i>
-                <span class="badge-notification"></span>
-                <span class="app-bottom-nav__label">Alerts</span>
-            </button>
-            <ul class="app-notification dropdown-menu dropdown-menu-center">
-                <li class="app-notification__title">You have 4 new notifications.</li>
-                <div class="app-notification__content">
-                    <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
-                                    class="bg-primary"><i class="bi bi-envelope-fill"></i></span></span>
-                            <div>
-                                <p class="app-notification__message">Lisa sent you a mail</p>
-                                <p class="app-notification__meta">2 min ago</p>
-                            </div>
-                        </a></li>
-                    <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
-                                    class="bg-danger"><i class="bi bi-hdd-fill"></i></span></span>
-                            <div>
-                                <p class="app-notification__message">Mail server not working</p>
-                                <p class="app-notification__meta">5 min ago</p>
-                            </div>
-                        </a></li>
-                    <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
-                                    class="bg-success"><i class="bi bi-cash-coin"></i></span></span>
-                            <div>
-                                <p class="app-notification__message">Transaction complete</p>
-                                <p class="app-notification__meta">2 days ago</p>
-                            </div>
-                        </a></li>
-                </div>
-                <li class="app-notification__footer"><a href="#">See all notifications.</a></li>
-            </ul>
-        </div>
 
         <div class="btn-group dropup">
             <button type="button" class="app-bottom-nav__item" data-bs-toggle="dropdown" aria-expanded="false"

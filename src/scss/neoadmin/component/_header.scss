@@ -112,7 +112,7 @@
 	margin-right: 15px;
 	padding: 10px 0;
 	
-	@media(max-width: 480px) { 
+	@media(max-width: 767px) { 
 		display: none; 
 		
 		&.show {
@@ -255,7 +255,7 @@
 			
 			&.active {
 				background-color: var(--bs-body-bg) !important;
-				color: $primary-color !important;
+				color: var(--bs-primary) !important; // Explicitly use the CSS variable!
 				box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
                 font-weight: 700;
 			}
@@ -277,8 +277,8 @@
 		
 		&:hover, 
 		&.active {
-			background-color: $primary-color !important;
-			color: #fff !important;
+			background-color: $primary-color;
+			color: #fff;
 			border-color: $primary-color;
 		}
 	}

@@ -20,6 +20,28 @@
 			display: flex;
 		}
 	}
+
+	& > .app-bottom-nav__item,
+	& > .btn-group {
+		flex: 1 1 33.33% !important;
+		max-width: 33.33% !important;
+		display: flex;
+		justify-content: center;
+	}
+
+	.dropup .dropdown-menu,
+	.dropdown-menu {
+		border-radius: 0.5rem 0.5rem 0 0 !important;
+		margin-bottom: 0 !important;
+		border-bottom: 0 !important;
+        
+        // Force centering regardless of HTML classes
+        right: auto !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        // Prevent it from clipping off-screen on very small devices
+        max-width: 90vw;
+	}
 }
 
 .app-bottom-nav__item {

@@ -17,10 +17,18 @@
 		color: #f6f6f6;
 	}
 
-	@media(max-width: 480px) {
-		display: block; // Show on mobile
+	@media(max-width: 767px) {
+		display: none; // Hiding as requested by user
 	}
 }
+
+// Hide notifications on mobile specifically
+@media(max-width: 767px) {
+    .app-nav > .dropdown:not(:last-child) {
+        display: none !important;
+    }
+}
+
 
 // Mobile Search Overlay
 .app-search.show {

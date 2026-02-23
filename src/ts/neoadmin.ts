@@ -416,6 +416,14 @@ export class NeoAdmin {
             const target = e.target as HTMLElement;
             const isFooterVisible = document.body.classList.contains('footer-visible');
 
+            // Top Search Toggle
+            if (target.closest('.toggle-search-btn')) {
+                e.preventDefault();
+                e.stopPropagation();
+                toggleTopSearch(true);
+                return;
+            }
+
             // 1. Footer Search Toggle
             if (target.closest('#mobile-search-toggle-bottom')) {
                 e.preventDefault();

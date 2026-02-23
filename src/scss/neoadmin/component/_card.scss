@@ -16,10 +16,7 @@
     min-width: 0;
     word-wrap: break-word;
 
-    &:hover {
-        transform: translateY(-4px);
-        box-shadow: $box-shadow-lg;
-    }
+    // Hover removed as requested
 
     .card-body {
         flex: 1 1 auto;
@@ -30,6 +27,14 @@
     &.card-compact {
         .card-body {
             padding: $card-compact-padding-y $card-compact-padding-x;
+
+            @media (max-width: 575px) {
+                padding: 1rem 1.25rem;
+                .fs-3 {
+                    font-size: 2.5rem !important; // Increase icon size significantly for mobile
+                    opacity: 0.9;
+                }
+            }
         }
     }
     
@@ -54,19 +59,6 @@
             font-weight: 700;
             color: var(--bs-heading-color);
             position: relative;
-            
-            // Subtle accent line
-            &::after {
-                content: '';
-                position: absolute;
-                bottom: -8px;
-                left: 0;
-                width: 35px;
-                height: 3px;
-                background: var(--bs-primary);
-                border-radius: 4px;
-                opacity: 0.8;
-            }
         }
         
         .card-footer {
