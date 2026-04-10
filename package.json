@@ -45,7 +45,7 @@
     "autoprefixer": "^10.4.20",
     "sass": "^1.97.3",
     "typescript": "^5.9.3",
-    "vite": "^5.4.21",
+    "vite": "^8.0.8",
     "vite-plugin-static-copy": "^3.1.6"
   }
 }
