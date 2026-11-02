@@ -1,0 +1,95 @@
+@use '../vars' as *;
+
+.row[class*='g-'] > [class*='col-'] > .card,
+.row[class*='g-'] > [class*='col-'] > .tile {
+    margin-bottom: 0;
+}
+
+@media (max-width: 767.98px) {
+    .app-content > .row.g-4 {
+        --bs-gutter-y: 1rem;
+    }
+}
+
+.card {
+    position: relative;
+    background: var(--bs-card-bg, #ffffff);
+    border: 1px solid var(--bs-border-color);
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    margin-bottom: $card-margin-bottom;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+
+    &:hover {
+        box-shadow: $box-shadow-lg;
+    }
+
+    .card-body {
+        flex: 1 1 auto;
+        padding: $card-padding-y $card-padding-x;
+    }
+
+	@media (max-width: 575.98px) {
+		margin-bottom: $page-section-gap-mobile;
+
+		.card-body {
+			padding: 1rem;
+		}
+
+		.card-header {
+			padding: 1rem 1rem 0.5rem;
+		}
+	}
+
+    .card-header {
+        padding: $card-padding-y $card-padding-x;
+        margin-bottom: 0;
+        background-color: transparent;
+        border-bottom: 0;
+
+        .card-title {
+            margin-bottom: 0;
+            font-weight: 700;
+            color: var(--bs-heading-color);
+        }
+    }
+
+    &.card-compact {
+        .card-body {
+            padding: $card-compact-padding-y $card-compact-padding-x;
+
+            @media (max-width: 575.98px) {
+                padding: 1rem 1.25rem;
+            }
+        }
+    }
+}
+
+[data-bs-theme="dark"] {
+    .card {
+        background: var(--bs-card-bg);
+        border-color: var(--bs-border-color);
+    }
+}
+.card-overlay {
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background-color: rgba(var(--bs-body-bg-rgb), 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 10;
+    backdrop-filter: blur(2px);
+    border-radius: $border-radius;
+
+    .l-text {
+        font-size: 1.5rem;
+        margin-top: 15px;
+        font-weight: 600;
+    }
+}

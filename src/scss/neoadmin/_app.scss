@@ -1,35 +1,18 @@
 @use 'sass:color';
-
-// Page common styles
-
+@use 'vars' as *;
+@use 'bootstrap' as bs;
 ::selection {
-	color: $white;
+	color: bs.$white;
 	background-color: color.scale($primary-color, $lightness: -16.9435215947%);
 }
 
-// Global text decoration overrides
 a {
 	text-decoration: none !important;
 	&:hover { text-decoration: none !important; }
 }
-
-
-
-
-// Fonts: Size and Colors
-.text-xs {
-	font-size:.75rem
-}
-
-.text-lg {
-	font-size:1.2rem
-}
-
-// General
-
+.text-xs { font-size: 0.75rem; }
+.text-lg { font-size: 1.2rem; }
 .app {
-	// On large devices make sidebar visible by default
-	// adding sidenav-toggled class will close sidebar
 	@media(min-width: 768px) {
 		&.sidenav-toggled {
 			.app-content { margin-left: 0; }
@@ -37,9 +20,7 @@ a {
 			.app-sidebar__overlay { visibility: hidden; }
 		}
 	}
-	// On small devices make sidebar collapsed by default
-	// adding sidenav-toggled class will open sidebar
-	@media(max-width: 767px) {
+	@media(max-width: 767.98px) {
 		overflow-x: hidden;
 		.app-sidebar { left: -$sidebar-width; }
 		.app-sidebar__overlay { visibility: hidden; }
@@ -52,20 +33,63 @@ a {
 }
 
 .app-content {
-	min-height: calc(100vh - 50px);
-	margin-top: 50px;
-	padding: 20px;
-	background-color: #E5E5E5;
+	--neoadmin-surface: var(--bs-body-bg);
+	min-height: calc(100vh - $header-height);
+	margin-top: $header-height;
+	padding: $app-content-padding;
+	background-color: $app-bg;
 	transition: margin-left 0.3s ease;
 	@media(min-width: 768px) { margin-left: $sidebar-width; }
-	@media(max-width: 767px) {
-		margin-top: 50px;
+	@media(max-width: 767.98px) {
+		margin-top: $header-height;
 		min-width: 100%;
+		body.footer-visible & {
+			padding-bottom: calc($bottom-nav-height + $app-content-padding-mobile + env(safe-area-inset-bottom));
+		}
 	}
-	@media(max-width: 480px) { padding: 15px; }
+	@media(max-width: 575.98px) { padding: $app-content-padding-mobile; }
 	@media print {
 		margin: 0;
 		padding: 0;
 		background-color: #fff;
 	}
+}
+
+:root[data-neoadmin-font-scale="small"] {
+	--neoadmin-base-size: 0.875rem;
+}
+
+:root[data-neoadmin-font-scale="normal"] {
+	--neoadmin-base-size: 1rem;
+}
+
+:root[data-neoadmin-font-scale="large"] {
+	--neoadmin-base-size: 1.125rem;
+}
+
+.neoadmin-chart-canvas {
+	height: 18.75rem;
+	width: 100%;
+}
+
+.neoadmin-message-list {
+	height: 18.75rem;
+	overflow-y: auto;
+}
+
+.neoadmin-notification-icon {
+	width: 1.25rem;
+}
+
+.neoadmin-icon-definitions {
+	position: absolute;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+}
+
+.pagination {
+	flex-wrap: wrap;
+	justify-content: center;
+	@media(min-width: 576px) { justify-content: flex-start; }
 }

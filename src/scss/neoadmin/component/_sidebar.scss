@@ -1,34 +1,33 @@
-// Componant: Sidebar 
-
+@use '../vars' as *;
+@use 'bootstrap' as bs;
+@use "sass:color";
 .app-sidebar {
 	position: fixed;
 	top: 0;
 	bottom: 0;
 	left: 0;
-	padding-top: 70px;
+	padding-top: $header-height;
 	width: $sidebar-width;
 	overflow: auto;
-	z-index: 10;
+	z-index: 1040;
 	background-color: $sidebar-color;
-	box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0.5rem 1.0625rem rgba(0, 0, 0, 0.2);
 	transition: left 0.3s ease,
 				width 0.3s ease;
-	&::-webkit-scrollbar { width: 6px; }
+	&::-webkit-scrollbar { width: 0.375rem; }
 	&::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.2); }
 	scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
 	scrollbar-width: thin;
 	@media print { display: none; }
 }
-
 .app-menu__group {
-	padding: 12px 15px;
+	padding: 0.75rem 0.9375rem;
 	font-size: 1.0625em;
 	@if $sidebar-accent == dark { color: $sidebar-dark-link-color }
 	@if $sidebar-accent == light { color: $sidebar-light-link-color }
 }
-
 .app-sidebar__overlay {
-	@media(max-width: 767px) {
+	@media(max-width: 767.98px) {
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -37,79 +36,69 @@
 		z-index: 9;
 	}
 }
-
 .app-sidebar__user {
 	display: flex;
 	align-items: center;
-	padding: 10px;
-	margin-bottom: 20px;
+	padding: 0.625rem;
+	margin-bottom: 1.25rem;
 	@if $sidebar-accent == dark {
 		color: #fff;
 	}
 }
-
-// Default small avatar (Circle)
 .app-sidebar__user-avatar {
 	flex: 0 0 auto;
-	margin-right: 15px;
-	width: 48px;
-	height: 48px;
-	@extend .rounded-circle;
+	margin-right: 0.9375rem;
+	width: 3rem;
+	height: 3rem;
+	border-radius: 50% !important;
 }
-
-// Full width logo modifier (use this class when displaying a logo without text)
 .app-sidebar__user-avatar--full {
 	display: block;
 	max-width: 100%;
 	width: auto;
 	height: auto;
-	padding: 0 20px;
+	padding: 0 1.25rem;
 	margin-right: 0;
 	border-radius: 0;
 }
-
 .app-sidebar__user-name {
-	font-size: 17px;
-	line-height: 1.2; // Tighter line height
-    font-weight: 600; // Bold as requested
-    margin-bottom: 2px; // Minimal spacing
+	font-size: 1.0625rem;
+	line-height: 1.2;
+    font-weight: 600;
+	margin-bottom: 0.125rem;
 }
-
 .app-sidebar__user-designation {
-    font-size: 0.9em; // Slightly smaller
+    font-size: 0.9em;
     line-height: 1;
 	margin-bottom: 0;
-    opacity: 0.8; 
+    opacity: 0.8;
 }
-
 .app-sidebar__user-name,
 .app-sidebar__user-designation {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	color: #fff; // Ensure visibility
+	color: #fff;
 }
-
 .app-sidebar__user-avatar-mobile {
 	display: none;
-	@extend .rounded-circle;
+	border-radius: 50% !important;
 	flex: 0 0 auto;
-	margin-right: 15px;
+	margin-right: 0.9375rem;
 }
-
 .app-menu {
-	@extend .list-unstyled;
+	padding-left: 0;
+	list-style: none;
 	margin-bottom: 0;
-	padding-bottom: 40px;
+	padding-bottom: 2.5rem;
 }
-
 .app-menu__item {
 	position: relative;
 	display: flex;
 	align-items: center;
-	padding: 13px 15px;
+	padding: 0.8125rem 0.9375rem;
 	font-size: 1.0625em;
-	border-left: 3px solid transparent;
+	border-left: 0.1875rem solid transparent;
 	transition: border-left-color 0.3s ease,
 				background-color 0.3s ease;
 	@if $sidebar-accent == dark { color: $sidebar-dark-link-color }
@@ -117,66 +106,61 @@
 	&.active,
 	&:hover,
 	&:focus {
-		background: $primary-color;
+		background: color.adjust($sidebar-color, $lightness: -8%);
 		border-left-color: $primary-color;
 		text-decoration: none;
 		@if $sidebar-accent == dark { color: $sidebar-dark-link-color }
-		@if $sidebar-accent == light { color: $white }
+		@if $sidebar-accent == light { color: bs.$white }
 	}
 }
-
 .app-menu__icon {
 	flex: 0 0 auto;
-	width: 28px;
+	width: 1.75rem;
 }
-
 .app-menu__label {
 	white-space: nowrap;
 	flex: 1 1 auto;
 }
-
 .treeview {
 	&.is-expanded {
-		[data-toggle='treeview'] {
+		[data-neoadmin-treeview] {
 			border-left-color: $primary-color;
-			background: darken($sidebar-color, 10);
+			background: color.adjust($sidebar-color, $lightness: -12%);
 		}
 		.treeview-menu { max-height: 100vh; }
 		.treeview-indicator { transform: rotate(90deg); }
 	}
 }
-
 .treeview-menu {
-	@extend .list-unstyled;
+	padding-left: 0;
+	list-style: none;
 	max-height: 0;
 	overflow: hidden;
 	transition: max-height 0.3s ease;
 	@if $sidebar-accent == dark {
-		background: lighten($sidebar-color, 4)
+		background: color.scale($sidebar-color, $lightness: 4%)
 	}
 	@if $sidebar-accent == light {
-		background: darken($sidebar-color, 4)
+		background: color.scale($sidebar-color, $lightness: -4%)
 	}
 }
-
 .treeview-item {
 	display: flex;
 	align-items: center;
-	padding: 5px 5px 5px 10px;
+	padding: 0.3125rem 0.3125rem 0.3125rem 0.625rem;
 	font-size: 1em;
 	@if $sidebar-accent == dark { color: $sidebar-dark-link-color }
 	@if $sidebar-accent == light { color: $sidebar-light-link-color }
 	&.active,
 	&:hover,
 	&:focus {
-		background: darken($sidebar-color, 5);
+		background: color.adjust($sidebar-color, $lightness: -8%);
 		text-decoration: none;
 		@if $sidebar-accent == dark { color: $sidebar-dark-link-color }
 		@if $sidebar-accent == light { color: $sidebar-light-link-color }
 	}
-	.icon { margin-right: 5px; font-size: 0.75em; }
+	.icon { margin-right: 0.3125rem; font-size: 0.75em; }
 }
-
 .treeview-indicator {
 	font-size: 0.75em;
 	transform-origin: center;

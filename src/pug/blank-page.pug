@@ -1,0 +1,24 @@
+extends layouts/_admin.pug
+
+block head
+  - var title = "Blank Page"
+  - var activePage = "blank"
+
+block content
+  .app-title
+    div
+      h1
+        i.bi.bi-file-earmark
+        |  Blank Page
+      p Start a new project from scratch
+
+    ul.app-breadcrumb.breadcrumb
+      li.breadcrumb-item
+        i.bi.bi-house-door.fs-6
+      li.breadcrumb-item
+        a(href="#") Blank Page
+
+  .row
+    .col-md-12
+      .tile
+        .tile-body Create a beautiful dashboard

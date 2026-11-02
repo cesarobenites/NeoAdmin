@@ -1,0 +1,115 @@
+extends layouts/_admin.pug
+
+block head
+  - var title = "AI Agent Guide"
+  - var activePage = "docs"
+
+block content
+  .app-title
+    div
+      h1
+        i.bi.bi-robot.me-2
+        | AI Agent Guide
+      p Use NeoAdmin rules and skills with the tools you already use
+
+    ul.app-breadcrumb.breadcrumb.d-none.d-md-flex
+      li.breadcrumb-item
+        a(href="docs.html") Documentation
+      li.breadcrumb-item.active AI Agent Guide
+
+  .tile
+    .tile-body
+      .docs.docs-content
+        h2.docs-title The Three Parts of Agent Guidance
+        p NeoAdmin keeps agent guidance separate from the application UI. The project root contains small tool entry points; the `.agents/` directory contains the reusable rules, technical context, and skills.
+        .table-responsive
+          table.table.align-middle
+            thead
+              tr
+                th(scope="col") Part
+                th(scope="col") Purpose
+                th(scope="col") NeoAdmin location
+            tbody
+              tr
+                th(scope="row") Rules
+                td Constraints that apply across tasks and limit unnecessary changes
+                td <code>.agents/rules/project-standards.md</code>
+              tr
+                th(scope="row") Context
+                td Technical facts the agent should check before changing architecture or build behavior
+                td <code>.agents/context/</code>
+              tr
+                th(scope="row") Skills
+                td Focused procedures loaded for a matching task, such as Pug or Sass work
+                td <code>.agents/skills/neo-admin-skill-*/SKILL.md</code>
+        p.mb-0 Rules are not a task checklist and skills are not installed application code. The agent uses a skill to work through a requested task while the rules constrain how it changes this repository.
+
+        h2.docs-title Start an Agent Session in NeoAdmin
+        ol
+          li Open the repository root as the workspace so the root instruction file and `.agents/` directory are available.
+          li Describe the requested outcome and the page, component, or behavior involved.
+          li Ask the agent to use the matching skill when the task is specialized, for example <code>neo-admin-skill-pug</code> for a Pug page or <code>neo-admin-skill-scss</code> for a theme change.
+          li Review the source changes and the generated page in <code>docs/</code> after the build.
+        p Keep requests specific. For example: <em>“Use neo-admin-skill-bootstrap to align the account actions at Bootstrap’s 768px breakpoint. Preserve the desktop header and the optional bottom navigation, then validate both sides of the breakpoint.”</em>
+
+        h2.docs-title Use the Agent in Your Preferred Tool
+        p Keep NeoAdmin's project rules and task workflows in their canonical files. Open the repository root, make the tool aware of <code>AGENTS.md</code>, and ask it to follow the relevant <code>.agents/skills/*/SKILL.md</code>. If the tool requires a native instruction file, use that file as a short pointer to these sources instead of copying their full contents.
+        .table-responsive
+          table.table.align-middle
+            thead
+              tr
+                th(scope="col") Tool
+                th(scope="col") Practical setup
+            tbody
+              tr
+                th(scope="row") Claude Code
+                td Open the repository as the working directory. Use a concise root <code>CLAUDE.md</code> pointer to <code>AGENTS.md</code> and the relevant NeoAdmin skill when Claude Code needs native project instructions.
+              tr
+                th(scope="row") OpenAI Codex
+                td Open the repository as the project or workspace. It can use the root <code>AGENTS.md</code> entry point and the linked rules and skills.
+              tr
+                th(scope="row") Google Antigravity
+                td Open the repository as the workspace and use its project rules and skills. Invoke a skill by name when supported, or ask the agent to read its <code>SKILL.md</code>.
+              tr
+                th(scope="row") Gemini CLI
+                td Start the CLI in the repository and provide <code>AGENTS.md</code> as project context. Ask it to read the relevant skill before specialized work.
+              tr
+                th(scope="row") GitHub Copilot and other tools
+                td Configure the tool's native project-instruction mechanism with a short pointer to <code>AGENTS.md</code>, then refer to the matching NeoAdmin skill as needed.
+        p.mb-0 Tool features and instruction discovery differ and can change by version. Check each tool's current project-instruction settings; keep NeoAdmin's actual standards in one canonical place.
+
+        h2.docs-title Use NeoAdmin Skills in Another Repository
+        p Use this when another application needs NeoAdmin's visual patterns but should keep its own source, routing, and architecture.
+        ol
+          li Copy only the relevant skill folders from NeoAdmin's <code>.agents/skills/</code> into the host repository's <code>.agents/skills/</code> directory.
+          li Keep the host repository's own rules and architecture in its native project instructions.
+          li Ask its agent to use a copied NeoAdmin skill for the specific task.
+          li Copy and adapt only the required theme assets and semantic Pug examples for the host framework.
+        p.mb-0 Do not copy NeoAdmin's complete agent rules or repository context into an unrelated application. The skills describe NeoAdmin conventions; the host repository still owns its architecture and lifecycle.
+
+        h2.docs-title Build the Application or Reuse the Theme
+        h5 Standalone NeoAdmin site
+        p Clone the repository, run <code>npm install</code> and <code>npm run dev</code>, customize the source under <code>src/</code>, then run <code>npm run build</code>. Deploy the generated <code>docs/</code> directory.
+        h5 Existing React, Vue, or Angular application
+        p Build NeoAdmin, copy <code>docs/assets/css/neoadmin.css</code> and only the needed icons, fonts, images, and optional integrations into the host project's public assets. Adapt the generated HTML or Pug examples into JSX/TSX, Vue templates, or Angular templates, and update asset paths. Load the theme once; let the host application own routing and component lifecycle.
+        p React, Vue, and Angular components, adapters, and project generators are not included. <code>npm run build:vue</code> only emits a framework-free ES module with automatic initialization disabled; it does not provide Vue components.
+
+        h2.docs-title Official Documentation
+        ul
+          li
+            a(href="https://docs.anthropic.com/en/docs/claude-code/memory", target="_blank", rel="noopener") Claude Code project memory
+          li
+            a(href="https://antigravity.google/docs/rules/", target="_blank", rel="noopener") Antigravity Rules
+          li
+            a(href="https://antigravity.google/docs/skills?app=antigravity-ide", target="_blank", rel="noopener") Antigravity Agent Skills
+          li
+            a(href="https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/gemini-md.md", target="_blank", rel="noopener") Gemini CLI project context
+          li
+            a(href="https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/using-agent-skills.md", target="_blank", rel="noopener") Gemini CLI Agent Skills
+          li
+            a(href="https://developers.openai.com/cookbook/examples/codex/iterating-development-workflows-with-codex", target="_blank", rel="noopener") Codex project instructions and skills
+          li
+            a(href="https://docs.github.com/en/copilot/concepts/prompting-and-context/custom-instructions", target="_blank", rel="noopener") GitHub Copilot custom instructions
+
+        p.mb-0
+          a(href="docs.html") Return to NeoAdmin Documentation

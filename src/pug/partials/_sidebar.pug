@@ -1,0 +1,125 @@
+aside.app-sidebar
+  .sidebar-scroll.sidebar-scroll-toggled
+    .app-sidebar__user
+      img.app-sidebar__user-avatar-mobile(src="assets/images/avatar.jpg", alt="User Image")
+      img.app-sidebar__user-avatar(src="assets/images/avatar_128.jpg", alt="User Image")
+      div
+        p.app-sidebar__user-name César Rolando
+        p.app-sidebar__user-designation Software Developer
+
+    ul.app-menu
+      li
+        a.app-menu__item(href="dashboard.html", class=(activePage === 'dashboard' ? 'active' : ''))
+          i.app-menu__icon.bi.bi-house-door
+          span.app-menu__label Dashboard
+
+      li.treeview(class=(['bootstrap-components', 'cards', 'widgets', 'ui-dates'].includes(activePage) ? 'is-expanded' : ''))
+        a.app-menu__item(href="#", data-neoadmin-treeview)
+          i.app-menu__icon.bi.bi-laptop
+          span.app-menu__label UI Elements
+          i.treeview-indicator.bi.bi-chevron-right
+        ul.treeview-menu
+          li
+            a.treeview-item(href="bootstrap-components.html", class=(activePage === 'bootstrap-components' ? 'active' : ''))
+              i.icon.bi.bi-chevron-right
+              |  Bootstrap Elements
+          li
+            a.treeview-item(href="ui-cards.html", class=(activePage === 'cards' ? 'active' : ''))
+              i.icon.bi.bi-chevron-right
+              |  Cards
+          li
+            a.treeview-item(href="widgets.html", class=(activePage === 'widgets' ? 'active' : ''))
+              i.icon.bi.bi-chevron-right
+              |  Widgets
+          li
+            a.treeview-item(href="ui-dates.html", class=(activePage === 'ui-dates' ? 'active' : ''))
+              i.icon.bi.bi-chevron-right
+              |  Date & Time
+
+      li.app-menu__group Components
+
+      li
+        a.app-menu__item(href="charts.html", class=(activePage === 'charts' ? 'active' : ''))
+          i.app-menu__icon.bi.bi-pie-chart
+          span.app-menu__label Charts
+
+      li.treeview(class=(['form-components', 'form-custom', 'form-samples', 'form-notifications'].includes(activePage) ? 'is-expanded' : ''))
+        a.app-menu__item(href="#", data-neoadmin-treeview)
+          i.app-menu__icon.bi.bi-pencil-square
+          span.app-menu__label Forms
+          i.treeview-indicator.bi.bi-chevron-right
+        ul.treeview-menu
+          li
+            a.treeview-item(href="form-components.html", class=(activePage === 'form-components' ? 'active' : ''))
+              i.icon.bi.bi-chevron-right
+              |  Form Components
+          li
+            a.treeview-item(href="form-custom.html", class=(activePage === 'form-custom' ? 'active' : ''))
+              i.icon.bi.bi-chevron-right
+              |  Custom Components
+          li
+            a.treeview-item(href="form-samples.html", class=(activePage === 'form-samples' ? 'active' : ''))
+              i.icon.bi.bi-chevron-right
+              |  Form Samples
+          li
+            a.treeview-item(href="form-notifications.html", class=(activePage === 'form-notifications' ? 'active' : ''))
+              i.icon.bi.bi-chevron-right
+              |  Form Notifications
+
+      li.treeview(class=(['table-basic', 'table-data-table'].includes(activePage) ? 'is-expanded' : ''))
+        a.app-menu__item(href="#", data-neoadmin-treeview)
+          i.app-menu__icon.bi.bi-table
+          span.app-menu__label Tables
+          i.treeview-indicator.bi.bi-chevron-right
+        ul.treeview-menu
+          li
+            a.treeview-item(href="table-basic.html", class=(activePage === 'table-basic' ? 'active' : ''))
+              i.icon.bi.bi-chevron-right
+              |  Basic Tables
+          li
+            a.treeview-item(href="table-data-table.html", class=(activePage === 'table-data-table' ? 'active' : ''))
+              i.icon.bi.bi-chevron-right
+              |  Data Tables
+
+      li.app-menu__group Pages
+
+      li
+        a.app-menu__item(href="page-mailbox.html", class=(activePage === 'page-mailbox' ? 'active' : ''))
+          i.app-menu__icon.bi.bi-envelope
+          span.app-menu__label Mailbox
+
+      li.treeview(class=(['page-user', 'settings', 'calendar', 'page-invoice', 'page-search', 'blank'].includes(activePage) ? 'is-expanded' : ''))
+        a.app-menu__item(href="#", data-neoadmin-treeview)
+          i.app-menu__icon.bi.bi-file-earmark
+          span.app-menu__label Pages
+          i.treeview-indicator.bi.bi-chevron-right
+        ul.treeview-menu
+          li
+            a.treeview-item(href="page-user.html", class=(activePage === 'page-user' ? 'active' : ''))
+              i.icon.bi.bi-chevron-right
+              |  User Profile
+          li
+            a.treeview-item(href="page-settings.html", class=(activePage === 'settings' ? 'active' : ''))
+              i.icon.bi.bi-chevron-right
+              |  Settings
+          li
+            a.treeview-item(href="page-calendar.html", class=(activePage === 'calendar' ? 'active' : ''))
+              i.icon.bi.bi-chevron-right
+              |  Calendar
+          li
+            a.treeview-item(href="page-search.html", class=(activePage === 'page-search' ? 'active' : ''))
+              i.icon.bi.bi-chevron-right
+              |  Search Results
+          li
+            a.treeview-item(href="page-invoice.html", class=(activePage === 'page-invoice' ? 'active' : ''))
+              i.icon.bi.bi-chevron-right
+              |  Invoice
+          li
+            a.treeview-item(href="blank-page.html", class=(activePage === 'blank' ? 'active' : ''))
+              i.icon.bi.bi-chevron-right
+              |  Blank Page
+
+      li
+        a.app-menu__item(href="docs.html", class=(activePage === 'docs' ? 'active' : ''))
+          i.app-menu__icon.bi.bi-journal-text
+          span.app-menu__label Documentation

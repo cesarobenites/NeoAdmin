@@ -1,0 +1,80 @@
+extends layouts/_admin.pug
+
+block head
+  - var title = "UI Cards"
+  - var activePage = "cards"
+
+block content
+  .app-title
+    div
+      h1.fs-3.fs-md-2
+        i.bi.bi-laptop.me-2
+        | UI Cards
+      p.text-muted.mb-0 Flexible and extensible content containers
+
+    ul.app-breadcrumb.breadcrumb.d-none.d-md-flex
+      li.breadcrumb-item
+        i.bi.bi-house-door.fs-6
+      li.breadcrumb-item UI Elements
+      li.breadcrumb-item.active
+        a(href="#") Cards
+  .row.g-3.mb-4
+    .col-12.col-lg-6
+      +card('Standard Card')
+        p Hey there, I am a very simple card. I am good at containing small bits of information. I am quite convenient because I require little markup to use effectively.
+        a.btn.btn-primary(href="#") Action Link
+
+    .col-12.col-lg-6
+      +card('Card with Action')
+        p.fw-bold Card with action button
+        p Hey there, I am a very simple card. I am good at containing small bits of information.
+        append card-header
+          a.btn.btn-primary.btn-sm(href="#")
+            i.bi.bi-plus-lg.me-1
+            | Add Item
+  .row.g-4.mb-5
+    .col-12
+      h4.fs-4.fs-md-3.mb-4 Standard Bootstrap 5.3 Cards
+
+    .col-12.col-md-6.col-lg-4
+      +card('Shadow Card')
+        h6.card-subtitle.mb-3.text-body-secondary Sub-heading here
+        p.card-text Some quick example text to build on the card title and make up the bulk of the card's content.
+        .d-flex.align-items-center.mt-3
+          a.card-link(href="#") Card link
+          a.btn.btn-sm.btn-primary.ms-auto(href="#") Action
+
+    .col-12.col-md-6.col-lg-4
+      .card.border-primary
+        .card-header.bg-primary.text-white Featured Header
+        .card-body
+          h5.card-title Bordered Primary
+          p.card-text With supporting text below as a natural lead-in to additional content.
+
+    .col-12.col-md-6.col-lg-4
+      .card.text-center.border-0.bg-light-subtle
+        .card-body
+          i.bi.bi-graph-up.text-primary.fs-1.mb-3.d-block
+          h5.card-title Centered Icon
+          p.card-text.text-muted A informative card with a centered icon for statistics or features.
+
+  .row.g-3.mb-4
+    .col-12
+      h4.fs-4.fs-md-3.mb-0 Loading States
+      p.text-body-secondary.mb-0 Use Bootstrap placeholders while TypeScript fetches content or data.
+
+    .col-12.col-lg-6
+      .card.h-100(aria-hidden="true")
+        .card-body.placeholder-glow
+          span.placeholder.col-5.mb-3
+          span.placeholder.col-12.mb-2
+          span.placeholder.col-9.mb-4
+          span.placeholder.col-4.placeholder-lg
+
+    .col-12.col-lg-6
+      .card.h-100(aria-hidden="true")
+        .card-body.placeholder-wave
+          span.placeholder.rounded-circle.d-inline-block.align-middle.me-3.col-2
+          span.placeholder.col-6.align-middle
+          span.placeholder.col-12.mt-4
+          span.placeholder.col-8.mt-2

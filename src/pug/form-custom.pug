@@ -1,0 +1,117 @@
+extends layouts/_admin.pug
+
+block head
+  - var title = "Custom Form Elements"
+  - var activePage = "form-custom"
+
+block content
+  .app-title
+    div
+      h1.fs-3.fs-md-2
+        i.bi.bi-pencil-square.me-2
+        | Custom Form Elements
+      p.text-muted.mb-0 Modernized custom form elements and inputs
+
+    ul.app-breadcrumb.breadcrumb.d-none.d-md-flex
+      li.breadcrumb-item
+        i.bi.bi-house-door.fs-6
+      li.breadcrumb-item Forms
+      li.breadcrumb-item.active
+        a(href="#") Custom Components
+
+  .row.g-3
+    .col-md-6
+      .tile
+        h3.tile-title Switches & Checks
+        .tile-body
+          .form-check.mb-2
+            input.form-check-input#flexRadioDefault1(type="radio", name="flexRadioDefault")
+            label.form-check-label(for="flexRadioDefault1") Radio Button
+
+          .form-check.mb-3
+            input.form-check-input#flexCheckDefault(type="checkbox")
+            label.form-check-label(for="flexCheckDefault") Checkbox
+
+          h5.mt-4.mb-3 Disabled state
+          .form-check.mb-2
+            input.form-check-input#flexRadioDisabled(type="radio", name="flexRadioDisabled", disabled)
+            label.form-check-label(for="flexRadioDisabled") Disabled Radio
+
+          .form-check.mb-2
+            input.form-check-input#flexCheckDisabled(type="checkbox", disabled)
+            label.form-check-label(for="flexCheckDisabled") Disabled Checkbox
+
+    .col-md-6
+      .tile
+        h3.tile-title Toggle Switches
+        .tile-body
+          .row
+            .col-12.col-sm-6
+              p.fw-bold Standard Switch
+              .mb-2
+                +switch('Default switch input', 'flexSwitchCheckDefault')
+              .mb-2
+                +switch('Checked switch input', 'flexSwitchCheckChecked', true)
+
+              h5.mt-4.mb-3 Disabled state
+              .mb-2
+                +switch('Disabled switch input', 'flexSwitchCheckDisabled')(disabled)
+
+    .col-md-6
+      .tile
+        .d-flex.justify-content-between.align-items-center.mb-3
+          h3.tile-title.mb-0 Tom Select
+          a.btn.btn-primary.btn-sm(href="https://tom-select.js.org/", target="_blank")
+            i.bi.bi-file-earmark-code.me-1
+            | Docs
+        .tile-body
+          p.small.text-muted Tom Select is a versatile and lightweight selection control.
+          h5.mb-3 Demo
+          select.form-control.neoadmin-select#demoSelect(multiple, placeholder="Select cities...")
+            option Ahmedabad
+            option Surat
+            option Vadodara
+            option Rajkot
+            option Bhavnagar
+            option Jamnagar
+            option Gandhinagar
+            option Nadiad
+            option Morvi
+            option Surendranagar
+            option Junagadh
+            option Gandhidham
+            option Veraval
+            option Ghatlodiya
+            option Bharuch
+            option Anand
+            option Porbandar
+            option Godhra
+            option Navsari
+            option Dahod
+            option Botad
+            option Kapadwanj
+
+    .col-md-6
+      .tile
+        h3.tile-title Native Date Picker
+        .tile-body
+          p.small.text-muted Using the native browser date picker for better accessibility.
+          h5.mb-3 Demo
+          input.form-control#demoDate(type="date")
+
+    .col-12.col-md-6
+      .tile
+        .d-flex.justify-content-between.align-items-center.mb-3
+          h3.tile-title.mb-0 Dropzone
+          a.btn.btn-primary.btn-sm(href="https://www.dropzone.dev/", target="_blank")
+            i.bi.bi-cloud-arrow-up.me-1
+            | Docs
+        .tile-body
+          p.small.text-muted Drag and Drop files for upload.
+          h5.mb-3 Demo
+          form.text-center.dropzone#myDropzone(method="POST", enctype="multipart/form-data", action="/file-upload")
+            .dz-message
+               i.bi.bi-cloud-upload.fs-1.d-block.mb-2
+               | Drop files here or click to upload
+               br
+               small.text-info (Demo only)

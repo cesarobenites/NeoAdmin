@@ -1,31 +1,26 @@
+@use 'vars' as *;
 :root {
-  --neo-primary: #{$primary};
-  --neo-secondary: #{$secondary};
-  --neo-success: #{$success};
-  --neo-info: #{$info};
-  --neo-warning: #{$warning};
-  --neo-danger: #{$danger};
-  --neo-light: #{$light};
-  --neo-dark: #{$dark};
-  
-  // Sidebar
-  --neo-sidebar-width: #{$sidebar-width};
-  --neo-sidebar-collapsed-width: #{$sidebar-collapsed-width};
-  --neo-header-height: #{$header-height};
-  
-  // Font Scaling
-  --neo-base-size: 16px;
-  font-size: var(--neo-base-size);
+  --neoadmin-primary: #{$primary};
+  --neoadmin-browser-theme-color: #{$primary};
+  --neoadmin-secondary: #{$secondary};
+  --neoadmin-success: #{$success};
+  --neoadmin-info: #{$info};
+  --neoadmin-warning: #{$warning};
+  --neoadmin-danger: #{$danger};
+  --neoadmin-light: #{$light};
+  --neoadmin-dark: #{$dark};
+  --neoadmin-sidebar-width: #{$sidebar-width};
+  --neoadmin-sidebar-collapsed-width: #{$sidebar-collapsed-width};
+  --neoadmin-header-height: #{$header-height};
+  --neoadmin-base-size: 16px;
+  font-size: var(--neoadmin-base-size);
 }
-
 [data-font-scale="small"] {
-  --neo-font-base: 12px;
+  --neoadmin-font-base: 12px;
 }
-
 [data-font-scale="large"] {
-  --neo-font-base: 16px;
+  --neoadmin-font-base: 16px;
 }
-
 body {
-  font-size: var(--neo-font-base);
+  font-size: var(--neoadmin-font-base);
 }

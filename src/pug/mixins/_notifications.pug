@@ -1,0 +1,31 @@
+mixin notificationMenu(menuAlignment)
+  ul.app-notification.dropdown-menu(class=menuAlignment)
+    li.app-notification__title You have 4 new notifications.
+    li
+      ul.app-notification__content.list-unstyled.mb-0
+        li
+          a.app-notification__item(href="#")
+            span.app-notification__icon
+              span.bg-primary-subtle
+                i.bi.bi-envelope-fill
+            div
+              p.app-notification__message Lisa sent you a mail
+              p.app-notification__meta 2 min ago
+        li
+          a.app-notification__item(href="#")
+            span.app-notification__icon
+              span.bg-danger-subtle
+                i.bi.bi-hdd-fill
+            div
+              p.app-notification__message Mail server not working
+              p.app-notification__meta 5 min ago
+        li
+          a.app-notification__item(href="#")
+            span.app-notification__icon
+              span.bg-success-subtle
+                i.bi.bi-cash-coin
+            div
+              p.app-notification__message Transaction complete
+              p.app-notification__meta 2 days ago
+    li.app-notification__footer
+      a(href="#") See all notifications.

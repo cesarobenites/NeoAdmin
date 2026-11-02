@@ -1,0 +1,117 @@
+extends layouts/_admin.pug
+
+block head
+  - var title = "Bootstrap Elements"
+  - var activePage = "bootstrap-components"
+
+block content
+  .app-title
+    div
+      h1.fs-3.fs-md-2
+        i.bi.bi-laptop.me-2
+        | Bootstrap Elements
+      p.text-muted.mb-0 Comprehensive suite of Bootstrap 5.3 components
+
+    ul.app-breadcrumb.breadcrumb.d-none.d-md-flex
+      li.breadcrumb-item
+        i.bi.bi-house-door.fs-6
+      li.breadcrumb-item UI Elements
+      li.breadcrumb-item.active
+        a(href="#") Bootstrap Elements
+  .tile
+    .page-header.mb-4
+      h2.mb-0.fs-4.fs-md-3.line-head#buttons Buttons
+
+    .row.g-4
+      .col-12.col-lg-7
+        .bs-component.d-flex.flex-wrap.gap-2.mb-4
+          each type in ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'link']
+            button.btn(class=`btn-${type}`, type="button")= type.charAt(0).toUpperCase() + type.slice(1)
+
+        .bs-component.d-flex.flex-wrap.gap-2.mb-4
+          each type in ['outline-primary', 'outline-secondary', 'outline-success', 'outline-info', 'outline-warning', 'outline-danger']
+            button.btn(class=type, type="button")= type.split('-')[1].charAt(0).toUpperCase() + type.split('-')[1].slice(1)
+
+      .col-12.col-lg-5
+        .d-grid.gap-2
+          button.btn.btn-primary.btn-lg(type="button") Block level button
+        .mt-3.bs-component
+          .btn-group.w-100(role="group")
+            button.btn.btn-secondary(type="button") Left
+            button.btn.btn-secondary(type="button") Middle
+            button.btn.btn-secondary(type="button") Right
+  .tile
+    .page-header.mb-4
+      h2.mb-0.fs-4.fs-md-3.line-head#typography Typography
+
+    .row.g-4
+      .col-12.col-md-6.col-lg-4
+        .bs-component
+          h1 Heading 1
+          h2 Heading 2
+          h3 Heading 3
+          h4 Heading 4
+          h5 Heading 5
+          h6 Heading 6
+          p.lead Viva la responsive design.
+
+      .col-12.col-md-6.col-lg-4
+        .bs-component
+          h2 Example body text
+          p Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes.
+          p
+            small This line of text is meant to be treated as fine print.
+          p
+            strong Rendered as bold text.
+          p
+            em Rendered as italicized text.
+
+      .col-12.col-md-12.col-lg-4
+        .bs-component
+          h2 Emphasis classes
+          p.text-muted Fusce dapibus, tellus ac cursus commodo.
+          p.text-primary Nullam id dolor id nibh ultricies vehicula.
+          p.text-success Duis mollis, est non commodo luctus.
+          p.text-info Maecenas sed diam eget risus varius.
+          p.text-warning Etiam porta sem malesuada magna.
+          p.text-danger Donec ullamcorper nulla non metus.
+
+  .tile
+    .page-header.mb-4
+      h2.mb-0.fs-4.fs-md-3.line-head#icons Bootstrap Icons
+    p Browse the complete local icon catalog at <a href="https://icons.getbootstrap.com/" target="_blank" rel="noopener">icons.getbootstrap.com</a>. NeoAdmin bundles Bootstrap Icons locally, so these examples do not require a CDN.
+    .row.g-3
+      each icon in [{ name: 'house-door', label: 'House' }, { name: 'search', label: 'Search' }, { name: 'bell', label: 'Notifications' }, { name: 'person-circle', label: 'Profile' }, { name: 'calendar2-week', label: 'Calendar' }, { name: 'bar-chart-line', label: 'Reports' }, { name: 'gear', label: 'Settings' }, { name: 'check-circle', label: 'Success' }, { name: 'envelope', label: 'Messages' }, { name: 'file-earmark-text', label: 'Documents' }, { name: 'heart', label: 'Favorites' }, { name: 'cart', label: 'Orders' }]
+        .col-6.col-md-4.col-lg-3
+          .card.h-100
+            .card-body.d-flex.align-items-center.gap-3
+              i.bi(class=`bi-${icon.name} fs-3 text-primary`, aria-hidden="true")
+              div
+                span.d-block.fw-semibold= icon.label
+                code.small= `bi bi-${icon.name}`
+  .tile
+    .page-header.mb-4
+      h2.mb-0.fs-4.fs-md-3.line-head#indicators Indicators
+
+    .row.g-3
+      .col-12.col-md-6.col-lg-4
+        .alert.alert-dismissible.alert-danger
+          button.btn-close(type="button", data-bs-dismiss="alert")
+          strong Oh snap!
+          a.alert-link(href="#") Change a few things
+          |  and try again.
+
+      .col-12.col-md-6.col-lg-4
+        .alert.alert-dismissible.alert-success
+          button.btn-close(type="button", data-bs-dismiss="alert")
+          strong Well done!
+          | You successfully read
+          a.alert-link(href="#") this message.
+
+      .col-12.col-md-12.col-lg-4
+        .alert.alert-dismissible.alert-info
+          button.btn-close(type="button", data-bs-dismiss="alert")
+          strong Heads up!
+          | This
+          a.alert-link(href="#") alert needs
+          |  your attention.

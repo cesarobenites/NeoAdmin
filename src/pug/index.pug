@@ -1,0 +1,49 @@
+include mixins/_ui.pug
+doctype html
+
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    meta(name="description", content="NeoAdmin is a modern, responsive admin dashboard template built with Bootstrap 5.3, SASS and TypeScript.")
+    title NeoAdmin - Modern Bootstrap 5 Admin Dashboard
+    script(src="assets/js/neoadmin-theme.js?v=1.0.1")
+    link(href="assets/css/neoadmin.css?v=1.0.1&ui=footer-search-panel" rel="stylesheet")
+    link(href="assets/css/neoadmin-icons.css?v=1.0.1" rel="stylesheet")
+
+  body.landing-page
+    #neoadmin-page-loader
+      .neoadmin-spinner
+        .ring
+        .ring
+
+    include partials/_landing-icons.pug
+
+    section.landing-hero
+      .landing-hero-overlay
+      .landing-hero-content
+        h1.landing-hero-title NeoAdmin - Modern Bootstrap 5 Admin Dashboard
+        p.landing-hero-description Built with TypeScript, SASS, and Bootstrap 5.3
+        .d-flex.justify-content-center.gap-3
+          a.btn.btn-primary.btn-lg(href="dashboard.html") View Demo
+          a.btn.btn-outline-light.btn-lg(href="https://github.com/cesarcalicb/NeoAdmin", target="_blank", rel="noopener") GitHub
+        img.landing-hero-banner(src="assets/images/banner.jpg")
+
+    section.features
+      h1.features-title Features
+      .features-cards
+        +feature('globe', 'Free to use and open-source')
+        +feature('smartphone', 'Beautiful and mobile responsive')
+        +feature('zap', 'Built with Bootstrap 5.3, SASS and TypeScript')
+        +feature('chart', 'Chart.js integration to display responsive charts')
+        +feature('layout', 'Seven pre built pages including login, user profile and invoice')
+        +feature('grid', 'Data tables with sort, search and paginate functions')
+
+    footer.landing-footer
+      | Created by
+      b César R.
+      |  &
+      a(href="https://github.com/cesarcalicb/NeoAdmin/graphs/contributors", target="_blank", rel="noopener") contributors
+
+    script(type="module", src="assets/js/neoadmin.js?v=1.0.1")

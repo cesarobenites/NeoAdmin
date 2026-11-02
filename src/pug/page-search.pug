@@ -1,0 +1,92 @@
+extends layouts/_admin.pug
+
+block head
+  - var title = "Search Results"
+  - var activePage = "page-search"
+
+block content
+  .app-title
+    div
+      h1.fs-3.fs-md-2
+        i.bi.bi-search.me-2
+        | Search Results
+      p.text-muted.mb-0 Global lookup for your workspace
+
+    ul.app-breadcrumb.breadcrumb.d-none.d-md-flex
+      li.breadcrumb-item
+        i.bi.bi-house-door.fs-6
+      li.breadcrumb-item.active
+        a(href="#") Global Search
+
+  .container-fluid.search-results.p-0
+    .row.g-3
+      .col-lg-9
+        .tile.tile-flush.overflow-hidden
+          .card-header.py-3.px-4.border-bottom.bg-light
+            .d-flex.align-items-center.justify-content-between.flex-wrap.gap-3
+              h2.h5.mb-0.fw-bold Results for
+                span.text-primary "Bootstrap Admin"
+              span.badge.bg-primary-subtle.text-primary Found 24 matches
+
+          .tile-body
+            .list-group.list-group-flush
+              mixin searchResult(title, url, category, badgeClass, snippet)
+                .list-group-item.p-4.search-result-row.border-0.border-bottom
+                  .d-flex.flex-column.gap-2
+                    .d-flex.align-items-center.gap-2
+                      h3.h6.mb-0.fw-bold
+                        a.text-emphasis.text-decoration-none.hover-primary(href=url)= title
+                      span.badge.rounded-pill.small.px-2(class=`bg-${badgeClass}-subtle text-${badgeClass} border border-${badgeClass}-subtle`)= category
+                    p.text-muted.mb-0.small.lh-base= snippet
+                      |  The core
+                      mark.bg-primary-subtle.text-primary.px-1.rounded admin
+                      |  panel built with
+                      mark.bg-primary-subtle.text-primary.px-1.rounded Bootstrap
+                      |  5. Optimized for real-time monitoring and analytics.
+
+              +searchResult('Main Dashboard Overview', 'dashboard.html', 'Page', 'primary', 'Optimized for real-time monitoring and analytics.')
+              +searchResult('John Doe - Senior Developer', 'page-user.html', 'User', 'success', 'Lead Admin and Bootstrap architect specializing in responsive UI design and scalable systems.')
+              +searchResult('Admin_2026_Advanced_Guide.pdf', '#', 'Document', 'info', 'Full documentation for NeoAdmin framework, including Bootstrap customization and SASS architecture.')
+              +searchResult('UI Components Kit - Cards', 'ui-cards.html', 'Components', 'warning', 'Library of interactive card elements designed with Bootstrap utility classes for rapid prototyping.')
+
+          .card-footer.border-top.py-3.bg-light
+            nav
+              ul.pagination.pagination-sm.justify-content-center.mb-0
+                li.page-item.disabled: a.page-link(href="#"): i.bi.bi-chevron-left
+                li.page-item.active: a.page-link(href="#") 1
+                li.page-item: a.page-link(href="#") 2
+                li.page-item: a.page-link(href="#") 3
+                li.page-item: a.page-link(href="#"): i.bi.bi-chevron-right
+
+      .col-lg-3
+        .tile
+          h4.tile-title.line-head.mb-3 Search Filters
+          .mb-3
+            label.form-label.small.text-muted Category
+            select.form-select.form-select-sm
+              option All Categories
+              option Components
+              option Pages
+              option Documentation
+          .mb-3
+            label.form-label.small.text-muted Date range
+            .form-check.small.mb-1
+              input.form-check-input#anytime(type="radio", name="dateRange", checked)
+              label.form-check-label(for="anytime") Anytime
+            .form-check.small.mb-1
+              input.form-check-input#last24(type="radio", name="dateRange")
+              label.form-check-label(for="last24") Last 24 hours
+          button.btn.btn-primary.btn-sm.w-100.mt-2 Apply Filters
+
+        .tile
+          h4.tile-title.line-head.mb-3 Quick Links
+          .list-group.list-group-flush
+            a.list-group-item.list-group-item-action.px-0.py-2(href="docs.html")
+              i.bi.bi-book.me-2.text-primary
+              | Documentation
+            a.list-group-item.list-group-item-action.px-0.py-2(href="form-custom.html")
+              i.bi.bi-code-slash.me-2.text-primary
+              | UI Kit
+            a.list-group-item.list-group-item-action.px-0.py-2(href="page-settings.html")
+              i.bi.bi-gear.me-2.text-primary
+              | Global Settings

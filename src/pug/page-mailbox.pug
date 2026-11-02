@@ -1,0 +1,104 @@
+extends layouts/_admin.pug
+
+block head
+  - var title = "Mailbox"
+  - var activePage = "page-mailbox"
+
+block content
+  .app-title
+    div
+      h1.fs-3.fs-md-2
+        i.bi.bi-envelope.me-2
+        | Mailbox
+      p.text-muted.mb-0 A Mailbox page sample
+
+    ul.app-breadcrumb.breadcrumb.d-none.d-md-flex
+      li.breadcrumb-item
+        i.bi.bi-house-door.fs-6
+      li.breadcrumb-item.active
+        a(href="#") Mailbox
+
+  .row.g-3
+    .col-md-3
+      a.btn.btn-primary.w-100.mb-3(href="#")
+        i.bi.bi-pencil-square.me-2
+        | Compose Mail
+
+      .tile.tile-flush
+        h4.tile-title.folder-head.px-3.py-2.mb-0 Folders
+        .tile-body
+          ul.nav.nav-pills.flex-column.mail-nav
+            li.nav-item
+              a.nav-link.active.rounded-0.border-start.border-3.border-primary(href="#", aria-current="page")
+                i.bi.bi-inbox.me-2
+                | Inbox
+                span.badge.rounded-pill.text-bg-primary.float-end 12
+            li.nav-item
+              a.nav-link(href="#")
+                i.bi.bi-envelope.me-2
+                | Sent
+            li.nav-item
+              a.nav-link(href="#")
+                i.bi.bi-file-earmark-text.me-2
+                | Drafts
+            li.nav-item
+              a.nav-link(href="#")
+                i.bi.bi-filter.me-2
+                | Junk
+                span.badge.rounded-pill.text-bg-primary.float-end 8
+            li.nav-item
+              a.nav-link(href="#")
+                i.bi.bi-trash.me-2
+                | Trash
+
+    .col-md-9
+      .tile
+        .mailbox-controls.d-flex.justify-content-between.mb-3
+          .animated-checkbox
+            label.m-0
+              input(type="checkbox")
+              span.label-text
+
+          .btn-group
+            button.btn.btn-primary.btn-sm(type="button")
+              i.bi.bi-trash
+            button.btn.btn-primary.btn-sm(type="button")
+              i.bi.bi-reply
+            button.btn.btn-primary.btn-sm(type="button")
+              i.bi.bi-share
+            button.btn.btn-primary.btn-sm(type="button")
+              i.bi.bi-arrow-clockwise
+
+        .table-responsive.mailbox-messages
+          table.table.table-hover
+            tbody
+              mixin mailRow(sender, subject, date, starred=false, attachment=false)
+                tr
+                  td: .animated-checkbox: label.m-0
+                    input(type="checkbox")
+                    span.label-text
+                  td: a(href="#"): i.bi(class=starred ? "bi-star-fill text-warning" : "bi-star")
+                  td: a.fw-bold(href="#")= sender
+                  td.mail-subject
+                    span.fw-bold= subject + " "
+                    | - Lorem ipsum dolor sit amet...
+                  td: if attachment
+                    i.bi.bi-paperclip
+                  td.text-muted.small= date
+
+              +mailRow('César Rolando', 'A report on project almanac', '2 mins ago', true, true)
+              +mailRow('César Rolando', 'A report on some good project', '11 mins ago')
+              +mailRow('César Rolando', 'A report on project almanac', '24 mins ago', false, true)
+              +mailRow('César Rolando', 'A report on project almanac', '31 December')
+              +mailRow('César Rolando', 'A report on project almanac', '28 December', false, true)
+              +mailRow('César Rolando', 'A report on project almanac', '28 December')
+              +mailRow('César Rolando', 'A report on project almanac', '24 December', true, true)
+              +mailRow('César Rolando', 'A report on project almanac', '20 December')
+
+        .d-flex.justify-content-between.align-items-center.mt-3.border-top.pt-3
+          span.text-muted.small Showing 1-15 out of 60
+          .btn-group
+            button.btn.btn-primary.btn-sm(type="button")
+              i.bi.bi-chevron-left
+            button.btn.btn-primary.btn-sm(type="button")
+              i.bi.bi-chevron-right

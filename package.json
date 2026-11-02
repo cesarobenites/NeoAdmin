@@ -1,15 +1,19 @@
 {
   "name": "neoadmin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
-  "description": "Major release: Refactorización total a TypeScript, SCSS modular y eliminación de dependencias de jQuery",
-  "main": "docs/assets/js/neoadmin.js",
+  "description": "Reusable Bootstrap admin template built with TypeScript, modular SCSS, Pug, and Vite",
+  "main": "docs/assets/js/neoadmin.umd.js",
   "module": "docs/assets/js/neoadmin.js",
   "scripts": {
     "dev": "vite",
-    "build:universal": "tsc && vite build --mode universal",
-    "build:vue": "tsc && vite build --mode vue",
-    "preview": "vite --config vite.preview.config.ts"
+    "build:theme": "tsc --target ES2020 --module none --strict --skipLibCheck --lib ES2020,DOM --outFile docs/assets/js/neoadmin-theme.js src/ts/neoadmin-theme.ts",
+    "build:icons": "sass --load-path=node_modules --style=compressed --no-source-map src/scss/neoadmin-icons.scss docs/assets/css/neoadmin-icons.css",
+    "pug:examples": "node --input-type=module -e \"import pug from 'pug'; import { readdirSync, mkdirSync, writeFileSync, copyFileSync } from 'node:fs'; const source = 'src/pug'; const output = 'node_modules/.cache/neoadmin-pug-preview'; mkdirSync(output, { recursive: true }); for (const name of readdirSync(source)) if (name.endsWith('.pug')) writeFileSync(output + '/' + name.slice(0, -4) + '.html', pug.renderFile(source + '/' + name, { pretty: true })); for (const name of readdirSync(output)) copyFileSync(output + '/' + name, 'docs/' + name)\"",
+    "build:universal": "tsc && vite build --mode universal && npm run build:theme && npm run build:icons && npm run pug:examples",
+    "build:vue": "tsc && vite build --mode vue && npm run build:theme && npm run build:icons && npm run pug:examples",
+    "build": "npm run build:universal",
+    "preview": "vite preview --config vite.preview.config.ts"
   },
   "repository": {
     "type": "git",
@@ -30,22 +34,24 @@
   "homepage": "https://neo20.com",
   "dependencies": {
     "@popperjs/core": "^2.11.8",
-    "bootstrap": "^5.3.3",
+    "bootstrap": "^5.3.8",
     "bootstrap-icons": "^1.13.1",
     "chart.js": "^4.5.1",
-    "datatables.net": "^2.3.6",
-    "datatables.net-bs5": "^2.3.6",
+    "datatables.net": "^3.1.5",
+    "datatables.net-bs5": "^3.1.5",
+    "datatables.net-responsive-bs5": "^4.1.1",
+    "flatpickr": "^4.6.13",
     "imask": "^7.6.1",
-    "sweetalert2": "^11.26.17",
     "tom-select": "^2.4.3"
   },
   "devDependencies": {
     "@types/bootstrap": "^5.2.10",
     "@types/node": "^20.11.5",
     "autoprefixer": "^10.4.20",
+    "pug": "^3.0.4",
     "sass": "^1.97.3",
     "typescript": "^5.9.3",
-    "vite": "^5.4.21",
-    "vite-plugin-static-copy": "^3.1.6"
+    "vite": "^8.3.5",
+    "vite-plugin-static-copy": "^4.1.1"
   }
 }

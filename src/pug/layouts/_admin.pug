@@ -1,0 +1,71 @@
+include ../mixins/_ui.pug
+include ../mixins/_notifications.pug
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    meta(name="theme-color", content="", data-neoadmin-theme-color)
+    title #{title ? title + ' - Neo Admin' : 'Neo Admin'}
+
+    script(src="assets/js/neoadmin-theme.js?v=1.0.1")
+    link(rel="stylesheet", type="text/css", href="assets/css/neoadmin.css?v=1.0.1&ui=footer-search-panel")
+    link(rel="stylesheet", type="text/css", href="assets/css/neoadmin-icons.css?v=1.0.1")
+
+    block head
+
+  body.app.sidebar-mini
+    include ../partials/_header.pug
+
+    include ../partials/_sidebar.pug
+
+    main.app-content
+      block content
+
+    #neoadmin-command-palette.modal.fade(tabindex="-1", aria-labelledby="neoadmin-command-title", aria-hidden="true", data-neoadmin-modal-root)
+      .modal-dialog.modal-dialog-centered
+        .modal-content
+          .modal-header
+            h2#neoadmin-command-title.modal-title.fs-5 Quick Search
+            button.btn-close(type="button", data-bs-dismiss="modal", aria-label="Close")
+          .modal-body
+            input.form-control.mb-3(type="search", placeholder="Search pages and actions", data-neoadmin-command-search, aria-label="Search pages and actions")
+            .list-group
+              a.list-group-item.list-group-item-action(data-neoadmin-command, data-href="dashboard.html", href="dashboard.html") Dashboard
+              a.list-group-item.list-group-item-action(data-neoadmin-command, data-href="table-data-table.html", href="table-data-table.html") Data Tables
+              a.list-group-item.list-group-item-action(data-neoadmin-command, data-href="ui-dates.html", href="ui-dates.html") Date & Time
+              a.list-group-item.list-group-item-action(data-neoadmin-command, data-href="page-search.html", href="page-search.html") Search Results
+              button.list-group-item.list-group-item-action(type="button", data-neoadmin-command, data-neoadmin-action="theme") Toggle Theme
+              button.list-group-item.list-group-item-action(type="button", data-neoadmin-command, data-neoadmin-action="search") Open Search
+
+    #neoadmin-confirm-modal.modal.fade(tabindex="-1", aria-labelledby="neoadmin-confirm-title", aria-hidden="true", data-neoadmin-confirm-modal)
+      .modal-dialog.modal-dialog-centered
+        .modal-content
+          .modal-header
+            h2#neoadmin-confirm-title.modal-title.fs-5(data-neoadmin-confirm-title) Confirm Action
+            button.btn-close(type="button", data-bs-dismiss="modal", aria-label="Close")
+          .modal-body(data-neoadmin-confirm-message) Do you want to continue?
+          .modal-footer
+            button.btn.btn-outline-secondary(type="button", data-bs-dismiss="modal") Cancel
+            button.btn.btn-danger(type="button", data-neoadmin-confirm-accept) Confirm
+
+    #neoadmin-async-modal.modal.fade(tabindex="-1", aria-labelledby="neoadmin-async-title", aria-hidden="true", data-neoadmin-async-modal)
+      .modal-dialog.modal-lg.modal-dialog-scrollable
+        .modal-content
+          .modal-header
+            h2#neoadmin-async-title.modal-title.fs-5(data-neoadmin-async-title) Loading
+            button.btn-close(type="button", data-bs-dismiss="modal", aria-label="Close")
+          .modal-body(data-neoadmin-async-content, aria-busy="true")
+            .placeholder-glow(aria-label="Loading content", role="status")
+              span.placeholder.col-12.mb-3
+              span.placeholder.col-8.mb-3
+              span.placeholder.col-10
+
+    #neoadmin-toast-container.toast-container.position-fixed.top-0.end-0.d-flex.flex-column.gap-2.p-3(aria-live="polite", aria-atomic="true", data-neoadmin-toast-container)
+
+    include ../partials/_footer-bar.pug
+
+    script(type="module", src="assets/js/neoadmin.js?v=1.0.1")
+
+    block scripts

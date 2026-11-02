@@ -1,0 +1,67 @@
+extends layouts/_admin.pug
+
+block head
+  - var title = "Calendar"
+  - var activePage = "calendar"
+
+block content
+  .app-title
+    div
+      h1.fs-3.fs-md-2
+        i.bi.bi-calendar3.me-2
+        | Calendar
+      p.text-muted.mb-0 Calendar planning and scheduling workspace
+
+    ul.app-breadcrumb.breadcrumb
+      li.breadcrumb-item
+        i.bi.bi-house-door.fs-6
+      li.breadcrumb-item
+        a(href="#") Calendar
+
+  .row.g-4
+    .col-12.col-xl-8
+      +card('Calendar workspace', 'calendar3')
+        .calendar-workspace(data-calendar-workspace)
+          .d-flex.flex-wrap.align-items-center.justify-content-between.gap-3.mb-3
+            .btn-group(aria-label="Calendar navigation")
+              button.btn.btn-outline-secondary(type="button", data-calendar-previous, aria-label="Previous month")
+                i.bi.bi-chevron-left
+              button.btn.btn-outline-secondary(type="button", data-calendar-today) Today
+              button.btn.btn-outline-secondary(type="button", data-calendar-next, aria-label="Next month")
+                i.bi.bi-chevron-right
+            h2.h5.mb-0(data-calendar-heading) November 2026
+            a.btn.btn-outline-primary.btn-sm(href="ui-dates.html")
+              i.bi.bi-calendar2-week.me-2
+              | Date controls
+          .calendar-grid(data-calendar-grid)
+            each day in ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+              .calendar-grid__weekday= day
+            each day in [{number:'26', outside:true}, {number:'27', outside:true}, {number:'28', outside:true}, {number:'29', outside:true}, {number:'30', outside:true}, {number:'31', outside:true}, {number:'1'}, {number:'2'}, {number:'3', event:'Team review'}, {number:'4'}, {number:'5'}, {number:'6'}, {number:'7'}, {number:'8'}, {number:'9'}, {number:'10'}, {number:'11', event:'Planning'}, {number:'12'}, {number:'13'}, {number:'14'}, {number:'15'}, {number:'16'}, {number:'17'}, {number:'18'}, {number:'19'}, {number:'20'}, {number:'21', event:'Report due'}, {number:'22'}, {number:'23'}, {number:'24'}, {number:'25'}, {number:'26'}, {number:'27'}, {number:'28'}, {number:'29'}, {number:'30'}, {number:'1', outside:true}, {number:'2', outside:true}, {number:'3', outside:true}, {number:'4', outside:true}, {number:'5', outside:true}, {number:'6', outside:true}]
+              button.calendar-grid__day(type="button", class=(day.outside ? 'is-outside' : ''), data-calendar-day=day.number, aria-label=`November ${day.number}`)
+                span= day.number
+                if day.event
+                  small= day.event
+    .col-12.col-xl-4
+      +card('Upcoming Events', 'calendar-event')
+        .list-group.list-group-flush
+          .list-group-item.px-0.d-flex.gap-3
+            .calendar-event__date
+              strong 03
+              span Nov
+            div
+              h3.h6.mb-1 Team review
+              p.small.text-body-secondary.mb-0 Product workspace · 10:00 AM
+          .list-group-item.px-0.d-flex.gap-3
+            .calendar-event__date
+              strong 11
+              span Nov
+            div
+              h3.h6.mb-1 Planning session
+              p.small.text-body-secondary.mb-0 Conference room · 02:30 PM
+          .list-group-item.px-0.d-flex.gap-3
+            .calendar-event__date
+              strong 21
+              span Nov
+            div
+              h3.h6.mb-1 Monthly report due
+              p.small.text-body-secondary.mb-0 Finance · All day

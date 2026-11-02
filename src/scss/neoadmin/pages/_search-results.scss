@@ -1,0 +1,109 @@
+@use "sass:color";
+@use '../vars' as *;
+
+.search-results {
+    .pagination .page-link {
+        display: grid;
+        min-width: 2rem;
+        min-height: 2rem;
+        place-items: center;
+    }
+
+    .search-main-card {
+        border-radius: $card-border-radius;
+        overflow: hidden;
+        background-color: var(--bs-card-bg);
+
+        .card-header, .card-footer {
+            background-color: transparent;
+            border-color: var(--bs-border-color);
+        }
+
+        .card-header {
+            .text-primary {
+                color: $primary !important;
+            }
+        }
+    }
+
+    .search-result-row {
+        transition: background-color 0.2s ease;
+        border-bottom: 1px solid var(--bs-border-color);
+
+        &:last-child {
+            border-bottom: 0;
+        }
+
+        &:hover {
+            background-color: var(--bs-light);
+
+            .hover-primary {
+                color: $primary !important;
+            }
+        }
+
+        .result-title {
+            a {
+                transition: color 0.15s ease-in-out;
+            }
+        }
+
+        mark {
+            background-color: rgba($primary, 0.1) !important;
+            color: $primary !important;
+            padding: 0 0.2rem;
+            border-radius: 0.2rem;
+        }
+
+        .badge {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 700;
+        }
+    }
+    .search-sidebar-card {
+        border-radius: $card-border-radius;
+
+        .card-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--bs-secondary-color);
+        }
+
+        .list-group-item {
+            font-size: 0.85rem;
+            padding: 0.75rem 0;
+            background: transparent;
+
+            a {
+                color: var(--bs-body-color);
+                text-decoration: none;
+                transition: color 0.2s ease;
+
+                i {
+                    color: var(--bs-secondary-color);
+                    margin-right: 0.5rem;
+                }
+
+                &:hover {
+                    color: $primary;
+                    i { color: $primary; }
+                }
+            }
+        }
+    }
+}
+[data-bs-theme="dark"] {
+    .search-results {
+        .search-result-row:hover {
+            background-color: rgba(255,255,255,0.03);
+        }
+
+        mark {
+            background-color: rgba($primary, 0.2) !important;
+            color: color.adjust($primary, $lightness: 20%) !important;
+        }
+    }
+}

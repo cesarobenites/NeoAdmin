@@ -1,0 +1,43 @@
+header.app-header
+  a.app-header__logo(href="dashboard.html", aria-label="NeoAdmin home")
+    img(src="assets/images/neo20_logo.png", width="172", height="50", alt="NeoAdmin")
+  button.app-sidebar__toggle(type="button", data-neoadmin-sidebar, aria-label="Hide Sidebar")
+    i.bi.bi-list
+  ul.app-nav
+    li
+      button.app-nav__item(type="button", data-neoadmin-command-open, aria-label="Quick search (Ctrl K)", aria-controls="neoadmin-command-palette", aria-haspopup="dialog")
+        i.bi.bi-command
+    li#header-search.app-search
+      form(action="page-search.html", method="GET")
+        input.app-search__input(type="search", name="q", placeholder="Search", aria-label="Search pages")
+        button.app-search__button(type="submit", aria-label="Submit search")
+          i.bi.bi-search
+    li.app-search__mobile-toggle
+      button.app-nav__item.app-search__toggle.toggle-search-btn(type="button", aria-label="Open search", aria-controls="header-search", aria-expanded="false")
+        i.bi.bi-search
+    li.dropdown
+      a.app-nav__item(href="#", data-bs-toggle="dropdown", data-bs-offset="[0,0]", aria-label="Show notifications")
+        i.bi.bi-bell
+      +notificationMenu('dropdown-menu-end')
+    li.dropdown
+      a.app-nav__item(href="#", data-bs-toggle="dropdown", data-bs-offset="[0,0]", aria-label="Open Profile Menu")
+        i.bi.bi-person
+      ul.dropdown-menu.settings-menu.dropdown-menu-end
+        li
+          a.dropdown-item(href="page-settings.html")
+            i.bi.bi-gear.me-2
+            | Settings
+        li
+          a.dropdown-item(href="page-user.html")
+            i.bi.bi-person.me-2
+            | Profile
+        li
+          hr.dropdown-divider
+        li
+          a.dropdown-item(href="#", data-neoadmin-theme-toggle)
+            i.bi.bi-moon-stars.me-2
+            | Toggle Theme
+        li
+          a.dropdown-item(href="page-login.html")
+            i.bi.bi-box-arrow-right.me-2
+            | Logout

@@ -1,0 +1,85 @@
+extends layouts/_admin.pug
+
+block head
+  - var title = "Form Notifications"
+  - var activePage = "form-notifications"
+
+block content
+  .app-title
+    div
+      h1.fs-3.fs-md-2
+        i.bi.bi-bell.me-2
+        | Form Notifications
+      p.text-muted.mb-0 Alerts, Toasts, and Notifications
+
+    ul.app-breadcrumb.breadcrumb.d-none.d-md-flex
+      li.breadcrumb-item
+        i.bi.bi-house-door.fs-6
+      li.breadcrumb-item Forms
+      li.breadcrumb-item.active
+        a(href="#") Form Notifications
+
+  .row.g-3
+    .col-md-12
+      .tile
+        h3.tile-title Bootstrap Alerts
+        .tile-body
+          .alert.alert-success.alert-dismissible.fade.show(role="alert")
+            strong Success!
+            |  You successfully read this important alert message.
+            button.btn-close(type="button", data-bs-dismiss="alert", aria-label="Close")
+
+          .alert.alert-info.alert-dismissible.fade.show(role="alert")
+            strong Info!
+            |  This alert needs your attention, but it's not super important.
+            button.btn-close(type="button", data-bs-dismiss="alert", aria-label="Close")
+
+          .alert.alert-warning.alert-dismissible.fade.show(role="alert")
+            strong Warning!
+            |  Better check yourself, you're not looking too good.
+            button.btn-close(type="button", data-bs-dismiss="alert", aria-label="Close")
+
+          .alert.alert-danger.alert-dismissible.fade.show(role="alert")
+            strong Error!
+            |  Change a few things up and try submitting again.
+            button.btn-close(type="button", data-bs-dismiss="alert", aria-label="Close")
+
+    .col-md-6
+      .tile
+        .d-flex.justify-content-between.align-items-center.mb-3
+          h3.tile-title.mb-0 NeoAdmin Notify
+          a.btn.btn-primary.btn-sm(href="docs.html#NeoAdmin-Methods")
+            i.bi.bi-file-earmark-text.me-1
+            | Docs
+        .tile-body
+          p.small.text-muted Notify users about the status of actions.
+          h5.mb-3 Demo
+          button.btn.btn-success(type="button", data-neoadmin-toast="success", data-neoadmin-message="Update complete.") Sample Notification
+
+    .col-md-6
+      .tile
+        .d-flex.justify-content-between.align-items-center.mb-3
+          h3.tile-title.mb-0 NeoModal Confirmation
+          a.btn.btn-primary.btn-sm(href="docs.html#NeoAdmin-Methods")
+            i.bi.bi-file-earmark-text.me-1
+            | Docs
+        .tile-body
+          p.small.text-muted Replacement for native javascript alerts.
+          h5.mb-3 Demo
+          button.btn.btn-info(type="button", data-neoadmin-modal="confirm", data-neoadmin-title="Are you sure?", data-neoadmin-message="This action cannot be undone.", data-neoadmin-confirm-label="Delete") Sample Alert
+
+    .col-md-12
+      .tile
+        h3.tile-title Bootstrap 5 Toasts
+        .tile-body
+          p.small.text-muted Lightweight and easily customizable alert messages.
+          button.btn.btn-primary(type="button", data-neoadmin-toast="info", data-neoadmin-message="Your settings were saved.") Show Live Toast
+
+          .toast-container.position-fixed.bottom-0.end-0.p-3
+            .toast#liveToast(role="alert", aria-live="assertive", aria-atomic="true")
+              .toast-header
+                img.rounded.me-2.neoadmin-notification-icon(src="assets/images/favicon.png", alt="NeoAdmin")
+                strong.me-auto NeoAdmin
+                small 11 mins ago
+                button.btn-close(type="button", data-bs-dismiss="toast", aria-label="Close")
+              .toast-body Hello, world! This is a toast message.

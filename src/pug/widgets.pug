@@ -1,0 +1,79 @@
+extends layouts/_admin.pug
+
+block head
+  - var title = "Widgets"
+  - var activePage = "widgets"
+
+block content
+  .app-title
+    div
+      h1.fs-3.fs-md-2
+        i.bi.bi-grid.me-2
+        | Widgets
+      p.text-muted.mb-0 Flexible and modular blocks for data visualization
+
+    ul.app-breadcrumb.breadcrumb.d-none.d-md-flex
+      li.breadcrumb-item
+        i.bi.bi-house-door.fs-6
+      li.breadcrumb-item UI Elements
+      li.breadcrumb-item.active
+        a(href="#") Widgets
+  .row.g-3.mb-4
+    .col-12
+      h4.fs-4.fs-md-3.mb-3 Colored Widgets
+
+    .col-12.col-md-6.col-xl-3
+      +advancedWidget('primary', 'people', 'Earnings (Monthly)', '$40,000.00+', 'up', '9.48%', 'Since last month')
+
+    .col-12.col-md-6.col-xl-3
+      +advancedWidget('info', 'hand-thumbs-up', 'Sales', '$70,000.00+', 'up', '5.47%', 'Since last years')
+
+    .col-12.col-md-6.col-xl-3
+      +advancedWidget('warning', 'file-earmark', 'New Users', '450', 'up', '7.64%', 'Since last month')
+
+    .col-12.col-md-6.col-xl-3
+      +advancedWidget('danger', 'star', 'Pending Requests', '238', 'down', '9.62%', 'Since yesterday')
+  .row.g-3.mb-4
+    .col-12
+      h4.fs-4.fs-md-3.mb-3 Light Style Widgets
+
+    .col-12.col-md-6.col-xl-3
+      +advancedWidget('primary', 'people', 'Earnings (Monthly)', '$40,000.00+', 'up', '9.48%', 'Since last month', true)
+
+    .col-12.col-md-6.col-xl-3
+      +advancedWidget('info', 'hand-thumbs-up', 'Sales', '$70,000.00+', 'up', '5.47%', 'Since last years', true)
+
+    .col-12.col-md-6.col-xl-3
+      +advancedWidget('warning', 'file-earmark', 'New Users', '450', 'up', '7.64%', 'Since last month', true)
+
+    .col-12.col-md-6.col-xl-3
+      +advancedWidget('danger', 'star', 'Pending Requests', '238', 'down', '9.62%', 'Since yesterday', true)
+  .row.g-4
+    .col-12.col-lg-6
+      +card('Messenger', 'chat-dots')
+        .messenger
+          .messages.neoadmin-message-list
+            .message
+              img(src="assets/images/avatar.jpg", alt="User Avatar", width="40")
+              p.info.bg-light.p-2.rounded Hello there!<br>Good Morning
+            .message.me.text-end
+              p.info.bg-primary.text-white.p-2.rounded.d-inline-block Hi<br>Good Morning
+              img(src="assets/images/avatar_128.jpg", alt="My Avatar", width="40", class="ms-2")
+          .sender.mt-3.d-flex.gap-2
+            input.form-control(type="text", placeholder="Send Message")
+            button.btn.btn-primary(type="button")
+              i.bi.bi-send
+
+    .col-12.col-lg-6
+      +card('Activity Feed', 'activity')
+        ul.list-group.list-group-flush
+          li.list-group-item.px-0
+            .d-flex.justify-content-between
+              span.fw-bold New server setup
+              small.text-muted 5 mins ago
+            p.mb-0.small Server in NY zone is now active.
+          li.list-group-item.px-0
+            .d-flex.justify-content-between
+              span.fw-bold Database backup
+              small.text-muted 1 hour ago
+            p.mb-0.small Weekly backup completed successfully.

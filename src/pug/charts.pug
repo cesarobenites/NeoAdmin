@@ -1,0 +1,50 @@
+extends layouts/_admin.pug
+
+block head
+  - var title = "Charts"
+  - var activePage = "charts"
+
+block content
+  .app-title
+    div
+      h1.fs-3.fs-md-2
+        i.bi.bi-pie-chart.me-2
+        | Charts
+      p.text-muted.mb-0 Various type of charts for your project
+
+    ul.app-breadcrumb.breadcrumb.d-none.d-md-flex
+      li.breadcrumb-item
+        i.bi.bi-house-door.fs-6
+      li.breadcrumb-item
+        a(href="#") Charts
+
+  .row.g-3
+    .col-12.col-md-6
+      +card('Line Chart')
+        .ratio.ratio-16x9
+          canvas#lineChartDemo(data-chart="line")
+
+    .col-12.col-md-6
+      +card('Bar Chart')
+        .ratio.ratio-16x9
+          canvas#barChartDemo(data-chart="bar")
+
+    .col-12.col-md-6
+      +card('Radar Chart')
+        .ratio.ratio-16x9
+          canvas#radarChartDemo(data-chart="radar")
+
+    .col-12.col-md-6
+      +card('Polar Chart')
+        .ratio.ratio-16x9
+          canvas#polarChartDemo(data-chart="polarArea")
+
+    .col-12.col-md-6
+      +card('Pie Chart')
+        .ratio.ratio-16x9
+          canvas#pieChartDemo(data-chart="pie")
+
+    .col-12.col-md-6
+      +card('Doughnut Chart')
+        .ratio.ratio-16x9
+          canvas#doughnutChartDemo(data-chart="doughnut")

@@ -1,0 +1,107 @@
+extends layouts/_admin.pug
+
+block head
+  - var title = "Invoice"
+  - var activePage = "page-invoice"
+
+block content
+  .app-title
+    div
+      h1.fs-3.fs-md-2
+        i.bi.bi-receipt.me-2
+        | Invoice
+      p.text-muted.mb-0 A Printable Invoice Format
+
+    ul.app-breadcrumb.breadcrumb.d-none.d-md-flex
+      li.breadcrumb-item
+        i.bi.bi-house-door.fs-6
+      li.breadcrumb-item.active
+        a(href="#") Invoice
+
+  .row.g-3
+    .col-md-12
+      .tile
+        section.invoice
+          .row.mb-4
+            .col-6
+              h2.page-header.fw-bold
+                i.bi.bi-globe.me-2
+                | Neo20
+            .col-6
+              h5.text-end.text-muted Date: 15/09/2020
+
+          .row.invoice-info.mb-4
+            .col-sm-4.invoice-col
+              p.fw-bold.mb-1 From
+              address
+                strong Neo20.
+                br
+                | 222 Lima
+                br
+                | Lima, PE
+                br
+                | Email: hola@neo20.com
+
+            .col-sm-4.invoice-col
+              p.fw-bold.mb-1 To
+              address
+                strong César Rolando
+                br
+                | 333 Lima
+                br
+                | Phone: (999) 444-0000
+                br
+                | Email: cesar@neo20.com
+
+            .col-sm-4.invoice-col
+              p.fw-bold.mb-1 Invoice #001515
+              b Order ID:
+              | 5G7U4H
+              br
+              b Payment Due:
+              | 22/09/2020
+              br
+              b Account:
+              | 777-8888
+
+          .row.mb-3
+            .col-12.table-responsive
+              table.table.table-striped
+                thead
+                  tr
+                    th Qty
+                    th Product
+                    th Serial #
+                    th Description
+                    th Subtotal
+                tbody
+                  tr
+                    td 1
+                    td Back to the Underworld
+                    td 456-987-234
+                    td The best way to live in the world.
+                    td $75.85
+                  tr
+                    td 1
+                    td The street of the blind
+                    td 323-556-775
+                    td They don't know the true story
+                    td $89.54
+                  tr
+                    td 1
+                    td The dog that was a cat
+                    td 522-345-673
+                    td The story of the dog that was a cat
+                    td $26.75
+                  tr
+                    td 1
+                    td The Mountain that spoke to me
+                    td 553-256-256
+                    td The most unusual friendship
+                    td $38.25
+
+          .row.d-print-none.mt-4
+            .col-12.text-end
+              button.btn.btn-primary(type="button", data-neoadmin-print)
+                i.bi.bi-printer.me-2
+                | Print Invoice

@@ -1,0 +1,99 @@
+extends layouts/_admin.pug
+
+block head
+  - var title = "Edit Profile"
+  - var activePage = "page-user"
+
+block content
+  .app-title
+    div
+      h1.fs-3.fs-md-2
+        i.bi.bi-person-circle.me-2
+        | My Profile
+      p.text-muted.mb-0 Update your personal information and public profile
+
+    ul.app-breadcrumb.breadcrumb.d-none.d-md-flex
+      li.breadcrumb-item
+        i.bi.bi-house-door.fs-6
+      li.breadcrumb-item Pages
+      li.breadcrumb-item.active
+        a(href="#") Profile
+
+  .row.g-3
+    .col-md-4.col-xl-3
+      .tile.tile-flush.overflow-hidden
+        .profile-header.text-center.py-4.bg-primary.text-white
+          .position-relative.d-inline-block
+            img.rounded-circle.border.border-4.border-white.shadow.mb-3(src="assets/images/avatar_128.jpg", width="128", height="128", alt="Profile avatar")
+            button.btn.btn-sm.btn-light.position-absolute.bottom-0.end-0.rounded-circle.shadow-sm(title="Change avatar")
+              i.bi.bi-camera
+          h4 César Rolando
+          p.mb-0.opacity-75.text-white Software Developer
+
+        .tile-body
+          .list-group.list-group-flush
+            a.list-group-item.list-group-item-action.d-flex.align-items-center.py-3.active(href="#")
+              i.bi.bi-person.me-3.fs-5
+              | Personal Info
+            a.list-group-item.list-group-item-action.d-flex.align-items-center.py-3(href="#")
+              i.bi.bi-briefcase.me-3.fs-5.text-secondary
+              | Professional Info
+            a.list-group-item.list-group-item-action.d-flex.align-items-center.py-3(href="#")
+              i.bi.bi-share.me-3.fs-5.text-secondary
+              | Social Profiles
+
+    .col-md-8.col-xl-9
+      .tile
+        h3.tile-title.line-head.mb-4
+          i.bi.bi-card-list.me-2
+          | Personal Details
+        .tile-body
+          form.row.g-4
+            .col-md-6
+              +input('First Name', 'firstName', 'text', 'César')
+            .col-md-6
+              +input('Last Name', 'lastName', 'text', 'Rolando')
+
+            .col-md-12
+              label.form-label.fw-bold Biography
+              textarea.form-control(rows="4") Software Developer passionate about creating beautiful and functional user interfaces. Expert in Bootstrap, TypeScript, and modern web technologies.
+
+            .col-md-6
+              label.form-label.fw-bold Email address
+              .input-group
+                span.input-group-text: i.bi.bi-envelope
+                input.form-control(type="email", value="cesar@example.com")
+
+            .col-md-6
+              label.form-label.fw-bold Phone Number
+              .input-group
+                span.input-group-text: i.bi.bi-phone
+                input.form-control(type="text", placeholder="(51) 99999-9999")
+
+            .col-md-12
+              h3.tile-title.line-head.mt-4.mb-4
+                i.bi.bi-globe.me-2
+                | Professional & Social
+
+            .col-md-6
+              +input('Company', 'company', 'text', 'Neo Systems')
+            .col-md-6
+              +input('Website', 'website', 'url', 'https://neo20.com')
+
+            .col-md-6
+              label.form-label.fw-bold GitHub
+              .input-group
+                span.input-group-text: i.bi.bi-github
+                input.form-control(type="text", value="cesarobenites")
+
+            .col-md-6
+              label.form-label.fw-bold LinkedIn
+              .input-group
+                span.input-group-text: i.bi.bi-linkedin
+                input.form-control(type="text", value="cesarobenites")
+
+            .col-12.mt-5
+              button.btn.btn-primary.px-4.py-2.me-2(type="button")
+                i.bi.bi-save2.me-2
+                | Save Changes
+              button.btn.btn-outline-secondary.px-4.py-2(type="button") Cancel

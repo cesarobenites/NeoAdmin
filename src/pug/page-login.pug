@@ -1,0 +1,57 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title Login - Neo Admin
+    script(src="assets/js/neoadmin-theme.js?v=1.0.1")
+    link(rel="stylesheet", type="text/css", href="assets/css/neoadmin.css?v=1.0.1&ui=footer-search-panel")
+    link(rel="stylesheet", type="text/css", href="assets/css/neoadmin-icons.css?v=1.0.1")
+
+  body
+    section.login-content
+      .logo
+        h1 Neo Admin
+      .login-box
+        form.login-form(action="dashboard.html")
+          h3.login-head
+            i.bi.bi-person.me-2
+            | SIGN IN
+          .mb-3
+            label.form-label USERNAME
+            input.form-control(type="text", placeholder="Email", autofocus)
+          .mb-3
+            label.form-label PASSWORD
+            input.form-control(type="password", placeholder="Password")
+          .mb-3
+            .utility
+              .animated-checkbox
+                label
+                  input(type="checkbox")
+                  span.label-text Stay Signed in
+              p.semibold-text.mb-2
+                a(href="#", data-neoadmin-login-flip) Forgot Password ?
+          .mb-3.btn-container
+            button.btn.btn-primary.w-100
+              i.bi.bi-box-arrow-in-right.fs-5.me-2
+              | SIGN IN
+
+        form.forget-form(action="dashboard.html")
+          h3.login-head
+            i.bi.bi-lock.me-2
+            | Forgot Password ?
+          .mb-3
+            label.form-label EMAIL
+            input.form-control(type="text", placeholder="Email")
+          .mb-3.btn-container
+            button.btn.btn-primary.w-100
+              i.bi.bi-unlock.fs-5.me-2
+              | RESET
+          .mb-3.mt-3
+            p.semibold-text.mb-0
+              a(href="#", data-neoadmin-login-flip)
+                i.bi.bi-chevron-left.me-2
+                | Back to Login
+
+    script(type="module", src="assets/js/neoadmin.js?v=1.0.1")

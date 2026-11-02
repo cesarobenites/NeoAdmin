@@ -1,0 +1,79 @@
+extends layouts/_admin.pug
+
+block head
+  - var title = "Technical Overview"
+  - var activePage = "docs"
+
+block content
+  .app-title
+    div
+      h1
+        i.bi.bi-diagram-3.me-2
+        | Technical Overview
+      p How NeoAdmin source becomes the reusable static dashboard
+
+    ul.app-breadcrumb.breadcrumb.d-none.d-md-flex
+      li.breadcrumb-item
+        a(href="docs.html") Documentation
+      li.breadcrumb-item.active Technical Overview
+
+  .tile
+    .tile-body
+      .docs.docs-content
+        h2.docs-title Build Flow
+        p NeoAdmin has a single source tree and a static distribution target. Vite bundles the runtime, Sass compiles the theme and local icon catalog, and Pug renders each top-level example page.
+        pre.bg-body-secondary.p-3.rounded.border
+          code.
+            src/pug/*.pug  → docs/*.html
+            src/scss/      → docs/assets/css/
+            src/ts/        → docs/assets/js/
+            src/images/    → docs/assets/images/
+        p.mb-0 The normal command is <code>npm run build</code>. Its output in <code>docs/</code> is the deployable GitHub Pages site.
+
+        h2.docs-title Source Map
+        .table-responsive
+          table.table.align-middle
+            thead
+              tr
+                th(scope="col") Source
+                th(scope="col") Responsibility
+                th(scope="col") Output or consumer
+            tbody
+              tr
+                th(scope="row") <code>src/pug/</code>
+                td Page examples, layouts, partials, and reusable mixins
+                td Static HTML pages in <code>docs/</code>
+              tr
+                th(scope="row") <code>src/scss/neoadmin/</code>
+                td Bootstrap theme configuration, Sass tokens, components, and page styles
+                td Main theme stylesheet
+              tr
+                th(scope="row") <code>src/scss/neoadmin-icons.scss</code>
+                td Bootstrap Icons catalog and local font declaration
+                td Separate icon stylesheet and WOFF2 asset
+              tr
+                th(scope="row") <code>src/ts/</code>
+                td Strict TypeScript controllers and optional page integrations
+                td ES module and universal library builds
+              tr
+                th(scope="row") <code>src/images/</code>
+                td Source images used by page examples
+                td Copied images in the static asset tree
+        h2.docs-title Styles and Surfaces
+        p <code>src/scss/neoadmin/_vars.scss</code> defines the Bootstrap palette, typography, layout dimensions, and reusable surface tokens. Shared cards, tiles, headers, sidebars, and navigation are separated into <code>src/scss/neoadmin/component/</code>. Page-only styles are grouped under <code>src/scss/neoadmin/pages/</code>. The browser toolbar color comes from the compiled Sass theme token and follows the active Light or Dark setting.
+        p The main theme CSS is generated as <code>docs/assets/css/neoadmin.css</code>. The Sass theme exposes <code>--neoadmin-browser-theme-color</code>; the TypeScript controller copies its computed value to the shared <code>theme-color</code> meta element at startup and after theme changes. Bootstrap Icons are compiled separately into <code>docs/assets/css/neoadmin-icons.css</code> and use the local WOFF2 file.
+
+        h2.docs-title Page Runtime
+        p Shared Pug layouts load the saved or system theme preference before the theme stylesheet, preventing a light-theme flash on pages saved in Dark mode. Bootstrap 5 JavaScript and the NeoAdmin TypeScript entry load with the page runtime. Pages opt into optional libraries through semantic data attributes; Vite keeps those integrations in deferred chunks when the page does not request them.
+        ul
+          li Tables opt into DataTables through table markup and page-level configuration.
+          li Charts load their charting integration from chart examples.
+          li Date &amp; Time controls load Flatpickr only on the date demonstration page.
+          li Forms load select and input-mask integrations only when their examples require them.
+
+        h2.docs-title(id="framework-targets") Framework Support
+        p The current application target is a Bootstrap 5 static template with framework-free TypeScript. The Pug examples use semantic markup and data attributes as integration points.
+        p NeoAdmin can be reused in React, Vue, or Angular projects by copying the compiled theme assets and adapting the semantic HTML examples into the host framework's templates. The host application owns routing and component lifecycle; React, Vue, and Angular components, adapters, and generators are not included.
+        p <code>npm run build:vue</code> creates a framework-free ES module profile with automatic initialization disabled. It does not create Vue components or provide component lifecycle adapters.
+        p.mb-0
+          a(href="docs.html") Return to Documentation

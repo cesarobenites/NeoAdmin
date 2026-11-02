@@ -1,375 +1,346 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description"
-    content="Neo Admin is responsive and free admin theme built with Bootstrap 5.3, SASS and PUG.js. It's fully customizable and modular.">
-  <!-- Twitter meta-->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:site" content="@cesarobenites">
-  <meta property="twitter:creator" content="@cesarobenites">
-  <!-- Open Graph Meta-->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Neo Admin">
-  <meta property="og:title" content="Neo Admin - Bootstrap 5.3 admin theme">
-  <meta property="og:url" content="http://neo20.com/blog/NeoAdmin">
-  <meta property="og:image" content="http://neo20.com/blog/NeoAdmin/hero-social.png">
-  <meta property="og:description"
-    content="Neo Admin is responsive and free admin theme built with Bootstrap 5.3, SASS and PUG.js. It's fully customizable and modular.">
-  <title>Documentation - Neo Admin</title>
-  <!-- Main CSS-->
-  <link href="assets/css/neoadmin.css" rel="stylesheet">
-  <!-- Styles -> Plugins & Custom-->
-</head>
-
-<body class="app sidebar-mini">
-  <!-- Preloader - Prevents FOUC -->
-  <div id="neo-page-loader">
-    <div class="neo-spinner">
-      <div class="ring"></div>
-      <div class="ring"></div>
-    </div>
-  </div>
-  <!-- Navbar-->
-  <!-- Navbar-->
-  <header class="app-header">
-    <a class="app-header__logo" href="index.html">
-      <img src="assets/images/neo20_logo.png" alt="NeoAdmin Logo">
-    </a>
-    <!-- Sidebar toggle button-->
-    <a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
-
-    <div class="app-nav-container">
-      <!-- Navbar Right Menu-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="" data-neoadmin-theme-color>
+    <title>Neo Admin</title>
+    <script src="assets/js/neoadmin-theme.js?v=1.0.1"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/neoadmin.css?v=1.0.1&amp;ui=footer-search-panel">
+    <link rel="stylesheet" type="text/css" href="assets/css/neoadmin-icons.css?v=1.0.1">
+  </head>
+  <body class="app sidebar-mini">
+    <header class="app-header"><a class="app-header__logo" href="dashboard.html" aria-label="NeoAdmin home"><img src="assets/images/neo20_logo.png" width="172" height="50" alt="NeoAdmin"></a>
+      <button class="app-sidebar__toggle" type="button" data-neoadmin-sidebar aria-label="Hide Sidebar"><i class="bi bi-list"></i></button>
       <ul class="app-nav">
-        <!-- Search-->
-        <li class="app-search">
-          <input class="app-search__input" type="search" placeholder="Search...">
-          <button class="app-search__button">
-            <i class="bi bi-search"></i>
-          </button>
+        <li>
+          <button class="app-nav__item" type="button" data-neoadmin-command-open aria-label="Quick search (Ctrl K)" aria-controls="neoadmin-command-palette" aria-haspopup="dialog"><i class="bi bi-command"></i></button>
         </li>
-
-        <!-- Theme Toggle-->
-        <li class="dropdown">
-          <a class="app-nav__item" href="#" data-toggle="theme" aria-label="Toggle Theme"
-            title="Toggle Dark/Light Mode">
-            <i class="bi bi-moon-stars fs-5"></i>
-          </a>
+        <li class="app-search" id="header-search">
+          <form action="page-search.html" method="GET">
+            <input class="app-search__input" type="search" name="q" placeholder="Search" aria-label="Search pages">
+            <button class="app-search__button" type="submit" aria-label="Submit search"><i class="bi bi-search"></i></button>
+          </form>
         </li>
-
-        <!-- Full Screen Toggle -->
-        <li class="dropdown">
-          <a class="app-nav__item" href="#" data-toggle="fullscreen" aria-label="Toggle Fullscreen" title="Full Screen">
-            <i class="bi bi-arrows-fullscreen fs-5"></i>
-          </a>
+        <li class="app-search__mobile-toggle">
+          <button class="app-nav__item app-search__toggle toggle-search-btn" type="button" aria-label="Open search" aria-controls="header-search" aria-expanded="false"><i class="bi bi-search"></i></button>
         </li>
-
-        <!-- Font Size Dropdown -->
-        <li class="dropdown">
-          <a class="app-nav__item" href="#" data-bs-toggle="dropdown" aria-label="Font Size" title="Text Size">
-            <i class="bi bi-type fs-5"></i>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="#" data-font-size="14px">Small</a></li>
-            <li><a class="dropdown-item" href="#" data-font-size="16px">Normal</a></li>
-            <li><a class="dropdown-item" href="#" data-font-size="20px">Large</a></li>
-          </ul>
-        </li>
-
-        <!--Notification Menu-->
-        <li class="dropdown"><a class="app-nav__item" href="#" data-bs-toggle="dropdown"
-            aria-label="Show notifications"><i class="bi bi-bell fs-5"></i></a>
+        <li class="dropdown"><a class="app-nav__item" href="#" data-bs-toggle="dropdown" data-bs-offset="[0,0]" aria-label="Show notifications"><i class="bi bi-bell"></i></a>
           <ul class="app-notification dropdown-menu dropdown-menu-end">
             <li class="app-notification__title">You have 4 new notifications.</li>
-            <div class="app-notification__content">
-              <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
-                      class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-primary"></i><i
-                        class="bi bi-envelope-fill bi-stack-1x bi-inverse"></i></span></span>
-                  <div>
-                    <p class="app-notification__message">Lisa sent you a mail</p>
-                    <p class="app-notification__meta">2 min ago</p>
-                  </div>
-                </a></li>
-              <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
-                      class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-danger"></i><i
-                        class="bi bi-hdd-fill bi-stack-1x bi-inverse"></i></span></span>
-                  <div>
-                    <p class="app-notification__message">Mail server not working</p>
-                    <p class="app-notification__meta">5 min ago</p>
-                  </div>
-                </a></li>
-              <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
-                      class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-success"></i><i
-                        class="bi bi-cash-coin bi-stack-1x bi-inverse"></i></span></span>
-                  <div>
-                    <p class="app-notification__message">Transaction complete</p>
-                    <p class="app-notification__meta">2 days ago</p>
-                  </div>
-                </a></li>
-              <div class="app-notification__content">
-                <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
-                        class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-primary"></i><i
-                          class="bi bi-envelope-fill bi-stack-1x bi-inverse"></i></span></span>
+            <li>
+              <ul class="app-notification__content list-unstyled mb-0">
+                <li><a class="app-notification__item" href="#"><span class="app-notification__icon"><span class="bg-primary-subtle"><i class="bi bi-envelope-fill"></i></span></span>
                     <div>
                       <p class="app-notification__message">Lisa sent you a mail</p>
                       <p class="app-notification__meta">2 min ago</p>
-                    </div>
-                  </a></li>
-                <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
-                        class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-danger"></i><i
-                          class="bi bi-hdd-fill bi-stack-1x bi-inverse"></i></span></span>
+                    </div></a></li>
+                <li><a class="app-notification__item" href="#"><span class="app-notification__icon"><span class="bg-danger-subtle"><i class="bi bi-hdd-fill"></i></span></span>
                     <div>
                       <p class="app-notification__message">Mail server not working</p>
                       <p class="app-notification__meta">5 min ago</p>
-                    </div>
-                  </a></li>
-                <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><span
-                        class="bi-stack bi-lg"><i class="bi bi-circle-fill bi-stack-2x text-success"></i><i
-                          class="bi bi-cash-coin bi-stack-1x bi-inverse"></i></span></span>
+                    </div></a></li>
+                <li><a class="app-notification__item" href="#"><span class="app-notification__icon"><span class="bg-success-subtle"><i class="bi bi-cash-coin"></i></span></span>
                     <div>
                       <p class="app-notification__message">Transaction complete</p>
                       <p class="app-notification__meta">2 days ago</p>
-                    </div>
-                  </a></li>
-              </div>
-            </div>
+                    </div></a></li>
+              </ul>
+            </li>
             <li class="app-notification__footer"><a href="#">See all notifications.</a></li>
           </ul>
         </li>
-
-        <!-- User Menu-->
-        <li class="dropdown">
-          <a class="app-nav__item" href="#" data-bs-toggle="dropdown" aria-label="Open Profile Menu">
-            <i class="bi bi-person-circle fs-5"></i>
-          </a>
+        <li class="dropdown"><a class="app-nav__item" href="#" data-bs-toggle="dropdown" data-bs-offset="[0,0]" aria-label="Open Profile Menu"><i class="bi bi-person"></i></a>
           <ul class="dropdown-menu settings-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="page-user.html"><i class="bi bi-gear me-2"></i> Settings</a></li>
-            <li><a class="dropdown-item" href="page-user.html"><i class="bi bi-person me-2"></i> Profile</a></li>
+            <li><a class="dropdown-item" href="page-settings.html"><i class="bi bi-gear me-2"></i>Settings</a></li>
+            <li><a class="dropdown-item" href="page-user.html"><i class="bi bi-person me-2"></i>Profile</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
-            <li><a class="dropdown-item" href="page-login.html"><i class="bi bi-box-arrow-right me-2"></i> Logout</a>
-            </li>
+            <li><a class="dropdown-item" href="#" data-neoadmin-theme-toggle><i class="bi bi-moon-stars me-2"></i>Toggle Theme</a></li>
+            <li><a class="dropdown-item" href="page-login.html"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
           </ul>
         </li>
       </ul>
-    </div>
-  </header>
-  <!-- Sidebar menu-->
-  <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
-  <aside class="app-sidebar">
-    <div class="sidebar-scroll sidebar-scroll-toggled">
-      <div class="app-sidebar__user">
-        <img class="app-sidebar__user-avatar-mobile" src="assets/images/avatar.jpg" alt="User Image">
-        <img class="app-sidebar__user-avatar" src="assets/images/avatar_128.jpg" alt="User Image">
+    </header>
+    <aside class="app-sidebar">
+      <div class="sidebar-scroll sidebar-scroll-toggled">
+        <div class="app-sidebar__user"><img class="app-sidebar__user-avatar-mobile" src="assets/images/avatar.jpg" alt="User Image"><img class="app-sidebar__user-avatar" src="assets/images/avatar_128.jpg" alt="User Image">
+          <div>
+            <p class="app-sidebar__user-name">César Rolando</p>
+            <p class="app-sidebar__user-designation">Software Developer</p>
+          </div>
+        </div>
+        <ul class="app-menu">
+          <li><a class="app-menu__item" href="dashboard.html"><i class="app-menu__icon bi bi-house-door"></i><span class="app-menu__label">Dashboard</span></a></li>
+          <li class="treeview"><a class="app-menu__item" href="#" data-neoadmin-treeview><i class="app-menu__icon bi bi-laptop"></i><span class="app-menu__label">UI Elements</span><i class="treeview-indicator bi bi-chevron-right"></i></a>
+            <ul class="treeview-menu">
+              <li><a class="treeview-item" href="bootstrap-components.html"><i class="icon bi bi-chevron-right"></i> Bootstrap Elements</a></li>
+              <li><a class="treeview-item" href="ui-cards.html"><i class="icon bi bi-chevron-right"></i> Cards</a></li>
+              <li><a class="treeview-item" href="widgets.html"><i class="icon bi bi-chevron-right"></i> Widgets</a></li>
+              <li><a class="treeview-item" href="ui-dates.html"><i class="icon bi bi-chevron-right"></i> Date & Time</a></li>
+            </ul>
+          </li>
+          <li class="app-menu__group">Components</li>
+          <li><a class="app-menu__item" href="charts.html"><i class="app-menu__icon bi bi-pie-chart"></i><span class="app-menu__label">Charts</span></a></li>
+          <li class="treeview"><a class="app-menu__item" href="#" data-neoadmin-treeview><i class="app-menu__icon bi bi-pencil-square"></i><span class="app-menu__label">Forms</span><i class="treeview-indicator bi bi-chevron-right"></i></a>
+            <ul class="treeview-menu">
+              <li><a class="treeview-item" href="form-components.html"><i class="icon bi bi-chevron-right"></i> Form Components</a></li>
+              <li><a class="treeview-item" href="form-custom.html"><i class="icon bi bi-chevron-right"></i> Custom Components</a></li>
+              <li><a class="treeview-item" href="form-samples.html"><i class="icon bi bi-chevron-right"></i> Form Samples</a></li>
+              <li><a class="treeview-item" href="form-notifications.html"><i class="icon bi bi-chevron-right"></i> Form Notifications</a></li>
+            </ul>
+          </li>
+          <li class="treeview"><a class="app-menu__item" href="#" data-neoadmin-treeview><i class="app-menu__icon bi bi-table"></i><span class="app-menu__label">Tables</span><i class="treeview-indicator bi bi-chevron-right"></i></a>
+            <ul class="treeview-menu">
+              <li><a class="treeview-item" href="table-basic.html"><i class="icon bi bi-chevron-right"></i> Basic Tables</a></li>
+              <li><a class="treeview-item" href="table-data-table.html"><i class="icon bi bi-chevron-right"></i> Data Tables</a></li>
+            </ul>
+          </li>
+          <li class="app-menu__group">Pages</li>
+          <li><a class="app-menu__item" href="page-mailbox.html"><i class="app-menu__icon bi bi-envelope"></i><span class="app-menu__label">Mailbox</span></a></li>
+          <li class="treeview"><a class="app-menu__item" href="#" data-neoadmin-treeview><i class="app-menu__icon bi bi-file-earmark"></i><span class="app-menu__label">Pages</span><i class="treeview-indicator bi bi-chevron-right"></i></a>
+            <ul class="treeview-menu">
+              <li><a class="treeview-item" href="page-user.html"><i class="icon bi bi-chevron-right"></i> User Profile</a></li>
+              <li><a class="treeview-item" href="page-settings.html"><i class="icon bi bi-chevron-right"></i> Settings</a></li>
+              <li><a class="treeview-item" href="page-calendar.html"><i class="icon bi bi-chevron-right"></i> Calendar</a></li>
+              <li><a class="treeview-item" href="page-search.html"><i class="icon bi bi-chevron-right"></i> Search Results</a></li>
+              <li><a class="treeview-item" href="page-invoice.html"><i class="icon bi bi-chevron-right"></i> Invoice</a></li>
+              <li><a class="treeview-item" href="blank-page.html"><i class="icon bi bi-chevron-right"></i> Blank Page</a></li>
+            </ul>
+          </li>
+          <li><a class="app-menu__item active" href="docs.html"><i class="app-menu__icon bi bi-journal-text"></i><span class="app-menu__label">Documentation</span></a></li>
+        </ul>
+      </div>
+    </aside>
+    <main class="app-content">
+      <div class="app-title">
         <div>
-          <p class="app-sidebar__user-name">César Rolando</p>
-          <p class="app-sidebar__user-designation">Software Developer</p>
+          <h1><i class="bi bi-journal-text me-2"></i>Documentation</h1>
+          <p>NeoAdmin Installation, Customization, and Usage</p>
+        </div>
+        <ul class="app-breadcrumb breadcrumb d-none d-md-flex">
+          <li class="breadcrumb-item">Home</li>
+          <li class="breadcrumb-item active"><a href="docs.html">Documentation</a></li>
+        </ul>
+      </div>
+      <div class="tile">
+        <div class="tile-body">
+          <div class="docs docs-content">
+            <h2 class="docs-title">NeoAdmin Overview</h2>
+            <p class="lead">NeoAdmin is a reusable administration dashboard template built with Bootstrap 5.3, TypeScript, SCSS, Pug, and Vite.</p>
+            <p>Use it as a complete static site, or reuse its compiled theme assets and semantic page examples in an existing application. The active runtime is framework-free TypeScript with Bootstrap and browser APIs; React, Vue, and Angular components are not part of this release.</p>
+            <div class="docs-actions"><a class="btn btn-primary btn-sm" href="dashboard.html">Open the Dashboard</a><a class="btn btn-outline-primary btn-sm" href="architecture.html">View the Technical Overview</a></div>
+            <h2 class="docs-title">Quick Start</h2>
+            <p>Clone the repository, install its development dependencies, then start the local Vite server.</p>
+            <pre class="docs-code-block"><code>git clone https://github.com/cesarobenites/NeoAdmin.git
+cd NeoAdmin
+npm install
+npm run dev</code></pre>
+            <p>The local server lets you preview the Pug examples while editing their source. Build the static site when the changes are ready.</p>
+            <pre class="docs-code-block"><code>npm run build
+npm run preview</code></pre>
+            <p class="mb-0">The production build type-checks TypeScript, bundles Vite assets, compiles the local icon catalog, and renders the top-level Pug pages into <code>docs/</code>.</p>
+            <h2 class="docs-title">Build System</h2>
+            <p>Use these commands from the repository root to develop, generate, and preview the distributable site.</p>
+            <div class="table-responsive">
+              <table class="table align-middle">
+                <thead>
+                  <tr>
+                    <th scope="col">Command</th>
+                    <th scope="col">Result</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"><code>npm run dev</code></th>
+                    <td>Starts the Vite development server for the Pug examples and theme source.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>npm run build</code></th>
+                    <td>Type-checks TypeScript and creates the complete static website under <code>docs/</code>.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>npm run preview</code></th>
+                    <td>Serves the generated website locally so the production output can be reviewed.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><code>npm run build:vue</code></th>
+                    <td>Builds the ES module profile with automatic initialization disabled for a host application.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="mb-0">Publish the contents of <code>docs/</code> with GitHub Pages. The <code>build:vue</code> profile remains a framework-free TypeScript module and does not generate Vue components.</p>
+            <h2 class="docs-title">Documentation Pages</h2>
+            <p>Use the focused guides when you need details about the build, framework integration, or AI-assisted development.</p>
+            <ul>
+              <li><a href="architecture.html">Technical Overview</a> describes source folders, runtime modules, and framework boundaries.</li>
+              <li><a href="agent-guide.html">AI Agent Guide</a> explains how to use NeoAdmin with Claude Code, Codex, Antigravity, Gemini CLI, Copilot, and other coding agents.</li>
+            </ul>
+            <h2 class="docs-title">Use NeoAdmin as Your Application</h2>
+            <p>Choose this workflow when you want the NeoAdmin dashboard itself to be the application. Keep the repository, edit its source, and deploy the generated site.</p>
+            <ol>
+              <li>Edit page examples and shared layout in <code>src/pug/</code>.</li>
+              <li>Customize colors, typography, spacing, and surfaces in <code>src/scss/neoadmin/_vars.scss</code>.</li>
+              <li>Add shared components under <code>src/scss/neoadmin/component/</code> and page-specific styles under <code>src/scss/neoadmin/pages/</code>.</li>
+              <li>Add interactions and page integrations in <code>src/ts/</code>.</li>
+              <li>Run <code>npm run build</code> and deploy the generated <code>docs/</code> directory with GitHub Pages or another static host.</li>
+            </ol>
+            <p class="mb-0">Treat <code>src/</code> as the editable source and <code>docs/</code> as compiled output. Do not make manual changes to generated pages.</p>
+            <h2 class="docs-title">Use NeoAdmin as a Template in Another Project</h2>
+            <p>Use NeoAdmin as a complete static dashboard by customizing this repository and deploying <code>docs/</code>. To use its design in an existing React, Vue, or Angular application, build NeoAdmin and copy the assets and examples that the host project needs. NeoAdmin is a starter template and theme, not a package of framework components.</p>
+            <ol>
+              <li>Run <code>npm install</code> and <code>npm run build</code> in the NeoAdmin repository.</li>
+              <li>Copy <code>docs/assets/css/neoadmin.css</code> into the host application's public assets. Copy <code>neoadmin-icons.css</code> and its WOFF2 font only when using Bootstrap Icons; add only the required images and optional integrations.</li>
+              <li>Use generated <code>docs/*.html</code> or source examples in <code>src/pug/</code> as references. Convert the needed structure into React JSX/TSX, Vue templates, or Angular templates, then adjust asset paths.</li>
+              <li>Load the theme stylesheet once. Let the host framework handle routing, rendering, and component lifecycle; include Bootstrap JavaScript only for components that require it.</li>
+              <li>Connect the needed <code>data-neoadmin-*</code> hooks and <code>neoadmin:*</code> DOM events to host interactions. Do not start the page-wide runtime independently in every routed component.</li>
+            </ol>
+            <p>React, Vue, and Angular components, adapters, and project generators are not included. <code>npm run build:vue</code> creates a framework-free ES module with automatic initialization disabled; it does not generate Vue components.</p>
+            <p class="mb-0">Read <a href="architecture.html#framework-targets">Framework Support</a> for the implementation boundary and <a href="agent-guide.html#host-projects">AI Agent Guide</a> for using NeoAdmin skills in another repository.</p>
+            <h2 class="docs-title">Theme, Fonts, and Icons</h2>
+            <p>The Sass palette and shared layout tokens are defined in <code>src/scss/neoadmin/_vars.scss</code>. The built theme uses Bootstrap CSS variables for component surfaces and supports the existing light and dark modes.</p>
+            <p>The browser toolbar theme color follows the active NeoAdmin theme automatically. Light mode uses the compiled <code>$primary</code> token; dark mode uses the dark header surface. TypeScript reads <code>--neoadmin-browser-theme-color</code> from the compiled theme and updates the <code>theme-color</code> meta tag on page startup and when Light or Dark is selected. Change the Sass tokens and run <code>npm run build</code>; no separate Pug color value is needed. Browser support and presentation vary by browser and device.</p>
+            <p>In the standalone template, Theme Mode on <code>page-settings.html</code> saves a manual Light or Dark choice in <code>localStorage</code> under the exact key <code>neoadmin-theme</code>. The accepted values are <code>light</code> and <code>dark</code>. System mode removes the key, then TypeScript follows <code>prefers-color-scheme</code> and responds to system changes.</p>
+            <pre class="docs-code-block"><code>localStorage.getItem('neoadmin-theme')</code></pre>
+            <p>To force Dark mode from the browser console, save the value and reload:</p>
+            <pre class="docs-code-block"><code>localStorage.setItem('neoadmin-theme', 'dark'); location.reload()</code></pre>
+            <p>To return to System mode, clear the override and reload:</p>
+            <pre class="docs-code-block"><code>localStorage.removeItem('neoadmin-theme'); location.reload()</code></pre>
+            <p>To change where the preference is stored, edit <code>getStoredTheme()</code> and <code>setTheme()</code> in <code>src/ts/neoadmin.ts</code>. <code>getStoredTheme()</code> reads the preference; <code>setTheme()</code> saves Light or Dark and removes the override for System. Keep <code>applyTheme()</code> to synchronize the page and the browser toolbar color. Rebuild with <code>npm run build</code> after changing the TypeScript source. A host application can replace this storage with its cookie, server, or account preference.</p>
+            <p>Secondary buttons use the Bootstrap secondary palette with white text for a clear contrast against primary actions.</p>
+            <p>Bootstrap Icons are included as a separate local catalog at <code>docs/assets/css/neoadmin-icons.css</code> with its local WOFF2 font. The theme does not need a remote icon CDN. Bootstrap form controls use the system font stack.</p>
+            <p class="mb-0">Keep icon styles linked once through the shared layout. Prefer available Bootstrap utilities and project tokens before introducing additional styles or dependencies.</p>
+            <h2 class="docs-title">Optional Components and Loading</h2>
+            <p>Page integrations load only when the matching example requests them. DataTables, responsive tables, charts, Tom Select, IMask, and Flatpickr are split into optional imports so unrelated pages can avoid their code.</p>
+            <ul>
+              <li><a href="table-data-table.html">Data Tables</a> demonstrates responsive tables, state, density, search, and CSV export.</li>
+              <li><a href="ui-dates.html">Date & Time</a> demonstrates date, date-time, range, and month/year inputs with Flatpickr.</li>
+              <li>Bootstrap Icons remain available from the separate stylesheet when an example needs an icon.</li>
+            </ul>
+            <li>UI Cards demonstrates Bootstrap's CSS-only skeleton placeholders; they need no JavaScript or framework.</li>
+            <p>The shared admin layout includes an asynchronous modal skeleton. Trigger it with <code>data-neoadmin-modal="load"</code> and <code>data-neoadmin-url="..."</code>; the TypeScript runtime displays placeholders while <code>fetch()</code> loads the content, then replaces them with the response.</p>
+            <pre class="docs-code-block"><code>&lt;button type="button" data-neoadmin-modal="load" data-neoadmin-url="form-fragment.html" data-neoadmin-title="Edit profile"&gt;
+  Edit profile
+&lt;/button&gt;</code></pre>
+            <p>The landing page also demonstrates a full-page startup loader in <code>src/pug/index.pug</code>; the TypeScript runtime removes it after initialization. Use this for a brief page startup state, and use skeletons for content regions waiting on asynchronous data.</p>
+            <p class="mb-0">Use <code>.placeholder-glow</code> or <code>.placeholder-wave</code> with <code>.placeholder</code> elements for content previews. Set <code>aria-busy="true"</code> while loading and replace the skeleton with the loaded content when the request completes. See <a href="ui-cards.html">UI Cards</a> and the asynchronous modal in the shared layout.</p>
+            <h2 class="docs-title">NeoAdmin TypeScript API</h2>
+            <p>Page controls use semantic HTML and <code>data-neoadmin-*</code> attributes. The same markup can be adapted into a framework template without inline event handlers.</p>
+            <h5>Notifications</h5>
+            <pre class="docs-code-block"><code>NeoAdmin.notify('Update successful!', 'success');</code></pre>
+            <p class="small text-body-secondary">The alert appears at the top of the page and closes automatically after five seconds.</p>
+            <button class="btn btn-success btn-sm mb-3" type="button" data-neoadmin-toast="success" data-neoadmin-message="Update successful!">Try Notify</button>
+            <h5>Confirmation</h5>
+            <pre class="docs-code-block"><code>NeoAdmin.getInstance().confirm({ title: 'Good Job!', message: 'Operation completed.', onConfirm: () =&gt; {} });</code></pre>
+            <button class="btn btn-info btn-sm text-white" type="button" data-neoadmin-modal="confirm" data-neoadmin-title="Good Job!" data-neoadmin-message="Operation completed." data-neoadmin-confirm-label="Continue">Try Alert</button>
+            <p>The command palette opens with <kbd>Ctrl</kbd> + <kbd>K</kbd> or <kbd>Cmd</kbd> + <kbd>K</kbd>. On mobile, open Quick Search from the footer navigation. It supports page navigation and quick theme actions.</p>
+            <h2 class="docs-title">Learn More</h2>
+            <ul>
+              <li><a href="architecture.html">Technical Overview</a> explains the source modules, build output, and framework support.</li>
+              <li><a href="agent-guide.html">AI Agent Guide</a> shows how to use this repository with Claude Code, Codex, Antigravity, Gemini CLI, Copilot, and other project-aware agents.</li>
+              <li><a href="https://github.com/cesarobenites/NeoAdmin" target="_blank" rel="noopener">NeoAdmin on GitHub</a> contains the source, README, issues, and version history.</li>
+            </ul>
+          </div>
         </div>
       </div>
-      <ul class="app-menu">
-        <li><a class="app-menu__item" href="dashboard.html"><i class="app-menu__icon bi bi-house-door"></i><span
-              class="app-menu__label">Dashboard</span></a></li>
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i
-              class="app-menu__icon bi bi-laptop"></i><span class="app-menu__label">UI Elements</span><i
-              class="treeview-indicator bi bi-chevron-right"></i></a>
-          <ul class="treeview-menu">
-            <li><a class="treeview-item" href="bootstrap-components.html"><i class="icon bi bi-chevron-right"></i>
-                Bootstrap Elements</a></li>
-            <li><a class="treeview-item" href="https://icons.getbootstrap.com/" target="_blank" rel="noopener"><i
-                  class="icon bi bi-chevron-right"></i> Font Icons</a></li>
-            <li><a class="treeview-item" href="ui-cards.html"><i class="icon bi bi-chevron-right"></i> Cards</a></li>
-            <li><a class="treeview-item" href="widgets.html"><i class="icon bi bi-chevron-right"></i> Widgets</a></li>
-          </ul>
-        </li>
-        <li class="app-menu__group">Components</li>
-        <li><a class="app-menu__item" href="charts.html"><i class="app-menu__icon bi bi-pie-chart"></i><span
-              class="app-menu__label">Charts</span></a></li>
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i
-              class="app-menu__icon bi bi-pencil-square"></i><span class="app-menu__label">Forms</span><i
-              class="treeview-indicator bi bi-chevron-right"></i></a>
-          <ul class="treeview-menu">
-            <li><a class="treeview-item" href="form-components.html"><i class="icon bi bi-chevron-right"></i> Form
-                Components</a></li>
-            <li><a class="treeview-item" href="form-custom.html"><i class="icon bi bi-chevron-right"></i> Custom
-                Components</a></li>
-            <li><a class="treeview-item" href="form-samples.html"><i class="icon bi bi-chevron-right"></i> Form
-                Samples</a></li>
-            <li><a class="treeview-item" href="form-notifications.html"><i class="icon bi bi-chevron-right"></i> Form
-                Notifications</a></li>
-          </ul>
-        </li>
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i
-              class="app-menu__icon bi bi-table"></i><span class="app-menu__label">Tables</span><i
-              class="treeview-indicator bi bi-chevron-right"></i></a>
-          <ul class="treeview-menu">
-            <li><a class="treeview-item" href="table-basic.html"><i class="icon bi bi-chevron-right"></i> Basic
-                Tables</a></li>
-            <li><a class="treeview-item" href="table-data-table.html"><i class="icon bi bi-chevron-right"></i> Data
-                Tables</a></li>
-          </ul>
-        </li>
-        <li class="app-menu__group">Extras</li>
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i
-              class="app-menu__icon bi bi-file-earmark-text"></i><span class="app-menu__label">Pages</span><i
-              class="treeview-indicator bi bi-chevron-right"></i></a>
-          <ul class="treeview-menu">
-            <li><a class="treeview-item" href="blank-page.html"><i class="icon bi bi-chevron-right"></i> Blank Page</a>
-            </li>
-            <li><a class="treeview-item" href="page-login.html"><i class="icon bi bi-chevron-right"></i> Login Page</a>
-            </li>
-            <li><a class="treeview-item" href="page-lockscreen.html"><i class="icon bi bi-chevron-right"></i> Lockscreen
-                Page</a></li>
-            <li><a class="treeview-item" href="page-user.html"><i class="icon bi bi-chevron-right"></i> User Page</a>
-            </li>
-            <li><a class="treeview-item" href="page-invoice.html"><i class="icon bi bi-chevron-right"></i> Invoice
-                Page</a></li>
-            <li><a class="treeview-item" href="page-mailbox.html"><i class="icon bi bi-chevron-right"></i> Mailbox</a>
-            </li>
-            <li><a class="treeview-item" href="page-error.html"><i class="icon bi bi-chevron-right"></i> Error Page</a>
-            </li>
-          </ul>
-        </li>
-        <li><a class="app-menu__item active" href="docs.html"><i class="app-menu__icon bi bi-code-square"></i><span
-              class="app-menu__label">Docs</span></a></li>
-      </ul>
-    </div>
-  </aside>
-  <main class="app-content">
-    <div class="app-title">
-      <div>
-        <h1>Documentation</h1>
-        <p>NeoAdmin Documentation & Guide</p>
-      </div>
-      <ul class="app-breadcrumb breadcrumb">
-        <li class="breadcrumb-item">Home</li>
-        <li class="breadcrumb-item"><a href="#">Documentation</a></li>
-      </ul>
-    </div>
-    <div class="tile">
-      <div class="tile-body">
-        <div class="docs" style="max-width: 700px;">
-          <h2 class="docs-title">Introduction</h2>
-          <p>NeoAdmin is a modern, responsive admin dashboard template built with <strong>Bootstrap 5.3</strong>,
-            <strong>TypeScript</strong>, and <strong>SASS (SCSS)</strong>. It abandons jQuery in favor of a modern
-            vanilla JS/TS approach, bundled with <strong>Vite</strong> for blazing fast performance.
-          </p>
-
-          <h2 class="docs-title">Directory Structure</h2>
-          <pre class="bg-body-secondary p-3 rounded border">│
-├── docs             &lt;- <i>Production ready files (HTML/CSS/JS)</i>
-│   ├── assets
-│   │   ├── css       &lt;- <i>Compiled SCSS</i>
-│   │   ├── js        &lt;- <i>Compiled Bundle (neoadmin.js)</i>
-│   │   └── images
-│   └── *.html
-└── src              &lt;- <i>Source Code</i>
-    ├── scss         &lt;- <i>SASS source files</i>
-    │   ├── neoadmin
-    │   └── ...
-    └── ts           &lt;- <i>TypeScript source files (Logic)</i>
-        └── neoadmin.ts
-</pre>
-
-          <h2 class="docs-title" id="Compilation">Build System (Vite)</h2>
-          <p>This project uses <a href="https://vitejs.dev/" target="_blank">Vite</a> for development and bundling.
-            Node.js is required.</p>
-
-          <h5>1. Installation</h5>
-          <p>Install dependencies via npm:</p>
-          <pre class="bg-body-secondary p-3 rounded border"><code>npm install</code></pre>
-
-          <h5>2. Development Server</h5>
-          <p>Start a local dev server with hot reload:</p>
-          <pre class="bg-body-secondary p-3 rounded border"><code>npm run dev</code></pre>
-
-          <h5>3. Production Build</h5>
-          <p>Compile TypeScript and SCSS into `docs/assets`:</p>
-          <pre class="bg-body-secondary p-3 rounded border"><code>npm run build:universal</code></pre>
-
-          <p>For <strong>Vue.js</strong> compatible builds (modules):</p>
-          <pre class="bg-body-secondary p-3 rounded border"><code>npm run build:vue</code></pre>
-
-          <h2 class="docs-title" id="Customization">Customization</h2>
-
-          <h5>Styles (SCSS)</h5>
-          <p>All styles are located in `src/scss`. The main entry point is `neoadmin.scss`.</p>
-          <ul>
-            <li><strong>Variables:</strong> Edit `src/scss/neoadmin/_vars.scss` to change colors, fonts, and sizes.</li>
-            <li><strong>Bootstrap:</strong> We modify Bootstrap via `_customize-bootstrap.scss` before importing it.
-            </li>
-          </ul>
-
-          <h2 class="docs-title" id="Localization">Localization (i18n)</h2>
-          <p>NeoAdmin supports automatic localization for libraries like DataTables.</p>
-          <p>To set the language, simply change the <code>lang</code> attribute in your HTML tag:</p>
-          <pre class="bg-body-secondary p-3 rounded border"><code>&lt;html lang="es"&gt;   &lt;!-- Spanish --&gt;
-&lt;html lang="en"&gt;   &lt;!-- English --&gt;
-&lt;html lang="fr"&gt;   &lt;!-- French --&gt;</code></pre>
-          <p>Supported libraries seamlessly adapt to this setting on page load.</p>
-
-          <h2 class="docs-title" id="Features">Features & Persistence</h2>
-          <p>NeoAdmin includes built-in functionality for user preferences which are automatically
-            <strong>persisted</strong> (saved) using <code>localStorage</code> or cookies. These settings remain active
-            even after refreshing the page.</p>
-          <ul>
-            <li><strong>Dark/Light Mode:</strong> Toggles the theme between light and dark modes.</li>
-            <li><strong>Full Screen:</strong> Toggles the browser's full-screen mode.</li>
-            <li><strong>Font Size:</strong> Adjusts the global font size (Small, Normal, Large).</li>
-          </ul>
-
-          <h2 class="docs-title" id="NeoAdmin-Methods">NeoAdmin Objects</h2>
-          <p>The global <code>NeoAdmin</code> object provides easy access to notifications and alerts.</p>
-
-          <h5>1. Notifications (Toasts)</h5>
-          <p>Show a corner notification (Toast) using `NeoAdmin.notify()`.</p>
-          <pre class="bg-body-secondary p-3 rounded border"><code class="language-javascript">// Types: 'success', 'danger', 'info', 'warning'
-NeoAdmin.notify('Update successful!', 'success');</code></pre>
-          <button class="btn btn-success btn-sm mb-3" onclick="NeoAdmin.notify('Update successful!', 'success')">Try
-            Notify</button>
-
-          <h5>2. Alerts (Modals)</h5>
-          <p>Show a modal alert using `NeoAdmin.alert()` or `NeoAdmin.swal()`.</p>
-          <pre
-            class="bg-body-secondary p-3 rounded border"><code class="language-javascript">NeoAdmin.alert('Good Job!', 'Operation completed.', 'info');</code></pre>
-          <button class="btn btn-info btn-sm mb-3"
-            onclick="NeoAdmin.alert('Good Job!', 'Operation completed.', 'info')">Try Alert</button>
-
-          <h5>3. Programmatic Bootstrap Toasts</h5>
-          <p>Trigger a standard Bootstrap 5 toast by its ID.</p>
-          <pre class="bg-body-secondary p-3 rounded border"><code>NeoAdmin.showToast('liveToastId');</code></pre>
-          <button class="btn btn-warning btn-sm mb-3" onclick="NeoAdmin.showToast('liveToastId')">Try Show
-            Toast</button>
-
-          <!-- Hidden Toast for Test -->
-          <div class="toast-container position-fixed bottom-0 end-0 p-3">
-            <div id="liveToastId" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-              <div class="toast-header">
-                <strong class="me-auto">NeoAdmin</strong>
-                <small>Just now</small>
-                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-              </div>
-              <div class="toast-body">
-                Hello, world! This is a toast message.
-              </div>
+    </main>
+    <div class="modal fade" id="neoadmin-command-palette" tabindex="-1" aria-labelledby="neoadmin-command-title" aria-hidden="true" data-neoadmin-modal-root>
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-5" id="neoadmin-command-title">Quick Search</h2>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <input class="form-control mb-3" type="search" placeholder="Search pages and actions" data-neoadmin-command-search aria-label="Search pages and actions">
+            <div class="list-group"><a class="list-group-item list-group-item-action" data-neoadmin-command data-href="dashboard.html" href="dashboard.html">Dashboard</a><a class="list-group-item list-group-item-action" data-neoadmin-command data-href="table-data-table.html" href="table-data-table.html">Data Tables</a><a class="list-group-item list-group-item-action" data-neoadmin-command data-href="ui-dates.html" href="ui-dates.html">Date & Time</a><a class="list-group-item list-group-item-action" data-neoadmin-command data-href="page-search.html" href="page-search.html">Search Results</a>
+              <button class="list-group-item list-group-item-action" type="button" data-neoadmin-command data-neoadmin-action="theme">Toggle Theme</button>
+              <button class="list-group-item list-group-item-action" type="button" data-neoadmin-command data-neoadmin-action="search">Open Search</button>
             </div>
           </div>
-
-          <h2 class="docs-title" id="Contribution">Contribution</h2>
-          <p>If you find issues or want to contribute, please check the <a
-              href="https://github.com/cesarobenites/NeoAdmin" target="_blank">GitHub Repository</a>.</p>
         </div>
       </div>
     </div>
-  </main>
-  <!-- Javascripts-->
-
-  <script type="text/javascript" src="assets/js/neoadmin.js"></script>
-  <!-- Page specific javascripts-->
-</body>
-
+    <div class="modal fade" id="neoadmin-confirm-modal" tabindex="-1" aria-labelledby="neoadmin-confirm-title" aria-hidden="true" data-neoadmin-confirm-modal>
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-5" id="neoadmin-confirm-title" data-neoadmin-confirm-title>Confirm Action</h2>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" data-neoadmin-confirm-message>Do you want to continue?</div>
+          <div class="modal-footer">
+            <button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+            <button class="btn btn-danger" type="button" data-neoadmin-confirm-accept>Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="neoadmin-async-modal" tabindex="-1" aria-labelledby="neoadmin-async-title" aria-hidden="true" data-neoadmin-async-modal>
+      <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-5" id="neoadmin-async-title" data-neoadmin-async-title>Loading</h2>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" data-neoadmin-async-content aria-busy="true">
+            <div class="placeholder-glow" aria-label="Loading content" role="status"><span class="placeholder col-12 mb-3"></span><span class="placeholder col-8 mb-3"></span><span class="placeholder col-10"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="toast-container position-fixed top-0 end-0 d-flex flex-column gap-2 p-3" id="neoadmin-toast-container" aria-live="polite" aria-atomic="true" data-neoadmin-toast-container></div>
+    <nav class="app-bottom-nav">
+      <button class="app-bottom-nav__item" id="mobile-search-toggle-bottom" type="button" aria-label="Open Search" aria-controls="footer-search-container" aria-expanded="false"><i class="bi bi-search" aria-hidden="true"></i><span class="app-bottom-nav__label">Search</span></button>
+      <button class="app-bottom-nav__item" type="button" data-neoadmin-command-open aria-label="Open quick search (Ctrl K)" aria-controls="neoadmin-command-palette" aria-haspopup="dialog"><i class="bi bi-command" aria-hidden="true"></i><span class="app-bottom-nav__label">Quick Search</span></button>
+      <div class="app-bottom-search" id="footer-search-container">
+        <form class="w-100 d-flex align-items-center" action="page-search.html" method="GET"><i class="bi bi-search app-bottom-search__icon" aria-hidden="true"></i>
+          <input class="app-bottom-search__input" type="search" name="q" placeholder="Search" aria-label="Search pages">
+          <button class="app-bottom-search__close" id="close-footer-search" type="button" aria-label="Close search"><i class="bi bi-x" aria-hidden="true"></i></button>
+        </form>
+      </div>
+      <div class="btn-group dropup">
+        <button class="app-bottom-nav__item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Show notifications"><i class="bi bi-bell"></i><span class="badge-notification"></span><span class="app-bottom-nav__label">Alerts</span></button>
+        <ul class="app-notification dropdown-menu app-bottom-nav__menu">
+          <li class="app-notification__title">You have 4 new notifications.</li>
+          <li>
+            <ul class="app-notification__content list-unstyled mb-0">
+              <li><a class="app-notification__item" href="#"><span class="app-notification__icon"><span class="bg-primary-subtle"><i class="bi bi-envelope-fill"></i></span></span>
+                  <div>
+                    <p class="app-notification__message">Lisa sent you a mail</p>
+                    <p class="app-notification__meta">2 min ago</p>
+                  </div></a></li>
+              <li><a class="app-notification__item" href="#"><span class="app-notification__icon"><span class="bg-danger-subtle"><i class="bi bi-hdd-fill"></i></span></span>
+                  <div>
+                    <p class="app-notification__message">Mail server not working</p>
+                    <p class="app-notification__meta">5 min ago</p>
+                  </div></a></li>
+              <li><a class="app-notification__item" href="#"><span class="app-notification__icon"><span class="bg-success-subtle"><i class="bi bi-cash-coin"></i></span></span>
+                  <div>
+                    <p class="app-notification__message">Transaction complete</p>
+                    <p class="app-notification__meta">2 days ago</p>
+                  </div></a></li>
+            </ul>
+          </li>
+          <li class="app-notification__footer"><a href="#">See all notifications.</a></li>
+        </ul>
+      </div>
+      <div class="btn-group dropup">
+        <button class="app-bottom-nav__item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Open Profile Menu"><i class="bi bi-person-circle fs-5"></i><span class="app-bottom-nav__label">Profile</span></button>
+        <ul class="dropdown-menu settings-menu app-bottom-nav__menu">
+          <li><a class="dropdown-item" href="page-settings.html"><i class="bi bi-gear me-2"></i> Settings</a></li>
+          <li><a class="dropdown-item" href="page-user.html"><i class="bi bi-person me-2"></i> Profile</a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item" href="#" data-neoadmin-theme-toggle><i class="bi bi-moon-stars me-2"></i> Toggle Theme</a></li>
+          <li><a class="dropdown-item" href="page-login.html"><i class="bi bi-box-arrow-right me-2"></i> Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+    <script type="module" src="assets/js/neoadmin.js?v=1.0.1"></script>
+  </body>
 </html>

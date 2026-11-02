@@ -1,0 +1,100 @@
+extends layouts/_admin.pug
+
+block head
+  - var title = "Form Components"
+  - var activePage = "form-components"
+
+block content
+  .app-title
+    div
+      h1.fs-3.fs-md-2
+        i.bi.bi-pencil-square.me-2
+        | Form Components
+      p.text-muted.mb-0 Modernized Bootstrap 5 form controls and inputs
+
+    ul.app-breadcrumb.breadcrumb.d-none.d-md-flex
+      li.breadcrumb-item
+        i.bi.bi-house-door.fs-6
+      li.breadcrumb-item Forms
+      li.breadcrumb-item.active
+        a(href="#") Form Components
+
+  .row.g-3
+    .col-md-12
+      .tile
+        h3.tile-title Standard Forms
+        .tile-body
+          form.row.g-3
+            .col-md-6
+              +input('Email address', 'email', 'email', '', 'Enter email')
+              .form-text.text-muted We'll never share your email with anyone else.
+            .col-md-6
+              +input('Password', 'password', 'password', '', 'Password')
+            .col-12
+              +input('Address', 'address', 'text', '', '1234 Main St')
+            .col-md-6
+              +input('City', 'city', 'text')
+            .col-md-4
+              label.form-label.fw-semibold State
+              select.form-select
+                option(selected) Choose...
+                option Option 1
+                option Option 2
+                option Option 3
+            .col-md-2
+              +input('Zip', 'zip', 'text')
+
+            .col-12.mt-4
+              h5.mb-3 Checks & Radios
+              .form-check
+                input.form-check-input#flexCheckDefault(type="checkbox")
+                label.form-check-label(for="flexCheckDefault") Default checkbox
+              .form-check
+                input.form-check-input#flexCheckChecked(type="checkbox", checked)
+                label.form-check-label(for="flexCheckChecked") Checked checkbox
+              .mt-3
+                +switch('Default switch checkbox input', 'flexSwitchCheckDefault')
+
+            .col-12.mt-4
+              h5.mb-3 Input Groups
+              .input-group.mb-3
+                span.input-group-text#basic-addon1 @
+                input.form-control(type="text", placeholder="Username", aria-label="Username")
+
+        .tile-footer
+          button.btn.btn-primary(type="submit")
+            i.bi.bi-check-circle.me-2
+            | Submit
+
+    .col-12.col-md-6
+      .tile
+        h3.tile-title Floating Labels
+        .tile-body
+          p.text-secondary.small.mb-3 Wrap a pair of form elements in <code>.form-floating</code> to enable floating labels.
+          .form-floating.mb-3
+            input.form-control#floatingInput(type="email", placeholder="name@example.com")
+            label(for="floatingInput") Email address
+          .form-floating.mb-3
+            input.form-control#floatingPassword(type="password", placeholder="Password")
+            label(for="floatingPassword") Password
+          .form-floating
+            select.form-select#floatingSelect
+              option(selected) Open this select menu
+              option(value="1") One
+              option(value="2") Two
+              option(value="3") Three
+            label(for="floatingSelect") Works with selects
+
+    .col-12.col-md-6
+      .tile
+        h3.tile-title Validation States
+        .tile-body
+          form.was-validated
+            .mb-3
+              label.form-label.fw-semibold(for="validationTextarea") Textarea
+              textarea.form-control.is-invalid#validationTextarea(placeholder="Required example textarea", required)
+              .invalid-feedback Please enter a message in the textarea.
+            .mb-3
+              label.form-label.fw-semibold(for="validationInput") Valid Input
+              input.form-control.is-valid#validationInput(type="text", value="Correct value", required)
+              .valid-feedback Looks good!

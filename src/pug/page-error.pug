@@ -1,0 +1,19 @@
+extends layouts/_admin.pug
+
+block head
+  - var title = "Error Page"
+  - var activePage = "error"
+
+block content
+  .page-error.text-center.py-5
+    .error-code.display-1.fw-bold.text-primary.mb-2 404
+    h1.fs-2.mb-3 Oops! Page Not Found
+    p.text-muted.mb-5 The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+
+    .d-flex.justify-content-center.gap-3
+      a.btn.btn-primary.px-4(href="dashboard.html")
+        i.bi.bi-house-door.me-2
+        | Go to Dashboard
+      button.btn.btn-outline-secondary.px-4(type="button", data-neoadmin-history-back)
+        i.bi.bi-arrow-left.me-2
+        | Go Back

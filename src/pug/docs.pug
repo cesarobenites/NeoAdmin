@@ -1,0 +1,160 @@
+extends layouts/_admin.pug
+
+block head
+  - var title = "Documentation"
+  - var activePage = "docs"
+
+block content
+  .app-title
+    div
+      h1
+        i.bi.bi-journal-text.me-2
+        | Documentation
+      p NeoAdmin Installation, Customization, and Usage
+
+    ul.app-breadcrumb.breadcrumb.d-none.d-md-flex
+      li.breadcrumb-item Home
+      li.breadcrumb-item.active
+        a(href="docs.html") Documentation
+
+  .tile
+    .tile-body
+      .docs.docs-content
+        h2.docs-title NeoAdmin Overview
+        p.lead NeoAdmin is a reusable administration dashboard template built with Bootstrap 5.3, TypeScript, SCSS, Pug, and Vite.
+        p Use it as a complete static site, or reuse its compiled theme assets and semantic page examples in an existing application. The active runtime is framework-free TypeScript with Bootstrap and browser APIs; React, Vue, and Angular components are not part of this release.
+        .docs-actions
+          a.btn.btn-primary.btn-sm(href="dashboard.html") Open the Dashboard
+          a.btn.btn-outline-primary.btn-sm(href="architecture.html") View the Technical Overview
+
+        h2.docs-title Quick Start
+        p Clone the repository, install its development dependencies, then start the local Vite server.
+        pre.docs-code-block
+          code.
+            git clone https://github.com/cesarobenites/NeoAdmin.git
+            cd NeoAdmin
+            npm install
+            npm run dev
+        p The local server lets you preview the Pug examples while editing their source. Build the static site when the changes are ready.
+        pre.docs-code-block
+          code.
+            npm run build
+            npm run preview
+        p.mb-0 The production build type-checks TypeScript, bundles Vite assets, compiles the local icon catalog, and renders the top-level Pug pages into <code>docs/</code>.
+
+        h2.docs-title Build System
+        p Use these commands from the repository root to develop, generate, and preview the distributable site.
+        .table-responsive
+          table.table.align-middle
+            thead
+              tr
+                th(scope="col") Command
+                th(scope="col") Result
+            tbody
+              tr
+                th(scope="row") <code>npm run dev</code>
+                td Starts the Vite development server for the Pug examples and theme source.
+              tr
+                th(scope="row") <code>npm run build</code>
+                td Type-checks TypeScript and creates the complete static website under <code>docs/</code>.
+              tr
+                th(scope="row") <code>npm run preview</code>
+                td Serves the generated website locally so the production output can be reviewed.
+              tr
+                th(scope="row") <code>npm run build:vue</code>
+                td Builds the ES module profile with automatic initialization disabled for a host application.
+        p.mb-0 Publish the contents of <code>docs/</code> with GitHub Pages. The <code>build:vue</code> profile remains a framework-free TypeScript module and does not generate Vue components.
+
+        h2.docs-title Documentation Pages
+        p Use the focused guides when you need details about the build, framework integration, or AI-assisted development.
+        ul
+          li
+            a(href="architecture.html") Technical Overview
+            |  describes source folders, runtime modules, and framework boundaries.
+          li
+            a(href="agent-guide.html") AI Agent Guide
+            |  explains how to use NeoAdmin with Claude Code, Codex, Antigravity, Gemini CLI, Copilot, and other coding agents.
+
+        h2.docs-title Use NeoAdmin as Your Application
+        p Choose this workflow when you want the NeoAdmin dashboard itself to be the application. Keep the repository, edit its source, and deploy the generated site.
+        ol
+          li Edit page examples and shared layout in <code>src/pug/</code>.
+          li Customize colors, typography, spacing, and surfaces in <code>src/scss/neoadmin/_vars.scss</code>.
+          li Add shared components under <code>src/scss/neoadmin/component/</code> and page-specific styles under <code>src/scss/neoadmin/pages/</code>.
+          li Add interactions and page integrations in <code>src/ts/</code>.
+          li Run <code>npm run build</code> and deploy the generated <code>docs/</code> directory with GitHub Pages or another static host.
+        p.mb-0 Treat <code>src/</code> as the editable source and <code>docs/</code> as compiled output. Do not make manual changes to generated pages.
+
+        h2.docs-title Use NeoAdmin as a Template in Another Project
+        p Use NeoAdmin as a complete static dashboard by customizing this repository and deploying <code>docs/</code>. To use its design in an existing React, Vue, or Angular application, build NeoAdmin and copy the assets and examples that the host project needs. NeoAdmin is a starter template and theme, not a package of framework components.
+        ol
+          li Run <code>npm install</code> and <code>npm run build</code> in the NeoAdmin repository.
+          li Copy <code>docs/assets/css/neoadmin.css</code> into the host application's public assets. Copy <code>neoadmin-icons.css</code> and its WOFF2 font only when using Bootstrap Icons; add only the required images and optional integrations.
+          li Use generated <code>docs/*.html</code> or source examples in <code>src/pug/</code> as references. Convert the needed structure into React JSX/TSX, Vue templates, or Angular templates, then adjust asset paths.
+          li Load the theme stylesheet once. Let the host framework handle routing, rendering, and component lifecycle; include Bootstrap JavaScript only for components that require it.
+          li Connect the needed <code>data-neoadmin-*</code> hooks and <code>neoadmin:*</code> DOM events to host interactions. Do not start the page-wide runtime independently in every routed component.
+        p React, Vue, and Angular components, adapters, and project generators are not included. <code>npm run build:vue</code> creates a framework-free ES module with automatic initialization disabled; it does not generate Vue components.
+        p.mb-0 Read <a href="architecture.html#framework-targets">Framework Support</a> for the implementation boundary and <a href="agent-guide.html#host-projects">AI Agent Guide</a> for using NeoAdmin skills in another repository.
+
+        h2.docs-title Theme, Fonts, and Icons
+        p The Sass palette and shared layout tokens are defined in <code>src/scss/neoadmin/_vars.scss</code>. The built theme uses Bootstrap CSS variables for component surfaces and supports the existing light and dark modes.
+        p The browser toolbar theme color follows the active NeoAdmin theme automatically. Light mode uses the compiled <code>$primary</code> token; dark mode uses the dark header surface. TypeScript reads <code>--neoadmin-browser-theme-color</code> from the compiled theme and updates the <code>theme-color</code> meta tag on page startup and when Light or Dark is selected. Change the Sass tokens and run <code>npm run build</code>; no separate Pug color value is needed. Browser support and presentation vary by browser and device.
+        p In the standalone template, Theme Mode on <code>page-settings.html</code> saves a manual Light or Dark choice in <code>localStorage</code> under the exact key <code>neoadmin-theme</code>. The accepted values are <code>light</code> and <code>dark</code>. System mode removes the key, then TypeScript follows <code>prefers-color-scheme</code> and responds to system changes.
+        pre.docs-code-block
+          code.
+            localStorage.getItem('neoadmin-theme')
+        p To force Dark mode from the browser console, save the value and reload:
+        pre.docs-code-block
+          code.
+            localStorage.setItem('neoadmin-theme', 'dark'); location.reload()
+        p To return to System mode, clear the override and reload:
+        pre.docs-code-block
+          code.
+            localStorage.removeItem('neoadmin-theme'); location.reload()
+        p To change where the preference is stored, edit <code>getStoredTheme()</code> and <code>setTheme()</code> in <code>src/ts/neoadmin.ts</code>. <code>getStoredTheme()</code> reads the preference; <code>setTheme()</code> saves Light or Dark and removes the override for System. Keep <code>applyTheme()</code> to synchronize the page and the browser toolbar color. Rebuild with <code>npm run build</code> after changing the TypeScript source. A host application can replace this storage with its cookie, server, or account preference.
+        p Secondary buttons use the Bootstrap secondary palette with white text for a clear contrast against primary actions.
+        p Bootstrap Icons are included as a separate local catalog at <code>docs/assets/css/neoadmin-icons.css</code> with its local WOFF2 font. The theme does not need a remote icon CDN. Bootstrap form controls use the system font stack.
+        p.mb-0 Keep icon styles linked once through the shared layout. Prefer available Bootstrap utilities and project tokens before introducing additional styles or dependencies.
+
+        h2.docs-title Optional Components and Loading
+        p Page integrations load only when the matching example requests them. DataTables, responsive tables, charts, Tom Select, IMask, and Flatpickr are split into optional imports so unrelated pages can avoid their code.
+        ul
+          li
+            a(href="table-data-table.html") Data Tables
+            |  demonstrates responsive tables, state, density, search, and CSV export.
+          li
+            a(href="ui-dates.html") Date & Time
+            |  demonstrates date, date-time, range, and month/year inputs with Flatpickr.
+          li Bootstrap Icons remain available from the separate stylesheet when an example needs an icon.
+        li UI Cards demonstrates Bootstrap's CSS-only skeleton placeholders; they need no JavaScript or framework.
+        p The shared admin layout includes an asynchronous modal skeleton. Trigger it with <code>data-neoadmin-modal="load"</code> and <code>data-neoadmin-url="..."</code>; the TypeScript runtime displays placeholders while <code>fetch()</code> loads the content, then replaces them with the response.
+        pre.docs-code-block
+          code.
+            &lt;button type="button" data-neoadmin-modal="load" data-neoadmin-url="form-fragment.html" data-neoadmin-title="Edit profile"&gt;
+              Edit profile
+            &lt;/button&gt;
+        p The landing page also demonstrates a full-page startup loader in <code>src/pug/index.pug</code>; the TypeScript runtime removes it after initialization. Use this for a brief page startup state, and use skeletons for content regions waiting on asynchronous data.
+        p.mb-0 Use <code>.placeholder-glow</code> or <code>.placeholder-wave</code> with <code>.placeholder</code> elements for content previews. Set <code>aria-busy="true"</code> while loading and replace the skeleton with the loaded content when the request completes. See <a href="ui-cards.html">UI Cards</a> and the asynchronous modal in the shared layout.
+
+        h2.docs-title NeoAdmin TypeScript API
+        p Page controls use semantic HTML and <code>data-neoadmin-*</code> attributes. The same markup can be adapted into a framework template without inline event handlers.
+        h5 Notifications
+        pre.docs-code-block <code>NeoAdmin.notify('Update successful!', 'success');</code>
+        p.small.text-body-secondary The alert appears at the top of the page and closes automatically after five seconds.
+        button.btn.btn-success.btn-sm.mb-3(type="button", data-neoadmin-toast="success", data-neoadmin-message="Update successful!") Try Notify
+        h5 Confirmation
+        pre.docs-code-block <code>NeoAdmin.getInstance().confirm({ title: 'Good Job!', message: 'Operation completed.', onConfirm: () =&gt; {} });</code>
+        button.btn.btn-info.btn-sm.text-white(type="button", data-neoadmin-modal="confirm", data-neoadmin-title="Good Job!", data-neoadmin-message="Operation completed.", data-neoadmin-confirm-label="Continue") Try Alert
+        p The command palette opens with <kbd>Ctrl</kbd> + <kbd>K</kbd> or <kbd>Cmd</kbd> + <kbd>K</kbd>. On mobile, open Quick Search from the footer navigation. It supports page navigation and quick theme actions.
+
+        h2.docs-title Learn More
+        ul
+          li
+            a(href="architecture.html") Technical Overview
+            |  explains the source modules, build output, and framework support.
+          li
+            a(href="agent-guide.html") AI Agent Guide
+            |  shows how to use this repository with Claude Code, Codex, Antigravity, Gemini CLI, Copilot, and other project-aware agents.
+          li
+            a(href="https://github.com/cesarobenites/NeoAdmin", target="_blank", rel="noopener") NeoAdmin on GitHub
+            |  contains the source, README, issues, and version history.

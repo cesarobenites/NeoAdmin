@@ -1,0 +1,53 @@
+mixin card(title, icon)
+  .card
+    if title || icon
+      .card-header.bg-transparent.border-0.pb-0
+        h5.card-title.fs-5.fs-md-4.mb-0
+          if icon
+            i(class=`bi bi-${icon} me-2`)
+          | #{title}
+    .card-body
+      block
+mixin metricCard(label, value, icon, color, change, direction, period)
+  .card.h-100
+    .card-body
+      .row.align-items-center.g-0
+        .col.me-2
+          .text-xs.fw-semibold.text-uppercase.mb-1= label
+          .h5.mb-0.fw-bold.text-body-emphasis= value
+          .mt-2.mb-0.text-body-secondary.small
+            span.me-2(class=`text-${direction === 'up' ? 'success' : 'danger'}`)
+              i.bi(class=`bi-arrow-${direction}`)
+              |  #{change}
+            span= period
+        .col-auto
+          i.bi(class=`bi-${icon} fs-2 text-${color}`)
+mixin input(label, name, type='text', value='', placeholder='')
+  .mb-3
+    if label
+      label.form-label.fw-semibold #{label}
+    input.form-control(type=type, name=name, value=value, placeholder=placeholder)&attributes(attributes)
+mixin switch(label, id, checked=false)
+  .form-check.form-switch
+    input.form-check-input(type="checkbox", id=id, checked=checked)&attributes(attributes)
+    if label
+      label.form-check-label(for=id) #{label}
+mixin advancedWidget(type, icon, label, value, trend, trendValue, trendLabel, light=false)
+  .widget-small.py-4.px-4(class=`${type} ${light ? 'w-light' : ''}`)
+    .col.me-2.caption
+      .text-xs.font-weight-bold.text-uppercase.mb-1 #{label}
+      .h4.mb-0.font-weight-bold #{value}
+      if trend
+        .mt-2.mb-0.text-muted.text-xs.description
+          span.me-2(class=`text-${trend === 'up' ? 'success' : 'danger'}`)
+            i.bi(class=`bi-arrow-${trend}`)
+            |  #{trendValue}
+          span #{trendLabel}
+    .col-auto.icon-w
+      i.icon.fs-1(class=`bi bi-${icon}`)
+mixin feature(icon, text)
+  .features-card
+    .feature-icon-backdrop
+      svg.feature-icon
+        use(xlink:href=`#icon-${icon}`)
+    p.feature-description= text

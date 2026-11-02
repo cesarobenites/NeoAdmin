@@ -1,135 +1,75 @@
-/*!
- * ================================================================
- * Project: Neo Admin
- * Author: César R.
- * Email: cesar.rcbx@gmail.com
- * Description: Styles and Customizations
- * ================================================================
- */
+@use 'neoadmin/vars' as *;
+@use 'neoadmin/css-vars' as *;
+@use 'neoadmin/customize-bootstrap' as *;
+@use 'bootstrap' with (
+  $primary: $primary,
+  $secondary: $secondary,
+  $success: $success,
+  $info: $info,
+  $warning: $warning,
+  $danger: $danger,
+  $light: $light,
+  $dark: $dark,
+  $font-family-sans-serif: $font-family-sans-serif,
+  $font-family-monospace: $font-family-monospace,
+  $font-size-base: $font-size-base,
+  $headings-font-weight: $headings-font-weight,
+  $grid-gutter-width: $grid-gutter-width,
+  $btn-border-radius: $btn-border-radius,
+  $btn-border-radius-lg: $btn-border-radius-lg,
+  $btn-border-radius-sm: $btn-border-radius-sm,
+  $btn-font-weight: $btn-font-weight,
+  $btn-transition: $btn-transition,
+  $dropdown-padding-y: $dropdown-padding-y,
+  $dropdown-spacer: $dropdown-spacer,
+  $dropdown-border-width: $dropdown-border-width,
+  $dropdown-item-padding-y: $dropdown-item-padding-y,
+  $dropdown-item-padding-x: $dropdown-item-padding-x,
+  $input-border-radius: $input-border-radius,
+  $input-border-radius-lg: $input-border-radius-lg,
+  $input-border-radius-sm: $input-border-radius-sm,
+  $input-focus-border-color: $input-focus-border-color,
+  $input-btn-border-width: $input-btn-border-width,
+  $input-btn-focus-width: $input-btn-focus-width,
+  $input-btn-focus-box-shadow: $input-btn-focus-box-shadow,
+  $border-radius: $border-radius,
+  $border-radius-lg: $border-radius-lg,
+  $border-radius-sm: $border-radius-sm,
+  $border-radius-xl: $border-radius-xl,
+  $box-shadow: $box-shadow,
+  $box-shadow-sm: $box-shadow-sm,
+  $box-shadow-lg: $box-shadow-lg,
+  $link-color: $link-color
+);
+@use 'neoadmin/dark-theme' as *;
+@use 'vendors/dataTables.bootstrap' as *;
+@use 'vendors/tom-select' as *;
+@use 'neoadmin/app' as *;
+@use 'neoadmin/helpers' as *;
+@use 'neoadmin/component/header' as *;
+@use 'neoadmin/component/header-mobile' as *;
+@use 'neoadmin/component/bottom-nav' as *;
+@use 'neoadmin/component/preloader' as *;
+@use 'neoadmin/component/sidebar' as *;
+@use 'neoadmin/component/sidebar-mini' as *;
+@use 'neoadmin/component/dropdown' as *;
+@use 'neoadmin/component/button' as *;
+@use 'neoadmin/component/app-title' as *;
+@use 'neoadmin/component/card' as *;
+@use 'neoadmin/component/tile' as *;
+@use 'neoadmin/component/custom-radio-n-checkbox' as *;
+@use 'neoadmin/component/toggle-button' as *;
+@use 'neoadmin/component/material-loader' as *;
+@use 'neoadmin/component/button-spinner' as *;
+@use 'neoadmin/component/widgets' as *;
+@use 'neoadmin/component/chat' as *;
+@use 'neoadmin/pages/landing-page' as *;
+@use 'neoadmin/pages/docs' as *;
+@use 'neoadmin/pages/login-material' as *;
+@use 'neoadmin/pages/lockscreen-material' as *;
+@use 'neoadmin/pages/error-page' as *;
+@use 'neoadmin/pages/mailbox' as *;
+@use 'neoadmin/pages/user-profile' as *;
+@use 'neoadmin/pages/search-results' as *;
 
-// Root Template
-//-----------------------------------------------------------------
-
-/*!
- * ================================================================
- * == Core
- * ================================================================
-*/
-@import 'neoadmin/vars';
-@import 'neoadmin/css-vars';
-@import 'neoadmin/dark-theme';
-
-// Customize Bootstrap
-@import 'neoadmin/customize-bootstrap'; 
-
-// Bootstrap 
-@import 'bootstrap/scss/bootstrap';
-@import 'vendors/bootstrap-icons';
-
-// Plugins - Vendors
-//-----------------------------------------------------------------
-/*!
- * ================================================================
- * == DataTables
- * ================================================================
-*/
-// @import 'vendors/dataTables.bootstrap';
-/*!
- * ================================================================
- * == Datepicker
- * ================================================================
-*/
-// @import 'vendors/bootstrap-datepicker';
-/*!
- * ================================================================
- * == Sweetalert
- * ================================================================
-*/
-// @import 'vendors/sweetalert';
-/*!
- * ================================================================
- * == Notify
- * ================================================================
-*/
-// @import 'vendors/notify';
-/*!
- * ================================================================
- * == TomSelect
- * ================================================================
-*/
-@import 'vendors/tom-select';
-/*!
- * ================================================================
- * == Pace
- * ================================================================
-*/
-// @import 'vendors/pace';
-/*!
- * ================================================================
- * == Dropzone
- * ================================================================
-*/
-// @import 'vendors/dropzone';
-/*!
- * ================================================================
- * == Chartjs
- * ================================================================
-*/
-// @import 'vendors/chart-js';
-
-/*!
- * ================================================================
- * == App & Helpers
- * ================================================================
-*/
-// Apps & Helpers
-//-----------------------------------------------------------------
-@import 'neoadmin/app';
-@import 'neoadmin/helpers';
-
-/*!
- * ================================================================
- * == Component
- * ================================================================
-*/
-// Component
-//-----------------------------------------------------------------
-@import 'neoadmin/component/header';
-@import 'neoadmin/component/preloader';
-@import 'neoadmin/component/sidebar';
-@import 'neoadmin/component/sidebar-mini';
-
-// This styles are optional based on your preferance
-
-@import 'neoadmin/component/dropdown';
-@import 'neoadmin/component/button';
-@import 'neoadmin/component/app-title';
-@import 'neoadmin/component/tile';
-@import 'neoadmin/component/custom-radio-n-checkbox';
-@import 'neoadmin/component/toggle-button';
-@import 'neoadmin/component/material-half-bg';
-@import 'neoadmin/component/material-loader';
-@import 'neoadmin/component/button-spinner';
-@import 'neoadmin/component/widgets';
-@import 'neoadmin/component/chat';
-
-// RTL support
-// Also you will need to add dir="rtl" attribute to HTML tag
-
-// @import 'neoadmin/component/rtl';
-
-/*!
- * ================================================================
- * == Pages
- * ================================================================
-*/
-// Pages
-//-----------------------------------------------------------------
-// This styles are optional based on your preferance
-@import 'neoadmin/pages/landing-page';
-@import 'neoadmin/pages/docs';
-@import 'neoadmin/pages/login-material';
-@import 'neoadmin/pages/lockscreen-material';
-@import 'neoadmin/pages/error-page';
-@import 'neoadmin/pages/mailbox';
-@import 'neoadmin/pages/user-profile';
+@use 'neoadmin/pages/calendar' as *;

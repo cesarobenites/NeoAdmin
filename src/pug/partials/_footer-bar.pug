@@ -1,0 +1,44 @@
+nav.app-bottom-nav
+  button#mobile-search-toggle-bottom.app-bottom-nav__item(type="button", aria-label="Open Search", aria-controls="footer-search-container", aria-expanded="false")
+    i.bi.bi-search(aria-hidden="true")
+    span.app-bottom-nav__label Search
+  button.app-bottom-nav__item(type="button", data-neoadmin-command-open, aria-label="Open quick search (Ctrl K)", aria-controls="neoadmin-command-palette", aria-haspopup="dialog")
+    i.bi.bi-command(aria-hidden="true")
+    span.app-bottom-nav__label Quick Search
+  #footer-search-container.app-bottom-search
+    form.w-100.d-flex.align-items-center(action="page-search.html", method="GET")
+      i.bi.bi-search.app-bottom-search__icon(aria-hidden="true")
+      input.app-bottom-search__input(type="search", name="q", placeholder="Search", aria-label="Search pages")
+      button#close-footer-search.app-bottom-search__close(type="button", aria-label="Close search")
+        i.bi.bi-x(aria-hidden="true")
+
+  .btn-group.dropup
+    button.app-bottom-nav__item(type="button", data-bs-toggle="dropdown", aria-expanded="false", aria-label="Show notifications")
+      i.bi.bi-bell
+      span.badge-notification
+      span.app-bottom-nav__label Alerts
+    +notificationMenu('app-bottom-nav__menu')
+
+  .btn-group.dropup
+    button.app-bottom-nav__item(type="button", data-bs-toggle="dropdown", aria-expanded="false", aria-label="Open Profile Menu")
+      i.bi.bi-person-circle.fs-5
+      span.app-bottom-nav__label Profile
+    ul.dropdown-menu.settings-menu.app-bottom-nav__menu
+      li
+        a.dropdown-item(href="page-settings.html")
+          i.bi.bi-gear.me-2
+          |  Settings
+      li
+        a.dropdown-item(href="page-user.html")
+          i.bi.bi-person.me-2
+          |  Profile
+      li
+        hr.dropdown-divider
+      li
+        a.dropdown-item(href="#", data-neoadmin-theme-toggle)
+          i.bi.bi-moon-stars.me-2
+          |  Toggle Theme
+      li
+        a.dropdown-item(href="page-login.html")
+          i.bi.bi-box-arrow-right.me-2
+          |  Logout

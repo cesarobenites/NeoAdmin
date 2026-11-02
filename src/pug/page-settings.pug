@@ -1,0 +1,68 @@
+extends layouts/_admin.pug
+
+block head
+  - var title = "Settings"
+  - var activePage = "settings"
+
+block content
+  .app-title
+    div
+      h1.fs-3.fs-md-2
+        i.bi.bi-gear.me-2
+        | Settings
+      p.text-muted.mb-0 Customize your account and application preferences
+
+    ul.app-breadcrumb.breadcrumb.d-none.d-md-flex
+      li.breadcrumb-item
+        i.bi.bi-house-door.fs-6
+      li.breadcrumb-item Users
+      li.breadcrumb-item.active
+        a(href="#") Settings
+
+  .row.g-4
+    .col-lg-4.col-md-6.col-12
+      +card('Account', 'person-badge')
+        .mb-3
+          label.form-label.fw-semibold Username
+          input.form-control(type="text", value="cesarobenites", readonly)
+        .mb-3
+          +input('Email address', 'email', 'email', 'cesar@example.com')
+        .mb-3
+          +input('Full Name', 'fullname', 'text', 'César Rolando')
+        button.btn.btn-primary.w-100.mt-2
+          i.bi.bi-check2-circle.me-2
+          | Update Profile
+    .col-lg-4.col-md-6.col-12
+      +card('Security', 'shield-lock')
+        .mb-3
+          +input('Current Password', 'curr_password', 'password', '', 'Enter current password')
+        .mb-3
+          +input('New Password', 'password', 'password', '', 'Enter new password')
+        .mb-3
+          +switch('Two-Factor Auth', 'flexSwitchCheckDefault', true)
+        button.btn.btn-info.w-100.mt-3.text-white
+          i.bi.bi-key.me-2
+          | Change Password
+    .col-lg-4.col-md-12.col-12
+      +card('Interface', 'palette')
+        .mb-4
+          label.form-label.fw-semibold Theme Mode
+          .d-flex.gap-2
+            button.btn.btn-outline-secondary.btn-sm.flex-fill.active(type="button", data-neoadmin-theme="system", aria-pressed="true")
+              i.bi.bi-display.me-1
+              | System
+            button.btn.btn-outline-secondary.btn-sm.flex-fill(type="button", data-neoadmin-theme="light", aria-pressed="false")
+              i.bi.bi-sun.me-1
+              | Light
+            button.btn.btn-outline-secondary.btn-sm.flex-fill(type="button", data-neoadmin-theme="dark", aria-pressed="false")
+              i.bi.bi-moon-stars.me-1
+              | Dark
+
+        .mb-4
+          +switch('Enable Footer Nav', 'footer-visibility-toggle')(data-neoadmin-footer-toggle)
+          p.small.text-muted.mt-1 Show bottom navigation below the 768px Bootstrap breakpoint.
+
+        .mb-0
+          h6.fs-6.fw-bold Notifications
+          +switch('Email Alerts', 'emailNotif', true).mb-2
+          +switch('Push Alerts', 'pushNotif', false)

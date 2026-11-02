@@ -1,0 +1,39 @@
+include mixins/_ui.pug
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    meta(name="description", content="NeoAdmin is a modern, responsive admin dashboard template built with Bootstrap 5.3.")
+    title Lockscreen - Neo Admin
+    script(src="assets/js/neoadmin-theme.js?v=1.0.1")
+    link(href="assets/css/neoadmin.css?v=1.0.1&ui=footer-search-panel" rel="stylesheet")
+    link(href="assets/css/neoadmin-icons.css?v=1.0.1" rel="stylesheet")
+
+  body
+    #neoadmin-page-loader
+      .neoadmin-spinner
+        .ring
+        .ring
+
+    section.lockscreen-content
+      .logo
+        h1 Neo Admin
+
+      .lock-box
+        img.rounded-circle.user-image.shadow(src="assets/images/avatar_128.jpg", width="80", height="80")
+        h4.text-center.mt-3.mb-1 César Rolando
+        p.text-center.text-muted.small Account Locked
+
+        form.unlock-form.mt-4(action="dashboard.html")
+          +input('PASSWORD', 'password', 'password', '', 'Enter your password')(autofocus)
+          .mt-4
+            button.btn.btn-primary.w-100.py-2(type="submit")
+              i.bi.bi-unlock.fs-5.me-2
+              | UNLOCK
+
+        p.text-center.mt-4
+          a.text-decoration-none.small(href="page-login.html") Login as a different user.
+
+    script(type="module", src="assets/js/neoadmin.js?v=1.0.1")

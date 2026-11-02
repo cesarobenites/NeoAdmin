@@ -1,0 +1,99 @@
+extends layouts/_admin.pug
+
+block head
+  - var title = "Date & Time"
+  - var activePage = "ui-dates"
+
+block content
+  .app-title
+    div
+      h1.fs-3.fs-md-2
+        i.bi.bi-calendar2-week.me-2
+        | Date & Time
+      p.text-muted.mb-0 Lightweight calendar controls for forms, schedules, and reports
+
+  .row.g-4
+    .col-12.col-xl-6
+      +card('Date, Time, and Month Pickers', 'calendar-date')
+        .row.g-3
+          .col-12.col-md-6
+            label.form-label(for="neoadmin-date") Date
+            input#neoadmin-date.form-control(type="text", placeholder="Select a date", data-date-picker, data-date-mode="date", data-neoadmin-calendar)
+          .col-12.col-md-6
+            label.form-label(for="neoadmin-datetime") Date and time
+            input#neoadmin-datetime.form-control(type="text", placeholder="Select a date and time", data-date-picker, data-date-mode="datetime", data-neoadmin-calendar)
+          .col-12.col-md-6
+            label.form-label(for="neoadmin-time") Time
+            input#neoadmin-time.form-control(type="text", placeholder="Select a time", data-date-picker, data-date-mode="time", data-neoadmin-calendar)
+          .col-12
+            label.form-label(for="neoadmin-month") Month and year
+            input#neoadmin-month.form-control(type="text", placeholder="Select a month", data-date-picker, data-date-mode="month", data-neoadmin-calendar)
+          .col-12.col-md-6
+            label.form-label(for="neoadmin-week") Week
+            input#neoadmin-week.form-control(type="text", placeholder="Select a week", data-date-picker, data-date-mode="week", data-neoadmin-calendar)
+        p.small.text-body-secondary.mt-3.mb-0 Flatpickr loads only on this page. The inputs expose native NeoAdmin date events for TypeScript and future framework adapters.
+    .col-12.col-xl-6
+      +card('Date Range', 'calendar-range')
+        label.form-label(for="neoadmin-date-range-input") Select a reporting range
+        #neoadmin-date-range.mb-3(data-date-range)
+          input#neoadmin-date-range-input.form-control(type="text", placeholder="Select a date range", data-date-picker, data-date-mode="range", data-neoadmin-calendar)
+        .row.g-3.mb-3
+        .d-flex.flex-wrap.gap-2(data-date-presets)
+          button.btn.btn-outline-primary.btn-sm(type="button", data-date-preset="today") Today
+          button.btn.btn-outline-primary.btn-sm(type="button", data-date-preset="last7") Last 7 days
+          button.btn.btn-outline-primary.btn-sm(type="button", data-date-preset="month") This month
+          button.btn.btn-outline-primary.btn-sm(type="button", data-date-preset="year") This year
+    .col-12
+      +card('Date-Filtered Report', 'calendar2-check')
+        p.text-body-secondary Select a range or use a preset to filter the report table immediately.
+        .d-flex.flex-wrap.align-items-center.gap-2.mb-3(data-table-toolbar="neoadmin-date-report")
+          button.btn.btn-outline-secondary.btn-sm(type="button", data-table-clear) Clear filters
+          button.btn.btn-primary.btn-sm(type="button", data-table-export="csv") Export CSV
+          select.form-select.form-select-sm.w-auto(data-table-density, aria-label="Row density")
+            option(value="normal") Normal
+            option(value="compact") Compact
+          label.form-check.form-check-inline.mb-0
+            input.form-check-input(type="checkbox", data-table-column="0")
+            span.form-check-label Period
+          label.form-check.form-check-inline.mb-0
+            input.form-check-input(type="checkbox", data-table-column="1")
+            span.form-check-label Department
+        .table-responsive
+          table#neoadmin-date-report.table.table-hover.neoadmin-table(data-page-length="5", data-state-key="neoadmin-date-report", data-date-filter="#neoadmin-date-range", data-date-column="0")
+            thead
+              tr
+                th Period
+                th Department
+                th Status
+                th Owner
+            tbody
+              tr
+                td 2026-01-12
+                td Finance
+                td Closed
+                td Anna Taylor
+              tr
+                td 2026-02-03
+                td Operations
+                td In review
+                td Luis Reyes
+              tr
+                td 2026-03-18
+                td Sales
+                td Closed
+                td Carla Diaz
+              tr
+                td 2026-04-09
+                td Finance
+                td Pending
+                td Anna Taylor
+              tr
+                td 2026-05-22
+                td Operations
+                td Closed
+                td Luis Reyes
+              tr
+                td 2026-06-14
+                td Sales
+                td In review
+                td Carla Diaz

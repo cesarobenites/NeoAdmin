@@ -1,24 +1,38 @@
-// Componant: Card (Tile)
+@use '../vars' as *;
 
 .tile {
 	position: relative;
-	background: var(--bs-tertiary-bg);
-	border-radius: $border-radius-lg;
-	padding: 1.5rem;
+	background: var(--bs-card-bg, #ffffff);
+	border-radius: $card-border-radius;
+	padding: $tile-padding;
 	box-shadow: $box-shadow;
-	margin-bottom: 30px;
-	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-	border: 1px solid var(--bs-border-color-translucent);
+	margin-bottom: $card-margin-bottom;
+	transition: all 0.3s ease;
+	border: 1px solid var(--bs-border-color);
+    display: block;
+    width: 100%;
 
 	&:hover {
 		box-shadow: $box-shadow-lg;
+        transform: translateY(-1px);
 	}
 
 	@media print {
-		border: 1px solid var(--bs-border-color);
+		border: 1px solid #ddd !important;
+        box-shadow: none !important;
 	}
 
-	&.small { padding: 0; }
+	@media (max-width: 575.98px) {
+		margin-bottom: $page-section-gap-mobile;
+		padding: 1rem;
+	}
+
+	&.small { padding: 0.75rem; }
+	&.tile-flush { padding: 0; }
+
+    .tile-body {
+        padding: 0;
+    }
 
 	.overlay {
 		position: absolute;
@@ -26,79 +40,67 @@
 		left: 0;
 		bottom: 0;
 		right: 0;
-		background-color: rgba(var(--bs-body-bg-rgb), 0.9);
+		background-color: rgba(255, 255, 255, 0.9);
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		flex-direction: row;
+		flex-direction: column;
 		color: var(--bs-body-color);
-		border-radius: $border-radius-lg;
-		z-index: 10;
+		border-radius: $border-radius;
+		z-index: 100;
+		backdrop-filter: blur(2px);
 
 		.l-text {
-			font-size: 1.5rem;
-			margin-top: 15px;
+			font-size: 1.25rem;
+			margin-top: 10px;
 			font-weight: 600;
 		}
 	}
 
 	.tile-title {
 		margin-top: 0;
-		margin-bottom: 1.25rem;
+		margin-bottom: $card-margin-bottom;
 		font-size: 1.25rem;
 		font-weight: 700;
 		color: var(--bs-heading-color);
 		position: relative;
-		padding-bottom: 0.5rem;
-
-		&::after {
-			content: "";
-			position: absolute;
-			left: 0;
-			bottom: 0;
-			width: 50px;
-			height: 2px;
-			background-color: $primary;
-		}
+        display: block;
 	}
 
 	.tile-title-w-btn {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		margin-bottom: 1.25rem;
-
+		margin-bottom: 1.5rem;
 		p { margin: 0; }
-
-		.title { 
+		.title {
 			margin: 0;
 			font-size: 1.25rem;
 			font-weight: 700;
 		}
-
 		.side {
 			margin-bottom: 0;
 			padding-left: 0;
 		}
-
 		.btn-group { flex: 0 0 auto; }
 	}
 
 	.tile-footer {
-		border-top: 1px solid var(--bs-border-color);
+		border-top: 1px solid rgba(0, 0, 0, 0.05);
 		padding: 1rem 0 0 0;
 		margin-top: 1rem;
 	}
 }
 
-// Dark mode refinements
 [data-bs-theme="dark"] {
 	.tile {
-		background: var(--bs-gray-900);
-		border-color: var(--bs-gray-800);
-		
-		.overlay {
-			background-color: rgba(0, 0, 0, 0.85);
-		}
+		background: var(--bs-card-bg);
+		border-color: var(--bs-border-color);
+		box-shadow: $box-shadow;
+
+        .overlay {
+            background-color: rgba(13, 17, 23, 0.85);
+            color: #fff;
+        }
 	}
 }

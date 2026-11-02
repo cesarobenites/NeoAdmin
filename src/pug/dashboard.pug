@@ -1,0 +1,36 @@
+extends layouts/_admin.pug
+
+block head
+  - var title = "Dashboard"
+  - var activePage = "dashboard"
+
+block content
+  .app-title
+    div
+      h1.fs-3.fs-md-2
+        i.bi.bi-speedometer.me-2
+        | Dashboard
+      p.text-muted.mb-0 A modern and modular Bootstrap 5.3 admin template
+
+    ul.app-breadcrumb.breadcrumb.d-none.d-md-flex
+      li.breadcrumb-item
+        i.bi.bi-house-door.fs-6
+      li.breadcrumb-item.active
+        a(href="#") Dashboard
+  .row.g-3.mb-4
+    .col-12.col-sm-6.col-xl-3
+      +metricCard('Users', '1,250', 'people', 'primary', '4.68%', 'up', 'Since last month')
+    .col-12.col-sm-6.col-xl-3
+      +metricCard('Likes', '4,500', 'heart-fill', 'info', '9.11%', 'up', 'Since last year')
+    .col-12.col-sm-6.col-xl-3
+      +metricCard('Uploads', '245', 'folder2-open', 'warning', '5.60%', 'up', 'Since last month')
+    .col-12.col-sm-6.col-xl-3
+      +metricCard('Stars', '800', 'star-fill', 'danger', '2.50%', 'down', 'Since yesterday')
+  .row.g-4
+    .col-12.col-lg-6
+      +card('Monthly Sales', 'graph-up')
+        canvas#lineChartDemo.neoadmin-chart-canvas(data-chart="line")
+
+    .col-12.col-lg-6
+      +card('Support Requests', 'pie-chart')
+        canvas#pieChartDemo.neoadmin-chart-canvas(data-chart="doughnut")
